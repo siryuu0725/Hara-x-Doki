@@ -3,44 +3,29 @@
 
 typedef struct
 {
-	bool CleaFlg;
-}NextCeneFlg;
+	bool Clea;
+}NextCene;
 
 typedef struct
 {
-	float pos_x[9];
-	float pos_y[9];
-	float width;
-	float height;
+	float pos_x[28];
+	float pos_y[28];
+	//ê≥ï˚å`
+	float square_width;
+	float square_height;
+	//â°í∑
+	float Landscape_width;
+	float Landscape_height;
+	//ècí∑
+	float Portrait_width;
+	float Portrait_height;
+	bool goal_key;
+	float move_speed;
 
-}Puzzle_1;
+}PuzzleCabe;
 
-
-typedef struct
-{
-	float pos_x[11];
-	float pos_y[11];
-	float width;
-	float height;
-	bool key_flg;
-	
-}Puzzle_2;
-
-
-
-typedef struct
-{
-	float pos_x[8];
-	float pos_y[8];
-	float width;
-	float height;
-
-}Puzzle_3;
-
-extern NextCeneFlg next_flg;
-extern Puzzle_1 puzzle1;
-extern Puzzle_2 puzzle2;
-extern Puzzle_3 puzzle3;
+extern NextCene nextcene;
+extern PuzzleCabe puzzle;
 
 
 void InitPuzzle();

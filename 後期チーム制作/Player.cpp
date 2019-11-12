@@ -12,8 +12,7 @@
 MoviePlayerDate movieplayer;
 BackPlayerData backplayer;
 
-int c;
-int d;
+
 void InitPlayer()
 {
 	movieplayer.pos_x = 900.0f;
@@ -21,10 +20,10 @@ void InitPlayer()
 	movieplayer.Tu = 0.0f;
 	movieplayer.Tv = 0.25f;
 	movieplayer.movespeed = 2.8f;
-	movieplayer.moveflg = false;
-	movieplayer.Bgflg = false;
-	c = 0;
-	d = 0;
+	movieplayer.move_animesion = false;
+	movieplayer.Bg_pos = false;
+	movieplayer.animetion_count = 0;
+	movieplayer.nextmoviecount = 0;
 }
 
 void InitBackPlayer()
@@ -45,24 +44,25 @@ void DrawBackPlayer()
 
 void UpDatePlayer()
 {
-	if (movieplayer.moveflg == false)//アニメーション
+	if (movieplayer.move_animesion == false)//アニメーション
 	{
-		c++;
+		movieplayer.animetion_count++;
 		movieplayer.pos_y -= 2.0f;
-		if (c >= 10)
+		if (movieplayer.animetion_count >= 10)
 		{
 			movieplayer.Tu += 0.25f;
-			c = 0;
+			movieplayer.animetion_count = 0;
 		}
 		
 	}
 	if (movieplayer.pos_y <= 540.0f)//特定の位置に進むと背景が動く
 	{
-		movieplayer.moveflg = true;
-		d++;
-		if (d == 60)
+		movieplayer.move_animesion = true;
+		movieplayer.nextmoviecount++;
+		if (movieplayer.nextmoviecount == 60)
 		{
-			movieplayer.Bgflg = true;
+			movieplayer.Bg_pos = true;
+			movieplayer.nextmoviecount = 0;
 		}
 	}
 }

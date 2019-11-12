@@ -29,7 +29,7 @@ void DrawTalkBg()
 //背景移動
 void UpDateBg()
 {
-	if (movieplayer.Bgflg == true)//プレイヤーが特定の位置に来た時
+	if (movieplayer.Bg_pos == true)//プレイヤーが特定の位置に来た時
 	{
 
 		if (bgdate.Tv <= 0.0f)//プレイヤーは動かず背景だけ移動
@@ -51,7 +51,7 @@ void UpDateBg()
 		{
 			bgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
-			movieplayer.moveflg = false;
+			movieplayer.move_animesion = false;
 		}
 	}
 	

@@ -54,7 +54,7 @@ void MainPuzzleGameScene()
 {
 	UpDatePuzzle();
 	
-	if ( next_flg.CleaFlg == true)
+	if (nextcene.Clea == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}

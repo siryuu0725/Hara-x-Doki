@@ -4,62 +4,61 @@
 #include "Input.h"
 #include "Hit.h"
 
-NextCeneFlg next_flg;
+NextCene nextcene;
 
-Puzzle_1 puzzle1;
-Puzzle_2 puzzle2;
-Puzzle_3 puzzle3;
-
+PuzzleCabe puzzle;
 
 void InitPuzzle()
 {
-	next_flg.CleaFlg = false;
+	nextcene.Clea = false;
+
+	puzzle.move_speed = 180.0f;
 
 #pragma region ê≥ï˚å`èâä˙âª
-	puzzle1.width = 180.0f;
-	puzzle1.height = 180.0f;
+	puzzle.square_width = 180.0f;
+	puzzle.square_height = 180.0f;
 
-	puzzle1.pos_x[0] = 0.0f, puzzle1.pos_y[0] = 360.0f;
-	puzzle1.pos_x[1] = 0.0f, puzzle1.pos_y[1] = 900.0f;
-	puzzle1.pos_x[2] = 360.0f, puzzle1.pos_y[2] = 900.0f;
-	puzzle1.pos_x[3] = 540.0f, puzzle1.pos_y[3] = 360.0f;
-	puzzle1.pos_x[4] = 540.0f, puzzle1.pos_y[4] = 720.0f;
-	puzzle1.pos_x[5] = 1080.0f, puzzle1.pos_y[5] = 900.0f;
-	puzzle1.pos_x[6] = 1260.0f, puzzle1.pos_y[6] = 180.0f;
-	puzzle1.pos_x[7] = 1260.0f, puzzle1.pos_y[7] = 360.0f;
-	puzzle1.pos_x[8] = 1260.0f, puzzle1.pos_y[8] = 900.0f;
+	puzzle.pos_x[0] = 0.0f, puzzle.pos_y[0] = 360.0f;
+	puzzle.pos_x[1] = 0.0f, puzzle.pos_y[1] = 900.0f;
+	puzzle.pos_x[2] = 360.0f, puzzle.pos_y[2] = 900.0f;
+	puzzle.pos_x[3] = 540.0f, puzzle.pos_y[3] = 360.0f;
+	puzzle.pos_x[4] = 540.0f, puzzle.pos_y[4] = 720.0f;
+	puzzle.pos_x[5] = 1080.0f, puzzle.pos_y[5] = 900.0f;
+	puzzle.pos_x[6] = 1260.0f, puzzle.pos_y[6] = 180.0f;
+	puzzle.pos_x[7] = 1260.0f, puzzle.pos_y[7] = 360.0f;
+	puzzle.pos_x[8] = 1260.0f, puzzle.pos_y[8] = 900.0f;
 #pragma endregion	
 
 #pragma region â°í∑Ç∆åÆèâä˙âª
-	puzzle2.width = 360.0f;
-	puzzle2.height = 180.0f;
-	puzzle2.key_flg = false;
+	puzzle.Landscape_width = 360.0f;
+	puzzle.Landscape_height = 180.0f;
+	puzzle.goal_key = false;
 
-	puzzle2.pos_x[0] = 0.0f, puzzle2.pos_y[0] = 180.0f;
-	puzzle2.pos_x[1] = 0.0f, puzzle2.pos_y[1] = 0.0f;
-	puzzle2.pos_x[2] = 180.0f, puzzle2.pos_y[2] = 720.0f;
-	puzzle2.pos_x[3] = 360.0f, puzzle2.pos_y[3] = 540.0f;
-	puzzle2.pos_x[4] = 540.0f, puzzle2.pos_y[4] = 0.0f;
-	puzzle2.pos_x[5] = 540.0f, puzzle2.pos_y[5] = 180.0f;
-	puzzle2.pos_x[6] = 720.0f, puzzle2.pos_y[6] = 360.0f;
-	puzzle2.pos_x[7] = 720.0f, puzzle2.pos_y[7] = 900.0f;
-	puzzle2.pos_x[8] = 1080.0f, puzzle2.pos_y[8] = 0.0f;
-	puzzle2.pos_x[9] = 1080.0f, puzzle2.pos_y[9] = 540.0f;
-	puzzle2.pos_x[10] = 1260.0f, puzzle2.pos_y[10] = 720.0f;
+	puzzle.pos_x[9] = 0.0f, puzzle.pos_y[9] = 180.0f;
+	puzzle.pos_x[10] = 0.0f, puzzle.pos_y[10] = 0.0f;
+	puzzle.pos_x[11] = 180.0f, puzzle.pos_y[11] = 720.0f;
+	puzzle.pos_x[12] = 360.0f, puzzle.pos_y[12] = 540.0f;
+	puzzle.pos_x[13] = 540.0f, puzzle.pos_y[13] = 0.0f;
+	puzzle.pos_x[14] = 540.0f, puzzle.pos_y[14] = 180.0f;
+	puzzle.pos_x[15] = 720.0f, puzzle.pos_y[15] = 360.0f;
+	puzzle.pos_x[16] = 720.0f, puzzle.pos_y[16] = 900.0f;
+	puzzle.pos_x[17] = 1080.0f, puzzle.pos_y[17] = 0.0f;
+	puzzle.pos_x[18] = 1080.0f, puzzle.pos_y[18] = 540.0f;
+	puzzle.pos_x[19] = 1260.0f, puzzle.pos_y[19] = 720.0f;
 #pragma endregion	
 
 #pragma region ècí∑èâä˙âª
-	puzzle3.width = 180.0f;
-	puzzle3.height = 360.0f;
+	puzzle.Portrait_width = 180.0f;
+	puzzle.Portrait_height = 360.0f;
 
-	puzzle3.pos_x[0] = 0.0f, puzzle3.pos_y[0] = 540.0f;
-	puzzle3.pos_x[1] = 180.0f, puzzle3.pos_y[1] = 360.0f;
-	puzzle3.pos_x[2] = 360.0f, puzzle3.pos_y[2] = 0.0f;
-	puzzle3.pos_x[3] = 720.0f, puzzle3.pos_y[3] = 540.0f;
-	puzzle3.pos_x[4] = 900.0f, puzzle3.pos_y[4] = 0.0f;
-	puzzle3.pos_x[5] = 900.0f, puzzle3.pos_y[5] = 540.0f;
-	puzzle3.pos_x[6] = 1080.0f, puzzle3.pos_y[6] = 180.0f;
-	puzzle3.pos_x[7] = 1440.0f, puzzle3.pos_y[7] = 360.0f;
+	puzzle.pos_x[20] = 0.0f, puzzle.pos_y[20] = 540.0f;
+	puzzle.pos_x[21] = 180.0f, puzzle.pos_y[21] = 360.0f;
+	puzzle.pos_x[22] = 360.0f, puzzle.pos_y[22] = 0.0f;
+	puzzle.pos_x[23] = 720.0f, puzzle.pos_y[23] = 540.0f;
+	puzzle.pos_x[24] = 900.0f, puzzle.pos_y[24] = 0.0f;
+	puzzle.pos_x[25] = 900.0f, puzzle.pos_y[25] = 540.0f;
+	puzzle.pos_x[26] = 1080.0f, puzzle.pos_y[26] = 180.0f;
+	puzzle.pos_x[27] = 1440.0f, puzzle.pos_y[27] = 360.0f;
 #pragma endregion	
 
 }
@@ -75,16 +74,16 @@ void DrawPuzzle()
 {
 	for (int i = 0; i < 9; i++)
 	{
-		DrawTexture(puzzle1.pos_x[i], puzzle1.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle1));
+		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle1));
 	}
-	for (int i = 1; i < 11; i++)
+	for (int i = 10; i < 20; i++)
 	{
-		DrawTexture(puzzle2.pos_x[i], puzzle2.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle2));
+		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle2));
 	}
-	DrawTexture(puzzle2.pos_x[0], puzzle2.pos_y[0], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKey));
-	for (int i = 0; i < 8; i++)
+	DrawTexture(puzzle.pos_x[9], puzzle.pos_y[9], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKey));
+	for (int i = 20; i < 28; i++)
 	{
-		DrawTexture(puzzle3.pos_x[i], puzzle3.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle3));
+		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle3));
 	}
 }
 
@@ -95,109 +94,114 @@ void UpDatePuzzle()
 	for (int i = 0; i < 9; i++)
 	{
 		//è„
-		if (GetMousePos().X >= puzzle1.pos_x[i] + 40.0f && GetMousePos().X <= puzzle1.pos_x[i] + 140.0f
-			&& GetMousePos().Y >= puzzle1.pos_y[i] && GetMousePos().Y <= puzzle1.pos_y[i] + 40.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 40.0f && GetMousePos().X <= puzzle.pos_x[i] + 140.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] && GetMousePos().Y <= puzzle.pos_y[i] + 40.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle1.pos_y[i] -= 180.0f;
+			puzzle.pos_y[i] -= 180.0f;
 
-			if (HitCabe1_1(i, &puzzle1) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle1.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
 
 			}
-			else if (HitCabe1_2(i, &puzzle1, &puzzle2) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle1.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
+
 			}
-			else if (HitCabe1_3(i, &puzzle1, &puzzle3) == true)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle1.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
+
 			}
-			else if (puzzle1.pos_y[i] < 0.0f)
+			else if (puzzle.pos_y[i] < 0.0f)
 			{
-				puzzle1.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
 			}
 		}
 
 		//â∫
-		if (GetMousePos().X >= puzzle1.pos_x[i] + 40.0f && GetMousePos().X <= puzzle1.pos_x[i] + 140.0f
-			&& GetMousePos().Y >= puzzle1.pos_y[i] + 140.0f && GetMousePos().Y <= puzzle1.pos_y[i] + 180.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 40.0f && GetMousePos().X <= puzzle.pos_x[i] + 140.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 140.0f && GetMousePos().Y <= puzzle.pos_y[i] + 180.0f
 			&& OnMouseDown(Left) == true)
 		{
 
-			puzzle1.pos_y[i] += 180.0f;
+			puzzle.pos_y[i] += 180.0f;
 
-			if (HitCabe1_1(i, &puzzle1) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle1.pos_y[i] -= 180.0f;
-
-			}
-			else if (HitCabe1_2(i, &puzzle1, &puzzle2) == true)
-			{
-				puzzle1.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= 180.0f;
 
 			}
-			else if (HitCabe1_3(i, &puzzle1, &puzzle3) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle1.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= 180.0f;
+
 			}
-			else if (puzzle1.pos_y[i] + puzzle1.height > 1080.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle1.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= 180.0f;
+
+			}
+			else if (puzzle.pos_y[i] + puzzle.square_height > 1080.0f)
+			{
+				puzzle.pos_y[i] -= 180.0f;
 			}
 		}
 		//ç∂
-		if (GetMousePos().X >= puzzle1.pos_x[i] && GetMousePos().X <= puzzle1.pos_x[i] + 40.0f
-			&& GetMousePos().Y >= puzzle1.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle1.pos_y[i] + 140.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] && GetMousePos().X <= puzzle.pos_x[i] + 40.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle1.pos_x[i] -= 180.0f;
+			puzzle.pos_x[i] -= 180.0f;
 
-			if (HitCabe1_1(i, &puzzle1) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle1.pos_x[i] += 180.0f;
-
-			}
-			else if (HitCabe1_2(i, &puzzle1, &puzzle2) == true)
-			{
-				puzzle1.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += 180.0f;
 
 			}
-			else if (HitCabe1_3(i, &puzzle1, &puzzle3) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle1.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += 180.0f;
+
 			}
-			else if (puzzle1.pos_x[i] < 0.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle1.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += 180.0f;
+
+			}
+			else if (puzzle.pos_x[i] < 0.0f)
+			{
+				puzzle.pos_x[i] += 180.0f;
 			}
 		}
-	
+
 		//âE
-		if (GetMousePos().X >= puzzle1.pos_x[i] + 140.0f && GetMousePos().X <= puzzle1.pos_x[i] + 180.0f
-			&& GetMousePos().Y >= puzzle1.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle1.pos_y[i] + 140.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 140.0f && GetMousePos().X <= puzzle.pos_x[i] + 180.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle1.pos_x[i] += 180.0f;
+			puzzle.pos_x[i] += 180.0f;
 
-			if (HitCabe1_1(i, &puzzle1) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle1.pos_x[i] -= 180.0f;
-			
+				puzzle.pos_x[i] -= 180.0f;
+
 			}
-			else if (HitCabe1_2(i, &puzzle1, &puzzle2) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle1.pos_x[i] -= 180.0f;
-				
+				puzzle.pos_x[i] -= 180.0f;
+
 			}
-			else if (HitCabe1_3(i, &puzzle1, &puzzle3) == true)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle1.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= 180.0f;
+
 			}
-			else if (puzzle1.pos_x[i] + puzzle1.width > 1740.0f)
+			else if (puzzle.pos_x[i] + puzzle.square_width > 1740.0f)
 			{
-				puzzle1.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= 180.0f;
 			}
 		}
 	}
@@ -205,121 +209,131 @@ void UpDatePuzzle()
 
 
 #pragma region â°í∑ÇÃëÄçÏ
-	for (int i = 0; i < 11; i++)
+	for (int i = 9; i < 20; i++)
 	{
 		//è„
-		if (GetMousePos().X >= puzzle2.pos_x[i] + 40.0f && GetMousePos().X <= puzzle2.pos_x[i] + 320.0f
-			&& GetMousePos().Y >= puzzle2.pos_y[i] && GetMousePos().Y <= puzzle2.pos_y[i] + 40.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 40.0f && GetMousePos().X <= puzzle.pos_x[i] + 320.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] && GetMousePos().Y <= puzzle.pos_y[i] + 40.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle2.pos_y[i] -= 180.0f;
+			puzzle.pos_y[i] -= 180.0f;
 
-			if (HitCabe2_2(i, &puzzle2) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				
-				puzzle2.pos_y[i] += 180.0f;
 
-			} 
-			else if (HitCabe2_1(i, &puzzle2, &puzzle1) == true)
-			{
-				puzzle2.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
 
 			}
-			else if (HitCabe2_3(i, &puzzle2, &puzzle3) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle2.pos_y[i] += 180.0f;
+
+				puzzle.pos_y[i] += 180.0f;
+
 			}
-			else if (puzzle2.pos_y[i] < 0.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle2.pos_y[i] += 180.0f;
+
+				puzzle.pos_y[i] += 180.0f;
+
+			}
+			else if (puzzle.pos_y[i] < 0.0f)
+			{
+				puzzle.pos_y[i] += 180.0f;
 			}
 		}
 		//â∫
-		if (GetMousePos().X >= puzzle2.pos_x[i] + 40.0f && GetMousePos().X <= puzzle2.pos_x[i] + 320.0f
-			&& GetMousePos().Y >= puzzle2.pos_y[i] + 140.0f && GetMousePos().Y <= puzzle2.pos_y[i] + 180.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 40.0f && GetMousePos().X <= puzzle.pos_x[i] + 320.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 140.0f && GetMousePos().Y <= puzzle.pos_y[i] + 180.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle2.pos_y[i] += 180.0f;
+			puzzle.pos_y[i] += 180.0f;
 
-			if (HitCabe2_2(i, &puzzle2) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-
-				puzzle2.pos_y[i] -= 180.0f;
-
-			}
-			else if (HitCabe2_1(i, &puzzle2, &puzzle1) == true)
-			{
-				puzzle2.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= 180.0f;
 
 			}
-			else if (HitCabe2_3(i, &puzzle2, &puzzle3) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle2.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= 180.0f;
+
 			}
-			else if (puzzle2.pos_y[i] + puzzle2.height > 1080.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle2.pos_y[i] -= 180.0f;
+
+				puzzle.pos_y[i] -= 180.0f;
+
+			}
+			else if (puzzle.pos_y[i] + puzzle.Landscape_height > 1080.0f)
+			{
+				puzzle.pos_y[i] -= 180.0f;
 			}
 		}
 		//ç∂
-		if (GetMousePos().X >= puzzle2.pos_x[i] && GetMousePos().X <= puzzle2.pos_x[i] + 40.0f
-			&& GetMousePos().Y >= puzzle2.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle2.pos_y[i] + 140.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] && GetMousePos().X <= puzzle.pos_x[i] + 40.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle2.pos_x[i] -= 180.0f;
+			puzzle.pos_x[i] -= 180.0f;
 
-			if (HitCabe2_2(i, &puzzle2) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle2.pos_x[i] += 180.0f;
-
-			}
-			else if (HitCabe2_1(i, &puzzle2, &puzzle1) == true)
-			{
-				puzzle2.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += 180.0f;
 
 			}
-			else if (HitCabe2_3(i, &puzzle2, &puzzle3) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle2.pos_x[i] += 180.0f;
+
+				puzzle.pos_x[i] += 180.0f;
+
 			}
-			else if (puzzle2.pos_x[i] < 0.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle2.pos_x[i] += 180.0f;
+
+				puzzle.pos_x[i] += 180.0f;
+
+			}
+			else if (puzzle.pos_x[i] < 0.0f)
+			{
+				puzzle.pos_x[i] += 180.0f;
 			}
 		}
 		//âE
-		if (GetMousePos().X >= puzzle2.pos_x[i] + 320.0f && GetMousePos().X <= puzzle2.pos_x[i] + 360.0f
-			&& GetMousePos().Y >= puzzle2.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle2.pos_y[i] + 140.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 320.0f && GetMousePos().X <= puzzle.pos_x[i] + 360.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle2.pos_x[i] += 180.0f;
+			puzzle.pos_x[i] += 180.0f;
 
-			if (HitCabe2_2(i, &puzzle2) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle2.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= 180.0f;
 
 			}
-			else if (HitCabe2_1(i, &puzzle2, &puzzle1) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle2.pos_x[i] -= 180.0f;
+
+				puzzle.pos_x[i] -= 180.0f;
 
 			}
-			else if (HitCabe2_3(i, &puzzle2, &puzzle3) == true)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle2.pos_x[i] -= 180.0f;
+
+				puzzle.pos_x[i] -= 180.0f;
+
 			}
-			else if (puzzle2.pos_x[i] + puzzle2.width > 1740.0f)
+			else if (puzzle.pos_x[i] + puzzle.Landscape_width > 1740.0f)
 			{
-				puzzle2.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= 180.0f;
 			}
 
-			if (puzzle2.pos_x[0] == 1260.0f && puzzle2.pos_y[0] == 360.0f && GetMousePos().X >= puzzle2.pos_x[0] + 320.0f && GetMousePos().X <= puzzle2.pos_x[0] + 360.0f
-				&& GetMousePos().Y >= puzzle2.pos_y[0] + 40.0f && GetMousePos().Y <= puzzle2.pos_y[0] + 140.0f
+			if (puzzle.pos_x[9] == 1260.0f && puzzle.pos_y[9] == 360.0f && GetMousePos().X >= puzzle.pos_x[9] + 320.0f && GetMousePos().X <= puzzle.pos_x[9] + 360.0f
+				&& GetMousePos().Y >= puzzle.pos_y[9] + 40.0f && GetMousePos().Y <= puzzle.pos_y[9] + 140.0f
 				&& OnMouseDown(Left) == true)
 			{
-				puzzle2.key_flg = true;
+				puzzle.goal_key = true;
 			}
 		}
 
@@ -328,132 +342,136 @@ void UpDatePuzzle()
 
 
 #pragma region ècí∑ÇÃëÄçÏ
-	for (int i = 0; i < 8; i++)
+	for (int i = 20; i < 28; i++)
 	{
 		//è„
-		if (GetMousePos().X >= puzzle3.pos_x[i] + 40.0f && GetMousePos().X <= puzzle3.pos_x[i] + 140.0f
-			&& GetMousePos().Y >= puzzle3.pos_y[i] && GetMousePos().Y <= puzzle3.pos_y[i] + 40.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 40.0f && GetMousePos().X <= puzzle.pos_x[i] + 140.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] && GetMousePos().Y <= puzzle.pos_y[i] + 40.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle3.pos_y[i] -= 180.0f;
+			puzzle.pos_y[i] -= 180.0f;
 
-			if (HitCabe3_3(i, &puzzle3) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle3.pos_y[i] += 180.0f;
-
-			}
-			else if (HitCabe3_1(i, &puzzle3, &puzzle1) == true)
-			{
-				puzzle3.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
 
 			}
-			else if (HitCabe3_2(i, &puzzle3, &puzzle2) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle3.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
+
 			}
-			else if (puzzle3.pos_x[i] < 0.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle3.pos_x[i] += 180.0f;
+				puzzle.pos_y[i] += 180.0f;
+
 			}
-			else if (puzzle3.pos_y[i] < 0.0f)
+			else if (puzzle.pos_x[i] < 0.0f)
 			{
-				puzzle3.pos_y[i] += 180.0f;
+				puzzle.pos_x[i] += 180.0f;
 			}
 		}
 
 		//â∫
-		if (GetMousePos().X >= puzzle3.pos_x[i] + 40.0f && GetMousePos().X <= puzzle3.pos_x[i] + 140.0f
-			&& GetMousePos().Y >= puzzle3.pos_y[i] + 320.0f && GetMousePos().Y <= puzzle3.pos_y[i] + 360.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 40.0f && GetMousePos().X <= puzzle.pos_x[i] + 140.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 320.0f && GetMousePos().Y <= puzzle.pos_y[i] + 360.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle3.pos_y[i] += 180.0f;
+			puzzle.pos_y[i] += 180.0f;
 
-			if (HitCabe3_3(i, &puzzle3) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle3.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= 180.0f;
 
 			}
-			else if (HitCabe3_1(i, &puzzle3, &puzzle1) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle3.pos_y[i] -= 180.0f;
+
+				puzzle.pos_y[i] -= 180.0f;
 
 			}
-			else if (HitCabe3_2(i, &puzzle3, &puzzle2) == true)
-			{
-				puzzle3.pos_y[i] -= 180.0f;
-			}
-			else if (puzzle3.pos_y[i] + puzzle3.height > 1080.0f)
-			{
-				puzzle3.pos_y[i] -= 180.0f;
-			}
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
+
+				puzzle.pos_y[i] -= 180.0f;
+
 		}
+		else if (puzzle.pos_y[i] + puzzle.Portrait_height > 1080.0f)
+		{
+			puzzle.pos_y[i] -= 180.0f;
+		}
+
 		//ç∂
-		if (GetMousePos().X >= puzzle3.pos_x[i] && GetMousePos().X <= puzzle3.pos_x[i] + 40.0f
-			&& GetMousePos().Y >= puzzle3.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle3.pos_y[i] + 320.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] && GetMousePos().X <= puzzle.pos_x[i] + 40.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 320.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle3.pos_x[i] -= 180.0f;
+			puzzle.pos_x[i] -= 180.0f;
 
-			if (HitCabe3_3(i, &puzzle3) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle3.pos_x[i] += 180.0f;
-
-			}
-			else if (HitCabe3_1(i, &puzzle3, &puzzle1) == true)
-			{
-				puzzle3.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += 180.0f;
 
 			}
-			else if (HitCabe3_2(i, &puzzle3, &puzzle2) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle3.pos_x[i] += 180.0f;
+
+				puzzle.pos_x[i] += 180.0f;
+
 			}
-			else if (puzzle3.pos_x[i] < 0.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle3.pos_x[i] += 180.0f;
+
+				puzzle.pos_x[i] += 180.0f;
+
+			}
+			else if (puzzle.pos_x[i] < 0.0f)
+			{
+				puzzle.pos_x[i] += 180.0f;
 			}
 		}
 		//âE
-		if (GetMousePos().X >= puzzle3.pos_x[i] + 140.0f && GetMousePos().X <= puzzle3.pos_x[i] + 180.0f
-			&& GetMousePos().Y >= puzzle3.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle3.pos_y[i] + 320.0f
+		if (GetMousePos().X >= puzzle.pos_x[i] + 140.0f && GetMousePos().X <= puzzle.pos_x[i] + 180.0f
+			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 320.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle3.pos_x[i] += 180.0f;
+			puzzle.pos_x[i] += 180.0f;
 
-			if (HitCabe3_3(i, &puzzle3) == true)
+			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle3.pos_x[i] -= 180.0f;
-
-			}
-			else if (HitCabe3_1(i, &puzzle3, &puzzle1) == true)
-			{
-				puzzle3.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= 180.0f;
 
 			}
-			else if (HitCabe3_2(i, &puzzle3, &puzzle2) == true)
+			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle3.pos_x[i] -= 180.0f;
+
+				puzzle.pos_x[i] -= 180.0f;
+
 			}
-			else if (puzzle3.pos_x[i] + puzzle3.width > 1740.0f)
+			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle3.pos_x[i] -= 180.0f;
+
+				puzzle.pos_x[i] -= 180.0f;
+
+			}
+			else if (puzzle.pos_x[i] + puzzle.Portrait_width > 1740.0f)
+			{
+				puzzle.pos_x[i] -= 180.0f;
 			}
 		}
 	}
 #pragma endregion 
 
 	//åÆÇ™ÉSÅ[ÉãÇµÇΩéû
-	if (puzzle2.key_flg == true)
+	if (puzzle.goal_key == true)
 	{
-		puzzle2.pos_x[0] += 10.0f;
-		if (puzzle2.pos_x[0] > 1920.0f)
+		puzzle.pos_x[9] += 10.0f;
+		if (puzzle.pos_x[9] > 1920.0f)
 		{
-			next_flg.CleaFlg = true;
-
+			nextcene.Clea = true;
 		}
 	}
-	
+
 }
