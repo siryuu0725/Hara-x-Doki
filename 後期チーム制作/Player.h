@@ -6,9 +6,9 @@ typedef struct
 	float pos_x, pos_y;
 	float Tu, Tv;
 	float movespeed;
-	int animetion_count;//アニメーションの動くスピード
+	int animetioncount;//アニメーションの動くスピード
 	int nextmoviecount;//背景が動く時のカウント
-	bool move_animesion;//背景が動き終わったときにアニメーションを動かす用
+	bool moveanimesion;//背景が動き終わったときにアニメーションを動かす用
 	bool Bg_pos;//背景を動かすポジションに立った時用
 }MoviePlayerDate;
 
@@ -16,8 +16,10 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float movespeed;
-
-}SearchPlayer;
+	float animetion_tu, animetion_tv;
+	//float animetionmovespeed;
+	int animetioncount;
+}SearchPlayerData;
 
 typedef struct
 {
@@ -26,19 +28,25 @@ typedef struct
 
 extern MoviePlayerDate movieplayer;
 
-extern SearchPlayer serachplayer;
+extern SearchPlayerData serachplayer;
 
 extern BackPlayerData backplayer;
 
-void InitPlayer();
+void InitMoviePlayer();
+
+void InitSearchPlayer();
 
 void InitBackPlayer();
 
-void DrawPlayer();
+void DrawMoviePlayer();
+
+void DrawSearchPlayer();
 
 void DrawBackPlayer();
 
-void UpDatePlayer();
+void UpDateMoviePlayer();
+
+void SearchPlayerControl(SearchPlayerData*searchplayer);
 
 void UpDateBackPlayer(BackPlayerData*backplayer);
 #endif

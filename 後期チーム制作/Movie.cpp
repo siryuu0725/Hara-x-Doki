@@ -34,22 +34,22 @@ SceneId UpdateMovieScene()
 void DrawMovieScene()
 {
 	DrawBg();
-	DrawPlayer();
+	DrawMoviePlayer();
 }
 
 void InitMovieScene()
 {
 	LoadTexture("Res/GameBg.png", TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex);
-	LoadTexture("Res/Player.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayer);
+	LoadTexture("Res/Player.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
 	InitBg();
-	InitPlayer();
+	InitMoviePlayer();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainMovieScene()
 {
 	
-	UpDatePlayer();
+	UpDateMoviePlayer();
 	UpDateBg();
 	
 	if (movieplayer.pos_y < -200.0f)//‰æ–Ê’[‚És‚­‚Æ•Ï‚í‚é
@@ -62,6 +62,6 @@ SceneId FinishMovieScene()
 {
 	ReleaseCategoryTexture(TEXTURE_MOVIE);
 
-	return SceneId::TalkScene;
+	return SceneId::SearchScene;
 
 }

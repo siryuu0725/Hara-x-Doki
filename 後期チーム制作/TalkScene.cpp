@@ -45,10 +45,10 @@ void DrawTalkScene()
 
 void InitTalkScene()
 {
-	LoadTexture("Res/room.png", TEXTURE_TALK, TalkCategoryTextureList::TalkBg);
-	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobot);
-	LoadTexture("Res/backplayer.png", TEXTURE_TALK, TalkCategoryTextureList::TalkPlayer);
-	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprised);
+	LoadTexture("Res/room.png", TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex);
+	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex);
+	LoadTexture("Res/backplayer.png", TEXTURE_TALK, TalkCategoryTextureList::TalkPlayerTex);
+	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 
 	InitRobot();
 	InitBackPlayer();

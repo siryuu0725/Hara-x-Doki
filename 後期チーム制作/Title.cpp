@@ -41,15 +41,15 @@ SceneId UpdateTitleScene()
 void DrawTitleScene()
 {
 	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex));
-	DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStart));
-	DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEnd));
+	DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
+	DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
 }
 
 void InitTitleScene()
 {
 	LoadTexture("Res/TitleBg.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex);
-	LoadTexture("Res/Start.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStart);
-	LoadTexture("Res/End.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEnd);
+	LoadTexture("Res/Start.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex);
+	LoadTexture("Res/End.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex);
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -77,5 +77,5 @@ SceneId FinishTitleScene()
 	ReleaseCategoryTexture(TEXTURE_TITLE);
 
 	//return SceneId::MovieScene;
-	return SceneId::TalkScene;
+	return SceneId::SearchScene;
 }

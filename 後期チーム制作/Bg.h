@@ -11,8 +11,9 @@ typedef struct
 	
 void InitBg();
 
-
 void DrawBg();
+
+void DrawSearchBg();
 
 void DrawTalkBg();
 

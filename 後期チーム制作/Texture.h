@@ -19,40 +19,41 @@
 enum TitleCategoryTextureList
 {
 	TitleBgTex,				//!< ”wŒi
-	TitleStart,             //!< Žn‚ß‚é
-	TitleEnd,               //!< I‚í‚é
+	TitleStartTex,             //!< Žn‚ß‚é
+	TitleEndTex,               //!< I‚í‚é
 	TitleTextureMax			//!< ƒŠƒXƒgÅ‘å”
 };
 
 enum MovieCategoryTextureList
 {
 	MovieBgTex,				//!< ”wŒi
-	MoviePlayer,            //ƒvƒŒƒCƒ„[
+	MoviePlayerTex,            //ƒvƒŒƒCƒ„[
 	MovieTextureMax,	    //!< ƒŠƒXƒgÅ‘å”
 };
 
 enum SearchCategoryTextureList
 {
-	SearchBgTex,				//!< ”wŒi
-	SearchPlayer,            //ƒvƒŒƒCƒ„[
+	SearchBgTex,				//!< ”wŒi1
+	SearchBg2Tex,				//!< ”wŒi2
+	SearchPlayerTex,            //ƒvƒŒƒCƒ„[
 	SearchTextureMax,	    //!< ƒŠƒXƒgÅ‘å”
 };
 
 enum TalkCategoryTextureList
 {
-	TalkBg,
-	TalkPlayer,
-	TalkRobot,
-	TalkSurprised,
+	TalkBgTex,
+	TalkPlayerTex,
+	TalkRobotTex,
+	TalkSurprisedTex,
 	TalkTextureMax,
 };
 enum PuzzleGameCategoryTextureList
 {
-	PuzzleGameBg,				//!< ”wŒi
-	PuzzleKey,                  //Œ®@@@
-	Puzzle1,					//³•ûŒ`
-	Puzzle2,					//‰¡’·
-	Puzzle3,					//c’·
+	PuzzleGameBgTex,				//!< ”wŒi
+	PuzzleKeyTex,                  //Œ®@@@
+	PuzzleSquareTex,					//³•ûŒ`
+	PuzzleLandscapeTex,					//‰¡’·
+	PuzzlePortraitTex,					//c’·
 	PuzzleGameTextureMax,		//ƒŠƒXƒgÅ‘å”
 };
 

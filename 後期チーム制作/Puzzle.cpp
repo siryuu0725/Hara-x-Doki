@@ -65,7 +65,7 @@ void InitPuzzle()
 
 void DrawBgPuzzle()
 {
-	DrawBgTexture(GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBg));
+	DrawBgTexture(GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex));
 
 }
 
@@ -74,16 +74,16 @@ void DrawPuzzle()
 {
 	for (int i = 0; i < 9; i++)
 	{
-		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle1));
+		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleSquareTex));
 	}
 	for (int i = 10; i < 20; i++)
 	{
-		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle2));
+		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleLandscapeTex));
 	}
-	DrawTexture(puzzle.pos_x[9], puzzle.pos_y[9], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKey));
+	DrawTexture(puzzle.pos_x[9], puzzle.pos_y[9], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKeyTex));
 	for (int i = 20; i < 28; i++)
 	{
-		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::Puzzle3));
+		DrawTexture(puzzle.pos_x[i], puzzle.pos_y[i], GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzlePortraitTex));
 	}
 }
 

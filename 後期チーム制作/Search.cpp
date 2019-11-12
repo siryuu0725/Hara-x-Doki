@@ -6,6 +6,9 @@
 #include "Player.h"
 #include "Bg.h"
 
+extern SearchPlayerData serachplayer;
+
+
 void InitSearchScene();
 
 void MainSearchScene();
@@ -34,24 +37,35 @@ SceneId UpdateSearchScene()
 
 void DrawSearchScene()
 {
-	
+	DrawSearchBg();
+	DrawSearchPlayer();
 }
 
 void InitSearchScene()
 {
-	
+	LoadTexture("Res/SearchBg.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
+	LoadTexture("Res/SearchBg2.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBg2Tex);
+	LoadTexture("Res/Player.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+
+	InitSearchPlayer();
+
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainSearchScene()
 {
+	//SearchPlayerControl(&serachplayer);
 
-	ChangeSceneStep(SceneStep::EndStep);
+	if (OnMouseDown(Left) == true)
+	{
+		ChangeSceneStep(SceneStep::EndStep);
+	}
+	
 }
 
 SceneId FinishSearchScene()
 {
-	ReleaseCategoryTexture(TEXTURE_MOVIE);
+	ReleaseCategoryTexture(TEXTURE_SEARCH);
 
 	return SceneId::TalkScene;
 

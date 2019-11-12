@@ -23,7 +23,7 @@ void DrawBg()
 
 void DrawTalkBg()
 {
-	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBg));
+	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex));
 }
 
 void DrawSearchBg()
@@ -56,7 +56,7 @@ void UpDateBg()
 		{
 			bgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
-			movieplayer.move_animesion = false;
+			movieplayer.moveanimesion = false;
 		}
 	}
 	
