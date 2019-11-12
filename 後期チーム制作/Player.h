@@ -15,9 +15,18 @@ typedef struct
 typedef struct
 {
 	float pos_x, pos_y;
+	float movespeed;
+
+}SearchPlayer;
+
+typedef struct
+{
+	float pos_x, pos_y;
 }BackPlayerData;
 
 extern MoviePlayerDate movieplayer;
+
+extern SearchPlayer serachplayer;
 
 extern BackPlayerData backplayer;
 

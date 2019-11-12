@@ -145,6 +145,7 @@
     <ClCompile Include="PuzzleGame.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Search.cpp" />
     <ClCompile Include="TalkScene.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="PuzzleGame.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Search.h" />
     <ClInclude Include="TalkScene.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />

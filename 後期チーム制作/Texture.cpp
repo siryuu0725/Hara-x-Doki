@@ -10,6 +10,7 @@ int TextureCaterogySize[] = {
 	TitleCategoryTextureList::TitleTextureMax,
 	HelpCategoryTextureList::HelpTextureMax,
 	MovieCategoryTextureList::MovieTextureMax,
+	SearchCategoryTextureList::SearchTextureMax,
 	TalkCategoryTextureList::TalkTextureMax,
 	PuzzleGameCategoryTextureList::PuzzleGameTextureMax,
 	GameClearCategoryTextureList::GameClearTextureMax,

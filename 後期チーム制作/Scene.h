@@ -6,8 +6,9 @@ enum SceneId
 	TitleScene,			//!< タイトルシーン
 	HelpScene,			//!< ヘルプ(遊戯説明画面)シーン
 	MovieScene,			//!< ゲーム本編シーン
-	TalkScene,
-	PuzzleGameScene,
+	SearchScene,		//!< 探索シーン
+	TalkScene,          //!< 会話シーン
+	PuzzleGameScene,    //!< パズルゲームシーン
 	GameClearScene,		//!< ゲームクリアシーン
 	GameOverScene,		//!< ゲームオーバーシーン
 	SceneIdMax			//!< シーンID最大

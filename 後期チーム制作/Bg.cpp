@@ -26,6 +26,11 @@ void DrawTalkBg()
 	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBg));
 }
 
+void DrawSearchBg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex));
+}
+
 //”wŒiˆÚ“®
 void UpDateBg()
 {

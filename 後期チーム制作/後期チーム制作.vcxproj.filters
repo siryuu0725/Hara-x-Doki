@@ -75,6 +75,9 @@
     <ClCompile Include="Robot.cpp">
       <Filter>object</Filter>
     </ClCompile>
+    <ClCompile Include="Search.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -124,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="Robot.h">
       <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="Search.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

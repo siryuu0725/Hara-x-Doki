@@ -5,6 +5,7 @@
 #include "GameOverr.h"
 #include "Title.h"
 #include "Movie.h"
+#include "Search.h"
 #include "PuzzleGame.h"
 #include "TalkScene.h"
 
@@ -39,6 +40,9 @@ void UpdateScene()
 		break;
 	case SceneId::MovieScene:
 		scene_id = UpdateMovieScene();
+		break;
+	case SceneId::SearchScene:
+		scene_id = UpdateSearchScene();
 		break;
 	case SceneId::TalkScene:
 		scene_id = UpdateTalkScene();
@@ -78,6 +82,9 @@ void DrawScene()
 			break;
 		case SceneId::MovieScene:
 			DrawMovieScene();
+			break;
+		case SceneId::SearchScene:
+			DrawSearchScene();
 			break;
 		case SceneId::TalkScene:
 			DrawTalkScene();

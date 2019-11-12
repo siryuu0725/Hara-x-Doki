@@ -6,6 +6,7 @@
 //それぞれのテクスチャのカテゴリー
 #define TEXTURE_TITLE (SceneId::TitleScene)			
 #define TEXTURE_MOVIE (SceneId::MovieScene)	
+#define TEXTURE_SEARCH (SceneId::SearchScene)
 #define TEXTURE_TALK (SceneId::TalkScene)
 #define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)
 #define TEXTURE_HELP (SceneId::HelpScene)				
@@ -28,6 +29,13 @@ enum MovieCategoryTextureList
 	MovieBgTex,				//!< 背景
 	MoviePlayer,            //プレイヤー
 	MovieTextureMax,	    //!< リスト最大数
+};
+
+enum SearchCategoryTextureList
+{
+	SearchBgTex,				//!< 背景
+	SearchPlayer,            //プレイヤー
+	SearchTextureMax,	    //!< リスト最大数
 };
 
 enum TalkCategoryTextureList
