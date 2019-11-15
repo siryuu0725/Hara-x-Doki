@@ -91,6 +91,9 @@ void DrawScene()
 		case SceneId::SearchScene:
 			DrawSearchScene();
 			break;
+		case SceneId::Search2Scene:
+			DrawSearch2Scene();
+			break;
 		case SceneId::TalkScene:
 			DrawTalkScene();
 			break;
