@@ -48,7 +48,7 @@ void DrawTalkScene()
 
 void InitTalkScene()
 {
-	LoadTexture("Res/room.png", TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex);
+	LoadTexture("Res/å¬é∫ÅièóéqïîâÆÅj.png", TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex);
 	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex);
 	LoadTexture("Res/backplayer.png", TEXTURE_TALK, TalkCategoryTextureList::TalkPlayerTex);
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);

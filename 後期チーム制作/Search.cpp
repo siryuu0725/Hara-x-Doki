@@ -43,8 +43,8 @@ void DrawSearchScene()
 
 void InitSearchScene()
 {
-	LoadTexture("Res/SearchBg.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
-	LoadTexture("Res/Player.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/‘å•”‰®.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
+	LoadTexture("Res/ƒ‰ƒtƒLƒƒƒ‰.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 
 	InitSearchPlayer();
 

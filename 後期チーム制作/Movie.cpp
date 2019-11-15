@@ -40,7 +40,7 @@ void DrawMovieScene()
 void InitMovieScene()
 {
 	LoadTexture("Res/GameBg.png", TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex);
-	LoadTexture("Res/Player.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
+	LoadTexture("Res/ƒ‰ƒtƒLƒƒƒ‰.jpg", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
 	InitBg();
 	InitMoviePlayer();
 	ChangeSceneStep(SceneStep::MainStep);

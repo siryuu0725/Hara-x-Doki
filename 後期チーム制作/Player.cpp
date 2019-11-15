@@ -20,7 +20,7 @@ void InitMoviePlayer()
 	movieplayer.pos_x = 900.0f;
 	movieplayer.pos_y = 1300.0f;
 	movieplayer.Tu = 0.0f;
-	movieplayer.Tv = 0.25f;
+	movieplayer.Tv = 0.5f;
 	movieplayer.movespeed = 2.8f;
 	movieplayer.moveanimesion = false;
 	movieplayer.Bg_pos = false;
@@ -33,7 +33,7 @@ void InitSearchPlayer()
 	searchplayer.pos_x = 820.0f;
 	searchplayer.pos_y = 890.0f;
 	searchplayer.animetion_tu = 0.0f;
-	searchplayer.animetion_tv = 0.25f;
+	searchplayer.animetion_tv = 0.5f;
 	//searchplayer.movespeed = 0.25f;
 }
 
@@ -42,7 +42,7 @@ void InitSearch2Player()
 	searchplayer.pos_x = 1760.0f;
 	searchplayer.pos_y = 440.0f;
 	searchplayer.animetion_tu = 0.0f;
-	searchplayer.animetion_tv = 0.5f;
+	searchplayer.animetion_tv = 0.25f;
 	//searchplayer.movespeed = 0.25f;
 
 }
@@ -55,12 +55,12 @@ void InitBackPlayer()
 
 void DrawMoviePlayer()
 {
-	DrawUVTexture(movieplayer.pos_x, movieplayer.pos_y, GetTexture(TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex), 170.0f, 175.0f, movieplayer.Tu, movieplayer.Tv);
+	DrawUVTexture(movieplayer.pos_x, movieplayer.pos_y, GetTexture(TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex), 64.0f, 128.0f, movieplayer.Tu, movieplayer.Tv);
 }
 
 void DrawSearchPlayer()
 {
-	DrawUVTexture(searchplayer.pos_x, searchplayer.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex), 170.0f, 175.0f, searchplayer.animetion_tu, searchplayer.animetion_tv);
+	DrawUVTexture(searchplayer.pos_x, searchplayer.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex), 64.0f, 128.0f, searchplayer.animetion_tu, searchplayer.animetion_tv);
 }
 
 void DrawBackPlayer()
@@ -96,7 +96,7 @@ void UpDateMoviePlayer()
 void SearchPlayerControl()
 {
 
-	searchplayer.movespeed = 10.0f;
+	searchplayer.movespeed = 5.0f;
 	float vec_x = 0.0f;
 	float vec_y = 0.0f;
 	float length = 0.0f;
@@ -105,7 +105,7 @@ void SearchPlayerControl()
 	{
 		if (searchplayer.pos_y >= 0.0f)
 		{
-			searchplayer.animetion_tv = 0.25f;
+			searchplayer.animetion_tv = 0.5f;
 
 			searchplayer.animetioncount++;
 
@@ -138,7 +138,7 @@ void SearchPlayerControl()
 	else if (GetKey(LEFT_KEY) == true)
 	{
 
-		searchplayer.animetion_tv = 0.5f;
+		searchplayer.animetion_tv = 0.25f;
 
 		searchplayer.animetioncount++;
 
@@ -187,7 +187,7 @@ void SearchPlayerControl()
 void Search2PlayerControl()
 {
 
-	searchplayer.movespeed = 10.0f;
+	searchplayer.movespeed = 5.0f;
 	float vec_x = 0.0f;
 	float vec_y = 0.0f;
 	float length = 0.0f;

@@ -34,7 +34,7 @@ void DrawSearchBg()
 
 void DrawSearch2Bg()
 {
-	DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::Search2BgTex));
+	DrawBgTexture(GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex));
 
 }
 
