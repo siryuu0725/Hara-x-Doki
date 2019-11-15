@@ -5,11 +5,13 @@
 #include "Player.h"
 #include "Bg.h"
 #include "Robot.h"
+#include "Menu.h"
 
 #define ROBOTSIZE 150 // ロボットのサイズ
 
 extern BackPlayerData backplayer;
 extern RobotData robot;
+extern MenuData menu;
 
 void InitTalkScene();
 
@@ -41,6 +43,7 @@ void DrawTalkScene()
 	DrawRobot();
 	DrawBackPlayer();
 	DrawSuprised();
+	DrawMenu();
 }
 
 void InitTalkScene()
@@ -49,16 +52,19 @@ void InitTalkScene()
 	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex);
 	LoadTexture("Res/backplayer.png", TEXTURE_TALK, TalkCategoryTextureList::TalkPlayerTex);
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
+	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	InitRobot();
 	InitBackPlayer();
 	InitSuprised();
+	InitMenu();
 
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainTalkScene()
 {
+	UpDateMenu();
 	UpDateBackPlayer(&backplayer);
 
 	if (backplayer.pos_x >= robot.pos_x - ROBOTSIZE && backplayer.pos_x <= robot.pos_x + ROBOTSIZE &&
@@ -75,5 +81,14 @@ SceneId FinishTalkScene()
 {
 	ReleaseCategoryTexture(TEXTURE_TALK);
 
-	return SceneId::PuzzleGameScene;
+	if (menu.onenterkey == true)
+	{
+		menu.onenterkey = false;
+		return SceneId::TitleScene;
+	}
+
+	else
+	{
+		return SceneId::PuzzleGameScene;
+	}
 }

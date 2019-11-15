@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include <math.h>
 #include "Robot.h"
+#include "Menu.h"
 
 #define BACKPLAYERSIZE 150
 #define ROBOTSIZE 150
@@ -12,7 +13,7 @@
 MoviePlayerDate movieplayer;
 SearchPlayerData searchplayer;
 BackPlayerData backplayer;
-
+extern MenuData menu;
 
 void InitMoviePlayer()
 {
@@ -282,6 +283,11 @@ void UpDateBackPlayer(BackPlayerData *backplayer)
 	float vec_x = 0.0f;
 	float vec_y = 0.0f;	
 	float length = 0.0f;
+
+	if (menu.onenterkey == true)
+	{
+		speed = 0.0f;
+	}
 
 	if (GetKey(UP_KEY) == true)
 	{

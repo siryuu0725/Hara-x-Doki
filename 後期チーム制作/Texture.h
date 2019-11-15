@@ -45,6 +45,7 @@ enum TalkCategoryTextureList
 	TalkPlayerTex,
 	TalkRobotTex,
 	TalkSurprisedTex,
+	MenuTex,
 	TalkTextureMax,
 };
 enum PuzzleGameCategoryTextureList
