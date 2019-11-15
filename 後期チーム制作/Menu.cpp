@@ -25,7 +25,7 @@ void DrawMenu()
 {
 	if (menu.onenterkey == true)
 	{
-		DrawTexture(menu.pos_x, menu.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::Menu));
+		DrawTexture(menu.pos_x, menu.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::MenuTex));
 	}
 }
 
