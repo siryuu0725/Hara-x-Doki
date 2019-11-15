@@ -34,7 +34,7 @@ enum MovieCategoryTextureList
 enum SearchCategoryTextureList
 {
 	SearchBgTex,				//!< ”wŒi1
-	SearchBg2Tex,				//!< ”wŒi2
+	Search2BgTex,				//!< ”wŒi2
 	SearchPlayerTex,            //ƒvƒŒƒCƒ„[
 	SearchTextureMax,	    //!< ƒŠƒXƒgÅ‘å”
 };

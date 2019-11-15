@@ -31,6 +31,13 @@ void DrawSearchBg()
 	DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex));
 }
 
+
+void DrawSearch2Bg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::Search2BgTex));
+
+}
+
 //”wŒiˆÚ“®
 void UpDateBg()
 {

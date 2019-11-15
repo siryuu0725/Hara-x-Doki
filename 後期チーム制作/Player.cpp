@@ -36,6 +36,16 @@ void InitSearchPlayer()
 	//searchplayer.movespeed = 0.25f;
 }
 
+void InitSearch2Player()
+{
+	searchplayer.pos_x = 1760.0f;
+	searchplayer.pos_y = 440.0f;
+	searchplayer.animetion_tu = 0.0f;
+	searchplayer.animetion_tv = 0.5f;
+	//searchplayer.movespeed = 0.25f;
+
+}
+
 void InitBackPlayer()
 {
 	backplayer.pos_x = 960.0f;
@@ -82,78 +92,78 @@ void UpDateMoviePlayer()
 	}
 }
 
-void SearchPlayerControl(SearchPlayerData *searchplayer)
+void SearchPlayerControl()
 {
 
-	float speed = 10.0f;
+	searchplayer.movespeed = 10.0f;
 	float vec_x = 0.0f;
 	float vec_y = 0.0f;
 	float length = 0.0f;
 
 	if (GetKey(UP_KEY) == true)
 	{
-		if (searchplayer->pos_y >= 0.0f)
+		if (searchplayer.pos_y >= 0.0f)
 		{
-			searchplayer->animetion_tv = 0.25f;
+			searchplayer.animetion_tv = 0.25f;
 
-			searchplayer->animetioncount++;
+			searchplayer.animetioncount++;
 
-			vec_y = -speed;
-			if (searchplayer->animetioncount >= 10)
-		    {
-				searchplayer->animetion_tu += 0.25f;
-				searchplayer->animetioncount = 0;
-		    }
-		}
-	}
-
-	if (GetKey(DOWN_KEY) == true)
-	{
-		searchplayer->animetion_tv = 0.0f;
-
-		searchplayer->animetioncount++;
-
-		if (searchplayer->pos_y + 175.0f <= 1080.0f)
-		{
-			vec_y = speed;
-			if (searchplayer->animetioncount >= 10)
+			vec_y = -searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
 			{
-				searchplayer->animetion_tu += 0.25f;
-				searchplayer->animetioncount = 0;
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
 			}
 		}
 	}
 
-	if (GetKey(LEFT_KEY) == true)
+	else if (GetKey(DOWN_KEY) == true)
 	{
+		searchplayer.animetion_tv = 0.0f;
 
-		searchplayer->animetion_tv = 0.5f;
+		searchplayer.animetioncount++;
 
-		searchplayer->animetioncount++;
-
-		if (searchplayer->pos_x >= 0.0f)
+		if (searchplayer.pos_y + 175.0f <= 1080.0f)
 		{
-			vec_x = -speed;
-			if (searchplayer->animetioncount >= 10)
+			vec_y = searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
 			{
-				searchplayer->animetion_tu += 0.25f;
-				searchplayer->animetioncount = 0;
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
 			}
 		}
 	}
-	if (GetKey(RIGHT_KEY) == true)
+
+	else if (GetKey(LEFT_KEY) == true)
 	{
-		searchplayer->animetion_tv = 0.75f;
 
-		searchplayer->animetioncount++;
+		searchplayer.animetion_tv = 0.5f;
 
-		if (searchplayer->pos_x + 175.0f <= 1980.0f)
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_x >= 0.0f)
 		{
-			vec_x = speed;
-			if (searchplayer->animetioncount >= 10)
+			vec_x = -searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
 			{
-				searchplayer->animetion_tu += 0.25f;
-				searchplayer->animetioncount = 0;
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+	else if (GetKey(RIGHT_KEY) == true)
+	{
+		searchplayer.animetion_tv = 0.75f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_x + 175.0f <= 1980.0f)
+		{
+			vec_x = searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
 			}
 		}
 	}
@@ -165,11 +175,102 @@ void SearchPlayerControl(SearchPlayerData *searchplayer)
 		float normal_x = vec_x / length;
 		float normal_y = vec_y / length;
 
-		normal_x *= speed;
-		normal_y *= speed;
+		normal_x *= searchplayer.movespeed;
+		normal_y *= searchplayer.movespeed;
 
-		searchplayer->pos_x += normal_x;
-		searchplayer->pos_y += normal_y;
+		searchplayer.pos_x += normal_x;
+		searchplayer.pos_y += normal_y;
+	}
+}
+
+void Search2PlayerControl()
+{
+
+	searchplayer.movespeed = 10.0f;
+	float vec_x = 0.0f;
+	float vec_y = 0.0f;
+	float length = 0.0f;
+
+	if (GetKey(UP_KEY) == true)
+	{
+		if (searchplayer.pos_y >= 0.0f)
+		{
+			searchplayer.animetion_tv = 0.25f;
+
+			searchplayer.animetioncount++;
+
+			vec_y = -searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+
+	if (GetKey(DOWN_KEY) == true)
+	{
+		searchplayer.animetion_tv = 0.0f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_y + 175.0f <= 1080.0f)
+		{
+			vec_y = searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+
+	if (GetKey(LEFT_KEY) == true)
+	{
+
+		searchplayer.animetion_tv = 0.5f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_x >= 0.0f)
+		{
+			vec_x = -searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+	if (GetKey(RIGHT_KEY) == true)
+	{
+		searchplayer.animetion_tv = 0.75f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_x + 175.0f <= 1980.0f)
+		{
+			vec_x = searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+
+	if (vec_x != 0.0f || vec_y != 0.0f)
+	{
+		length = sqrt(vec_x * vec_x + vec_y * vec_y);
+
+		float normal_x = vec_x / length;
+		float normal_y = vec_y / length;
+
+		normal_x *= searchplayer.movespeed;
+		normal_y *= searchplayer.movespeed;
+
+		searchplayer.pos_x += normal_x;
+		searchplayer.pos_y += normal_y;
 	}
 }
 

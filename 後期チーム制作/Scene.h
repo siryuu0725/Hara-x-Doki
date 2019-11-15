@@ -7,6 +7,7 @@ enum SceneId
 	HelpScene,			//!< ヘルプ(遊戯説明画面)シーン
 	MovieScene,			//!< ゲーム本編シーン
 	SearchScene,		//!< 探索シーン
+	Search2Scene,		//!<
 	TalkScene,          //!< 会話シーン
 	PuzzleGameScene,    //!< パズルゲームシーン
 	GameClearScene,		//!< ゲームクリアシーン

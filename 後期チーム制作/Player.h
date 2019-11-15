@@ -28,13 +28,15 @@ typedef struct
 
 extern MoviePlayerDate movieplayer;
 
-extern SearchPlayerData serachplayer;
+extern SearchPlayerData searchplayer;
 
 extern BackPlayerData backplayer;
 
 void InitMoviePlayer();
 
 void InitSearchPlayer();
+
+void InitSearch2Player();
 
 void InitBackPlayer();
 
@@ -46,7 +48,9 @@ void DrawBackPlayer();
 
 void UpDateMoviePlayer();
 
-void SearchPlayerControl(SearchPlayerData*searchplayer);
+void SearchPlayerControl();
+
+void Search2PlayerControl();
 
 void UpDateBackPlayer(BackPlayerData*backplayer);
 #endif

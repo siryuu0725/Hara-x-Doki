@@ -44,7 +44,6 @@ void DrawSearchScene()
 void InitSearchScene()
 {
 	LoadTexture("Res/SearchBg.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
-	LoadTexture("Res/SearchBg2.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBg2Tex);
 	LoadTexture("Res/Player.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 
 	InitSearchPlayer();
@@ -54,9 +53,9 @@ void InitSearchScene()
 
 void MainSearchScene()
 {
-	//SearchPlayerControl(&serachplayer);
+	SearchPlayerControl();
 
-	if (OnMouseDown(Left) == true)
+	if (searchplayer.pos_x <= 20.0f && searchplayer.pos_y >= 100.0f && searchplayer.pos_y <= 120.0f)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
@@ -67,6 +66,6 @@ SceneId FinishSearchScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH);
 
-	return SceneId::TalkScene;
+	return SceneId::Search2Scene;
 
 }
