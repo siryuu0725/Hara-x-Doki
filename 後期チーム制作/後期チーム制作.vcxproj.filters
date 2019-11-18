@@ -84,6 +84,9 @@
     <ClCompile Include="Menu.cpp">
       <Filter>object</Filter>
     </ClCompile>
+    <ClCompile Include="SearchGame.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -142,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchGame.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

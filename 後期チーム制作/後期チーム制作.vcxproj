@@ -148,6 +148,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Search2.cpp" />
+    <ClCompile Include="SearchGame.cpp" />
     <ClCompile Include="TalkScene.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Search.h" />
     <ClInclude Include="Search2.h" />
+    <ClInclude Include="SearchGame.h" />
     <ClInclude Include="TalkScene.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />

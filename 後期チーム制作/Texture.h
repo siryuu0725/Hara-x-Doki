@@ -8,6 +8,7 @@
 #define TEXTURE_MOVIE (SceneId::MovieScene)	
 #define TEXTURE_SEARCH (SceneId::SearchScene)
 #define TEXTURE_SEARCH2 (SceneId::Search2Scene)
+#define TEXTURE_SEARCH_GAME (SceneId::SearchGameScene)
 #define TEXTURE_TALK (SceneId::TalkScene)
 #define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)
 #define TEXTURE_HELP (SceneId::HelpScene)				
@@ -43,6 +44,15 @@ enum Search2CategoryTextureList
 {
 	Search2BgTex,				//!< ”wŒi
 	Search2TextureMax,	    //!< ƒŠƒXƒgÅ‘å”
+};
+
+enum SearchGameCategoryTextureList
+{
+	SearchGameBgTex,
+	SearchGamePlayerTex,
+	SearchGameRobotTex,
+	SearchGameSurprisedTex,
+	SearchGameTextureMax,
 };
 
 enum TalkCategoryTextureList

@@ -65,7 +65,7 @@ void InitTalkScene()
 void MainTalkScene()
 {
 	UpDateMenu();
-	UpDateBackPlayer(&backplayer);
+	//SearchPlayerControl();
 
 	if (backplayer.pos_x >= robot.pos_x - ROBOTSIZE && backplayer.pos_x <= robot.pos_x + ROBOTSIZE &&
 		backplayer.pos_y >= robot.pos_y - ROBOTSIZE && backplayer.pos_y <= robot.pos_y + ROBOTSIZE)

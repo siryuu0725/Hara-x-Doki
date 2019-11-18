@@ -17,6 +17,8 @@ void DrawSearchBg();
 
 void DrawSearch2Bg();
 
+void DrawSearchGameBg();
+
 void DrawTalkBg();
 
 void UpDateBg();

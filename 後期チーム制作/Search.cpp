@@ -53,9 +53,9 @@ void InitSearchScene()
 
 void MainSearchScene()
 {
-	SearchPlayerControl();
+	SearchPlayerControl(155.0f, 1080.0f, 155.0f, 1730.0f);
 
-	if (searchplayer.pos_x <= 20.0f && searchplayer.pos_y >= 100.0f && searchplayer.pos_y <= 120.0f)
+	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y >= 150.0f && searchplayer.pos_y <= 370.0f && searchplayer.pos_y >= 314.0f)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}

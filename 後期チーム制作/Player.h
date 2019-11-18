@@ -48,9 +48,9 @@ void DrawBackPlayer();
 
 void UpDateMoviePlayer();
 
-void SearchPlayerControl();
+void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax);
 
 void Search2PlayerControl();
 
-void UpDateBackPlayer(BackPlayerData*backplayer);
+void UpDateBackPlayer();
 #endif

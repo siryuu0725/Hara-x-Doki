@@ -7,6 +7,7 @@
 #include "Movie.h"
 #include "Search.h"
 #include "Search2.h"
+#include "SearchGame.h"
 #include "PuzzleGame.h"
 #include "TalkScene.h"
 
@@ -48,6 +49,9 @@ void UpdateScene()
 		break;
 	case SceneId::Search2Scene:
 		scene_id = UpdateSearch2Scene();
+		break;
+	case SceneId::SearchGameScene:
+		scene_id = UpdateSearchGameScene();
 		break;
 	case SceneId::TalkScene:
 		scene_id = UpdateTalkScene();
@@ -93,6 +97,9 @@ void DrawScene()
 			break;
 		case SceneId::Search2Scene:
 			DrawSearch2Scene();
+			break;
+		case SceneId::SearchGameScene:
+			DrawSearchGameScene();
 			break;
 		case SceneId::TalkScene:
 			DrawTalkScene();

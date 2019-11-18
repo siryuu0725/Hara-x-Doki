@@ -10,6 +10,7 @@
 #define ROBOTSIZE 150
 #define INTERVAL 0.01
 
+
 MoviePlayerDate movieplayer;
 SearchPlayerData searchplayer;
 BackPlayerData backplayer;
@@ -34,23 +35,23 @@ void InitSearchPlayer()
 	searchplayer.pos_y = 890.0f;
 	searchplayer.animetion_tu = 0.0f;
 	searchplayer.animetion_tv = 0.5f;
-	//searchplayer.movespeed = 0.25f;
+	
 }
 
 void InitSearch2Player()
 {
-	searchplayer.pos_x = 1760.0f;
-	searchplayer.pos_y = 440.0f;
+	searchplayer.pos_x = 1830.0f;
+	searchplayer.pos_y = 645.0f;
 	searchplayer.animetion_tu = 0.0f;
 	searchplayer.animetion_tv = 0.25f;
-	//searchplayer.movespeed = 0.25f;
+	
 
 }
 
 void InitBackPlayer()
 {
-	backplayer.pos_x = 960.0f;
-	backplayer.pos_y = 800.0f;
+	searchplayer.pos_x = 960.0f;
+	searchplayer.pos_y = 800.0f;
 }
 
 void DrawMoviePlayer()
@@ -65,7 +66,7 @@ void DrawSearchPlayer()
 
 void DrawBackPlayer()
 {
-	DrawTexture(backplayer.pos_x, backplayer.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkPlayerTex));
+	DrawUVTexture(searchplayer.pos_x, searchplayer.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex), 64.0f, 128.0f, searchplayer.animetion_tu, searchplayer.animetion_tv);
 }
 
 void UpDateMoviePlayer()
@@ -93,7 +94,7 @@ void UpDateMoviePlayer()
 	}
 }
 
-void SearchPlayerControl()
+void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax)
 {
 
 	searchplayer.movespeed = 5.0f;
@@ -101,6 +102,107 @@ void SearchPlayerControl()
 	float vec_y = 0.0f;
 	float length = 0.0f;
 
+	if (GetKey(UP_KEY) == true)
+	{
+		searchplayer.animetion_tv = 0.5f;
+
+		if (searchplayer.pos_y >= upmax)
+		{
+
+			searchplayer.animetioncount++;
+
+			vec_y = -searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+
+	else if (GetKey(DOWN_KEY) == true)
+	{
+		searchplayer.animetion_tv = 0.0f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_y + 128.0f <= downmax)
+		{
+			vec_y = searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+
+	else if (GetKey(LEFT_KEY) == true)
+	{
+
+		searchplayer.animetion_tv = 0.25f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_x >= leftmax)
+		{
+			vec_x = -searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+	else if (GetKey(RIGHT_KEY) == true)
+	{
+		searchplayer.animetion_tv = 0.75f;
+
+		searchplayer.animetioncount++;
+
+		if (searchplayer.pos_x + 64.0f <= rightmax)
+		{
+			vec_x = searchplayer.movespeed;
+			if (searchplayer.animetioncount >= 10)
+			{
+				searchplayer.animetion_tu += 0.25f;
+				searchplayer.animetioncount = 0;
+			}
+		}
+	}
+	else 
+		searchplayer.animetion_tu = 0.0f;
+
+	if (vec_x != 0.0f || vec_y != 0.0f)
+	{
+		length = sqrt(vec_x * vec_x + vec_y * vec_y);
+
+		float normal_x = vec_x / length;
+		float normal_y = vec_y / length;
+
+		normal_x *= searchplayer.movespeed;
+		normal_y *= searchplayer.movespeed;
+
+		searchplayer.pos_x += normal_x;
+		searchplayer.pos_y += normal_y;
+	}
+}
+
+
+
+
+void UpDateBackPlayer()
+{
+	
+	searchplayer.movespeed = 5.0f;
+	float vec_x = 0.0f;
+	float vec_y = 0.0f;	
+	float length = 0.0f;
+
+	if (menu.onenterkey == true)
+	{
+		searchplayer.movespeed = 0.0f;
+	}
 	if (GetKey(UP_KEY) == true)
 	{
 		if (searchplayer.pos_y >= 0.0f)
@@ -184,153 +286,5 @@ void SearchPlayerControl()
 	}
 }
 
-void Search2PlayerControl()
-{
 
-	searchplayer.movespeed = 5.0f;
-	float vec_x = 0.0f;
-	float vec_y = 0.0f;
-	float length = 0.0f;
-
-	if (GetKey(UP_KEY) == true)
-	{
-		if (searchplayer.pos_y >= 0.0f)
-		{
-			searchplayer.animetion_tv = 0.25f;
-
-			searchplayer.animetioncount++;
-
-			vec_y = -searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-
-	if (GetKey(DOWN_KEY) == true)
-	{
-		searchplayer.animetion_tv = 0.0f;
-
-		searchplayer.animetioncount++;
-
-		if (searchplayer.pos_y + 175.0f <= 1080.0f)
-		{
-			vec_y = searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-
-	if (GetKey(LEFT_KEY) == true)
-	{
-
-		searchplayer.animetion_tv = 0.5f;
-
-		searchplayer.animetioncount++;
-
-		if (searchplayer.pos_x >= 0.0f)
-		{
-			vec_x = -searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-	if (GetKey(RIGHT_KEY) == true)
-	{
-		searchplayer.animetion_tv = 0.75f;
-
-		searchplayer.animetioncount++;
-
-		if (searchplayer.pos_x + 175.0f <= 1980.0f)
-		{
-			vec_x = searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-
-	if (vec_x != 0.0f || vec_y != 0.0f)
-	{
-		length = sqrt(vec_x * vec_x + vec_y * vec_y);
-
-		float normal_x = vec_x / length;
-		float normal_y = vec_y / length;
-
-		normal_x *= searchplayer.movespeed;
-		normal_y *= searchplayer.movespeed;
-
-		searchplayer.pos_x += normal_x;
-		searchplayer.pos_y += normal_y;
-	}
-}
-
-
-void UpDateBackPlayer(BackPlayerData *backplayer)
-{
-	
-	float speed = 10.0f;
-	float vec_x = 0.0f;
-	float vec_y = 0.0f;	
-	float length = 0.0f;
-
-	if (menu.onenterkey == true)
-	{
-		speed = 0.0f;
-	}
-
-	if (GetKey(UP_KEY) == true)
-	{
-		if (backplayer->pos_y + BACKPLAYERSIZE >= 200.0f)
-		{
-			vec_y = -speed;
-		}
-	}
-
-	if (GetKey(DOWN_KEY) == true)
-	{
-		if (backplayer->pos_y + BACKPLAYERSIZE + 100 <= 1080.0f)
-		{
-			vec_y = speed;
-		}
-	}
-	if (GetKey(LEFT_KEY) == true)
-	{
-		if (backplayer->pos_x + BACKPLAYERSIZE >= 200.0f)
-		{
-			vec_x = -speed;
-		}
-	}
-	if (GetKey(RIGHT_KEY) == true)
-	{
-		if (backplayer->pos_x + BACKPLAYERSIZE + 100 <= 1980.0f)
-		{
-			vec_x = speed;
-		}
-	}
-
-	if (vec_x != 0.0f || vec_y != 0.0f)
-	{
-		length = sqrt(vec_x * vec_x + vec_y * vec_y);
-
-		float normal_x = vec_x / length;
-		float normal_y = vec_y / length;
-
-		normal_x *= speed;
-		normal_y *= speed;
-
-		backplayer->pos_x += normal_x;
-		backplayer->pos_y += normal_y;
-	}
-}
 
