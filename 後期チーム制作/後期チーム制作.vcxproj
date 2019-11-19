@@ -145,6 +145,7 @@
     <ClCompile Include="Puzzle.cpp" />
     <ClCompile Include="PuzzleGame.cpp" />
     <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Search2.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Puzzle.h" />
     <ClInclude Include="PuzzleGame.h" />
     <ClInclude Include="Robot.h" />
+    <ClInclude Include="Scenario.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Search.h" />
     <ClInclude Include="Search2.h" />

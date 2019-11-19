@@ -4,7 +4,8 @@
 #include "Scene.h"
 
 //それぞれのテクスチャのカテゴリー
-#define TEXTURE_TITLE (SceneId::TitleScene)			
+#define TEXTURE_TITLE (SceneId::TitleScene)
+#define TEXTURE_SCENARIO (SceneId::ScenarioScene)
 #define TEXTURE_MOVIE (SceneId::MovieScene)	
 #define TEXTURE_SEARCH (SceneId::SearchScene)
 #define TEXTURE_SEARCH2 (SceneId::Search2Scene)
@@ -21,15 +22,20 @@
 enum TitleCategoryTextureList
 {
 	TitleBgTex,				//!< 背景
-	TitleStartTex,             //!< 始める
-	TitleEndTex,               //!< 終わる
+	TitleStartTex,          //!< 始める
+	TitleEndTex,            //!< 終わる
 	TitleTextureMax			//!< リスト最大数
 };
 
+enum ScenarioCategoryTextureList
+{
+	ScenarioBgTex,          //!< 背景
+	ScenarioTextureMax      //!< リスト最大数
+};
 enum MovieCategoryTextureList
 {
 	MovieBgTex,				//!< 背景
-	MoviePlayerTex,            //プレイヤー
+	MoviePlayerTex,         //!< プレイヤー
 	MovieTextureMax,	    //!< リスト最大数
 };
 

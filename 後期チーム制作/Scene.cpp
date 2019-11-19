@@ -10,7 +10,7 @@
 #include "SearchGame.h"
 #include "PuzzleGame.h"
 #include "TalkScene.h"
-
+#include "Scenario.h"
 
 static SceneId g_CurrentSceneId = SceneId::TitleScene;		// 動作中シーンID
 static SceneStep g_CurrentSceneStep = SceneStep::InitStep;	// 動作中シーンのステップ
@@ -40,6 +40,9 @@ void UpdateScene()
 	{
 	case SceneId::TitleScene:
 		scene_id = UpdateTitleScene();
+		break;
+	case SceneId::ScenarioScene:
+		scene_id = UpdateScenarioScene();
 		break;
 	case SceneId::MovieScene:
 		scene_id = UpdateMovieScene();
@@ -88,6 +91,9 @@ void DrawScene()
 		{
 		case SceneId::TitleScene:
 			DrawTitleScene();
+			break;
+		case SceneId::ScenarioScene:
+			DrawScenarioScene();
 			break;
 		case SceneId::MovieScene:
 			DrawMovieScene();

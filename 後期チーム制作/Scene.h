@@ -3,7 +3,8 @@
 
 enum SceneId
 {
-	TitleScene,			//!< タイトルシーン
+	TitleScene,	     	//!< タイトルシーン
+	ScenarioScene,      //!< シナリオシーン
 	HelpScene,			//!< ヘルプ(遊戯説明画面)シーン
 	MovieScene,			//!< ゲーム本編シーン
 	SearchScene,		//!< 探索シーン
