@@ -4,9 +4,8 @@
 typedef struct
 {
 	float Tu, Tv;
-	float moveflg;
 	float movespeed;
-
+	int stopcount;
 }MovieBgDate;
 	
 void InitBg();
