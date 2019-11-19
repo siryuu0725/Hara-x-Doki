@@ -1,6 +1,8 @@
 #ifndef PLAYER_
 #define PLAYER_
 
+#define MOVIE_PLAYER_SPEED 2.65
+
 typedef struct
 {
 	float pos_x, pos_y;

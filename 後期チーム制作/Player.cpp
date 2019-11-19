@@ -22,7 +22,7 @@ void InitMoviePlayer()
 	movieplayer.pos_y = 1300.0f;
 	movieplayer.Tu = 0.0f;
 	movieplayer.Tv = 0.5f;
-	movieplayer.movespeed = 2.8f;
+	movieplayer.movespeed = MOVIE_PLAYER_SPEED;
 	movieplayer.moveanimesion = false;
 	movieplayer.Bg_pos = false;
 	movieplayer.animetioncount = 0;
@@ -74,7 +74,7 @@ void UpDateMoviePlayer()
 	if (movieplayer.moveanimesion == false)//アニメーション
 	{
 		movieplayer.animetioncount++;
-		movieplayer.pos_y -= 2.0f;
+		movieplayer.pos_y -= MOVIE_PLAYER_SPEED;
 		if (movieplayer.animetioncount >= 10)
 		{
 			movieplayer.Tu += 0.25f;

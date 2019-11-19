@@ -3,17 +3,19 @@
 #include "Texture.h"
 #include "Player.h"
 
+#define MOVIETEX_TU 0.0f
+#define MOVITEXE_TV 0.5f
+#define MOVIE_SPEED 0.001f
+#define MOVIE_STOP_TIME 120
 
 MovieBgDate bgdate;
 
-int f;
 void InitBg()
 {
-	bgdate.Tu = 0.0f;
-	bgdate.Tv = 0.5f;
-	bgdate.moveflg = false;
-	bgdate.movespeed = 0.001f;
-	f = 0;
+	bgdate.Tu = MOVIETEX_TU;
+	bgdate.Tv = MOVITEXE_TV;
+	bgdate.movespeed = MOVIE_SPEED;
+	bgdate.stopcount = 0;
 }
 
 void DrawBg()
@@ -46,18 +48,20 @@ void DrawSearchGameBg()
 //背景移動
 void UpDateBg()
 {
-	if (movieplayer.Bg_pos == true)//プレイヤーが特定の位置に来た時
+	//プレイヤーが特定の位置に来た時
+	if (movieplayer.Bg_pos == true)
 	{
-
-		if (bgdate.Tv <= 0.1f)//プレイヤーは動かず背景だけ移動
+		//プレイヤーは動かず背景だけ移動
+		if (bgdate.Tv <= 0.1f)
 		{
 			bgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
-			f++;
-			if (f == 120)
+			bgdate.stopcount++;
+
+			if (bgdate.stopcount == MOVIE_STOP_TIME)
 			{
-				bgdate.movespeed = -0.001f;
-				movieplayer.movespeed = -2.7f;
+				bgdate.movespeed = -MOVIE_SPEED;
+				movieplayer.movespeed = -MOVIE_PLAYER_SPEED;
 			}
 
 		}
