@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="Bg.cpp" />
     <ClCompile Include="Hit.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Movie.cpp" />
     <ClCompile Include="GameClear.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="Bg.h" />
     <ClInclude Include="Hit.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="GameClear.h" />

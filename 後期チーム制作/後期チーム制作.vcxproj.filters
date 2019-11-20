@@ -90,6 +90,9 @@
     <ClCompile Include="Scenario.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="Scenario.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

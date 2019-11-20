@@ -14,7 +14,7 @@ void InitBg()
 {
 	bgdate.Tu = MOVIETEX_TU;
 	bgdate.Tv = MOVITEXE_TV;
-	bgdate.movespeed = MOVIE_SPEED;
+	bgdate.movespeed = 0.001f;
 	bgdate.stopcount = 0;
 }
 
@@ -60,8 +60,8 @@ void UpDateBg()
 
 			if (bgdate.stopcount == MOVIE_STOP_TIME)
 			{
-				bgdate.movespeed = -MOVIE_SPEED;
-				movieplayer.movespeed = -MOVIE_PLAYER_SPEED;
+				bgdate.movespeed = -0.001f;
+				movieplayer.movespeed = -2.65;
 			}
 
 		}

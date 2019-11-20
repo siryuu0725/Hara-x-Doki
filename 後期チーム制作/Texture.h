@@ -57,6 +57,7 @@ enum SearchGameCategoryTextureList
 	SearchGameBgTex,
 	SearchGamePlayerTex,
 	SearchGameRobotTex,
+	SearchGameRobotNeckTex,
 	SearchGameSurprisedTex,
 	SearchGameTextureMax,
 };

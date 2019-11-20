@@ -41,7 +41,7 @@ void DrawTalkScene()
 {
 	DrawTalkBg();
 	DrawRobot();
-	DrawBackPlayer();
+	DrawSearchPlayer();
 	DrawSuprised();
 	DrawMenu();
 }

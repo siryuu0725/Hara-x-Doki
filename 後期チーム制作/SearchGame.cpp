@@ -8,7 +8,7 @@
 #include "Bg.h"
 #include "Robot.h"
 #include "Menu.h"
-
+#include "Item.h"
 
 void InitSearchGameScene();
 
@@ -40,6 +40,8 @@ void DrawSearchGameScene()
 {
 	DrawSearchGameBg();
 	DrawSearchPlayer();
+	DrawRobotNeck();
+
 	
 	DrawSuprised(); 
 	DrawMenu();
@@ -50,6 +52,8 @@ void InitSearchGameScene()
 	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
 	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex);
 	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/ちびロボパーツラフ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
+
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
