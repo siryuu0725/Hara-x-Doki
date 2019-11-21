@@ -9,6 +9,7 @@ static TEXTURE_DATE** g_TextureList[MAX_TEXTURE_] = { nullptr };
 int TextureCaterogySize[] = {
 	TitleCategoryTextureList::TitleTextureMax,
 	HelpCategoryTextureList::HelpTextureMax,
+	ScenarioCategoryTextureList::ScenarioTextureMax,
 	MovieCategoryTextureList::MovieTextureMax,
 	SearchCategoryTextureList::SearchTextureMax,
 	Search2CategoryTextureList::Search2TextureMax,

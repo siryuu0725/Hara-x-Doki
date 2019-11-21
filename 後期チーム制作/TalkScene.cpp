@@ -41,16 +41,16 @@ void DrawTalkScene()
 {
 	DrawTalkBg();
 	DrawRobot();
-	DrawSearchPlayer();
+	DrawBackPlayer();
 	DrawSuprised();
 	DrawMenu();
 }
 
 void InitTalkScene()
 {
-	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex);
+	LoadTexture("Res/犯人部屋.png", TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex);
 	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex);
-	LoadTexture("Res/backplayer.png", TEXTURE_TALK, TalkCategoryTextureList::TalkPlayerTex);
+	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
