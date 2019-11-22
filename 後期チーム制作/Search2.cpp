@@ -58,13 +58,14 @@ void MainSearch2Scene()
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (searchplayer.pos_x + 64.0f >= 1900.0f && searchplayer.pos_y <= 650.0f && searchplayer.pos_y >= 630.0f)
+	if (searchplayer.pos_x + 64.0f >= 1900.0f && searchplayer.pos_y <= 650.0f && searchplayer.pos_y >= 620.0f)
 	{
 		areadata.searcharea2 = false;
 		areadata.searcharea1 = true;
 		areadata.cangearea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
+
 	//ƒLƒƒƒ‰‚Ì•+20’ö”»’è‚ð‘å‚«‚­‚µ‚Ä‚¢‚é
 	if (searchplayer.pos_x >= 1430.0f && searchplayer.pos_x + 64.0f <= 1550.0f && searchplayer.pos_y <= 460.0f
 		&& GetKeyDown(SPACE_KEY) == true)

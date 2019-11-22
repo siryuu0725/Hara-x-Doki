@@ -3,18 +3,18 @@
 
 typedef struct
 {
-	float Tu, Tv;
-	float movespeed;
-	int stopcount;
+	float Tu, Tv;     //ƒ€[ƒr[”wŒi‚ÌTu,Tv
+	float movespeed;  //ƒ€[ƒr[”wŒi‚ÌˆÚ“®ƒXƒs[ƒh
+	int stopcount;    //”wŒi‚Ì‹ó‚«‰Æ‚ğŒ©‚¹‚é‚Æ‚«‚Ì~‚ß‚Ä‚¢‚éŠÔ
 }MovieBgData;
 
 typedef struct
 {
-	bool searcharea1;
-	bool searcharea2;
-	bool searchgamearea;
-	bool cangearea;
-	bool cangearea2;
+	bool searcharea1;     //‘å•”‰®‚É‚¢‚é‚Æ‚«true
+	bool searcharea2;     //˜L‰º‚É‚¢‚é‚Æ‚«true
+	bool searchgamearea;  //—q‚¶•”‰®‚É‚¢‚é‚Æ‚«true
+	bool cangearea;       //˜L‰º‚Æ‘å•”‰®‚ğˆÚ“®‚·‚é‚Æ‚«
+	bool cangearea2;      //˜L‰º‚Æ—q‚¶•”‰®‚ğˆÚ“®‚·‚é‚Æ‚«
 
 }SearchAreaData;
 

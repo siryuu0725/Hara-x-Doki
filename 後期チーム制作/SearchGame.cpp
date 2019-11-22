@@ -85,7 +85,7 @@ SceneId FinishSearchGameScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH_GAME);
 
-	if (areadata.searcharea2 = true)
+	if (areadata.searcharea2 == true)
 	{
 		return SceneId::Search2Scene;
 	}
@@ -93,6 +93,6 @@ SceneId FinishSearchGameScene()
 	{
 		return SceneId::TalkScene;
 	}
-	;
+	
 
 }
