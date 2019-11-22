@@ -38,7 +38,7 @@ SceneId UpdateSearchGameScene()
 
 void DrawSearchGameScene()
 {
-	DrawSearchGameBg();
+	DrawSearchBg();
 	DrawSearchPlayer();
 	DrawRobotNeck();
 
@@ -57,6 +57,8 @@ void InitSearchGameScene()
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
+	InitSearchGamePlayer();
+
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -68,6 +70,14 @@ void MainSearchGameScene()
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
+	else if (searchplayer.pos_x >= 850.0f && searchplayer.pos_x + 64.0f <= 945.0f && searchplayer.pos_y >= 940.0f
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		areadata.searchgamearea = false;
+		areadata.searcharea2 = true;
+		areadata.cangearea2 = true;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
 
 }
 
@@ -75,6 +85,14 @@ SceneId FinishSearchGameScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH_GAME);
 
-	return SceneId::TalkScene;
+	if (areadata.searcharea2 = true)
+	{
+		return SceneId::Search2Scene;
+	}
+	else
+	{
+		return SceneId::TalkScene;
+	}
+	;
 
 }

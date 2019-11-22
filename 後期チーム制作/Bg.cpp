@@ -8,7 +8,9 @@
 #define MOVIE_SPEED 0.001f
 #define MOVIE_STOP_TIME 120
 
-MovieBgDate bgdate;
+MovieBgData bgdate;
+SearchAreaData areadata;
+extern MoviePlayerDate movieplayer;
 
 void InitBg()
 {
@@ -16,6 +18,13 @@ void InitBg()
 	bgdate.Tv = MOVITEXE_TV;
 	bgdate.movespeed = 0.001f;
 	bgdate.stopcount = 0;
+}
+
+void InitArea()
+{
+	areadata.searcharea1 = true;
+	areadata.searcharea2 = false;
+	areadata.searchgamearea = false;
 }
 
 void DrawBg()
@@ -30,20 +39,20 @@ void DrawTalkBg()
 
 void DrawSearchBg()
 {
-	DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex));
+	if (areadata.searcharea1 == true)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex));
+	}
+	else if (areadata.searcharea2 == true)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex));
+	}
+	else if (areadata.searchgamearea == true)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex));
+	}
 }
 
-
-void DrawSearch2Bg()
-{
-	DrawBgTexture(GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex));
-
-}
-
-void DrawSearchGameBg()
-{
-	DrawBgTexture(GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex));
-}
 
 //”wŒiˆÚ“®
 void UpDateBg()

@@ -40,6 +40,8 @@ void InitSearchPlayer();
 
 void InitSearch2Player();
 
+void InitSearchGamePlayer();
+
 void InitBackPlayer();
 
 void DrawMoviePlayer();
@@ -52,7 +54,5 @@ void UpDateMoviePlayer();
 
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax);
 
-void Search2PlayerControl();
-
-void UpDateBackPlayer();
+//void UpDateBackPlayer();
 #endif

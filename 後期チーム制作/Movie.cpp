@@ -9,6 +9,7 @@ void InitMovieScene();
 
 void MainMovieScene();
 
+extern MoviePlayerDate movieplayer;
 
 SceneId FinishMovieScene();
 

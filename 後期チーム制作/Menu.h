@@ -7,6 +7,8 @@ typedef struct
 	bool onenterkey; // ENTERキーを押したフラグ
 }MenuData; // メニュー構造体
 
+extern MenuData menu;
+
 void InitMenu();
 
 void DrawMenu();

@@ -5,6 +5,7 @@
 #include <math.h>
 #include "Robot.h"
 #include "Menu.h"
+#include "Bg.h"
 
 #define BACKPLAYERSIZE 150
 #define ROBOTSIZE 150
@@ -14,7 +15,7 @@
 MoviePlayerDate movieplayer;
 SearchPlayerData searchplayer;
 BackPlayerData backplayer;
-extern MenuData menu;
+
 
 void InitMoviePlayer()
 {
@@ -31,21 +32,49 @@ void InitMoviePlayer()
 
 void InitSearchPlayer()
 {
-	searchplayer.pos_x = 820.0f;
-	searchplayer.pos_y = 890.0f;
-	searchplayer.animetion_tu = 0.0f;
-	searchplayer.animetion_tv = 0.5f;
-	
+	if (areadata.cangearea == true)
+	{
+		searchplayer.pos_x = 180.0f;
+		searchplayer.pos_y = 340.0f;
+		searchplayer.animetion_tu = 0.0f;
+		searchplayer.animetion_tv = 0.75f;
+	}
+	else
+	{
+		searchplayer.pos_x = 820.0f;
+		searchplayer.pos_y = 890.0f;
+		searchplayer.animetion_tu = 0.0f;
+		searchplayer.animetion_tv = 0.5f;
+	}
+
 }
 
 void InitSearch2Player()
 {
-	searchplayer.pos_x = 1830.0f;
-	searchplayer.pos_y = 645.0f;
-	searchplayer.animetion_tu = 0.0f;
-	searchplayer.animetion_tv = 0.25f;
+	if (areadata.cangearea2 == true)
+	{
+		searchplayer.pos_x = 1465.0f;
+		searchplayer.pos_y = 455.0f;
+		searchplayer.animetion_tu = 0.0f;
+		searchplayer.animetion_tv = 0.0f;
+	}
+	else
+	{
+		searchplayer.pos_x = 1830.0f;
+		searchplayer.pos_y = 645.0f;
+		searchplayer.animetion_tu = 0.0f;
+		searchplayer.animetion_tv = 0.25f;
+	}
 	
+}
 
+void InitSearchGamePlayer()
+{
+	searchplayer.pos_x = 860.0f;
+	searchplayer.pos_y = 935.0f;
+	searchplayer.animetion_tu = 0.0f;
+	searchplayer.animetion_tv = 0.5f;
+	
 }
 
 void InitBackPlayer()
@@ -191,100 +220,100 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 
 
 
-void UpDateBackPlayer()
-{
-	
-	searchplayer.movespeed = 5.0f;
-	float vec_x = 0.0f;
-	float vec_y = 0.0f;	
-	float length = 0.0f;
-
-	if (menu.onenterkey == true)
-	{
-		searchplayer.movespeed = 0.0f;
-	}
-	if (GetKey(UP_KEY) == true)
-	{
-		if (searchplayer.pos_y >= 0.0f)
-		{
-			searchplayer.animetion_tv = 0.5f;
-
-			searchplayer.animetioncount++;
-
-			vec_y = -searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-
-	else if (GetKey(DOWN_KEY) == true)
-	{
-		searchplayer.animetion_tv = 0.0f;
-
-		searchplayer.animetioncount++;
-
-		if (searchplayer.pos_y + 175.0f <= 1080.0f)
-		{
-			vec_y = searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-
-	else if (GetKey(LEFT_KEY) == true)
-	{
-
-		searchplayer.animetion_tv = 0.25f;
-
-		searchplayer.animetioncount++;
-
-		if (searchplayer.pos_x >= 0.0f)
-		{
-			vec_x = -searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-	else if (GetKey(RIGHT_KEY) == true)
-	{
-		searchplayer.animetion_tv = 0.75f;
-
-		searchplayer.animetioncount++;
-
-		if (searchplayer.pos_x + 175.0f <= 1980.0f)
-		{
-			vec_x = searchplayer.movespeed;
-			if (searchplayer.animetioncount >= 10)
-			{
-				searchplayer.animetion_tu += 0.25f;
-				searchplayer.animetioncount = 0;
-			}
-		}
-	}
-
-	if (vec_x != 0.0f || vec_y != 0.0f)
-	{
-		length = sqrt(vec_x * vec_x + vec_y * vec_y);
-
-		float normal_x = vec_x / length;
-		float normal_y = vec_y / length;
-
-		normal_x *= searchplayer.movespeed;
-		normal_y *= searchplayer.movespeed;
-
-		searchplayer.pos_x += normal_x;
-		searchplayer.pos_y += normal_y;
-	}
-}
+//void UpDateBackPlayer()
+//{
+//	
+//	searchplayer.movespeed = 5.0f;
+//	float vec_x = 0.0f;
+//	float vec_y = 0.0f;	
+//	float length = 0.0f;
+//
+//	if (menu.onenterkey == true)
+//	{
+//		searchplayer.movespeed = 0.0f;
+//	}
+//	if (GetKey(UP_KEY) == true)
+//	{
+//		if (searchplayer.pos_y >= 0.0f)
+//		{
+//			searchplayer.animetion_tv = 0.5f;
+//
+//			searchplayer.animetioncount++;
+//
+//			vec_y = -searchplayer.movespeed;
+//			if (searchplayer.animetioncount >= 10)
+//			{
+//				searchplayer.animetion_tu += 0.25f;
+//				searchplayer.animetioncount = 0;
+//			}
+//		}
+//	}
+//
+//	else if (GetKey(DOWN_KEY) == true)
+//	{
+//		searchplayer.animetion_tv = 0.0f;
+//
+//		searchplayer.animetioncount++;
+//
+//		if (searchplayer.pos_y + 175.0f <= 1080.0f)
+//		{
+//			vec_y = searchplayer.movespeed;
+//			if (searchplayer.animetioncount >= 10)
+//			{
+//				searchplayer.animetion_tu += 0.25f;
+//				searchplayer.animetioncount = 0;
+//			}
+//		}
+//	}
+//
+//	else if (GetKey(LEFT_KEY) == true)
+//	{
+//
+//		searchplayer.animetion_tv = 0.25f;
+//
+//		searchplayer.animetioncount++;
+//
+//		if (searchplayer.pos_x >= 0.0f)
+//		{
+//			vec_x = -searchplayer.movespeed;
+//			if (searchplayer.animetioncount >= 10)
+//			{
+//				searchplayer.animetion_tu += 0.25f;
+//				searchplayer.animetioncount = 0;
+//			}
+//		}
+//	}
+//	else if (GetKey(RIGHT_KEY) == true)
+//	{
+//		searchplayer.animetion_tv = 0.75f;
+//
+//		searchplayer.animetioncount++;
+//
+//		if (searchplayer.pos_x + 175.0f <= 1980.0f)
+//		{
+//			vec_x = searchplayer.movespeed;
+//			if (searchplayer.animetioncount >= 10)
+//			{
+//				searchplayer.animetion_tu += 0.25f;
+//				searchplayer.animetioncount = 0;
+//			}
+//		}
+//	}
+//
+//	if (vec_x != 0.0f || vec_y != 0.0f)
+//	{
+//		length = sqrt(vec_x * vec_x + vec_y * vec_y);
+//
+//		float normal_x = vec_x / length;
+//		float normal_y = vec_y / length;
+//
+//		normal_x *= searchplayer.movespeed;
+//		normal_y *= searchplayer.movespeed;
+//
+//		searchplayer.pos_x += normal_x;
+//		searchplayer.pos_y += normal_y;
+//	}
+//}
 
 
 

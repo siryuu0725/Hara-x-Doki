@@ -11,7 +11,7 @@ void InitSearch2Scene();
 
 void MainSearch2Scene();
 
-bool changearea = false;
+
 
 SceneId FinishSearch2Scene();
 
@@ -36,7 +36,7 @@ SceneId UpdateSearch2Scene()
 
 void DrawSearch2Scene()
 {
-	DrawSearch2Bg();
+	DrawSearchBg();
 	DrawSearchPlayer();
 }
 
@@ -58,9 +58,33 @@ void MainSearch2Scene()
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (searchplayer.pos_x + 64.0f >= 1890.0f && searchplayer.pos_y <= 650.0f && searchplayer.pos_y >= 630.0f)
+	if (searchplayer.pos_x + 64.0f >= 1900.0f && searchplayer.pos_y <= 650.0f && searchplayer.pos_y >= 630.0f)
 	{
-		changearea = true;
+		areadata.searcharea2 = false;
+		areadata.searcharea1 = true;
+		areadata.cangearea = true;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
+	//ƒLƒƒƒ‰‚Ì•+20’ö”»’è‚ð‘å‚«‚­‚µ‚Ä‚¢‚é
+	if (searchplayer.pos_x >= 1430.0f && searchplayer.pos_x + 64.0f <= 1550.0f && searchplayer.pos_y <= 460.0f
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		areadata.searcharea2 = false;
+		areadata.searchgamearea = true;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
+	if (searchplayer.pos_x >= 820.0f && searchplayer.pos_x + 64.0f <= 945.0f && searchplayer.pos_y <= 450.0f
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		areadata.searcharea2 = false;
+		areadata.searchgamearea = true;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
+	if (searchplayer.pos_x >= 225.0f && searchplayer.pos_x + 64.0f <= 350.0f && searchplayer.pos_y <= 450.0f
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		areadata.searcharea2 = false;
+		areadata.searchgamearea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
@@ -70,11 +94,14 @@ SceneId FinishSearch2Scene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH2);
 
-	if (changearea == true)
+	if (areadata.searcharea1 == true)
 	{
 		return SceneId::SearchScene;
 	}
-	else
+	else if (areadata.searchgamearea == true)
+	{
 		return SceneId::SearchGameScene;
+	}
+		
 
 }

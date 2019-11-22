@@ -46,6 +46,7 @@ void InitSearchScene()
 	LoadTexture("Res/‘å•”‰®.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
 	LoadTexture("Res/ƒ‰ƒtƒLƒƒƒ‰.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 
+	InitArea();
 	InitSearchPlayer();
 
 	ChangeSceneStep(SceneStep::MainStep);
@@ -57,6 +58,9 @@ void MainSearchScene()
 
 	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y >= 150.0f && searchplayer.pos_y <= 370.0f && searchplayer.pos_y >= 314.0f)
 	{
+		areadata.searcharea1 = false;
+		areadata.searcharea2 = true;
+
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	
