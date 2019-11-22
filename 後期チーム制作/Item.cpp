@@ -4,6 +4,10 @@
 
 void DrawRobotNeck()
 {
-	DrawTexture(700.0f, 400.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex));
+	DrawTexture(700.0f, 500.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex));
 }
+
+
+
+
 

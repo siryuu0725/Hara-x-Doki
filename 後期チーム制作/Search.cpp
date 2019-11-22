@@ -5,6 +5,8 @@
 #include "Input.h"
 #include "Player.h"
 #include "Bg.h"
+#include "Hit.h"
+
 
 extern SearchPlayerData serachplayer;
 

@@ -2,6 +2,9 @@
 #define PLAYER_
 
 #define MOVIE_PLAYER_SPEED 2.65
+#define PLAYER_WIDTH 64.0f
+#define PLAYER_HEIGHT 128.0f
+
 
 typedef struct
 {
@@ -19,8 +22,7 @@ typedef struct
 	float pos_x, pos_y;
 	float movespeed;                    //キャラの動くスピード
 	float animetion_tu, animetion_tv;   //キャラのアニメーション座標
-	//float animetionmovespeed;
-	int animetioncount;                 //アニメーションスピード
+	int animetioncount;                 //アニメーションスピードt
 }SearchPlayerData;
 
 typedef struct

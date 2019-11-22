@@ -6,12 +6,11 @@
 #include "Input.h"
 #include "Player.h"
 #include "Bg.h"
+#include "Hit.h"
 
 void InitSearch2Scene();
 
 void MainSearch2Scene();
-
-
 
 SceneId FinishSearch2Scene();
 
@@ -67,22 +66,20 @@ void MainSearch2Scene()
 	}
 
 	//ƒLƒƒƒ‰‚Ì•+20’ö”»’è‚ð‘å‚«‚­‚µ‚Ä‚¢‚é
-	if (searchplayer.pos_x >= 1430.0f && searchplayer.pos_x + 64.0f <= 1550.0f && searchplayer.pos_y <= 460.0f
-		&& GetKeyDown(SPACE_KEY) == true)
+	if (HitNextArea(1430.0f, 1550.0f,440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searcharea2 = false;
 		areadata.searchgamearea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (searchplayer.pos_x >= 820.0f && searchplayer.pos_x + 64.0f <= 945.0f && searchplayer.pos_y <= 450.0f
-		&& GetKeyDown(SPACE_KEY) == true)
+	if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searcharea2 = false;
 		areadata.searchgamearea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (searchplayer.pos_x >= 225.0f && searchplayer.pos_x + 64.0f <= 350.0f && searchplayer.pos_y <= 450.0f
-		&& GetKeyDown(SPACE_KEY) == true)
+
+	if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searcharea2 = false;
 		areadata.searchgamearea = true;

@@ -4,7 +4,7 @@
 #include "Player.h"
 
 #define MOVIETEX_TU 0.0f
-#define MOVITEXE_TV 0.5f
+#define MOVITEXE_TV 0.45f
 #define MOVIE_SPEED 0.001f
 #define MOVIE_STOP_TIME 120
 
@@ -16,7 +16,7 @@ void InitBg()
 {
 	bgdate.Tu = MOVIETEX_TU;
 	bgdate.Tv = MOVITEXE_TV;
-	bgdate.movespeed = 0.001f;
+	bgdate.movespeed = 0.002f;
 	bgdate.stopcount = 0;
 }
 
@@ -61,7 +61,7 @@ void UpDateBg()
 	if (movieplayer.Bg_pos == true)
 	{
 		//ƒvƒŒƒCƒ„[‚Í“®‚©‚¸”wŒi‚¾‚¯ˆÚ“®
-		if (bgdate.Tv <= 0.1f)
+		if (bgdate.Tv <= 0.01f)
 		{
 			bgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
@@ -69,8 +69,8 @@ void UpDateBg()
 
 			if (bgdate.stopcount == MOVIE_STOP_TIME)
 			{
-				bgdate.movespeed = -0.001f;
-				movieplayer.movespeed = -2.65;
+				bgdate.movespeed = -0.002f;
+				movieplayer.movespeed = -2.35;
 			}
 
 		}
