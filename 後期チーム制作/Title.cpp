@@ -78,5 +78,5 @@ SceneId FinishTitleScene()
 
 	//return SceneId::MovieScene;
 	//return SceneId::MovieScene;
-	return SceneId::ScenarioScene;
+	return SceneId::SearchGameScene;
 }

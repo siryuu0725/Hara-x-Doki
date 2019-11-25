@@ -18,11 +18,13 @@ bool HitPlayerObject(float obj_x,float obj_y, float obj_width, float obj_height)
 {
 	if ((searchplayer.pos_x < obj_x + obj_width)
 		&& (searchplayer.pos_x + PLAYER_WIDTH > obj_x)
-		&& (searchplayer.pos_y - 64.0f < obj_y + obj_height)
+		&& (searchplayer.pos_y + (PLAYER_HEIGHT/2) < obj_y + obj_height)
 		&& (searchplayer.pos_y + PLAYER_HEIGHT > obj_y))
 	{
 		return true;
 	}
+	return false;
+	
 }
 
 bool HitCabe(int d, int d2, int idx_, PuzzleCabe* puzzle1, float width, float height, float Compare_width, float Compare_height)

@@ -20,6 +20,7 @@ typedef struct
 typedef struct
 {
 	float pos_x, pos_y;
+	float oldpos_x, oldpos_y;
 	float movespeed;                    //キャラの動くスピード
 	float animetion_tu, animetion_tv;   //キャラのアニメーション座標
 	int animetioncount;                 //アニメーションスピードt

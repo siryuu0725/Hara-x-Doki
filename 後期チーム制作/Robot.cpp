@@ -53,7 +53,7 @@ void DrawSearchRobot()
 
 void HitSearchPlayerRobot()
 {
-	if (HitPlayerObject(searchrobot.pos_x, searchrobot.pos_y, searchrobot.width, searchrobot.height) == true)
+	if(HitPlayerObject(searchrobot.pos_x, searchrobot.pos_y, searchrobot.width, searchrobot.height) == true)
 	{
 		searchrobot.hit = true;
 	}
@@ -61,4 +61,6 @@ void HitSearchPlayerRobot()
 	{
 		searchrobot.hit = false;
 	}
+	
+	
 }

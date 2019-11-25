@@ -61,6 +61,10 @@ void UpDateBg()
 	if (movieplayer.Bg_pos == true)
 	{
 		//ƒvƒŒƒCƒ„[‚Í“®‚©‚¸”wŒi‚¾‚¯ˆÚ“®
+		bgdate.Tv -= bgdate.movespeed;
+		movieplayer.pos_y += movieplayer.movespeed;
+
+
 		if (bgdate.Tv <= 0.01f)
 		{
 			bgdate.movespeed = 0.0f;
@@ -70,17 +74,17 @@ void UpDateBg()
 			if (bgdate.stopcount == MOVIE_STOP_TIME)
 			{
 				bgdate.movespeed = -0.002f;
-				movieplayer.movespeed = -2.35;
+				movieplayer.movespeed -= 4.9;
 			}
 
 		}
-		bgdate.Tv -= bgdate.movespeed;
-		movieplayer.pos_y += movieplayer.movespeed;
+		
 
 		if (bgdate.Tv >= 0.5)//Œ³‚Ì‰æ–Ê‚É–ß‚Á‚½
 		{
 			bgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
+		
 			movieplayer.moveanimesion = false;
 		}
 	}

@@ -70,6 +70,7 @@ void MainSearchGameScene()
 {
 	SearchPlayerControl(175.0f, 1080.0f, 460.0f, 1445.0f);
 	HitSearchPlayerRobot();
+
 	if (OnMouseDown(Left) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
@@ -92,10 +93,10 @@ SceneId FinishSearchGameScene()
 	{
 		return SceneId::Search2Scene;
 	}
-	else
+	/*else
 	{
 		return SceneId::TalkScene;
-	}
+	}*/
 	
 
 }
