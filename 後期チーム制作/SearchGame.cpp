@@ -68,8 +68,10 @@ void InitSearchGameScene()
 
 void MainSearchGameScene()
 {
+	//HitSearchPlayerRobot();
+
 	SearchPlayerControl(175.0f, 1080.0f, 460.0f, 1445.0f);
-	HitSearchPlayerRobot();
+	
 
 	if (OnMouseDown(Left) == true)
 	{

@@ -127,7 +127,9 @@ void UpDateMoviePlayer()
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax)
 {
 	searchplayer.movespeed = 5.0f;
-	
+	searchplayer.oldpos_x = searchplayer.pos_x;
+	searchplayer.oldpos_y = searchplayer.pos_y;
+
 	float vec_x = 0.0f;
 	float vec_y = 0.0f;
 	float length = 0.0f;
@@ -135,7 +137,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 	if (GetKey(UP_KEY) == true)
 	{
 		searchplayer.animetion_tv = 0.5f;
-		searchplayer.oldpos_y = searchplayer.pos_y;
+		
 
 		if (searchplayer.pos_y >= upmax)
 		{
@@ -147,7 +149,10 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if (searchrobot.hit == true)
+			if((searchplayer.pos_x < searchrobot.pos_x +searchrobot.width)
+				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
+				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
+				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
 			{
 				searchplayer.pos_y = searchplayer.oldpos_y;
 			}
@@ -159,11 +164,13 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 	{
 		searchplayer.animetion_tv = 0.0f;
 
+		
+
 		if (searchplayer.pos_y + 128.0f <= downmax)
 		{
 			searchplayer.animetioncount++;
 
-			searchplayer.oldpos_y = searchplayer.pos_y;
+			
 			searchplayer.pos_y += searchplayer.movespeed;
 
 			if (searchplayer.animetioncount >= 10)
@@ -171,7 +178,10 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if (searchrobot.hit == true)
+			if ((searchplayer.pos_x < searchrobot.pos_x + searchrobot.width)
+				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
+				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
+				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
 			{
 				searchplayer.pos_y = searchplayer.oldpos_y;
 			}
@@ -183,18 +193,22 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 
 		searchplayer.animetion_tv = 0.25f;
 
+
 		if (searchplayer.pos_x >= leftmax)
 		{
 			searchplayer.animetioncount++;
 
-			searchplayer.oldpos_x = searchplayer.pos_x;
+			
 			searchplayer.pos_x -= searchplayer.movespeed;
 			if (searchplayer.animetioncount >= 10)
 			{
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if (searchrobot.hit == true)
+			if ((searchplayer.pos_x < searchrobot.pos_x + searchrobot.width)
+				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
+				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
+				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
 			{
 				searchplayer.pos_x = searchplayer.oldpos_x;
 			}
@@ -208,7 +222,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		{
 			searchplayer.animetioncount++;
 
-			searchplayer.oldpos_x = searchplayer.pos_x;
+			
 			searchplayer.pos_x += searchplayer.movespeed;
 			
 			if (searchplayer.animetioncount >= 10)
@@ -216,7 +230,10 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if (searchrobot.hit == true)
+			if ((searchplayer.pos_x < searchrobot.pos_x + searchrobot.width)
+				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
+				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
+				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
 			{
 				searchplayer.pos_x = searchplayer.oldpos_x;
 			}
