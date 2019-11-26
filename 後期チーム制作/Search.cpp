@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Bg.h"
 #include "Hit.h"
+#include "Item.h"
 
 
 extern SearchPlayerData serachplayer;
@@ -56,7 +57,11 @@ void InitSearchScene()
 
 void MainSearchScene()
 {
-	SearchPlayerControl(155.0f, 990.0f, 155.0f, 1730.0f);
+	SearchPlayerControl(175.0f, 990.0f, 155.0f, 1730.0f);
+
+	HitSearchObject();
+
+	UpDataPlayerPos();
 
 	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y >= 150.0f && searchplayer.pos_y <= 370.0f && searchplayer.pos_y >= 314.0f)
 	{

@@ -11,6 +11,9 @@ extern RobotNeck neck;
 
 void DrawRobotNeck();
 
+void HitSearchObject();
+
+void HitSearchGameObject();
 
 
 

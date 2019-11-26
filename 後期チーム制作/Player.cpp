@@ -45,6 +45,7 @@ void InitSearchPlayer()
 		searchplayer.pos_y = 950.0f;
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.5f;
+		searchplayer.hit = false;
 	}
 
 }
@@ -70,8 +71,8 @@ void InitSearch2Player()
 
 void InitSearchGamePlayer()
 {
-	searchplayer.pos_x = 860.0f;
-	searchplayer.pos_y = 935.0f;
+	searchplayer.pos_x = 900.0f;
+	searchplayer.pos_y = 950.0f;
 	searchplayer.animetion_tu = 0.0f;
 	searchplayer.animetion_tv = 0.5f;
 	
@@ -152,9 +153,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 
 	else if (GetKey(DOWN_KEY) == true)
 	{
-		searchplayer.animetion_tv = 0.0f;
-
-		
+		searchplayer.animetion_tv = 0.0f;	
 
 		if (searchplayer.pos_y + 128.0f <= downmax)
 		{
@@ -216,7 +215,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 
 void UpDataPlayerPos()
 {
-	if (searchrobot.hit == true)
+	if (searchplayer.hit == true)
 	{
 		searchplayer.pos_x = searchplayer.oldpos_x;
 		searchplayer.pos_y = searchplayer.oldpos_y;

@@ -43,7 +43,7 @@ void DrawSearchGameScene()
 	DrawSearchBg();
 	
 	DrawRobotNeck();
-	DrawSearchRobot();
+	DrawSearchGameRobot();
 	DrawSearchPlayer();
 
 	DrawMenu();
@@ -60,7 +60,7 @@ void InitSearchGameScene()
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	InitSearchGamePlayer();
-	InitSearchRobot();
+	InitSearchGameRobot();
 
 	ChangeSceneStep(SceneStep::MainStep);
 }
@@ -68,9 +68,10 @@ void InitSearchGameScene()
 void MainSearchGameScene()
 {
 
-	SearchPlayerControl(175.0f, 1080.0f, 460.0f, 1445.0f);
+	SearchPlayerControl(175.0f, 1020.0f, 460.0f, 1445.0f);
 
-	HitSearchPlayerRobot();
+	HitSearchGameObject();
+
 	
 	UpDataPlayerPos();
 
@@ -78,7 +79,7 @@ void MainSearchGameScene()
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (HitNextArea(850.0f, 945.0f, 940.0f, 1080.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchgamearea = false;
 		areadata.searcharea2 = true;

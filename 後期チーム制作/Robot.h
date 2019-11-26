@@ -10,7 +10,7 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
-	bool hit;
+	
 }SearchRobotData;
 
 typedef struct
@@ -26,15 +26,14 @@ extern SurprisedData surprised;
 
 void InitRobot();
 
-void InitSearchRobot();
+void InitSearchGameRobot();
 
 void InitSuprised();
 
 void DrawRobot();
 
-void DrawSearchRobot();
+void DrawSearchGameRobot();
 
-void HitSearchPlayerRobot();
 
 void DrawSuprised();
 #endif

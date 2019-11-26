@@ -18,14 +18,22 @@ void InitRobot()
 	robot.pos_y = 200.0f;
 }
 
-void InitSearchRobot()
+void InitSearchGameRobot()
 {
 	searchrobot.pos_x = 800.0f;
 	searchrobot.pos_y = 400.0f;
 	searchrobot.height = 128.0f;
 	searchrobot.width = 64.0f;
-	searchrobot.hit = false;
 }
+
+//Œã‚ÅŽg‚¤
+//void InitSearchRobot()
+//{
+//	searchrobot.pos_x = 805.0f;
+//	searchrobot.pos_y = 860.0f;
+//	searchrobot.height = 128.0f;
+//	searchrobot.width = 64.0f;
+//}
 
 void InitSuprised()
 {
@@ -46,20 +54,14 @@ void DrawSuprised()
 	}
 }
 
-void DrawSearchRobot()
+//Œã‚ÅŽg‚¤
+//void DrawSearchRobot()
+//{
+//	DrawTexture(searchrobot.pos_x, searchrobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
+//}
+
+void DrawSearchGameRobot()
 {
 	DrawTexture(searchrobot.pos_x, searchrobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
 }
 
-void HitSearchPlayerRobot()
-{
-	if(HitPlayerObject(searchrobot.pos_x, searchrobot.pos_y, searchrobot.width, searchrobot.height) == true)
-	{
-		searchrobot.hit = true;
-	}
-	else
-	{
-		searchrobot.hit = false;
-	}
-	
-}
