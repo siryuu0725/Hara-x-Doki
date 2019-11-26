@@ -45,7 +45,7 @@ void DrawSearchScene()
 
 void InitSearchScene()
 {
-	LoadTexture("Res/‘å•”‰®.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
+	LoadTexture("Res/‘å•”‰®B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
 	LoadTexture("Res/ƒ‰ƒtƒLƒƒƒ‰.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 
 	InitArea();
@@ -56,7 +56,7 @@ void InitSearchScene()
 
 void MainSearchScene()
 {
-	SearchPlayerControl(155.0f, 1080.0f, 155.0f, 1730.0f);
+	SearchPlayerControl(155.0f, 990.0f, 155.0f, 1730.0f);
 
 	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y >= 150.0f && searchplayer.pos_y <= 370.0f && searchplayer.pos_y >= 314.0f)
 	{

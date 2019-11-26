@@ -41,8 +41,8 @@ void InitSearchPlayer()
 	}
 	else
 	{
-		searchplayer.pos_x = 820.0f;
-		searchplayer.pos_y = 890.0f;
+		searchplayer.pos_x = 880.0f;
+		searchplayer.pos_y = 950.0f;
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.5f;
 	}
@@ -130,9 +130,6 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 	searchplayer.oldpos_x = searchplayer.pos_x;
 	searchplayer.oldpos_y = searchplayer.pos_y;
 
-	float vec_x = 0.0f;
-	float vec_y = 0.0f;
-	float length = 0.0f;
 
 	if (GetKey(UP_KEY) == true)
 	{
@@ -148,13 +145,6 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 			{
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
-			}
-			if((searchplayer.pos_x < searchrobot.pos_x +searchrobot.width)
-				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
-				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
-				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
-			{
-				searchplayer.pos_y = searchplayer.oldpos_y;
 			}
 		}
 	}
@@ -178,13 +168,6 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if ((searchplayer.pos_x < searchrobot.pos_x + searchrobot.width)
-				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
-				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
-				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
-			{
-				searchplayer.pos_y = searchplayer.oldpos_y;
-			}
 		}
 	}
 
@@ -205,13 +188,6 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if ((searchplayer.pos_x < searchrobot.pos_x + searchrobot.width)
-				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
-				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
-				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
-			{
-				searchplayer.pos_x = searchplayer.oldpos_x;
-			}
 		}
 	}
 	else if (GetKey(RIGHT_KEY) == true)
@@ -230,31 +206,22 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 				searchplayer.animetion_tu += 0.25f;
 				searchplayer.animetioncount = 0;
 			}
-			if ((searchplayer.pos_x < searchrobot.pos_x + searchrobot.width)
-				&& (searchplayer.pos_x + 64.0f > searchrobot.pos_x)
-				&& (searchplayer.pos_y + 64.0f < searchrobot.pos_y + searchrobot.height)
-				&& (searchplayer.pos_y + 128.0f > searchrobot.pos_y))
-			{
-				searchplayer.pos_x = searchplayer.oldpos_x;
-			}
 		}
 	}
 	else 
 		searchplayer.animetion_tu = 0.0f;
 
-	/*if (vec_x != 0.0f || vec_y != 0.0f)
+	
+}
+
+void UpDataPlayerPos()
+{
+	if (searchrobot.hit == true)
 	{
-		length = sqrt(vec_x * vec_x + vec_y * vec_y);
-
-		float normal_x = vec_x / length;
-		float normal_y = vec_y / length;
-
-		normal_x *= searchplayer.movespeed;
-		normal_y *= searchplayer.movespeed;
-
-		searchplayer.pos_x += normal_x;
-		searchplayer.pos_y += normal_y;
-	}*/
+		searchplayer.pos_x = searchplayer.oldpos_x;
+		searchplayer.pos_y = searchplayer.oldpos_y;
+	}
+	
 }
 
 

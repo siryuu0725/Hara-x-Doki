@@ -14,14 +14,14 @@ SearchRobotData searchrobot;
 
 void InitRobot()
 {
-	robot.pos_x = 960.0f;
+	robot.pos_x = 860.0f;
 	robot.pos_y = 200.0f;
 }
 
 void InitSearchRobot()
 {
-	searchrobot.pos_x = 880.0f;
-	searchrobot.pos_y = 600.0f;
+	searchrobot.pos_x = 800.0f;
+	searchrobot.pos_y = 400.0f;
 	searchrobot.height = 128.0f;
 	searchrobot.width = 64.0f;
 	searchrobot.hit = false;
@@ -61,6 +61,5 @@ void HitSearchPlayerRobot()
 	{
 		searchrobot.hit = false;
 	}
-	
 	
 }

@@ -51,11 +51,10 @@ void DrawSearchGameScene()
 
 void InitSearchGameScene()
 {
-	LoadTexture("Res/個室（女子部屋）_家具配置.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
-	LoadTexture("Res/Robot.png", TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex);
+	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
 	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/ちびロボパーツラフ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
-	LoadTexture("Res/ちび執事ラフ(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
+	LoadTexture("Res/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
+	LoadTexture("Res/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
@@ -68,10 +67,12 @@ void InitSearchGameScene()
 
 void MainSearchGameScene()
 {
-	//HitSearchPlayerRobot();
 
 	SearchPlayerControl(175.0f, 1080.0f, 460.0f, 1445.0f);
+
+	HitSearchPlayerRobot();
 	
+	UpDataPlayerPos();
 
 	if (OnMouseDown(Left) == true)
 	{

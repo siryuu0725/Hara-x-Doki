@@ -57,5 +57,6 @@ void UpDateMoviePlayer();
 
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax);
 
+void UpDataPlayerPos();
 
 #endif

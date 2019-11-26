@@ -74,7 +74,7 @@ void UpDateBg()
 			if (bgdate.stopcount == MOVIE_STOP_TIME)
 			{
 				bgdate.movespeed = -0.002f;
-				movieplayer.movespeed -= 4.9;
+				movieplayer.movespeed -= 4.7;
 			}
 
 		}
