@@ -12,8 +12,28 @@ void DrawRobotNeck()
 
 void HitSearchObject()
 {
+	//画面左端
+	if (HitPlayerObject(0.0f, 0.0f, 155.0f, 1080.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面左下
+	else if (HitPlayerObject(155.0f, 990.0f, 715.0f, 90.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面右下
+	else if (HitPlayerObject(960.0f, 990.0f, 770.0f, 90.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面右端
+	else if (HitPlayerObject(1730.0f, 550.0f, 185.0f, 440.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//大テーブル
-	if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true)
+	else if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -70,8 +90,28 @@ void HitSearchObject()
 
 void HitSearchGameObject()
 {
+	//画面左端
+	if (HitPlayerObject(0.0f, 0.0f, 460.0f, 1080.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面左下
+	else if (HitPlayerObject(460.0f, 1020.0f, 440.0f, 60.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面右下
+	else if (HitPlayerObject(975.0f, 1020.0f, 470.0f, 90.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面右端
+	else if (HitPlayerObject(1445.0f, 0.0f, 475.0f, 1080.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//ロボット
-	if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width-30.0f, searchrobot.height-42.0f) == true)
+	else if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width-30.0f, searchrobot.height-42.0f) == true)
 	{
 		searchplayer.hit = true;
 	}

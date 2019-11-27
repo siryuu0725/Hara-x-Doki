@@ -57,7 +57,7 @@ void InitSearchScene()
 
 void MainSearchScene()
 {
-	SearchPlayerControl(175.0f, 990.0f, 155.0f, 1730.0f);
+	SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
 
 	HitSearchObject();
 
