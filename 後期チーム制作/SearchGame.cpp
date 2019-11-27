@@ -72,9 +72,9 @@ void MainSearchGameScene()
 
 	HitSearchGameObject();
 
-	
 	UpDataPlayerPos();
 
+	HitEyeSearchGameObject();
 	if (OnMouseDown(Left) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);

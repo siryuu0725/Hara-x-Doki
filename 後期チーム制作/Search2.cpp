@@ -62,6 +62,7 @@ void MainSearch2Scene()
 		areadata.searcharea2 = false;
 		areadata.searcharea1 = true;
 		areadata.cangearea = true;
+		areadata.cangearea2 = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 

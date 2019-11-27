@@ -15,6 +15,7 @@ void HitSearchObject();
 
 void HitSearchGameObject();
 
+void HitEyeSearchGameObject();
 
 
 #endif
