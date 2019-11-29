@@ -93,6 +93,9 @@
     <ClCompile Include="Item.cpp">
       <Filter>object</Filter>
     </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -159,6 +162,9 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
       <Filter>object</Filter>
     </ClInclude>
   </ItemGroup>

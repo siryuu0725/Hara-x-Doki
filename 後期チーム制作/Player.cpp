@@ -6,6 +6,7 @@
 #include "Robot.h"
 #include "Menu.h"
 #include "Bg.h"
+#include "Text.h"
 
 #define BACKPLAYERSIZE 150
 #define ROBOTSIZE 150
@@ -15,6 +16,7 @@
 MoviePlayerDate movieplayer;
 SearchPlayerData searchplayer;
 BackPlayerData backplayer;
+extern TextBoxData textbox;
 
 
 void InitMoviePlayer()

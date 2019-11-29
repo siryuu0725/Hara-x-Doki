@@ -7,6 +7,12 @@
 #include "Player.h"
 #include "Bg.h"
 #include "Hit.h"
+#include "Menu.h"
+#include "Text.h"
+
+extern TextBoxData textbox;
+extern MenuData menu;
+
 
 void InitSearch2Scene();
 
@@ -37,21 +43,27 @@ void DrawSearch2Scene()
 {
 	DrawSearchBg();
 	DrawSearchPlayer();
+	DrawMenu();
 }
 
 void InitSearch2Scene()
 {
 	LoadTexture("Res/廊下.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
 	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
+	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
 	InitSearch2Player();
-
+	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainSearch2Scene()
 {
-	SearchPlayerControl(450.0f, 840.0f, 0.0f, 1920.0f);
+	if (textbox.onspacekey == false && menu.onenterkey == false)
+	{
+		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
+	}
 
 	if (OnMouseDown(Left) == true)
 	{
@@ -87,6 +99,7 @@ void MainSearch2Scene()
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
+	UpDateMenu();
 }
 
 SceneId FinishSearch2Scene()

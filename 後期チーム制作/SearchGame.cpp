@@ -10,7 +10,9 @@
 #include "Menu.h"
 #include "Item.h"
 #include "Hit.h"
+#include "Text.h"
 
+extern TextBoxData textbox;
 
 void InitSearchGameScene();
 
@@ -45,7 +47,7 @@ void DrawSearchGameScene()
 	DrawRobotNeck();
 	DrawSearchGameRobot();
 	DrawSearchPlayer();
-
+	DrawTextBox();
 	DrawMenu();
 }
 
@@ -55,26 +57,37 @@ void InitSearchGameScene()
 	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
 	LoadTexture("Res/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
+	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex);
+	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextnameTex);
+	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
+	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	InitSearchGamePlayer();
 	InitSearchGameRobot();
+	InitTextBox();
+	InitMenu();
 
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainSearchGameScene()
 {
-
-	SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
-
+	if (textbox.onspacekey == false && menu.onenterkey == false)
+	{
+		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
+	}
+	
 	HitSearchGameObject();
 
 	UpDataPlayerPos();
 
 	HitEyeSearchGameObject();
+
+	UpDateMenu();
+
 	if (OnMouseDown(Left) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);

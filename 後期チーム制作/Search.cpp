@@ -7,9 +7,12 @@
 #include "Bg.h"
 #include "Hit.h"
 #include "Item.h"
-
+#include "Menu.h"
+#include "Text.h"
 
 extern SearchPlayerData serachplayer;
+extern TextBoxData textbox;
+extern MenuData menu;
 
 
 void InitSearchScene();
@@ -42,26 +45,35 @@ void DrawSearchScene()
 {
 	DrawSearchBg();
 	DrawSearchPlayer();
+	DrawMenu();
 }
 
 void InitSearchScene()
 {
 	LoadTexture("Res/大部屋B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
 	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
+	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
 	InitArea();
 	InitSearchPlayer();
+	InitMenu();
 
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainSearchScene()
 {
-	SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
+	if (textbox.onspacekey == false && menu.onenterkey == false)
+	{
+		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
+	}
 
 	HitSearchObject();
 
 	UpDataPlayerPos();
+
+	UpDateMenu();
 
 	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y >= 150.0f && searchplayer.pos_y <= 370.0f && searchplayer.pos_y >= 314.0f)
 	{
