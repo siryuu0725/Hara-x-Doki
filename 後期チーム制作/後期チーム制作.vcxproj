@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bg.cpp" />
+    <ClCompile Include="CriminalRoom.cpp" />
     <ClCompile Include="Hit.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Puzzle.cpp" />
     <ClCompile Include="PuzzleGame.cpp" />
+    <ClCompile Include="Yuruhuwa.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -155,10 +157,12 @@
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
+    <ClCompile Include="Tundere.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bg.h" />
+    <ClInclude Include="CriminalRoom.h" />
     <ClInclude Include="Hit.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Menu.h" />
@@ -170,6 +174,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Puzzle.h" />
     <ClInclude Include="PuzzleGame.h" />
+    <ClInclude Include="Yuruhuwa.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="Scene.h" />
@@ -180,6 +185,7 @@
     <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />
+    <ClInclude Include="Tundere.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

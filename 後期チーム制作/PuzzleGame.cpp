@@ -42,10 +42,10 @@ void InitPuzzleGameScene()
 {
 	InitPuzzle();
 	LoadTexture("Res/配置.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex);
-	LoadTexture("Res/Key.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKeyTex);
+	LoadTexture("Res/ピースメイン.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKeyTex);
 	LoadTexture("Res/cabe変更.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleSquareTex);
-	LoadTexture("Res/cabe2変更.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleLandscapeTex);
-	LoadTexture("Res/cabe3変更.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzlePortraitTex);
+	LoadTexture("Res/ピース横.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleLandscapeTex);
+	LoadTexture("Res/ピース縦.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzlePortraitTex);
 
 	ChangeSceneStep(SceneStep::MainStep);
 }

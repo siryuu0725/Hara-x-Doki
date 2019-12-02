@@ -20,13 +20,13 @@ typedef struct
 typedef struct
 {
 	float pos_x, pos_y;
-	float oldpos_x, oldpos_y;
-	float eyepos_x, eyepos_y;
+	float oldpos_x, oldpos_y;           //プレイヤーのあたり判定時用の前の位置
+	float eyepos_x, eyepos_y;           //プレイヤーの視覚の位置
 	float movespeed;                    //キャラの動くスピード
 	float animetion_tu, animetion_tv;   //キャラのアニメーション座標
 	int animetioncount;                 //アニメーションスピード
-	bool hit;
-	bool eyehit;
+	bool hit;                           //プレイヤーとオブジェクトのあたり判定フラグ
+	bool eyehit;                        //プレイヤーの視覚とオブジェクトのあたり判定フラグ
 }SearchPlayerData;
 
 typedef struct
@@ -40,6 +40,7 @@ extern SearchPlayerData searchplayer;
 
 extern BackPlayerData backplayer;
 
+#pragma region プレイヤーの初期化
 void InitMoviePlayer();
 
 void InitSearchPlayer();
@@ -49,17 +50,22 @@ void InitSearch2Player();
 void InitSearchGamePlayer();
 
 void InitBackPlayer();
+#pragma endregion
 
+#pragma region プレイヤーの描画
 void DrawMoviePlayer();
 
 void DrawSearchPlayer();
 
 void DrawBackPlayer();
+#pragma endregion
 
+#pragma region プレイヤーの挙動
 void UpDateMoviePlayer();
 
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax);
 
 void UpDataPlayerPos();
+#pragma endregion
 
 #endif

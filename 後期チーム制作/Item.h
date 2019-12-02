@@ -9,15 +9,15 @@ typedef struct
 
 typedef struct
 {
-	bool energy;
-	bool desk;
-	bool chair;
-	bool doll;
-	bool bed;
-	bool light;
-	bool flowerpot;
-	bool closet;
-	bool bookshelf;
+	bool energy;    //ロボのエネルギー
+	bool desk;      //机
+	bool chair;     //椅子
+	bool doll;      //人形
+	bool bed;       //ベッド
+	bool light;     //ライト
+	bool flowerpot; //植木鉢
+	bool closet;    //クローゼット
+	bool bookshelf; //本棚
 
 }TouchObject;
 
@@ -27,12 +27,33 @@ extern RobotNeck neck;
 
 void DrawRobotNeck();
 
+/*
+　　探索パートでのオブジェクトとのあたり判定
+　　矩形と矩形のあたり判定
+*/
 void HitSearchObject();
 
+
+/*
+　　探索ゲームでのオブジェクトとのあたり判定
+　　矩形と矩形のあたり判定
+*/
 void HitSearchGameObject();
 
+
+/*
+　　探索パートでのプレイヤーとがアクションを起こすときの
+  　オブジェクトとの視覚のあたり判定
+　　矩形と矩形のあたり判定
+*/
 void HitEyeSearchObject();
 
+
+/*
+　　探索ゲームでのプレイヤーとがアクションを起こすときの
+  　オブジェクトとの視覚のあたり判定
+　　矩形と矩形のあたり判定
+*/
 void HitEyeSearchGameObject();
 
 

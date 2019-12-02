@@ -189,17 +189,17 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ロボット
-	else if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width-30.0f, searchrobot.height-42.0f) == true)
+	else if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width - 30.0f, searchrobot.height - 62.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//首
-	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 64.0f) == true)
+	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 64.0f) == true && neck.get == false)
 	{
 		searchplayer.hit = true;
 	}
 	//ベッド
-	else if (HitPlayerObject(480.0f, 755.0f, 265.0f, 146.0f) == true)
+	else if (HitPlayerObject(480.0f, 755.0f, 255.0f, 146.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -214,17 +214,17 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//椅子１
-	else if (HitPlayerObject(990.0f, 610.0f, 40.0f, 40.0f) == true)
+	else if (HitPlayerObject(995.0f, 610.0f, 40.0f, 40.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//椅子2
-	else if (HitPlayerObject(1120.0f, 775.0f, 40.0f, 40.0f) == true)
+	else if (HitPlayerObject(1130.0f, 775.0f, 15.0f, 40.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//椅子3
-	else if (HitPlayerObject(1240.0f, 775.0f, 40.0f, 40.0f) == true)
+	else if (HitPlayerObject(1250.0f, 775.0f, 15.0f, 40.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -239,7 +239,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ぬいぐるみ
-	else if (HitPlayerObject(522.0f, 625.0f, 45.0f, 75.0f) == true)
+	else if (HitPlayerObject(525.0f, 625.0f, 35.0f, 75.0f) == true)
 	{
 		searchplayer.hit = true;
 	}

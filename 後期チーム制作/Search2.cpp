@@ -49,7 +49,7 @@ void DrawSearch2Scene()
 void InitSearch2Scene()
 {
 	LoadTexture("Res/廊下.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
-	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
@@ -62,7 +62,7 @@ void MainSearch2Scene()
 {
 	if (textbox.onspacekey == false && menu.onenterkey == false)
 	{
-		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
+		SearchPlayerControl(455.0f, 1080.0f, 0.0f, 1920.0f);
 	}
 
 	if (OnMouseDown(Left) == true)

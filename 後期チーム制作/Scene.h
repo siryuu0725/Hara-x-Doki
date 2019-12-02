@@ -9,6 +9,9 @@ enum SceneId
 	MovieScene,			//!< ゲーム本編シーン
 	SearchScene,		//!< 探索シーン
 	Search2Scene,		//!<
+	CriminalRoomScene,
+	TundereRoomScene,
+	YuruhuwaRoomScene,
 	SearchGameScene,    //!<
 	TalkScene,          //!< 会話シーン
 	PuzzleGameScene,    //!< パズルゲームシーン

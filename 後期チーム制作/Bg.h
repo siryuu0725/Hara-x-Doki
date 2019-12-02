@@ -10,11 +10,12 @@ typedef struct
 
 typedef struct
 {
-	bool searcharea1;     //‘å•”‰®‚É‚¢‚é‚Æ‚«true
-	bool searcharea2;     //˜L‰º‚É‚¢‚é‚Æ‚«true
-	bool searchgamearea;  //—q‚¶•”‰®‚É‚¢‚é‚Æ‚«true
-	bool cangearea;       //˜L‰º‚Æ‘å•”‰®‚ğˆÚ“®‚·‚é‚Æ‚«
-	bool cangearea2;      //˜L‰º‚Æ—q‚¶•”‰®‚ğˆÚ“®‚·‚é‚Æ‚«
+	bool searcharea1;       //‘å•”‰®‚É‚¢‚é‚Æ‚«true
+	bool searcharea2;       //˜L‰º‚É‚¢‚é‚Æ‚«true
+	bool searchcriminalarea;//”Æl•”‰®‚É‚¢‚é‚Æ‚«true
+	bool searchgamearea;    //—q‚¶•”‰®‚É‚¢‚é‚Æ‚«true
+	bool cangearea;         //˜L‰º‚Æ‘å•”‰®‚ğˆÚ“®‚·‚é‚Æ‚«
+	bool cangearea2;        //˜L‰º‚Æ—q‚¶•”‰®‚ğˆÚ“®‚·‚é‚Æ‚«
 
 }SearchAreaData;
 

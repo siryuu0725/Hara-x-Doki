@@ -9,6 +9,9 @@
 #define TEXTURE_MOVIE (SceneId::MovieScene)	
 #define TEXTURE_SEARCH (SceneId::SearchScene)
 #define TEXTURE_SEARCH2 (SceneId::Search2Scene)
+#define TEXTURE_CRIMINAL_ROOM (SceneId::CriminalRoomScene)
+#define TEXTURE_TUNDERE_ROOM (SceneId::TundereRoomScene)
+#define TEXTURE_YURUHUWA_ROOM (SceneId::YuruhuwaRoomScene)
 #define TEXTURE_SEARCH_GAME (SceneId::SearchGameScene)
 #define TEXTURE_TALK (SceneId::TalkScene)
 #define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)
@@ -43,46 +46,63 @@ enum SearchCategoryTextureList
 {
 	SearchBgTex,				//!< 背景1
 	SearchPlayerTex,            //プレイヤー
-	SearchTextureMax,	    //!< リスト最大数
+	SearchTextureMax,	        //!< リスト最大数
 };
 
 enum Search2CategoryTextureList
 {
 	Search2BgTex,				//!< 背景
-	Search2TextureMax,	    //!< リスト最大数
+	Search2TextureMax,	        //!< リスト最大数
 };
 
+enum CriminalRoomCategoryTextureList
+{
+	CriminalRoomBgTex,				//!< 背景
+	CriminalRoomTextureMax,	        //!< リスト最大数
+};
+
+enum TundereRoomCategoryTextureList
+{
+	TundereRoomBgTex,				//!< 背景
+	TundereRoomTextureMax,	        //!< リスト最大数
+};
+
+enum YuruhuwaRoomCategoryTextureList
+{
+	YuruhuwaRoomBgTex,				//!< 背景
+	YuruhuwaRoomTextureMax,	        //!< リスト最大数
+};
 enum SearchGameCategoryTextureList
 {
-	SearchGameBgTex,
-	SearchGamePlayerTex,
-	SearchGameRobotTex,
-	SearchGameRobotNeckTex,
-	SearchGameSurprisedTex,
-	SearchGameTextBoxTex,
-	SearchGameTextnameTex,
-	SearchGameItemBoxTex,
-	SearchGameItemMenuTex,
-	SearchGameTextureMax,
+	SearchGameBgTex,             //!< 背景
+	SearchGamePlayerTex,         //!< プレイヤー
+	SearchGameRobotTex,          //!< ロボット
+	SearchGameRobotNeckTex,      //!< ロボットの首
+	SearchGameSurprisedTex,      //!< ビックリマーク
+	SearchGameTextBoxTex,        //!< テキストボックス
+	SearchGameTextnameTex,       //!< 
+	SearchGameItemBoxTex,        //!< アイテムボックス
+	SearchGameItemMenuTex,       //!< 
+	SearchGameTextureMax,        //!< リスト最大数
 };
 
 enum TalkCategoryTextureList
 {
-	TalkBgTex,
-	TalkPlayerTex,
-	TalkRobotTex,
-	TalkSurprisedTex,
-	MenuTex,
-	TalkTextureMax,
+	TalkBgTex,            //!< 背景
+	TalkPlayerTex,	      //!< プレイヤー
+	TalkRobotTex,	      //!< ロボット
+	TalkSurprisedTex,     //!< ビックリマーク
+	MenuTex,		      //!< 
+	TalkTextureMax,	      //!< リスト最大数
 };
 enum PuzzleGameCategoryTextureList
 {
-	PuzzleGameBgTex,				//!< 背景
+	PuzzleGameBgTex,			   //!< 背景
 	PuzzleKeyTex,                  //鍵　　　
-	PuzzleSquareTex,					//正方形
-	PuzzleLandscapeTex,					//横長
-	PuzzlePortraitTex,					//縦長
-	PuzzleGameTextureMax,		//リスト最大数
+	PuzzleSquareTex,			   //正方形
+	PuzzleLandscapeTex,			   //横長
+	PuzzlePortraitTex,			   //縦長
+	PuzzleGameTextureMax,		   //リスト最大数
 };
 
 enum GameClearCategoryTextureList

@@ -24,6 +24,7 @@ void InitArea()
 {
 	areadata.searcharea1 = true;
 	areadata.searcharea2 = false;
+	areadata.searchcriminalarea = false;
 	areadata.searchgamearea = false;
 }
 
@@ -51,10 +52,14 @@ void DrawSearchBg()
 	{
 		DrawBgTexture(GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex));
 	}
+	else if (areadata.searchcriminalarea == true)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRoomBgTex));
+	}
 }
 
 
-//背景移動
+//ムービー用背景移動
 void UpDateBg()
 {
 	//プレイヤーが特定の位置に来た時

@@ -96,6 +96,15 @@
     <ClCompile Include="Text.cpp">
       <Filter>object</Filter>
     </ClCompile>
+    <ClCompile Include="CriminalRoom.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Tundere.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Yuruhuwa.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -166,6 +175,15 @@
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="CriminalRoom.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Tundere.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Yuruhuwa.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

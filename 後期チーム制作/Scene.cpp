@@ -11,8 +11,12 @@
 #include "PuzzleGame.h"
 #include "TalkScene.h"
 #include "Scenario.h"
+#include "CriminalRoom.h"
+#include "Tundere.h"
+#include "Yuruhuwa.h"
 
-static SceneId g_CurrentSceneId = SceneId::SearchGameScene;		// 動作中シーンID
+
+static SceneId g_CurrentSceneId = SceneId::SearchScene;		// 動作中シーンID
 static SceneStep g_CurrentSceneStep = SceneStep::InitStep;	// 動作中シーンのステップ
 
 SceneId GetCurrentSceneId()
@@ -52,6 +56,12 @@ void UpdateScene()
 		break;
 	case SceneId::Search2Scene:
 		scene_id = UpdateSearch2Scene();
+		break;
+	case SceneId::TundereRoomScene:
+		scene_id = UpdateTundereRoomScene();
+		break;
+	case SceneId::YuruhuwaRoomScene:
+		scene_id = UpdateYuruhuwaRoomScene();
 		break;
 	case SceneId::SearchGameScene:
 		scene_id = UpdateSearchGameScene();
@@ -104,6 +114,15 @@ void DrawScene()
 		case SceneId::Search2Scene:
 			DrawSearch2Scene();
 			break;
+		case SceneId::CriminalRoomScene:
+			DrawCriminalRoomScene();
+			break;	
+		case SceneId::TundereRoomScene:
+			DrawTundereRoomScene();
+		    break;	
+		case SceneId::YuruhuwaRoomScene:
+			DrawYuruhuwaRoomScene();
+		    break;	
 		case SceneId::SearchGameScene:
 			DrawSearchGameScene();
 			break;

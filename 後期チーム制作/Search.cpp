@@ -51,7 +51,7 @@ void DrawSearchScene()
 void InitSearchScene()
 {
 	LoadTexture("Res/大部屋B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
-	LoadTexture("Res/ラフキャラ.jpg", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
@@ -75,14 +75,20 @@ void MainSearchScene()
 
 	UpDateMenu();
 
-	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y >= 150.0f && searchplayer.pos_y <= 370.0f && searchplayer.pos_y >= 314.0f)
+	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y <= 350.0f && searchplayer.pos_y >= 314.0f)
 	{
 		areadata.searcharea1 = false;
 		areadata.searcharea2 = true;
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	
+	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 400.0f && searchplayer.pos_y <= 450.0f)
+	{
+		areadata.searcharea1 = false;
+		areadata.searchcriminalarea = true;
+
+		ChangeSceneStep(SceneStep::EndStep);
+	}
 }
 
 SceneId FinishSearchScene()
