@@ -80,13 +80,14 @@ void MainTundereRoomScene()
 	{
 		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
 	}
-
+	HitTundereRoomObject();
+	UpDataPlayerPos();
 
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchtunderearea = false;
 		areadata.searcharea2 = true;
-		areadata.cangearea2 = true;
+		areadata.cangearea2 = 2;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	
@@ -96,7 +97,7 @@ SceneId FinishTundereRoomScene()
 {
 	ReleaseCategoryTexture(TEXTURE_TUNDERE_ROOM);
 
-	if (areadata.searcharea2 == true)
+	if (areadata.cangearea2 == 2)
 	{
 		return SceneId::Search2Scene;
 	}

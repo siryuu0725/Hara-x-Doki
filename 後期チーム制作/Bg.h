@@ -17,7 +17,7 @@ typedef struct
 	bool searchtunderearea; //ツンデレ部屋にいるときtrue
 	bool searchyuruhuwaarea;//ゆるふわ部屋にいるときtrue
 	bool cangearea;         //廊下と大部屋を移動するとき
-	bool cangearea2;        //廊下と女子高生部屋を移動するとき
+	int cangearea2;        //廊下と女子高生部屋を移動するとき
 
 }SearchAreaData;
 

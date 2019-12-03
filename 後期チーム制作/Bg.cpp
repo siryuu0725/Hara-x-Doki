@@ -25,7 +25,7 @@ void InitArea()
 	areadata.searcharea1 = true;
 	areadata.searcharea2 = false;
 	areadata.searchcriminalarea = false;
-	areadata.searchgamearea = false;
+	areadata.searchgamearea = 0;
 	areadata.searchtunderearea = false;
 	areadata.searchyuruhuwaarea = false;
 }
@@ -43,13 +43,13 @@ void DrawTalkBg()
 void DrawTundereBg()
 {
 	DrawBgTexture(GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex));
-	DrawTexture(450.0f, 840.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed));
 	DrawTexture(650.0f, 330.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCarpet));
+	DrawTexture(450.0f, 840.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed));
 	DrawTexture(1285.0f, 50.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCloset));
 	DrawTexture(1000.0f, 625.f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk));
 	DrawTexture(1255.0f, 630.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll));
-	DrawTexture(445.0f, 225.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot));
-	DrawTexture(440.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
+	DrawTexture(450.0f, 225.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot));
+	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
 	DrawTexture(655.0f, 150.f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa));
 	DrawTexture(455.0f, 65.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow));
 

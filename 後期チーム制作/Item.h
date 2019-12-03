@@ -33,6 +33,9 @@ void DrawRobotNeck();
 */
 void HitSearchObject();
 
+void HitTundereRoomObject();
+
+void HitYuruhuwaRoomObject();
 
 /*
 　　探索ゲームでのオブジェクトとのあたり判定

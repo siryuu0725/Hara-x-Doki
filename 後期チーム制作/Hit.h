@@ -22,6 +22,7 @@ bool HitNextArea(float left_x, float right_x, float up_y, float down_y);
 */
 bool HitPlayerObject(float obj_x, float obj_y, float obj_width, float obj_height);
 
+void HitTundereRoomObject();
 /*
 	プレイヤーの視界とオブジェクトのあたり判定
 	当たっていればtrue

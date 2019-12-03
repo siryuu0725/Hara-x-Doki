@@ -60,21 +60,21 @@ void InitSearchPlayer()
 
 void InitSearch2Player()
 {
-	if (areadata.cangearea2 == true && areadata.searchgamearea == false)
+	if (areadata.cangearea2 == 1)
 	{
 		searchplayer.pos_x = 1465.0f;
 		searchplayer.pos_y = 455.0f;
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.0f;
 	}
-	else if (areadata.cangearea2 == true && areadata.searchtunderearea == false)
+	else if (areadata.cangearea2 == 2)
 	{
 		searchplayer.pos_x = 855.0f;
 		searchplayer.pos_y = 455.0f;
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.0f;
 	}
-	else if (areadata.cangearea2 == true && areadata.searchyuruhuwaarea == false)
+	else if (areadata.cangearea2 == 3)
 	{
 		searchplayer.pos_x = 265.0f;
 		searchplayer.pos_y = 455.0f;

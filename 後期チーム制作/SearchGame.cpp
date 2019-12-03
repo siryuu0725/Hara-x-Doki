@@ -96,7 +96,7 @@ void MainSearchGameScene()
 	{
 		areadata.searchgamearea = false;
 		areadata.searcharea2 = true;
-		areadata.cangearea2 = true;
+		areadata.cangearea2 = 1;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
@@ -106,14 +106,10 @@ SceneId FinishSearchGameScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH_GAME);
 
-	if (areadata.searcharea2 == true)
+	if (areadata.searcharea2 == 1)
 	{
 		return SceneId::Search2Scene;
 	}
-	/*else
-	{
-		return SceneId::TalkScene;
-	}*/
-	
+
 
 }
