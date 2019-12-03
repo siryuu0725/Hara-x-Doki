@@ -88,14 +88,14 @@ void MainSearch2Scene()
 	if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searcharea2 = false;
-		areadata.searchgamearea = true;
+		areadata.searchtunderearea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
 	if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searcharea2 = false;
-		areadata.searchgamearea = true;
+		areadata.searchyuruhuwaarea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
@@ -113,6 +113,14 @@ SceneId FinishSearch2Scene()
 	else if (areadata.searchgamearea == true)
 	{
 		return SceneId::SearchGameScene;
+	}
+	else if (areadata.searchtunderearea == true)
+	{
+		return SceneId::TundereRoomScene;
+	}
+	else if (areadata.searchyuruhuwaarea == true)
+	{
+		return SceneId::YuruhuwaRoomScene;
 	}
 		
 

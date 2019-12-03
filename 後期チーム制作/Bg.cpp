@@ -26,6 +26,8 @@ void InitArea()
 	areadata.searcharea2 = false;
 	areadata.searchcriminalarea = false;
 	areadata.searchgamearea = false;
+	areadata.searchtunderearea = false;
+	areadata.searchyuruhuwaarea = false;
 }
 
 void DrawBg()
@@ -36,6 +38,37 @@ void DrawBg()
 void DrawTalkBg()
 {
 	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex));
+}
+
+void DrawTundereBg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex));
+	DrawTexture(450.0f, 840.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed));
+	DrawTexture(650.0f, 330.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCarpet));
+	DrawTexture(1285.0f, 50.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCloset));
+	DrawTexture(1000.0f, 625.f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk));
+	DrawTexture(1255.0f, 630.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll));
+	DrawTexture(445.0f, 225.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot));
+	DrawTexture(440.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
+	DrawTexture(655.0f, 150.f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa));
+	DrawTexture(455.0f, 65.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow));
+
+}
+
+void DrawYuruhuwaBg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex));
+	DrawTexture(450.0f, 715.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaBed));
+	DrawTexture(1385.0f, 455.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet));
+	DrawTexture(665.0f, 345.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet));
+	DrawTexture(850.0f, 50.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCloset));
+	DrawTexture(1295.0f, 70.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock));
+	DrawTexture(420.0f, 225.f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk));
+	DrawTexture(1100.0f, 160.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll));
+	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
+	DrawTexture(1000.0f, 160.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa));
+	DrawTexture(520.0f, 25.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow));
+
 }
 
 void DrawSearchBg()
@@ -51,6 +84,14 @@ void DrawSearchBg()
 	else if (areadata.searchgamearea == true)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex));
+	}
+	else if (areadata.searchtunderearea == true)
+	{
+		DrawTundereBg();
+	}
+	else if (areadata.searchyuruhuwaarea == true)
+	{
+		DrawYuruhuwaBg();
 	}
 	else if (areadata.searchcriminalarea == true)
 	{

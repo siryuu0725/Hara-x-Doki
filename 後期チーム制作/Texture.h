@@ -64,12 +64,32 @@ enum CriminalRoomCategoryTextureList
 enum TundereRoomCategoryTextureList
 {
 	TundereRoomBgTex,				//!< ”wŒi
+	TundereWindow,
+	TundereFlowerpot,
+	TundereCloset,
+	TundereSofa,
+	TundereCarpet,
+	TundereRight,
+	TundereDesk,
+	TundereBed,
+	TundereDoll,
+
 	TundereRoomTextureMax,	        //!< ƒŠƒXƒgÅ‘å”
 };
 
 enum YuruhuwaRoomCategoryTextureList
 {
 	YuruhuwaRoomBgTex,				//!< ”wŒi
+	YuruhuwaWindow,
+	YuruhuwaClock,
+	YuruhuwaCloset,
+	YuruhuwaSofa,
+	YuruhuwaCarpet,
+	YuruhuwaRight,
+	YuruhuwaDesk,
+	YuruhuwaBed,
+	YuruhuwaDoll,
+	YuruhuwaCabinet,
 	YuruhuwaRoomTextureMax,	        //!< ƒŠƒXƒgÅ‘å”
 };
 enum SearchGameCategoryTextureList

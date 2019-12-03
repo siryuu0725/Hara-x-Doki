@@ -8,6 +8,8 @@ typedef struct
 	bool onspacekey;
 }TextBoxData;
 
+extern TextBoxData textbox;
+
 void InitTextBox();
 
 void DrawTextBox();
