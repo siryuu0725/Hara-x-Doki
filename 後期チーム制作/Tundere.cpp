@@ -40,23 +40,14 @@ void DrawTundereRoomScene()
 {
 	DrawSearchBg();
 	DrawSearchPlayer();
+	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
 	DrawTextBox();
 	DrawMenu();
 }
 
 void InitTundereRoomScene()
 {
-	LoadTexture("Res/部屋(空).png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex);
-	LoadTexture("Res/カーペット02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCarpet);
-	LoadTexture("Res/窓.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow);
-	LoadTexture("Res/ソファ.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa);
-	LoadTexture("Res/観葉植物.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot);
-	LoadTexture("Res/箪笥02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCloset);
-	LoadTexture("Res/ライト.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight);
-	LoadTexture("Res/ベッド04.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed);
-	LoadTexture("Res/テーブル03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk);
-	LoadTexture("Res/ぬいぐるみ03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll);
-
+	LoadTundereFurnitureTex();
 
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex);

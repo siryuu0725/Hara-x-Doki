@@ -31,6 +31,37 @@ void DrawRobotNeck()
 	}
 }
 
+
+//背景と家具が別のため関数化
+void LoadTundereFurnitureTex()
+{
+	LoadTexture("Res/部屋(空).png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex);
+	LoadTexture("Res/カーペット02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCarpet);
+	LoadTexture("Res/窓.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow);
+	LoadTexture("Res/ソファ.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa);
+	LoadTexture("Res/観葉植物.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot);
+	LoadTexture("Res/箪笥02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCloset);
+	LoadTexture("Res/ライト.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight);
+	LoadTexture("Res/ベッド04.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed);
+	LoadTexture("Res/テーブル03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk);
+	LoadTexture("Res/ぬいぐるみ03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll);
+}
+void LoadYuruhuwaFurnitureTex()
+{
+	LoadTexture("Res/部屋(空).png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex);
+	LoadTexture("Res/カーペット03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet);
+	LoadTexture("Res/窓.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow);
+	LoadTexture("Res/ソファ02.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa);
+	LoadTexture("Res/箪笥03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCloset);
+	LoadTexture("Res/ライト.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight);
+	LoadTexture("Res/ベッド.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaBed);
+	LoadTexture("Res/テーブル03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk);
+	LoadTexture("Res/ぬいぐるみ03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll);
+	LoadTexture("Res/時計.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock);
+	LoadTexture("Res/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
+}
+
+#pragma region プレイヤーとオブジェクトのあたり判定
 void HitSearchObject()
 {
 	//画面左端
@@ -416,7 +447,9 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = false;
 	}
 }
+#pragma endregion 
 
+#pragma region プレイヤーの視界とオブジェクトのあたり判定
 void HitEyeSearchObject()
 {
 	if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)
@@ -558,7 +591,7 @@ void HitEyeSearchGameObject()
 		searchplayer.hit = false;
 	}
 }
-
+#pragma endregion 
 
 void UpDataSearchGame()
 {

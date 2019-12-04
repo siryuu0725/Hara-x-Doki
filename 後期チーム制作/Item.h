@@ -27,6 +27,10 @@ extern RobotNeck neck;
 
 void DrawRobotNeck();
 
+void LoadTundereFurnitureTex();
+
+void LoadYuruhuwaFurnitureTex();
+
 /*
 　　探索パートでのオブジェクトとのあたり判定
 　　矩形と矩形のあたり判定

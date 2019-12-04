@@ -34,7 +34,7 @@ SceneId UpdateMovieScene()
 
 void DrawMovieScene()
 {
-	DrawBg();
+	DrawMovieBg();
 	DrawMoviePlayer();
 }
 
@@ -42,7 +42,7 @@ void InitMovieScene()
 {
 	LoadTexture("Res/外観.png", TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex);
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
-	InitBg();
+	InitMovieBg();
 	InitMoviePlayer();
 	ChangeSceneStep(SceneStep::MainStep);
 }

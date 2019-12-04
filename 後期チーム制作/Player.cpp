@@ -34,6 +34,7 @@ void InitMoviePlayer()
 
 void InitSearchPlayer()
 {
+	//プレイヤーが廊下から大部屋に戻った時
 	if (areadata.cangearea == true)
 	{
 		searchplayer.pos_x = 180.0f;
@@ -60,6 +61,7 @@ void InitSearchPlayer()
 
 void InitSearch2Player()
 {
+	//プレイヤーがボーイッシュ部屋から廊下に戻った時
 	if (areadata.cangearea2 == 1)
 	{
 		searchplayer.pos_x = 1465.0f;
@@ -67,6 +69,7 @@ void InitSearch2Player()
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.0f;
 	}
+	//プレイヤーがツンデレ部屋から廊下に戻った時
 	else if (areadata.cangearea2 == 2)
 	{
 		searchplayer.pos_x = 855.0f;
@@ -74,6 +77,7 @@ void InitSearch2Player()
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.0f;
 	}
+	//プレイヤーがゆるふわ部屋から廊下に戻った時
 	else if (areadata.cangearea2 == 3)
 	{
 		searchplayer.pos_x = 265.0f;
@@ -123,7 +127,8 @@ void DrawBackPlayer()
 
 void UpDateMoviePlayer()
 {
-	if (movieplayer.moveanimesion == false)//アニメーション
+	//アニメーション
+	if (movieplayer.moveanimesion == false)
 	{
 		movieplayer.animetioncount++;
 		movieplayer.pos_y -= MOVIE_PLAYER_SPEED;
@@ -134,7 +139,8 @@ void UpDateMoviePlayer()
 		}
 		
 	}
-	if (movieplayer.pos_y <= 540.0f)//特定の位置に進むと背景が動く
+	//特定の位置に進むと背景が動く
+	if (movieplayer.pos_y <= 540.0f)
 	{
 		movieplayer.moveanimesion = true;
 		movieplayer.nextmoviecount++;
@@ -243,6 +249,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 
 }
 
+//あたり判定時の描画位置更新
 void UpDataPlayerPos()
 {
 	if (searchplayer.hit == true)

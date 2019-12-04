@@ -23,16 +23,16 @@ typedef struct
 
 extern SearchAreaData areadata;
 	
-void InitBg();
+void InitMovieBg();
 
+//エリア移動フラグの初期化
 void InitArea();
 
-void DrawBg();
+void DrawMovieBg();
 
 void DrawTundereBg();
 
 void DrawYuruhuwaBg();
-
 
 void DrawSearchBg();
 

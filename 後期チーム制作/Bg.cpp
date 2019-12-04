@@ -12,7 +12,7 @@ MovieBgData bgdate;
 SearchAreaData areadata;
 extern MoviePlayerDate movieplayer;
 
-void InitBg()
+void InitMovieBg()
 {
 	bgdate.Tu = MOVIETEX_TU;
 	bgdate.Tv = MOVITEXE_TV;
@@ -30,7 +30,7 @@ void InitArea()
 	areadata.searchyuruhuwaarea = false;
 }
 
-void DrawBg()
+void DrawMovieBg()
 {
 	DrawUVTexture(0.0f, 0.0f, GetTexture(TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex), 1920, 2500, bgdate.Tu, bgdate.Tv);
 }
@@ -40,6 +40,7 @@ void DrawTalkBg()
 	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex));
 }
 
+//家具の配置も一緒にやっている
 void DrawTundereBg()
 {
 	DrawBgTexture(GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex));
@@ -49,12 +50,12 @@ void DrawTundereBg()
 	DrawTexture(1000.0f, 625.f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk));
 	DrawTexture(1255.0f, 630.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll));
 	DrawTexture(450.0f, 225.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot));
-	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
 	DrawTexture(655.0f, 150.f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa));
 	DrawTexture(455.0f, 65.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow));
 
 }
 
+//家具の配置も一緒にやっている
 void DrawYuruhuwaBg()
 {
 	DrawBgTexture(GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex));
@@ -65,12 +66,12 @@ void DrawYuruhuwaBg()
 	DrawTexture(1295.0f, 70.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock));
 	DrawTexture(420.0f, 225.f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk));
 	DrawTexture(1100.0f, 160.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll));
-	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	DrawTexture(1000.0f, 160.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa));
 	DrawTexture(520.0f, 25.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow));
 
 }
 
+//エリア移動時に切り替え
 void DrawSearchBg()
 {
 	if (areadata.searcharea1 == true)

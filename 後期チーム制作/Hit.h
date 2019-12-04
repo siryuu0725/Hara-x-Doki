@@ -23,6 +23,10 @@ bool HitNextArea(float left_x, float right_x, float up_y, float down_y);
 bool HitPlayerObject(float obj_x, float obj_y, float obj_width, float obj_height);
 
 void HitTundereRoomObject();
+
+void HitYuruhuwaRoomObject();
+
+
 /*
 	プレイヤーの視界とオブジェクトのあたり判定
 	当たっていればtrue
@@ -32,13 +36,7 @@ void HitTundereRoomObject();
 */
 bool HitPlayerEyeObject(float obj_x, float obj_y, float obj_width, float obj_height);
 
-/*
-	プレイヤーの視界とオブジェクトのあたり判定
-	当たっていればtrue
-	矩形と矩形であたり判定をとっている
-	引数
-	 　　(オブジェクトのx座標,オブジェクトのy座標,オブジェクトの横サイズ,オブジェクトの縦サイズ)
-*/
+
 #pragma endregion
 
 #pragma region パズルゲーム
