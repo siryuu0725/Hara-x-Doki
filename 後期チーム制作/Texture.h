@@ -60,7 +60,22 @@ enum Search2CategoryTextureList
 enum CriminalRoomCategoryTextureList
 {
 	CriminalRoomBgTex,				//!< ”wŒi
+	CriminalRedCarpet,
+	CriminalBuleCarpet,
+	CriminalGreenCarpet,
+	CriminalDesk,
+	CriminalRight,
+	CriminalCloset,
+	CriminalClock,
+	CriminalBed,
+	CriminalBookshelf,
+	CriminalBook,
+	CriminalRobotParts1,
+	CriminalRobotParts2,
+	CriminalRobotParts3,
+	CriminalCabinet,
 	CriminalRoomTextureMax,	        //!< ƒŠƒXƒgÅ‘å”
+
 };
 
 enum TundereRoomCategoryTextureList

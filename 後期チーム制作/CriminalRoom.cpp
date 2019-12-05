@@ -30,6 +30,7 @@ SceneId UpdateCriminalRoomScene()
 
 void DrawCriminalRoomScene()
 {
+
 }
 
 void InitCriminalRoomScene()

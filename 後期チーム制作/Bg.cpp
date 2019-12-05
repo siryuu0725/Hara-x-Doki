@@ -71,6 +71,24 @@ void DrawYuruhuwaBg()
 
 }
 
+void DrawCriminalBg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRoomBgTex));
+	DrawTexture(370.0f, 210.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRedCarpet));
+	DrawTexture(300.0f, 540.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBuleCarpet));
+	DrawTexture(990.0f, 535.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalGreenCarpet));
+	DrawTexture(330.0f, 845.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBed));
+	DrawTexture(335.0f, 845.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRight));
+	DrawTexture(290.0f, 65.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBookshelf));
+	DrawTexture(590.0f, 65.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBookshelf));
+	DrawTexture(875.0f, 90.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalClock));
+	DrawTexture(1410.0f, 50.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCloset));
+	DrawTexture(315.0f, 460.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCabinet));
+	DrawTexture(340.0f, 320.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook));
+	DrawTexture(670.0f, 320.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook));
+
+}
+
 //ÉGÉäÉAà⁄ìÆéûÇ…êÿÇËë÷Ç¶
 void DrawSearchBg()
 {

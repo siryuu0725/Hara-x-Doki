@@ -61,6 +61,21 @@ void LoadYuruhuwaFurnitureTex()
 	LoadTexture("Res/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
 }
 
+void LoadTundereFurnitureTex()
+{
+	LoadTexture("Res/犯人部屋.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRoomBgTex);
+	LoadTexture("Res/カーペット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRedCarpet);
+	LoadTexture("Res/カーペット02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBuleCarpet);
+	LoadTexture("Res/カーペット03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalGreenCarpet);
+	LoadTexture("Res/キャビネット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCabinet);
+	LoadTexture("Res/箪笥02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCloset);
+	LoadTexture("Res/ライト.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRight);
+	LoadTexture("Res/ベッド04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBed);
+	LoadTexture("Res/テーブル03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalDesk);
+	LoadTexture("Res/時計.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalClock);
+}
+
+
 #pragma region プレイヤーとオブジェクトのあたり判定
 void HitSearchObject()
 {

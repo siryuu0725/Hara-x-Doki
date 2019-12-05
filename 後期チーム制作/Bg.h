@@ -36,6 +36,8 @@ void DrawYuruhuwaBg();
 
 void DrawSearchBg();
 
+void DrawCriminalBg();
+
 void DrawTalkBg();
 
 void UpDateBg();
