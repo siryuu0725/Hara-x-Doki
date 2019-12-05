@@ -9,6 +9,7 @@
 #include "Item.h"
 #include "Menu.h"
 #include "Text.h"
+#include "Robot.h"
 
 extern SearchPlayerData serachplayer;
 extern TextBoxData textbox;
@@ -44,6 +45,8 @@ SceneId UpdateSearchScene()
 void DrawSearchScene()
 {
 	DrawSearchBg();
+	DrawMaidRobot();
+
 	DrawSearchPlayer();
 	DrawMenu();
 }
@@ -52,11 +55,13 @@ void InitSearchScene()
 {
 	LoadTexture("Res/大部屋B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/メイド_ちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
 	InitArea();
 	InitSearchPlayer();
+	InitMaidRobot();
 	InitMenu();
 
 	ChangeSceneStep(SceneStep::MainStep);

@@ -10,8 +10,30 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
+
+}MaidRobotData;
+
+typedef struct
+{
+	float pos_x, pos_y;
+	float width, height;
 	
-}SearchRobotData;
+}SearchGameRobotData;
+
+
+typedef struct
+{
+	float pos_x, pos_y;
+	float width, height;
+
+}PuzzleGameRobotData;
+
+typedef struct
+{
+	float pos_x, pos_y;
+	float width, height;
+
+}MysteryGameRobotData;
 
 typedef struct
 {
@@ -20,19 +42,37 @@ typedef struct
 
 extern RobotData robot;
 
-extern SearchRobotData searchrobot;
+extern MaidRobotData maidrobot;
+
+extern SearchGameRobotData searchgamerobot;
+
+extern PuzzleGameRobotData puzzlegamerobot;
+
+extern MysteryGameRobotData mysterygamerobot;
 
 extern SurprisedData surprised;
 
 void InitRobot();
 
+void InitMaidRobot();
+
 void InitSearchGameRobot();
+
+void InitPuzzleGameRobot();
+
+void InitMysteryGameRobot();
 
 void InitSuprised();
 
 void DrawRobot();
 
+void DrawMaidRobot();
+
 void DrawSearchGameRobot();
+
+void DrawPuzzleGameRobot();
+
+void DrawMysteryGameRobot();
 
 
 void DrawSuprised();

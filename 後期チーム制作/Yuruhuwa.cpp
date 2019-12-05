@@ -38,9 +38,13 @@ SceneId UpdateYuruhuwaRoomScene()
 void DrawYuruhuwaRoomScene()
 {
 	DrawSearchBg();
+	DrawPuzzleGameRobot();
 	DrawSearchPlayer();
+	
+	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	DrawTextBox();
+
 	DrawMenu();
 }
 
@@ -50,6 +54,7 @@ void InitYuruhuwaRoomScene()
 
 
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
 	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex);
 	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextnameTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
@@ -59,6 +64,7 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	InitSearchGamePlayer();
+	InitPuzzleGameRobot();
 	InitTextBox();
 	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);
@@ -74,7 +80,9 @@ void MainYuruhuwaRoomScene()
 
 	UpDataPlayerPos();
 
+	HitYuruhuwaRoomObject();
 
+	UpDateMenu();
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchyuruhuwaarea = false;

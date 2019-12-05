@@ -63,6 +63,9 @@ void HitEyeSearchObject();
 */
 void HitEyeSearchGameObject();
 
+void HitTundereRoomObject();
+
+void HitYuruhuwaRoomObject();
 
 #endif
 

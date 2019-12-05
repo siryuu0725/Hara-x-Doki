@@ -46,6 +46,8 @@ enum SearchCategoryTextureList
 {
 	SearchBgTex,				//!< 背景1
 	SearchPlayerTex,            //プレイヤー
+	SearchRobotTex,          //!< ロボット
+	SearchMaidRobotTex,          //!< ロボット
 	SearchTextureMax,	        //!< リスト最大数
 };
 
@@ -64,6 +66,7 @@ enum CriminalRoomCategoryTextureList
 enum TundereRoomCategoryTextureList
 {
 	TundereRoomBgTex,				//!< 背景
+	TundereRobotTex,          //!< ロボット
 	TundereWindow,
 	TundereFlowerpot,
 	TundereCloset,
@@ -80,6 +83,7 @@ enum TundereRoomCategoryTextureList
 enum YuruhuwaRoomCategoryTextureList
 {
 	YuruhuwaRoomBgTex,				//!< 背景
+	YuruhuwaRobotTex,          //!< ロボット
 	YuruhuwaWindow,
 	YuruhuwaClock,
 	YuruhuwaCloset,

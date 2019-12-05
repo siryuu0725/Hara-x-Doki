@@ -39,7 +39,10 @@ SceneId UpdateTundereRoomScene()
 void DrawTundereRoomScene()
 {
 	DrawSearchBg();
+	DrawMysteryGameRobot();
 	DrawSearchPlayer();
+	
+	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
 	DrawTextBox();
 	DrawMenu();
@@ -50,6 +53,7 @@ void InitTundereRoomScene()
 	LoadTundereFurnitureTex();
 
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/ちび執事.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRobotTex);
 	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex);
 	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextnameTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
@@ -60,6 +64,7 @@ void InitTundereRoomScene()
 
 
 	InitSearchGamePlayer();
+	InitMysteryGameRobot();
 	InitTextBox();
 	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);
@@ -73,7 +78,8 @@ void MainTundereRoomScene()
 	}
 	HitTundereRoomObject();
 	UpDataPlayerPos();
-
+	UpDateMenu();
+	HitTundereRoomObject();
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchtunderearea = false;

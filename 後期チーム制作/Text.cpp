@@ -10,7 +10,7 @@
 #define TEXTBOX_POS_Y 680
 
 TextBoxData textbox;
-extern SearchRobotData searchrobot;
+extern SearchGameRobotData searchgamerobot;
 extern SearchPlayerData searchplayer;
 void InitTextBox()
 {

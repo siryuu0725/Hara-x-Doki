@@ -89,106 +89,60 @@ void HitSearchObject()
 	{
 		searchplayer.hit = true;
 	}
+	//メイド
+	else if (HitPlayerObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//大テーブル
 	else if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true)
 	{
-		if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
 		searchplayer.hit = true;	
 	}
 	//椅子１
 	else if (HitPlayerObject(635.0f, 530.0f, 50.0f, 30.0f) == true)
 	{
-		if (HitPlayerObject(635.0f, 530.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
 		searchplayer.hit = true;
 	}
 	//椅子2
 	else if (HitPlayerObject(830.0f, 780.0f, 50.0f, 30.0f) == true)
 	{
-		if (HitPlayerObject(830.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
-		searchplayer.hit = true;
+	    searchplayer.hit = true;
 	}
 	//椅子3
 	else if (HitPlayerObject(1005.0f, 780.0f, 50.0f, 30.0f) == true)
 	{
-		if (HitPlayerObject(1005.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
 		searchplayer.hit = true;
 	}
 	//椅子4
 	else if (HitPlayerObject(1602.0f, 890.0f, 58.0f, 58.0f) == true)
 	{
-		if (HitPlayerObject(1602.0f, 890.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
 		searchplayer.hit = true;
-
 	}
 	//植木鉢
 	else if (HitPlayerObject(155.0f, 885.0f, 100.0f, 105.0f) == true)
 	{
-		if (HitPlayerObject(155.0f, 885.0f, 100.0f, 105.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
 		searchplayer.hit = true;
-
 	}
 	//時計
 	else if (HitPlayerObject(225.0f, 120.0f ,70.0f, 185.0f) == true)
 	{
-		if (HitPlayerObject(225.0f, 120.0f, 70.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
 		searchplayer.hit = true;
 	}
 	//ソファー
 	else if (HitPlayerObject(705.0f, 140.0f, 515.0f, 135.0f) == true)
 	{
-		if (HitPlayerObject(705.0f, 140.0f, 515.0f, 135.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
-
 		searchplayer.hit = true;	
 	}
 	//電話
 	else if (HitPlayerObject(1395.0f, 185.0f, 65.0f, 100.0f) == true)
 	{
 		searchplayer.hit = true;
-
-		if (HitPlayerObject(1395.0f, 185.0f, 65.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
 	}
 	//照明
 	else if (HitPlayerObject(1600.0f, 155.0f, 75.0f, 185.0f) == true)
 	{
 		searchplayer.hit = true;
-
-		if (HitPlayerObject(1600.0f, 155.0f, 75.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		{
-			searchplayer.eyehit = true;
-		}
 	}
 	else
 	{
@@ -220,7 +174,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ロボット
-	else if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width - 30.0f, searchrobot.height - 62.0f) == true)
+	else if (HitPlayerObject(searchgamerobot.pos_x + 20.0f, searchgamerobot.pos_y + 64.0f, searchgamerobot.width - 30.0f, searchgamerobot.height - 62.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -302,11 +256,11 @@ void HitTundereRoomObject()
 	{
 		searchplayer.hit = true;
 	}
-	////ロボット
-	//else if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width - 30.0f, searchrobot.height - 62.0f) == true)
-	//{
-	//	searchplayer.hit = true;
-	//}
+	//ロボット
+	else if (HitPlayerObject(mysterygamerobot.pos_x + 20.0f, mysterygamerobot.pos_y + 64.0f, mysterygamerobot.width - 30.0f, mysterygamerobot.height - 62.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	
 	//ベッド
 	else if (HitPlayerObject(465.0f, 865.0f, 265.0f, 146.0f) == true)
@@ -381,11 +335,11 @@ void HitYuruhuwaRoomObject()
 	{
 		searchplayer.hit = true;
 	}
-	////ロボット
-	//else if (HitPlayerObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width - 30.0f, searchrobot.height - 62.0f) == true)
-	//{
-	//	searchplayer.hit = true;
-	//}
+	//ロボット
+	else if (HitPlayerObject(puzzlegamerobot.pos_x + 20.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 62.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//ベッド
 	else if (HitPlayerObject(475.0f, 745.0f, 145.0f, 255.0f) == true)
 	{
@@ -402,12 +356,12 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = true;
 	}
 	//椅子１
-	else if (HitPlayerObject(540.0f, 525.0f, 30.0f, 30.0f) == true)
+	else if (HitPlayerObject(550.0f, 525.0f, 30.0f, 30.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//椅子2
-	else if (HitPlayerObject(660.0f, 525.0f, 35.0f, 30.0f) == true)
+	else if (HitPlayerObject(670.0f, 525.0f, 35.0f, 30.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -452,52 +406,58 @@ void HitYuruhuwaRoomObject()
 #pragma region プレイヤーの視界とオブジェクトのあたり判定
 void HitEyeSearchObject()
 {
-	if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	//メイド
+	if (HitPlayerEyeObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//大テーブル
+	else if (HitPlayerEyeObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//椅子１
-	else if (HitPlayerObject(635.0f, 530.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(635.0f, 530.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//椅子2
-	else if(HitPlayerObject(830.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if(HitPlayerEyeObject(830.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//椅子3
-	else if (HitPlayerObject(1005.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1005.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//椅子4
-	else if (HitPlayerObject(1602.0f, 890.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1602.0f, 890.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//植木鉢
-	else if (HitPlayerObject(155.0f, 885.0f, 100.0f, 105.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(155.0f, 885.0f, 100.0f, 105.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//時計
-	else if (HitPlayerObject(225.0f, 120.0f, 70.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(225.0f, 120.0f, 70.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//ソファー
-	else if (HitPlayerObject(705.0f, 140.0f, 515.0f, 135.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(705.0f, 140.0f, 515.0f, 135.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//電話
-	else if (HitPlayerObject(1395.0f, 185.0f, 65.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1395.0f, 185.0f, 65.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
 	//照明
-	else if (HitPlayerObject(1600.0f, 155.0f, 75.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1600.0f, 155.0f, 75.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}
@@ -510,7 +470,7 @@ void HitEyeSearchObject()
 void HitEyeSearchGameObject()
 {
 	//ロボット
-	if (HitPlayerEyeObject(searchrobot.pos_x + 20.0f, searchrobot.pos_y + 64.0f, searchrobot.width - 30.0f, searchrobot.height - 42.0f) == true
+	if (HitPlayerEyeObject(searchgamerobot.pos_x + 20.0f, searchgamerobot.pos_y + 64.0f, searchgamerobot.width - 30.0f, searchgamerobot.height - 42.0f) == true
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
@@ -591,6 +551,135 @@ void HitEyeSearchGameObject()
 		searchplayer.hit = false;
 	}
 }
+
+void HitEyeTundereRoomObject()
+{
+	//ロボット
+	if (HitPlayerEyeObject(mysterygamerobot.pos_x + 20.0f, mysterygamerobot.pos_y + 64.0f, mysterygamerobot.width - 30.0f, mysterygamerobot.height - 62.0f) == true
+	    &&GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//ベッド
+	else if (HitPlayerEyeObject(465.0f, 865.0f, 265.0f, 146.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//大テーブル
+	else if (HitPlayerEyeObject(1050.0f, 665.0f, 315.0f, 250.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子１
+	else if (HitPlayerEyeObject(1130.0f, 930.0f, 30.0f, 30.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子2
+	else if (HitPlayerEyeObject(1250.0f, 930.0f, 30.0f, 30.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子3
+	else if (HitPlayerEyeObject(1380.0f, 770.0f, 30.0f, 30.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//植木鉢
+	else if (HitPlayerEyeObject(460.0f, 255.0f, 165.0f, 70.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//照明
+	else if (HitPlayerEyeObject(460.0f, 800.0f, 85.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//ソファ
+	else if (HitPlayerEyeObject(695.0f, 170.0f, 245.0f, 110.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//箪笥
+	else if (HitPlayerEyeObject(1305.0f, 80.0f, 120.0f, 225.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	else
+	{
+		searchplayer.eyehit = false;
+	}
+}
+
+void HitEyeYuruhuwaRoomObject()
+{
+	//ロボット
+	if (HitPlayerEyeObject(puzzlegamerobot.pos_x + 20.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 62.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//ベッド
+	else if (HitPlayerEyeObject(475.0f, 745.0f, 145.0f, 255.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//小テーブル
+	else if (HitPlayerEyeObject(1390.0f, 460.0f, 50.0f, 65.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//大テーブル
+	else if (HitPlayerEyeObject(460.0f, 260.0f, 315.0f, 250.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子１
+	else if (HitPlayerEyeObject(540.0f, 525.0f, 30.0f, 30.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子2
+	else if (HitPlayerEyeObject(660.0f, 525.0f, 35.0f, 30.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子3
+	else if (HitPlayerEyeObject(790.0f, 360.0f, 35.0f, 30.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//ソファ
+	else if (HitPlayerEyeObject(1040.0f, 185.0f, 245.0f, 130.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//箪笥
+	else if (HitPlayerEyeObject(870.0f, 70.0f, 125.0f, 245.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//時計
+	else if (HitPlayerEyeObject(1330.0f, 120.0f, 75.0f, 180.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//キャビネット
+	else if (HitPlayerEyeObject(1390.0f, 460.0f, 50.0f, 55.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//照明
+	else if (HitPlayerEyeObject(1350.0f, 950.0f, 75.0f, 50.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	else
+	{
+		searchplayer.eyehit = false;
+	}
+}
+
 #pragma endregion 
 
 void UpDataSearchGame()

@@ -10,7 +10,11 @@
 
 RobotData robot;
 SurprisedData surprised;
-SearchRobotData searchrobot;
+MaidRobotData maidrobot;
+
+SearchGameRobotData searchgamerobot;
+PuzzleGameRobotData puzzlegamerobot;
+MysteryGameRobotData mysterygamerobot;
 
 void InitRobot()
 {
@@ -18,22 +22,37 @@ void InitRobot()
 	robot.pos_y = 200.0f;
 }
 
-void InitSearchGameRobot()
+void InitMaidRobot()
 {
-	searchrobot.pos_x = 800.0f;
-	searchrobot.pos_y = 400.0f;
-	searchrobot.height = 128.0f;
-	searchrobot.width = 64.0f;
+	maidrobot.pos_x = 920.0f;
+	maidrobot.pos_y = 700.0f;
+	maidrobot.height = 128.0f;
+	maidrobot.width = 64.0f;
 }
 
-//Œã‚ÅŽg‚¤
-//void InitSearchRobot()
-//{
-//	searchrobot.pos_x = 805.0f;
-//	searchrobot.pos_y = 860.0f;
-//	searchrobot.height = 128.0f;
-//	searchrobot.width = 64.0f;
-//}
+void InitSearchGameRobot()
+{
+	searchgamerobot.pos_x = 800.0f;
+	searchgamerobot.pos_y = 400.0f;
+	searchgamerobot.height = 128.0f;
+	searchgamerobot.width = 64.0f;
+}
+
+void InitPuzzleGameRobot()
+{
+	puzzlegamerobot.pos_x = 910.0f;
+	puzzlegamerobot.pos_y = 530.0f;
+	puzzlegamerobot.height = 128.0f;
+	puzzlegamerobot.width = 64.0f;
+}
+
+void InitMysteryGameRobot()
+{
+	mysterygamerobot.pos_x = 910.0f;
+	mysterygamerobot.pos_y = 550.0f;
+	mysterygamerobot.height = 128.0f;
+	mysterygamerobot.width = 64.0f;
+}
 
 void InitSuprised()
 {
@@ -46,6 +65,11 @@ void DrawRobot()
 	DrawTexture(robot.pos_x, robot.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex));
 }
 
+void DrawMaidRobot()
+{
+	DrawTexture(maidrobot.pos_x, maidrobot.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex));
+}
+
 void DrawSuprised()
 {
 	if (backplayer.pos_x >= robot.pos_x - ROBOTSIZE && backplayer.pos_x <= robot.pos_x + ROBOTSIZE && backplayer.pos_y >= robot.pos_y - ROBOTSIZE && backplayer.pos_y <= robot.pos_y + ROBOTSIZE)
@@ -54,14 +78,17 @@ void DrawSuprised()
 	}
 }
 
-//Œã‚ÅŽg‚¤
-//void DrawSearchRobot()
-//{
-//	DrawTexture(searchrobot.pos_x, searchrobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
-//}
-
 void DrawSearchGameRobot()
 {
-	DrawTexture(searchrobot.pos_x, searchrobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
+	DrawTexture(searchgamerobot.pos_x, searchgamerobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
 }
 
+void DrawPuzzleGameRobot()
+{
+	DrawTexture(puzzlegamerobot.pos_x, puzzlegamerobot.pos_y, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex));
+}
+
+void DrawMysteryGameRobot()
+{
+	DrawTexture(mysterygamerobot.pos_x, mysterygamerobot.pos_y, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRobotTex));
+}
