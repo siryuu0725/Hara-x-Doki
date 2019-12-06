@@ -70,6 +70,7 @@ enum CriminalRoomCategoryTextureList
 	CriminalBed,
 	CriminalBookshelf,
 	CriminalBook,
+	CriminalBook2,
 	CriminalRobotParts1,
 	CriminalRobotParts2,
 	CriminalRobotParts3,
@@ -91,7 +92,6 @@ enum TundereRoomCategoryTextureList
 	TundereDesk,
 	TundereBed,
 	TundereDoll,
-
 	TundereRoomTextureMax,	        //!< ƒŠƒXƒgÅ‘å”
 };
 

@@ -63,7 +63,7 @@ void InitTundereRoomScene()
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 
-	InitSearchGamePlayer();
+	InitGameRoomPlayer();
 	InitMysteryGameRobot();
 	InitTextBox();
 	InitMenu();

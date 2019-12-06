@@ -87,7 +87,7 @@ void MainSearchScene()
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 400.0f && searchplayer.pos_y <= 450.0f)
+	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 370.0f && searchplayer.pos_y <= 450.0f)
 	{
 		areadata.searcharea1 = false;
 		areadata.searchcriminalarea = true;
@@ -100,6 +100,12 @@ SceneId FinishSearchScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH);
 
-	return SceneId::Search2Scene;
-
+	if (areadata.searcharea2 == true)
+	{
+		return SceneId::Search2Scene;
+	}
+	else if (areadata.searchcriminalarea == true)
+	{
+		return SceneId::CriminalRoomScene;
+	}
 }

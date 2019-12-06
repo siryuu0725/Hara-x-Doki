@@ -95,13 +95,22 @@ void InitSearch2Player()
 	
 }
 
-void InitSearchGamePlayer()
+void InitGameRoomPlayer()
 {
 	searchplayer.pos_x = 900.0f;
 	searchplayer.pos_y = 950.0f;
 	searchplayer.animetion_tu = 0.0f;
 	searchplayer.animetion_tv = 0.5f;
 	
+}
+
+void InitCriminalPlayer()
+{
+	searchplayer.pos_x = 335.0f;
+	searchplayer.pos_y = 700.0f;
+	searchplayer.animetion_tu = 0.0f;
+	searchplayer.animetion_tv = 0.5f;
+
 }
 
 void InitBackPlayer()

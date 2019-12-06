@@ -31,6 +31,8 @@ void LoadTundereFurnitureTex();
 
 void LoadYuruhuwaFurnitureTex();
 
+void LoadCriminalFurnitureTex();
+
 /*
 　　探索パートでのオブジェクトとのあたり判定
 　　矩形と矩形のあたり判定

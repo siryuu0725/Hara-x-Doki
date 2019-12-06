@@ -16,7 +16,7 @@
 #include "Yuruhuwa.h"
 
 
-static SceneId g_CurrentSceneId = SceneId::TundereRoomScene;		// 動作中シーンID
+static SceneId g_CurrentSceneId = SceneId::SearchScene;		// 動作中シーンID
 static SceneStep g_CurrentSceneStep = SceneStep::InitStep;	// 動作中シーンのステップ
 
 SceneId GetCurrentSceneId()
@@ -62,6 +62,9 @@ void UpdateScene()
 		break;
 	case SceneId::YuruhuwaRoomScene:
 		scene_id = UpdateYuruhuwaRoomScene();
+		break;
+	case SceneId::CriminalRoomScene:
+		scene_id = UpdateCriminalRoomScene();
 		break;
 	case SceneId::SearchGameScene:
 		scene_id = UpdateSearchGameScene();

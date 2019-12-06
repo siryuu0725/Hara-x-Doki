@@ -63,7 +63,7 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
-	InitSearchGamePlayer();
+	InitGameRoomPlayer();
 	InitPuzzleGameRobot();
 	InitTextBox();
 	InitMenu();

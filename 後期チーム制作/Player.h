@@ -47,7 +47,9 @@ void InitSearchPlayer();
 
 void InitSearch2Player();
 
-void InitSearchGamePlayer();
+void InitGameRoomPlayer();
+
+void InitCriminalPlayer();
 
 void InitBackPlayer();
 #pragma endregion

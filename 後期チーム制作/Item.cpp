@@ -61,7 +61,7 @@ void LoadYuruhuwaFurnitureTex()
 	LoadTexture("Res/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
 }
 
-void LoadTundereFurnitureTex()
+void LoadCriminalFurnitureTex()
 {
 	LoadTexture("Res/犯人部屋.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRoomBgTex);
 	LoadTexture("Res/カーペット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRedCarpet);
@@ -73,6 +73,9 @@ void LoadTundereFurnitureTex()
 	LoadTexture("Res/ベッド04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBed);
 	LoadTexture("Res/テーブル03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalDesk);
 	LoadTexture("Res/時計.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalClock);
+	LoadTexture("Res/本棚03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBookshelf);
+	LoadTexture("Res/本04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook);
+	LoadTexture("Res/本02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook2);
 }
 
 
