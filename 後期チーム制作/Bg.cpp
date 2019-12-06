@@ -85,9 +85,12 @@ void DrawCriminalBg()
 	DrawTexture(1410.0f, 50.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCloset));
 	DrawTexture(320.0f, 460.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCabinet));
 	DrawTexture(1110.0f, 700.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalDesk));
-
 	DrawTexture(340.0f, 320.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook));
 	DrawTexture(670.0f, 320.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook));
+	DrawTexture(1155.0f, 85.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts1));
+	DrawTexture(670.0f, 35.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts2));
+	DrawTexture(1190.0f, 780.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts3));
+
 
 }
 

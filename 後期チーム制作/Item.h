@@ -43,6 +43,8 @@ void HitTundereRoomObject();
 
 void HitYuruhuwaRoomObject();
 
+void HitCriminalRoomObject();
+
 /*
 　　探索ゲームでのオブジェクトとのあたり判定
 　　矩形と矩形のあたり判定
@@ -65,9 +67,12 @@ void HitEyeSearchObject();
 */
 void HitEyeSearchGameObject();
 
-void HitTundereRoomObject();
+void HitEyeTundereRoomObject();
 
-void HitYuruhuwaRoomObject();
+void HitEyeYuruhuwaRoomObject();
+
+void HitEyeCriminalRoomObject();
+
 
 #endif
 

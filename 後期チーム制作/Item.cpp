@@ -36,46 +36,49 @@ void DrawRobotNeck()
 void LoadTundereFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex);
-	LoadTexture("Res/カーペット02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCarpet);
-	LoadTexture("Res/窓.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow);
-	LoadTexture("Res/ソファ.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa);
-	LoadTexture("Res/観葉植物.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot);
-	LoadTexture("Res/箪笥02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCloset);
-	LoadTexture("Res/ライト.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight);
-	LoadTexture("Res/ベッド04.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed);
-	LoadTexture("Res/テーブル03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk);
-	LoadTexture("Res/ぬいぐるみ03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll);
+	LoadTexture("Res/家具/カーペット02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCarpet);
+	LoadTexture("Res/家具/窓.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereWindow);
+	LoadTexture("Res/家具/ソファ.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereSofa);
+	LoadTexture("Res/家具/観葉植物.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereFlowerpot);
+	LoadTexture("Res/家具/箪笥02.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereCloset);
+	LoadTexture("Res/家具/ライト.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight);
+	LoadTexture("Res/家具/ベッド04.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereBed);
+	LoadTexture("Res/家具/テーブル03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk);
+	LoadTexture("Res/家具/ぬいぐるみ03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll);
 }
 void LoadYuruhuwaFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex);
-	LoadTexture("Res/カーペット03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet);
-	LoadTexture("Res/窓.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow);
-	LoadTexture("Res/ソファ02.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa);
-	LoadTexture("Res/箪笥03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCloset);
-	LoadTexture("Res/ライト.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight);
-	LoadTexture("Res/ベッド.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaBed);
-	LoadTexture("Res/テーブル03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk);
-	LoadTexture("Res/ぬいぐるみ03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll);
-	LoadTexture("Res/時計.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock);
-	LoadTexture("Res/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
+	LoadTexture("Res/家具/カーペット03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet);
+	LoadTexture("Res/家具/窓.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow);
+	LoadTexture("Res/家具/ソファ02.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa);
+	LoadTexture("Res/家具/箪笥03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCloset);
+	LoadTexture("Res/家具/ライト.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight);
+	LoadTexture("Res/家具/ベッド.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaBed);
+	LoadTexture("Res/家具/テーブル03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk);
+	LoadTexture("Res/家具/ぬいぐるみ03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll);
+	LoadTexture("Res/家具/時計.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock);
+	LoadTexture("Res/家具/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
 }
-
 void LoadCriminalFurnitureTex()
 {
 	LoadTexture("Res/犯人部屋.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRoomBgTex);
-	LoadTexture("Res/カーペット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRedCarpet);
-	LoadTexture("Res/カーペット02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBuleCarpet);
-	LoadTexture("Res/カーペット03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalGreenCarpet);
-	LoadTexture("Res/キャビネット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCabinet);
-	LoadTexture("Res/箪笥02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCloset);
-	LoadTexture("Res/ライト.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRight);
-	LoadTexture("Res/ベッド04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBed);
-	LoadTexture("Res/テーブル03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalDesk);
-	LoadTexture("Res/時計.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalClock);
-	LoadTexture("Res/本棚03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBookshelf);
-	LoadTexture("Res/本04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook);
-	LoadTexture("Res/本02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook2);
+	LoadTexture("Res/家具/カーペット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRedCarpet);
+	LoadTexture("Res/家具/カーペット02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBuleCarpet);
+	LoadTexture("Res/家具/カーペット03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalGreenCarpet);
+	LoadTexture("Res/家具/キャビネット.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCabinet);
+	LoadTexture("Res/家具/箪笥02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalCloset);
+	LoadTexture("Res/家具/ライト.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRight);
+	LoadTexture("Res/家具/ベッド04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBed);
+	LoadTexture("Res/家具/テーブル03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalDesk);
+	LoadTexture("Res/家具/時計.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalClock);
+	LoadTexture("Res/家具/本棚03.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBookshelf);
+	LoadTexture("Res/家具/本04.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook);
+	LoadTexture("Res/家具/本02.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook2);
+	LoadTexture("Res/家具/パーツ各種.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts1);
+	LoadTexture("Res/家具/脚.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts2);
+	LoadTexture("Res/家具/腕.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts3);
+
 }
 
 
@@ -419,6 +422,79 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = false;
 	}
 }
+
+void HitCriminalRoomObject()
+{
+	//画面左端
+	if (HitPlayerObject(0.0f, 0.0f, 325.0f, 1080.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//画面右端
+	else if (HitPlayerObject(1555.0f, 0.0f, 365.0f, 1080.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//ベッド
+	else if (HitPlayerObject(335.0f, 865.0f, 265.0f, 145.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//大テーブル
+	else if (HitPlayerObject(1160.0f, 745.0f, 315.0f, 250.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//椅子１
+	else if (HitPlayerObject(1240.0f, 1010.0f, 30.0f, 30.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//椅子2
+	else if (HitPlayerObject(1360.0f, 1010.0f, 30.0f, 30.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//椅子3
+	else if (HitPlayerObject(1490.0f, 845.0f, 30.0f, 30.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//時計
+	else if (HitPlayerObject(915.0f, 100.0f, 70.0f, 185.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//照明
+	else if (HitPlayerObject(345.0f, 1030.0f, 85.0f, 185.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//キャビネット
+	else if (HitPlayerObject(335.0f, 460.0f, 55.0f, 60.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//箪笥
+	else if (HitPlayerObject(1435.0f, 70.0f, 120.0f, 225.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//本棚
+	else if (HitPlayerObject(335.0f, 75.0f, 270.0f, 260.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//本棚
+	else if (HitPlayerObject(615.0f, 75.0f, 270.0f, 260.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	else
+	{
+		searchplayer.hit = false;
+	}
+}
 #pragma endregion 
 
 #pragma region プレイヤーの視界とオブジェクトのあたり判定
@@ -689,6 +765,80 @@ void HitEyeYuruhuwaRoomObject()
 	}
 	//照明
 	else if (HitPlayerEyeObject(1350.0f, 950.0f, 75.0f, 50.0f) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	else
+	{
+		searchplayer.eyehit = false;
+	}
+}
+
+void HitEyeCriminalRoomObject()
+{
+	//ベッド
+	if (HitPlayerEyeObject(335.0f, 865.0f, 265.0f, 145.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//大テーブル
+	else if (HitPlayerEyeObject(1160.0f, 745.0f, 315.0f, 250.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子１
+	else if (HitPlayerEyeObject(1240.0f, 1010.0f, 30.0f, 30.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子2
+	else if (HitPlayerEyeObject(1360.0f, 1010.0f, 30.0f, 30.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//椅子3
+	else if (HitPlayerEyeObject(1490.0f, 845.0f, 30.0f, 30.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//時計
+	else if (HitPlayerEyeObject(915.0f, 100.0f, 70.0f, 185.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//照明
+	else if (HitPlayerEyeObject(345.0f, 1030.0f, 85.0f, 185.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//キャビネット
+	else if (HitPlayerEyeObject(335.0f, 460.0f, 55.0f, 60.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//箪笥
+	else if (HitPlayerEyeObject(1435.0f, 70.0f, 120.0f, 225.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//本棚
+	else if (HitPlayerEyeObject(335.0f, 75.0f, 270.0f, 260.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		searchplayer.eyehit = true;
+	}
+	//本棚
+	else if (HitPlayerEyeObject(615.0f, 75.0f, 270.0f, 260.0f) == true
+		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		searchplayer.eyehit = true;
 	}

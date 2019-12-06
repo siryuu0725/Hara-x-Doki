@@ -80,7 +80,7 @@ void MainYuruhuwaRoomScene()
 
 	UpDataPlayerPos();
 
-	HitYuruhuwaRoomObject();
+	HitEyeYuruhuwaRoomObject();
 
 	UpDateMenu();
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
