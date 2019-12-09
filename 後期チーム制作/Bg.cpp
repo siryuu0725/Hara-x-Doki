@@ -87,11 +87,14 @@ void DrawCriminalBg()
 	DrawTexture(1110.0f, 700.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalDesk));
 	DrawTexture(340.0f, 320.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook));
 	DrawTexture(670.0f, 320.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalBook));
-	DrawTexture(1155.0f, 85.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts1));
-	DrawTexture(670.0f, 35.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts2));
-	DrawTexture(1190.0f, 780.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotParts3));
-
-
+	DrawTexture(970.0f, 185.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalWorkbench));
+	DrawTexture(1165.0f, 85.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotAllParts));
+	DrawTexture(670.0f, 35.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotPartsArm));
+	DrawTexture(1190.0f, 780.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotPartsHead));
+	DrawTexture(1000.0f, 285.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotPartsLeg));
+	DrawTexture(1280.0f, 260.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalPC));
+	DrawTexture(985.0f, 75.0f, GetTexture(TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRobotDesign));
+	DrawTexture(920.0f, 250.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
 }
 
 //ÉGÉäÉAà⁄ìÆéûÇ…êÿÇËë÷Ç¶

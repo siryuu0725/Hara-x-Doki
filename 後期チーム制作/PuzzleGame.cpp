@@ -41,11 +41,11 @@ void DrawPuzzleGameScene()
 void InitPuzzleGameScene()
 {
 	InitPuzzle();
-	LoadTexture("Res/配置.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex);
-	LoadTexture("Res/ピースメイン.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKeyTex);
-	LoadTexture("Res/ピース正方形.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleSquareTex);
-	LoadTexture("Res/ピース横.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleLandscapeTex);
-	LoadTexture("Res/ピース縦.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzlePortraitTex);
+	LoadTexture("Res/パズルゲーム/パズル背景.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex);
+	LoadTexture("Res/パズルゲーム/ピースメイン.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKeyTex);
+	LoadTexture("Res/パズルゲーム/ピース正方形.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleSquareTex);
+	LoadTexture("Res/パズルゲーム/ピース横.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleLandscapeTex);
+	LoadTexture("Res/パズルゲーム/ピース縦.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzlePortraitTex);
 
 	ChangeSceneStep(SceneStep::MainStep);
 }

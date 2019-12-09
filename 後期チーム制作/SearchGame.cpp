@@ -48,23 +48,27 @@ void DrawSearchGameScene()
 	DrawSearchGameRobot();
 	DrawSearchPlayer();
 	DrawTextBox();
-	DrawMenu();
+	//DrawMenu();
 }
 
 void InitSearchGameScene()
 {
+	LoadSearchGameItem();
+
 	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
 	LoadTexture("Res/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
+	LoadTexture("Res/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
+
 	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex);
 	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextnameTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
-
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
+	InitSearchGameObject();
 	InitGameRoomPlayer();
 	InitSearchGameRobot();
 	InitTextBox();
@@ -87,6 +91,8 @@ void MainSearchGameScene()
 	HitEyeSearchGameObject();
 
 	UpDateMenu();
+
+	UpDataSearchGame();
 
 	if (OnMouseDown(Left) == true)
 	{

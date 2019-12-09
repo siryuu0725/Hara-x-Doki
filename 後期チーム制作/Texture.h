@@ -71,9 +71,13 @@ enum CriminalRoomCategoryTextureList
 	CriminalBookshelf,
 	CriminalBook,
 	CriminalBook2,
-	CriminalRobotParts1,
-	CriminalRobotParts2,
-	CriminalRobotParts3,
+	CriminalRobotAllParts,
+	CriminalRobotPartsArm,
+	CriminalRobotPartsLeg,
+	CriminalRobotPartsHead,
+	CriminalRobotDesign,
+	CriminalWorkbench,
+	CriminalPC,
 	CriminalCabinet,
 	CriminalRoomTextureMax,	        //!< リスト最大数
 
@@ -115,13 +119,19 @@ enum SearchGameCategoryTextureList
 {
 	SearchGameBgTex,             //!< 背景
 	SearchGamePlayerTex,         //!< プレイヤー
-	SearchGameRobotTex,          //!< ロボット
+	SearchGameRobotTex,          //!< ロボット(未完成)
+	SearchGameCompleteRobotTex,  //!< ロボット(完成)
+
 	SearchGameRobotNeckTex,      //!< ロボットの首
 	SearchGameSurprisedTex,      //!< ビックリマーク
 	SearchGameTextBoxTex,        //!< テキストボックス
 	SearchGameTextnameTex,       //!< 
 	SearchGameItemBoxTex,        //!< アイテムボックス
 	SearchGameItemMenuTex,       //!< 
+	SearchGameItemKeyTex,        //!< 鍵
+	SearchGameItemEnergyTex,     //!< 電池
+	SearchGameItemRobotPartTex,  //!< パーツ
+
 	SearchGameTextureMax,        //!< リスト最大数
 };
 

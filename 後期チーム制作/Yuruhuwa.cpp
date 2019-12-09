@@ -63,6 +63,7 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
+	InitYuruhuwaRoomObject();
 	InitGameRoomPlayer();
 	InitPuzzleGameRobot();
 	InitTextBox();
@@ -90,6 +91,10 @@ void MainYuruhuwaRoomScene()
 		areadata.cangearea2 = 3;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
+	if (yuruhuwaobject.robot == true)
+	{
+		ChangeSceneStep(SceneStep::EndStep);
+	}
 	
 }
 
@@ -97,6 +102,10 @@ SceneId FinishYuruhuwaRoomScene()
 {
 	ReleaseCategoryTexture(TEXTURE_YURUHUWA_ROOM);
 
+	if (yuruhuwaobject.robot = true)
+	{
+		return SceneId::PuzzleGameScene;
+	}
 	if (areadata.cangearea2 == 3)
 	{
 		return SceneId::Search2Scene;

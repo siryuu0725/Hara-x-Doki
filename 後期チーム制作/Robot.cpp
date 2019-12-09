@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "Player.h"
 #include "Hit.h"
+#include "Item.h"
 
 #define ROBOTSIZE 150
 #define SURPRISEDSIZE 50
@@ -80,7 +81,14 @@ void DrawSuprised()
 
 void DrawSearchGameRobot()
 {
-	DrawTexture(searchgamerobot.pos_x, searchgamerobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
+	if (searchgameobject.completerobot == true)
+	{
+		DrawTexture(searchgamerobot.pos_x, searchgamerobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex));
+	}
+	else
+	{
+		DrawTexture(searchgamerobot.pos_x, searchgamerobot.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex));
+	}
 }
 
 void DrawPuzzleGameRobot()

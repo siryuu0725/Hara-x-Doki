@@ -8,11 +8,25 @@ typedef struct
 	bool onspacekey;
 }TextBoxData;
 
+struct Time
+{
+	char timefont[20];
+	int timecounter;
+	int onesecondscounter;
+	int tensecondscounter;
+	int oneminutecounter;
+	int tenminutecounter;
+};
+
 extern TextBoxData textbox;
 
 void InitTextBox();
 
 void DrawTextBox();
+
+void InitTimeCounter();
+
+void DrawTime();
 
 #endif
 

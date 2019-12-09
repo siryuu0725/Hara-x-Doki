@@ -3,35 +3,69 @@
 
 typedef struct
 {
-	float pos_x, pos_y;
-	bool get;            //アイテムを手に入れたかどうか
-}RobotNeck;
+	bool robot;         //ロボ
+	bool robotneck;     //ロボの頭
+	bool completerobot; //ロボ完成形
+	bool light;         //ライト
+
+	bool desk;          //机
+	bool chair;         //椅子
+	bool doll;          //人形
+	bool bed;           //ベッド
+	bool flowerpot;     //植木鉢
+	bool closet;        //クローゼット
+	bool bookshelf;     //本棚
+
+}SearchGameTouchObject;
 
 typedef struct
 {
-	bool energy;    //ロボのエネルギー
-	bool desk;      //机
-	bool chair;     //椅子
-	bool doll;      //人形
-	bool bed;       //ベッド
-	bool light;     //ライト
-	bool flowerpot; //植木鉢
-	bool closet;    //クローゼット
-	bool bookshelf; //本棚
+	bool robot;         //ロボ
 
-}TouchObject;
+	bool light;         //ライト
+	bool desk;          //机
+	bool chair;         //椅子
+	bool doll;          //人形
+	bool bed;           //ベッド
+	bool flowerpot;     //植木鉢
+	bool closet;        //クローゼット
+	bool bookshelf;     //本棚
 
-extern RobotNeck neck;
+}YuruhuwaTouchObject;
 
 
+typedef struct
+{
+	bool itemrobot;   //ロボの首
+	bool itemkey;     //鍵
+	bool itemenergy;  //電池
+	bool itemlight;   //ライト
+}GetItem;
+
+extern SearchGameTouchObject searchgameobject;
+
+extern YuruhuwaTouchObject yuruhuwaobject;
+
+extern GetItem getitem;
+
+void InitSearchGameObject();
+
+void InitYuruhuwaRoomObject();
+
+void LoadSearchGameItem();
 
 void DrawRobotNeck();
 
+
+/*
+   それぞれの部屋の家具Tex
+*/
 void LoadTundereFurnitureTex();
 
 void LoadYuruhuwaFurnitureTex();
 
 void LoadCriminalFurnitureTex();
+
 
 /*
 　　探索パートでのオブジェクトとのあたり判定
@@ -44,6 +78,7 @@ void HitTundereRoomObject();
 void HitYuruhuwaRoomObject();
 
 void HitCriminalRoomObject();
+
 
 /*
 　　探索ゲームでのオブジェクトとのあたり判定
@@ -73,6 +108,8 @@ void HitEyeYuruhuwaRoomObject();
 
 void HitEyeCriminalRoomObject();
 
+
+void UpDataSearchGame();
 
 #endif
 

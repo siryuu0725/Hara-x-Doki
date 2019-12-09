@@ -48,7 +48,9 @@ void DrawSearchScene()
 	DrawMaidRobot();
 
 	DrawSearchPlayer();
+	//DrawTexture()
 	DrawMenu();
+	DrawTime();
 }
 
 void InitSearchScene()
@@ -63,6 +65,7 @@ void InitSearchScene()
 	InitSearchPlayer();
 	InitMaidRobot();
 	InitMenu();
+	InitTimeCounter();
 
 	ChangeSceneStep(SceneStep::MainStep);
 }
@@ -80,14 +83,14 @@ void MainSearchScene()
 
 	UpDateMenu();
 
-	if (searchplayer.pos_x <= 170.0f && searchplayer.pos_y <= 350.0f && searchplayer.pos_y >= 314.0f)
+	if (searchplayer.pos_x <= 70.0f && searchplayer.pos_y >= 390.0f && searchplayer.pos_y <= 500.0f)
 	{
 		areadata.searcharea1 = false;
 		areadata.searcharea2 = true;
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 370.0f && searchplayer.pos_y <= 450.0f)
+	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 370.0f && searchplayer.pos_y <= 500.0f)
 	{
 		areadata.searcharea1 = false;
 		areadata.searchcriminalarea = true;

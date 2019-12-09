@@ -37,8 +37,8 @@ void InitSearchPlayer()
 	//ƒvƒŒƒCƒ„[‚ª˜L‰º‚©‚ç‘å•”‰®‚É–ß‚Á‚½
 	if (areadata.cangearea == true)
 	{
-		searchplayer.pos_x = 180.0f;
-		searchplayer.pos_y = 340.0f;
+		searchplayer.pos_x = 90.0f;
+		searchplayer.pos_y = 430.0f;
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.75f;
 	}
