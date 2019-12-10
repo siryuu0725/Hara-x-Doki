@@ -36,31 +36,7 @@ void DrawTextBox()
 	}
 	if (textbox.onspacekey == true)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex));
-	}
-
-	if (menu.onenterkey == true)
-	{
-		DrawTexture(menu.pos_x, menu.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex));
-
-		if (getitem.itemrobot == true)
-		{
-			DrawTexture(60.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRobotPartTex));
-		}
-		if (getitem.itemlight == true)
-		{
-			//DrawTexture(320.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRobotPartTex);
-		}
-		if (getitem.itemkey == true)
-		{
-			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
-		}
-		if (getitem.itemenergy == true)
-		{
-			DrawTexture(840.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemEnergyTex));
-		}
-
-		
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 	}
 }
 
@@ -95,7 +71,7 @@ void DrawTime()
 		}
 		if (time.tensecondscounter == -1)
 		{
-			time.tensecondscounter = 9;
+			time.tensecondscounter = 5;
 			time.oneminutecounter--;
 		}
 		if (time.oneminutecounter == -1)

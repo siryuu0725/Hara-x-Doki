@@ -7,7 +7,9 @@
 #include "Input.h"
 #include "Text.h"
 #include "JK.h"
+#include "Maid.h"
 
+SearchTouchObject searchobject;
 SearchGameTouchObject searchgameobject;
 YuruhuwaTouchObject yuruhuwaobject;
 GetItem getitem;
@@ -180,6 +182,11 @@ void HitSearchObject()
 	}
 	//植木鉢
 	else if (HitPlayerObject(155.0f, 885.0f, 100.0f, 105.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//コート掛け
+	else if (HitPlayerObject(1010.0f, 935.0f, 65.0f, 50.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -556,8 +563,7 @@ void HitEyeSearchObject()
 	//メイド
 	if (HitPlayerEyeObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		time.start = true;
-		searchplayer.eyehit = true;
+		searchobject.maid = true;
 	}
 	//大テーブル
 	else if (HitPlayerEyeObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)

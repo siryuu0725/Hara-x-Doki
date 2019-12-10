@@ -46,10 +46,13 @@ enum SearchCategoryTextureList
 {
 	SearchBgTex,				//!< 背景1
 	SearchPlayerTex,            //プレイヤー
-	BoyishTex,            //プレイヤー
-
+	Searchhanger,
+	SearchFlowerpot,
 	SearchRobotTex,          //!< ロボット
-	SearchMaidRobotTex,          //!< ロボット
+	SearchMaidRobotTex,          //!<メイド
+	SearchTalkMaidTex,          //!< ロボット
+	SearchTextBoxTex,        //!< テキストボックス
+	SearchTextnameTex,       //!< 
 	SearchTextureMax,	        //!< リスト最大数
 };
 
@@ -125,11 +128,12 @@ enum SearchGameCategoryTextureList
 	SearchGamePlayerTex,         //!< プレイヤー
 	SearchGameRobotTex,          //!< ロボット(未完成)
 	SearchGameCompleteRobotTex,  //!< ロボット(完成)
+	BoyishTex,            //プレイヤー
 
 	SearchGameRobotNeckTex,      //!< ロボットの首
 	SearchGameSurprisedTex,      //!< ビックリマーク
-	SearchGameTextBoxTex,        //!< テキストボックス
-	SearchGameTextnameTex,       //!< 
+	
+	
 	SearchGameItemBoxTex,        //!< アイテムボックス
 	SearchGameItemMenuTex,       //!< 
 	SearchGameItemKeyTex,        //!< 鍵

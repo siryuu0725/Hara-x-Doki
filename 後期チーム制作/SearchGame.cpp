@@ -58,15 +58,15 @@ void InitSearchGameScene()
 	LoadSearchGameItem();
 
 	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
-	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/ボーイッシュちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::BoyishTex);
+	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH, SearchGameCategoryTextureList::BoyishTex);
 
-	LoadTexture("Res/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
-	LoadTexture("Res/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
-	LoadTexture("Res/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
+	LoadTexture("Res/キャラ/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
+	LoadTexture("Res/キャラ/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
+	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
 
-	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextBoxTex);
-	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTextnameTex);
+	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
+	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
@@ -88,7 +88,8 @@ void MainSearchGameScene()
 	{
 		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
 	}
-	
+	UpDataSearchGame();
+
 	HitSearchGameObject();
 
 	UpDataPlayerPos();
@@ -97,7 +98,7 @@ void MainSearchGameScene()
 
 	UpDateMenu();
 
-	UpDataSearchGame();
+	
 
 	if (OnMouseDown(Left) == true)
 	{

@@ -22,5 +22,5 @@ void InitBoyish()
 
 void DrawBoyish()
 {
-	DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::BoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
+	DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH, SearchGameCategoryTextureList::BoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
 }

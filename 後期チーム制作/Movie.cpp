@@ -42,7 +42,7 @@ void DrawMovieScene()
 void InitMovieScene()
 {
 	LoadTexture("Res/外観.png", TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex);
-	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
+	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
 	InitMovieBg();
 	InitMoviePlayer();
 	

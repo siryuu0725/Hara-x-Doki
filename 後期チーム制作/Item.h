@@ -3,6 +3,16 @@
 
 typedef struct
 {
+	bool maid;         //ロボ
+	bool light;         //ライト
+	bool desk;          //机
+	bool chair;         //椅子
+	bool flowerpot;     //植木鉢
+
+}SearchTouchObject;
+
+typedef struct
+{
 	bool robot;         //ロボ
 	bool robotneck;     //ロボの頭
 	bool completerobot; //ロボ完成形
@@ -40,7 +50,12 @@ typedef struct
 	bool itemkey;     //鍵
 	bool itemenergy;  //電池
 	bool itemlight;   //ライト
+	bool doorkey;
+	bool breakdoorkey;
+
 }GetItem;
+
+extern SearchTouchObject searchobject;
 
 extern SearchGameTouchObject searchgameobject;
 

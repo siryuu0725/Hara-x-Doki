@@ -10,6 +10,7 @@
 #include "Menu.h"
 #include "Text.h"
 #include "Robot.h"
+#include "Maid.h"
 
 extern SearchPlayerData serachplayer;
 extern TextBoxData textbox;
@@ -48,23 +49,31 @@ void DrawSearchScene()
 	DrawMaidRobot();
 
 	DrawSearchPlayer();
-	//DrawTexture()
+	DrawTexture(960.0f, 755.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger));
+	DrawTexture(160.0f, 770.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot));
+
 	DrawMenu();
 	DrawTime();
-	DrawTxt();
+	//DrawTxt();
+	DrawTalkMaid();
 }
 
 void InitSearchScene()
 {
 	LoadTexture("Res/大部屋B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
-	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/メイド_ちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex);
+	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/キャラ/メイド_ちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex);
+	LoadTexture("Res/キャラ/メイド_立ち絵.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex);
+	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
+	LoadTexture("Res/家具/観葉植物B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot);
+	LoadTexture("Res/家具/コート掛け.png", TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger);
 
 	InitArea();
 	InitSearchPlayer();
 	InitMaidRobot();
+	InitMaid();
 	InitMenu();
 	InitTimeCounter();
 
