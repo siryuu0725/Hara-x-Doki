@@ -40,6 +40,17 @@ void DrawTalkBg()
 	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex));
 }
 
+
+void DrawSearch2Bg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex));
+	DrawTexture(1435.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door));
+	DrawTexture(845.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door));
+	DrawTexture(230.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door));
+	DrawTexture(5.0f,700.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase));
+	DrawTexture(5.0f, 460.0f, GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase));
+
+}
 //â∆ãÔÇÃîzíuÇ‡àÍèèÇ…Ç‚Ç¡ÇƒÇ¢ÇÈ
 void DrawTundereBg()
 {
@@ -106,7 +117,7 @@ void DrawSearchBg()
 	}
 	else if (areadata.searcharea2 == true)
 	{
-		DrawBgTexture(GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex));
+		DrawSearch2Bg();
 	}
 	else if (areadata.searchgamearea == true)
 	{

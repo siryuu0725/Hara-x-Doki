@@ -48,6 +48,8 @@ extern YuruhuwaTouchObject yuruhuwaobject;
 
 extern GetItem getitem;
 
+
+
 void InitSearchGameObject();
 
 void InitYuruhuwaRoomObject();
@@ -60,6 +62,8 @@ void DrawRobotNeck();
 /*
    ‚»‚ê‚¼‚ê‚Ì•”‰®‚Ì‰Æ‹ïTex
 */
+void LoadSearch2FurnitureTex();
+
 void LoadTundereFurnitureTex();
 
 void LoadYuruhuwaFurnitureTex();

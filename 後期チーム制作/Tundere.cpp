@@ -46,6 +46,7 @@ void DrawTundereRoomScene()
 	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
 	DrawTextBox();
 	DrawMenu();
+	DrawTime();
 }
 
 void InitTundereRoomScene()

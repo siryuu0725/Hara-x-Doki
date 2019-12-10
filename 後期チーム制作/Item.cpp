@@ -5,6 +5,8 @@
 #include "Player.h"
 #include "Robot.h"
 #include "Input.h"
+#include "Text.h"
+#include "JK.h"
 
 SearchGameTouchObject searchgameobject;
 YuruhuwaTouchObject yuruhuwaobject;
@@ -54,6 +56,11 @@ void LoadSearchGameItem()
 
 
 //背景と家具が別のため関数化
+void LoadSearch2FurnitureTex()
+{
+	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door);
+	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase);
+}
 void LoadTundereFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex);
@@ -142,7 +149,7 @@ void HitSearchObject()
 		searchplayer.hit = true;
 	}
 	//メイド
-	else if (HitPlayerObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true)
+	else if (HitPlayerObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 110.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -230,6 +237,11 @@ void HitSearchGameObject()
 	{
 		searchplayer.hit = true;
 	}
+	//ボーイッシュ
+	else if (HitPlayerObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 62.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//首
 	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 64.0f) == true && searchgameobject.robotneck == false)
 	{
@@ -266,17 +278,17 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//植木鉢と照明
-	else if (HitPlayerObject(1175.0f, 95.0f, 270.0f, 190.0f) == true)
+	else if (HitPlayerObject(1180.0f, 95.0f, 270.0f, 160.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//箪笥と本棚
-	else if (HitPlayerObject(460.0f, 35.0f, 450.0f, 255.0f) == true)
+	else if (HitPlayerObject(460.0f, 35.0f, 450.0f, 240.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//ぬいぐるみ
-	else if (HitPlayerObject(525.0f, 625.0f, 35.0f, 75.0f) == true)
+	else if (HitPlayerObject(525.0f, 625.0f, 35.0f, 70.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -544,6 +556,7 @@ void HitEyeSearchObject()
 	//メイド
 	if (HitPlayerEyeObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
+		time.start = true;
 		searchplayer.eyehit = true;
 	}
 	//大テーブル
@@ -609,6 +622,10 @@ void HitEyeSearchGameObject()
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		searchgameobject.robot = true;
+	}
+	else if (HitPlayerEyeObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 62.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		boyish.talk = true;
 	}
 	//首
 	else if (HitPlayerEyeObject(700.0f, 500.0f, 64.0f, 64.0f) == true && GetKeyDown(SPACE_KEY) == true)

@@ -46,6 +46,8 @@ enum SearchCategoryTextureList
 {
 	SearchBgTex,				//!< 背景1
 	SearchPlayerTex,            //プレイヤー
+	BoyishTex,            //プレイヤー
+
 	SearchRobotTex,          //!< ロボット
 	SearchMaidRobotTex,          //!< ロボット
 	SearchTextureMax,	        //!< リスト最大数
@@ -54,6 +56,8 @@ enum SearchCategoryTextureList
 enum Search2CategoryTextureList
 {
 	Search2BgTex,				//!< 背景
+	Search2Door,
+	Search2Vase,
 	Search2TextureMax,	        //!< リスト最大数
 };
 

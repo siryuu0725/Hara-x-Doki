@@ -9,6 +9,7 @@
 #include "Hit.h"
 #include "Menu.h"
 #include "Text.h"
+#include "Item.h"
 
 extern TextBoxData textbox;
 extern MenuData menu;
@@ -44,11 +45,15 @@ void DrawSearch2Scene()
 	DrawSearchBg();
 	DrawSearchPlayer();
 	DrawMenu();
+	DrawTime();
 }
 
 void InitSearch2Scene()
 {
-	LoadTexture("Res/廊下.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
+
+	LoadSearch2FurnitureTex();
+
+	LoadTexture("Res/廊下_修正.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
@@ -62,14 +67,14 @@ void MainSearch2Scene()
 {
 	if (textbox.onspacekey == false && menu.onenterkey == false)
 	{
-		SearchPlayerControl(455.0f, 1080.0f, 0.0f, 1920.0f);
+		SearchPlayerControl(455.0f, 835.0f, 0.0f, 1920.0f);
 	}
 
 	if (OnMouseDown(Left) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (searchplayer.pos_x + 64.0f >= 1900.0f && searchplayer.pos_y <= 650.0f && searchplayer.pos_y >= 620.0f)
+	if (searchplayer.pos_x + 64.0f >= 1900.0f)
 	{
 		areadata.searcharea2 = false;
 		areadata.searcharea1 = true;

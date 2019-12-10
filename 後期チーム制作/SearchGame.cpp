@@ -11,6 +11,7 @@
 #include "Item.h"
 #include "Hit.h"
 #include "Text.h"
+#include "JK.h"
 
 extern TextBoxData textbox;
 
@@ -43,12 +44,13 @@ SceneId UpdateSearchGameScene()
 void DrawSearchGameScene()
 {
 	DrawSearchBg();
-	
+	DrawBoyish();
 	DrawRobotNeck();
 	DrawSearchGameRobot();
 	DrawSearchPlayer();
 	DrawTextBox();
-	//DrawMenu();
+	DrawMenu();
+	DrawTime();
 }
 
 void InitSearchGameScene()
@@ -57,6 +59,8 @@ void InitSearchGameScene()
 
 	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
+	LoadTexture("Res/ボーイッシュちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::BoyishTex);
+
 	LoadTexture("Res/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
 	LoadTexture("Res/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
 	LoadTexture("Res/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
@@ -70,6 +74,7 @@ void InitSearchGameScene()
 
 	InitSearchGameObject();
 	InitGameRoomPlayer();
+	InitBoyish();
 	InitSearchGameRobot();
 	InitTextBox();
 	InitMenu();

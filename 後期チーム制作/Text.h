@@ -16,9 +16,12 @@ struct Time
 	int tensecondscounter;
 	int oneminutecounter;
 	int tenminutecounter;
+	bool start;
 };
 
 extern TextBoxData textbox;
+
+extern Time time;
 
 void InitTextBox();
 
@@ -28,6 +31,8 @@ void InitTimeCounter();
 
 void DrawTime();
 
+
+void DrawTxt();
 #endif
 
 

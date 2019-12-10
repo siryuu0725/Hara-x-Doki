@@ -30,6 +30,8 @@ void InitArea();
 
 void DrawMovieBg();
 
+void DrawSearch2Bg();
+
 void DrawTundereBg();
 
 void DrawYuruhuwaBg();

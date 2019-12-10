@@ -105,6 +105,9 @@
     <ClCompile Include="Yuruhuwa.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="JK.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -184,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="Yuruhuwa.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="JK.h">
+      <Filter>object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

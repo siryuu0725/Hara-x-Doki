@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "Player.h"
 #include "Bg.h"
+#include "Text.h"
 
 void InitMovieScene();
 
@@ -44,6 +45,7 @@ void InitMovieScene()
 	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_MOVIE, MovieCategoryTextureList::MoviePlayerTex);
 	InitMovieBg();
 	InitMoviePlayer();
+	
 	ChangeSceneStep(SceneStep::MainStep);
 }
 

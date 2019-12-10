@@ -51,6 +51,7 @@ void DrawSearchScene()
 	//DrawTexture()
 	DrawMenu();
 	DrawTime();
+	DrawTxt();
 }
 
 void InitSearchScene()
@@ -78,6 +79,8 @@ void MainSearchScene()
 	}
 
 	HitSearchObject();
+
+	HitEyeSearchObject();
 
 	UpDataPlayerPos();
 

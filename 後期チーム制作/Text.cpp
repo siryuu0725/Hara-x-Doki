@@ -7,6 +7,7 @@
 #include "Item.h"
 #include "Menu.h"
 #include <stdio.h>
+#include<stdlib.h>
 
 #define TEXTBOX_POS_X 0
 #define TEXTBOX_POS_Y 680
@@ -65,38 +66,67 @@ void DrawTextBox()
 
 void InitTimeCounter()
 {
-	time.timecounter = 0;
-	time.onesecondscounter = 0;
-	time.tensecondscounter = 0;
-	time.oneminutecounter = 5;
-	time.tenminutecounter = 0;
+	if (time.start == false)
+	{
+		time.timecounter = 0;
+		time.onesecondscounter = 0;
+		time.tensecondscounter = 0;
+		time.oneminutecounter = 5;
+		time.tenminutecounter = 0;
+	}
+	
 }
 
 
 void DrawTime()
 {
-	time.timecounter++;
-	if (time.timecounter == 60)
+	if (time.start == true)
 	{
-		time.onesecondscounter--;
-		time.timecounter = 0;
-	}
-	if (time.onesecondscounter == 0)
-	{
-		time.onesecondscounter = 10;
-		time.tensecondscounter--;
-	}
-	if (time.tensecondscounter == 0)
-	{
-		time.tensecondscounter = 10;
-		time.oneminutecounter--;
-	}
-	if (time.oneminutecounter == 0)
-	{
-		time.oneminutecounter = 0;
-	}
+		time.timecounter++;
+		if (time.timecounter == 60)
+		{
+			time.onesecondscounter--;
+			time.timecounter = 0;
+		}
+		if (time.onesecondscounter == -1)
+		{
+			time.onesecondscounter = 9;
+			time.tensecondscounter--;
+		}
+		if (time.tensecondscounter == -1)
+		{
+			time.tensecondscounter = 9;
+			time.oneminutecounter--;
+		}
+		if (time.oneminutecounter == -1)
+		{
+			time.oneminutecounter = 0;
+		}
 
-	sprintf(time.timefont, "Žc‚èŽžŠÔ %d:%d%d", time.oneminutecounter, time.tensecondscounter, time.onesecondscounter);
+		sprintf(time.timefont, "Žc‚èŽžŠÔ %d:%d%d", time.oneminutecounter, time.tensecondscounter, time.onesecondscounter);
 
-	DrawFont(1500, 0, time.timefont, FontSize::Regular, FontColor::Red);
+		DrawFont(1500, 0, time.timefont, FontSize::Regular, FontColor::Red);
+	}
+	
+}
+
+void DrawTxt()
+{
+	FILE* fp;
+	char mozi[256];
+
+	fopen_s(&fp,"Res/test.txt", "r");
+
+	if (fp != NULL)
+	{
+		while (fgets(mozi, 256, fp) != NULL)
+		{
+			
+			if (mozi[256] != '\n')
+			{
+				DrawFont(100.0f, 500.0f, mozi, FontSize::Regular, FontColor::Red);
+			}
+		}
+		fclose(fp);
+	}
 }
