@@ -126,6 +126,8 @@ enum SearchGameCategoryTextureList
 {
 	SearchGameBgTex,             //!< 背景
 	SearchGamePlayerTex,         //!< プレイヤー
+	SearchGameTalkRobotTex,          //!< ロボット(未完成)
+
 	SearchGameRobotTex,          //!< ロボット(未完成)
 	SearchGameCompleteRobotTex,  //!< ロボット(完成)
 	BoyishTex,            //プレイヤー

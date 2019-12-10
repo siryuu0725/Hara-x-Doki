@@ -9,8 +9,7 @@
 #include <stdio.h>
 #include<stdlib.h>
 
-#define TEXTBOX_POS_X 0
-#define TEXTBOX_POS_Y 680
+
 
 TextBoxData textbox;
 Time time;

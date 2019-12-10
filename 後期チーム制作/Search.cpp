@@ -10,7 +10,6 @@
 #include "Menu.h"
 #include "Text.h"
 #include "Robot.h"
-#include "Maid.h"
 
 extern SearchPlayerData serachplayer;
 extern TextBoxData textbox;
@@ -64,6 +63,8 @@ void InitSearchScene()
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/キャラ/メイド_ちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex);
 	LoadTexture("Res/キャラ/メイド_立ち絵.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex);
+	LoadTexture("Res/探索ゲーム/鍵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex);
+
 	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
 	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
@@ -73,7 +74,7 @@ void InitSearchScene()
 	InitArea();
 	InitSearchPlayer();
 	InitMaidRobot();
-	InitMaid();
+	InitTextBox();
 	InitMenu();
 	InitTimeCounter();
 

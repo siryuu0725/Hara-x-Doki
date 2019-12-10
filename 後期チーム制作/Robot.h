@@ -10,6 +10,7 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
+	bool talk;
 
 }MaidRobotData;
 
@@ -17,6 +18,7 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
+	bool talk;
 	
 }SearchGameRobotData;
 
@@ -25,6 +27,7 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
+	bool talk;
 
 }PuzzleGameRobotData;
 
@@ -32,6 +35,7 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
+	bool talk;
 
 }MysteryGameRobotData;
 
@@ -74,6 +78,8 @@ void DrawPuzzleGameRobot();
 
 void DrawMysteryGameRobot();
 
-
 void DrawSuprised();
+
+void DrawTalkMaid();
+
 #endif

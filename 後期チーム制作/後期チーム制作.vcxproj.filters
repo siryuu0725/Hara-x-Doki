@@ -108,9 +108,6 @@
     <ClCompile Include="JK.cpp">
       <Filter>object</Filter>
     </ClCompile>
-    <ClCompile Include="Maid.cpp">
-      <Filter>object</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -192,9 +189,6 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="JK.h">
-      <Filter>object</Filter>
-    </ClInclude>
-    <ClInclude Include="Maid.h">
       <Filter>object</Filter>
     </ClInclude>
   </ItemGroup>

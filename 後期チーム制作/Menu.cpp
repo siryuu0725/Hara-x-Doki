@@ -37,7 +37,11 @@ void DrawMenu()
 		{
 			//DrawTexture(320.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRobotPartTex);
 		}
-		if (getitem.itemkey == true || getitem.doorkey == true)
+		if (getitem.itemkey == true)
+		{
+			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
+		}
+		if ( getitem.doorkey == true)
 		{
 			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
 		}

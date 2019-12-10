@@ -137,7 +137,6 @@
     <ClCompile Include="Hit.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="JK.cpp" />
-    <ClCompile Include="Maid.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Movie.cpp" />
     <ClCompile Include="GameClear.cpp" />
@@ -168,7 +167,6 @@
     <ClInclude Include="Hit.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="JK.h" />
-    <ClInclude Include="Maid.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="GameClear.h" />

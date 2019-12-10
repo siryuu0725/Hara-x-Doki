@@ -7,7 +7,6 @@
 #include "Input.h"
 #include "Text.h"
 #include "JK.h"
-#include "Maid.h"
 
 SearchTouchObject searchobject;
 SearchGameTouchObject searchgameobject;
@@ -34,6 +33,8 @@ void InitSearchGameObject()
 	getitem.itemkey = false;
 	getitem.itemenergy = false;
 	getitem.itemlight = false;
+	getitem.doorkey = false;
+	getitem.breakdoorkey = false;
 }
 
 void InitYuruhuwaRoomObject()
@@ -617,6 +618,7 @@ void HitEyeSearchObject()
 	}
 	else
 	{
+		searchobject.maid = false;
 		searchplayer.eyehit = false;
 	}
 }

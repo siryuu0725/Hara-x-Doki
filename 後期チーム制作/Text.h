@@ -1,6 +1,9 @@
 #ifndef TEXT_H_
 #define TEXT_H_
 
+#define TEXTBOX_POS_X 0
+#define TEXTBOX_POS_Y 680
+
 typedef struct
 {
 	float pos_x;
