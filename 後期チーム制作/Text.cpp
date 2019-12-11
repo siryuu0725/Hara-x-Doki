@@ -44,7 +44,7 @@ void InitTimeCounter()
 		time.timecounter = 0;
 		time.onesecondscounter = 0;
 		time.tensecondscounter = 0;
-		time.oneminutecounter = 1;
+		time.oneminutecounter = 5;
 		time.tenminutecounter = 0;
 		time.end = false;
 	}
@@ -69,7 +69,7 @@ void DrawTime()
 		}
 		if (time.tensecondscounter == -1)
 		{
-			time.tensecondscounter = 1;
+			time.tensecondscounter = 5;
 			time.oneminutecounter--;
 		}
 		if (time.oneminutecounter == -1)

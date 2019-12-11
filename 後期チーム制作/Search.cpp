@@ -121,7 +121,7 @@ void MainSearchScene()
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 1000.0f && boyish.clear == true)
+	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f && boyish.clear == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
