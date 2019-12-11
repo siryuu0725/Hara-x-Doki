@@ -10,6 +10,7 @@
 #include "Menu.h"
 #include "Text.h"
 #include "Item.h"
+#include "JK.h"
 
 extern TextBoxData textbox;
 extern MenuData menu;
@@ -44,6 +45,7 @@ void DrawSearch2Scene()
 {
 	DrawSearchBg();
 	DrawSearchPlayer();
+	DrawBoyish();
 	DrawMenu();
 	DrawTime();
 }
@@ -52,13 +54,17 @@ void InitSearch2Scene()
 {
 
 	LoadSearch2FurnitureTex();
+	LoadSearchGameItem();
 
 	LoadTexture("Res/廊下_修正.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
+	
+    LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
+	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
+	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
 	InitSearch2Player();
+	InitBoyish();
 	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);
 }
@@ -84,23 +90,41 @@ void MainSearch2Scene()
 	}
 
 	//キャラの幅+20程判定を大きくしている
-	if (HitNextArea(1430.0f, 1550.0f,440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	if (HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
 	{
 		areadata.searcharea2 = false;
 		areadata.searchgamearea = true;
+		getitem.breakdoorkey = true;
+
+		getitem.tunderedoorkey = false;
+		getitem.yuruhuwadoorkey = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
 	{
 		areadata.searcharea2 = false;
 		areadata.searchtunderearea = true;
+		getitem.breakdoorkey = true;
+		if (boyish.clear != true)
+		{
+			getitem.boyishdoorkey = false;
+			getitem.yuruhuwadoorkey = false;
+		}
+	
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
-	if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
 	{
 		areadata.searcharea2 = false;
 		areadata.searchyuruhuwaarea = true;
+		getitem.breakdoorkey = true;
+		if (boyish.clear != true)
+		{
+			getitem.boyishdoorkey = false;
+			getitem.tunderedoorkey = false;
+		}
+		
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 

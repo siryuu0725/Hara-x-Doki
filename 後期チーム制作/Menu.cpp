@@ -29,7 +29,7 @@ void DrawMenu()
 	{
 		DrawTexture(menu.pos_x, menu.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex));
 
-		if (getitem.itemrobot == true)
+		if (getitem.itemrobot == true && searchgameobject.completerobot != true)
 		{
 			DrawTexture(60.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRobotPartTex));
 		}
@@ -41,7 +41,7 @@ void DrawMenu()
 		{
 			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
 		}
-		if ( getitem.doorkey == true)
+		if (getitem.boyishdoorkey == true && getitem.tunderedoorkey == true && getitem.yuruhuwadoorkey == true)
 		{
 			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
 		}

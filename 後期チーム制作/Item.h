@@ -18,6 +18,7 @@ typedef struct
 	bool completerobot; //ロボ完成形
 	bool light;         //ライト
 
+
 	bool desk;          //机
 	bool chair;         //椅子
 	bool doll;          //人形
@@ -43,6 +44,21 @@ typedef struct
 
 }YuruhuwaTouchObject;
 
+typedef struct
+{
+	bool robot;         //ロボ
+
+	bool light;         //ライト
+	bool desk;          //机
+	bool chair;         //椅子
+	bool doll;          //人形
+	bool bed;           //ベッド
+	bool flowerpot;     //植木鉢
+	bool closet;        //クローゼット
+	bool bookshelf;     //本棚
+
+}TundereTouchObject;
+
 
 typedef struct
 {
@@ -50,7 +66,9 @@ typedef struct
 	bool itemkey;     //鍵
 	bool itemenergy;  //電池
 	bool itemlight;   //ライト
-	bool doorkey;
+	bool boyishdoorkey;
+	bool yuruhuwadoorkey;
+	bool tunderedoorkey;
 	bool breakdoorkey;
 
 }GetItem;
@@ -61,11 +79,15 @@ extern SearchGameTouchObject searchgameobject;
 
 extern YuruhuwaTouchObject yuruhuwaobject;
 
+extern TundereTouchObject tundereobject;
+
 extern GetItem getitem;
 
 
 
 void InitSearchGameObject();
+
+void InitTundereRoomObject();
 
 void InitYuruhuwaRoomObject();
 
@@ -97,7 +119,6 @@ void HitTundereRoomObject();
 void HitYuruhuwaRoomObject();
 
 void HitCriminalRoomObject();
-
 
 /*
 　　探索ゲームでのオブジェクトとのあたり判定

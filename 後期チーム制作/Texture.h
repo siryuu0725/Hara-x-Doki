@@ -94,6 +94,7 @@ enum TundereRoomCategoryTextureList
 {
 	TundereRoomBgTex,				//!< 背景
 	TundereRobotTex,          //!< ロボット
+	TundereTalkRobotTex,          //!< ロボット(未完成)
 	TundereWindow,
 	TundereFlowerpot,
 	TundereCloset,
@@ -110,6 +111,7 @@ enum YuruhuwaRoomCategoryTextureList
 {
 	YuruhuwaRoomBgTex,				//!< 背景
 	YuruhuwaRobotTex,          //!< ロボット
+	YuruhuwaTalkRobotTex,          //!< ロボット(未完成)
 	YuruhuwaWindow,
 	YuruhuwaClock,
 	YuruhuwaCloset,
@@ -126,11 +128,11 @@ enum SearchGameCategoryTextureList
 {
 	SearchGameBgTex,             //!< 背景
 	SearchGamePlayerTex,         //!< プレイヤー
-	SearchGameTalkRobotTex,          //!< ロボット(未完成)
+	SearchGameTalkRobotTex,      //!< ロボット
 
 	SearchGameRobotTex,          //!< ロボット(未完成)
 	SearchGameCompleteRobotTex,  //!< ロボット(完成)
-	BoyishTex,            //プレイヤー
+	SearchGameBoyishTex,            //プレイヤー
 
 	SearchGameRobotNeckTex,      //!< ロボットの首
 	SearchGameSurprisedTex,      //!< ビックリマーク
@@ -173,6 +175,8 @@ enum GameClearCategoryTextureList
 enum GameOverCategoryTextureList
 {
 	GameOverBgTex,			//!< 背景
+	GameOverLogoTex,			//!< 背景
+
 	GameOverTextureMax,		//!< リスト最大数
 };
 

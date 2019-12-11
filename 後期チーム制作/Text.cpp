@@ -13,8 +13,6 @@
 
 TextBoxData textbox;
 Time time;
-extern SearchGameRobotData searchgamerobot;
-extern SearchPlayerData searchplayer;
 void InitTextBox()
 {
 	textbox.pos_x = TEXTBOX_POS_X;
@@ -46,8 +44,9 @@ void InitTimeCounter()
 		time.timecounter = 0;
 		time.onesecondscounter = 0;
 		time.tensecondscounter = 0;
-		time.oneminutecounter = 5;
+		time.oneminutecounter = 1;
 		time.tenminutecounter = 0;
+		time.end = false;
 	}
 	
 }
@@ -70,12 +69,12 @@ void DrawTime()
 		}
 		if (time.tensecondscounter == -1)
 		{
-			time.tensecondscounter = 5;
+			time.tensecondscounter = 1;
 			time.oneminutecounter--;
 		}
 		if (time.oneminutecounter == -1)
 		{
-			time.oneminutecounter = 0;
+			time.end = true;
 		}
 
 		sprintf(time.timefont, "Žc‚èŽžŠÔ %d:%d%d", time.oneminutecounter, time.tensecondscounter, time.onesecondscounter);

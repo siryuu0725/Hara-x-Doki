@@ -11,13 +11,12 @@
 SearchTouchObject searchobject;
 SearchGameTouchObject searchgameobject;
 YuruhuwaTouchObject yuruhuwaobject;
+TundereTouchObject tundereobject;
 GetItem getitem;
 
 void InitSearchGameObject()
 {
 	searchgameobject.robot = false;
-	searchgameobject.robotneck = false;
-	searchgameobject.completerobot = false;
 	searchgameobject.light = false;
 
 
@@ -29,12 +28,20 @@ void InitSearchGameObject()
 	searchgameobject.closet = false;
 	searchgameobject.bookshelf = false;
 
-	getitem.itemrobot = false;
+	/*getitem.itemrobot = false;
 	getitem.itemkey = false;
 	getitem.itemenergy = false;
-	getitem.itemlight = false;
-	getitem.doorkey = false;
-	getitem.breakdoorkey = false;
+	getitem.itemlight = false;*/
+
+	/*getitem.boyishdoorkey = false;
+	getitem.tunderedoorkey = false;
+	getitem.yuruhuwadoorkey = false;
+	getitem.breakdoorkey = false;*/
+}
+
+void InitTundereRoomObject()
+{
+	tundereobject.robot = false;
 }
 
 void InitYuruhuwaRoomObject()
@@ -44,7 +51,7 @@ void InitYuruhuwaRoomObject()
 
 void DrawRobotNeck()
 {
-	if (searchgameobject.robotneck == false)
+	if (searchgameobject.robotneck == false && searchgameobject.completerobot != true)
 	{
 		DrawTexture(700.0f, 500.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex));
 	}
@@ -631,6 +638,7 @@ void HitEyeSearchGameObject()
 	{
 		searchgameobject.robot = true;
 	}
+	//ボーイッシュ
 	else if (HitPlayerEyeObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 62.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		boyish.talk = true;
@@ -700,6 +708,7 @@ void HitEyeSearchGameObject()
 	else
 	{
 		searchgameobject.robot = false;
+		//searchgameobject.robotneck = false;
 		
 		searchgameobject.light = false;
 		searchgameobject.closet = false;
@@ -720,7 +729,7 @@ void HitEyeTundereRoomObject()
 	if (HitPlayerEyeObject(mysterygamerobot.pos_x + 20.0f, mysterygamerobot.pos_y + 64.0f, mysterygamerobot.width - 30.0f, mysterygamerobot.height - 62.0f) == true
 	    &&GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		tundereobject.robot = true;
 	}
 	//ベッド
 	else if (HitPlayerEyeObject(465.0f, 865.0f, 265.0f, 146.0f) == true && GetKeyDown(SPACE_KEY) == true)
@@ -769,6 +778,7 @@ void HitEyeTundereRoomObject()
 	}
 	else
 	{
+		tundereobject.robot = false;
 		searchplayer.eyehit = false;
 	}
 }
@@ -838,6 +848,7 @@ void HitEyeYuruhuwaRoomObject()
 	}
 	else
 	{
+		yuruhuwaobject.robot = false;
 		searchplayer.eyehit = false;
 	}
 }
@@ -953,9 +964,13 @@ void UpDataSearchGame()
 
 	if (searchgameobject.robot == true && getitem.itemenergy == true)
 	{
+		boyish.clear = true;
 		searchgameobject.completerobot = true;
 		getitem.itemrobot = false;
 		getitem.itemenergy = false;
+		getitem.boyishdoorkey = true;
+		getitem.yuruhuwadoorkey = true;
+		getitem.tunderedoorkey = true;
 	}
 	
 }

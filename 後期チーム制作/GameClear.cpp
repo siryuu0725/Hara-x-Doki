@@ -1,6 +1,7 @@
 #include "Graphics.h"
 #include "Texture.h"
 #include "GameClear.h"
+#include "Input.h"
 
 // ゲームクリアシーンの初期化
 void InitGameClearScene();
@@ -41,7 +42,10 @@ void InitGameClearScene()
 void MainGameClearScene()
 {
 	
-	ChangeSceneStep(SceneStep::EndStep);
+	if (GetKeyDown(SPACE_KEY) == true)
+	{
+		ChangeSceneStep(SceneStep::EndStep);
+	}
 	
 }
 

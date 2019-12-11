@@ -58,6 +58,7 @@ extern SurprisedData surprised;
 
 void InitRobot();
 
+#pragma region ロボット初期化
 void InitMaidRobot();
 
 void InitSearchGameRobot();
@@ -65,11 +66,13 @@ void InitSearchGameRobot();
 void InitPuzzleGameRobot();
 
 void InitMysteryGameRobot();
+#pragma endregion
 
 void InitSuprised();
 
 void DrawRobot();
 
+#pragma region ロボット描画
 void DrawMaidRobot();
 
 void DrawSearchGameRobot();
@@ -77,9 +80,20 @@ void DrawSearchGameRobot();
 void DrawPuzzleGameRobot();
 
 void DrawMysteryGameRobot();
+#pragma endregion
+
 
 void DrawSuprised();
 
+#pragma region 会話描画
 void DrawTalkMaid();
+
+void DrawTalkSearchGameRobot();
+
+void DrawTalkPuzzleGameRobot();
+
+void DrawTalkMysteryGameRobot();
+#pragma endregion
+
 
 #endif

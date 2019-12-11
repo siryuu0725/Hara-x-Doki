@@ -20,6 +20,7 @@ struct Time
 	int oneminutecounter;
 	int tenminutecounter;
 	bool start;
+	bool end;
 };
 
 extern TextBoxData textbox;

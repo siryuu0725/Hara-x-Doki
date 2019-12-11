@@ -30,19 +30,21 @@ SceneId UpdateGameOverScene()
 
 void DrawGameOverScene()
 {
-	//DrawTexture(0, 0, GetTexture(TEXTURE_GAME_OVER, GameOverCategoryTextureList::GameOverBgTex));
+	DrawTexture(200.0f, 200.0f, GetTexture(TEXTURE_GAME_OVER, GameOverCategoryTextureList::GameOverLogoTex));
 }
 
 void InitGameOverScene()
 {
-	//LoadTexture("Res/GameOverBg.png", TEXTURE_GAME_OVER, GameOverCategoryTextureList::GameOverBgTex);
+	LoadTexture("Res/UI/ゲームオーバー.png", TEXTURE_GAME_OVER, GameOverCategoryTextureList::GameOverLogoTex);
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainGameOverScene()
 {
-	
+	if (GetKeyDown(SPACE_KEY) == true)
+	{
 		ChangeSceneStep(SceneStep::EndStep);
+	}
 }
 
 SceneId FinishGameOverScene()

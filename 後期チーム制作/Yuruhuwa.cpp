@@ -44,21 +44,25 @@ void DrawYuruhuwaRoomScene()
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	DrawTextBox();
-	DrawMenu();
+	//DrawMenu();
 	DrawTime();
+	DrawTalkPuzzleGameRobot();
 }
 
 void InitYuruhuwaRoomScene()
 {
 	LoadYuruhuwaFurnitureTex();
+	LoadSearchGameItem();
 
 
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
-	LoadTexture("Res/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
-	LoadTexture("Res/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
-	LoadTexture("Res/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
+	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex);
+
+	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
+	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
+	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
+	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
@@ -91,10 +95,10 @@ void MainYuruhuwaRoomScene()
 		areadata.cangearea2 = 3;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (yuruhuwaobject.robot == true)
+	/*if (yuruhuwaobject.robot == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
-	}
+	}*/
 	
 }
 
@@ -102,7 +106,7 @@ SceneId FinishYuruhuwaRoomScene()
 {
 	ReleaseCategoryTexture(TEXTURE_YURUHUWA_ROOM);
 
-	if (yuruhuwaobject.robot = true)
+	if (yuruhuwaobject.robot == true)
 	{
 		return SceneId::PuzzleGameScene;
 	}

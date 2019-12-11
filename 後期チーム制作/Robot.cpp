@@ -24,6 +24,7 @@ void InitRobot()
 	robot.pos_y = 200.0f;
 }
 
+#pragma region ロボット初期化
 void InitMaidRobot()
 {
 	maidrobot.pos_x = 920.0f;
@@ -61,6 +62,7 @@ void InitMysteryGameRobot()
 	mysterygamerobot.talk = false;
 
 }
+#pragma endregion
 
 void InitSuprised()
 {
@@ -73,17 +75,18 @@ void DrawRobot()
 	DrawTexture(robot.pos_x, robot.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex));
 }
 
-void DrawMaidRobot()
-{
-	DrawTexture(maidrobot.pos_x, maidrobot.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex));
-}
-
 void DrawSuprised()
 {
 	if (backplayer.pos_x >= robot.pos_x - ROBOTSIZE && backplayer.pos_x <= robot.pos_x + ROBOTSIZE && backplayer.pos_y >= robot.pos_y - ROBOTSIZE && backplayer.pos_y <= robot.pos_y + ROBOTSIZE)
 	{
 		DrawTexture(surprised.pos_x, surprised.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex));
 	}
+}
+
+#pragma region ロボット描画
+void DrawMaidRobot()
+{
+	DrawTexture(maidrobot.pos_x, maidrobot.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex));
 }
 
 void DrawSearchGameRobot()
@@ -107,7 +110,9 @@ void DrawMysteryGameRobot()
 {
 	DrawTexture(mysterygamerobot.pos_x, mysterygamerobot.pos_y, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRobotTex));
 }
+#pragma endregion
 
+#pragma region 会話関数
 void DrawTalkMaid()
 {
 	if (searchobject.maid == true && maidrobot.talk == false)
@@ -118,10 +123,16 @@ void DrawTalkMaid()
 	else if (GetKeyDown(SPACE_KEY) == true && maidrobot.talk == true)
 	{
 		maidrobot.talk = false;
+
+		//会話が終わると同時に時間制限スタート
 		time.start = true;
+		
+		//ドアを開けるためのカギをもらう
 		if (getitem.breakdoorkey == false)
 		{
-			getitem.doorkey = true;
+			getitem.boyishdoorkey = true;
+			getitem.tunderedoorkey = true;
+			getitem.yuruhuwadoorkey = true;
 		}
 	}
 	if (maidrobot.talk == true)
@@ -133,7 +144,7 @@ void DrawTalkMaid()
 
 void DrawTalkSearchGameRobot()
 {
-	if (searchgameobject.robot = true && searchgamerobot.talk == false)
+	if (searchgameobject.robot == true && searchgamerobot.talk == false)
 	{
 		searchgamerobot.talk = true;
 
@@ -148,3 +159,40 @@ void DrawTalkSearchGameRobot()
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 	}
 }
+
+void DrawTalkPuzzleGameRobot()
+{
+	if (yuruhuwaobject.robot == true && puzzlegamerobot.talk == false)
+	{
+		puzzlegamerobot.talk = true;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && puzzlegamerobot.talk == true)
+	{
+		puzzlegamerobot.talk = false;
+	}
+	if (puzzlegamerobot.talk == true)
+	{
+		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+	}
+}
+
+void DrawTalkMysteryGameRobot()
+{
+	if (tundereobject.robot == true && mysterygamerobot.talk == false)
+	{
+		mysterygamerobot.talk = true;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && mysterygamerobot.talk == true)
+	{
+		mysterygamerobot.talk = false;
+	}
+	if (mysterygamerobot.talk == true)
+	{
+		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+	}
+}
+#pragma endregion

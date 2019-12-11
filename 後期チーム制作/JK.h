@@ -9,6 +9,7 @@ typedef struct
 	float height;
 
 	bool talk;
+	bool clear;
 }Boyish;
 
 
