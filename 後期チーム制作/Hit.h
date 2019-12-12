@@ -2,6 +2,9 @@
 #define HIT_
 #include "Puzzle.h"
 
+bool HitChoiseTitle(float x, float y, float width, float height);
+
+
 #pragma region 探索パート
 /*
      部屋(エリア)移動を行うときの移動判定

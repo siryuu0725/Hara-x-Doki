@@ -3,15 +3,9 @@
 #include "Texture.h"
 #include "Title.h"
 #include "Window.h"
+#include "Hit.h"
+#include "Bg.h"
 
-#define START_X 710 // 始めるのX座標
-#define START_X_SIZE 600 // 始めるのX座標のサイズ
-#define START_Y 700 // 始めるのY座標
-#define START_Y_SIZE 150 // 始めるのY座標のサイズ
-#define END_X 710 // 終わるのX座標
-#define END_X_SIZE 600 // 終わるのX座標のサイズ
-#define END_Y 900 // 終わるのY座標
-#define END_Y_SIZE 150 // 終わるのY座標のサイズ
 
 // タイトルシーンの初期化
 void InitTitleScene();
@@ -40,36 +34,50 @@ SceneId UpdateTitleScene()
 
 void DrawTitleScene()
 {
-	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex));
-	DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
-	DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
+	DrawTitleBg();
 }
+
 
 void InitTitleScene()
 {
 	LoadTexture("Res/TitleBg.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex);
-	LoadTexture("Res/Start.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex);
-	LoadTexture("Res/End.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex);
+	LoadTexture("Res/UI/はじめる.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex);
+	LoadTexture("Res/UI/おわる.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex);
+	LoadTexture("Res/UI/はじめる02.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStartChoiceTex);
+	LoadTexture("Res/UI/おわる02.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEndChoiceTex);
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainTitleScene()
 {
-	// 始めるとマウスの当たり判定
-	if (GetMousePos().X >= START_X && GetMousePos().X <= START_X + START_X_SIZE &&
-		GetMousePos().Y >= START_Y && GetMousePos().Y <= START_Y + START_Y_SIZE &&
-		OnMouseDown(Left) == true)
+
+	if (HitChoiseTitle(START_X, START_Y, START_X_SIZE, START_Y_SIZE) == true
+		&& OnMouseDown(Left) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
-	// 終わるとマウスの当たり判定
-	if (GetMousePos().X >= END_X && GetMousePos().X <= END_X + END_X_SIZE &&
-		GetMousePos().Y >= END_Y && GetMousePos().Y <= END_Y + END_Y_SIZE &&
-		OnMouseDown(Left) == true)
+	if (HitChoiseTitle(END_X, END_Y, END_X_SIZE, END_Y_SIZE) == true
+		&& OnMouseDown(Left) == true)
 	{
 		PostQuitMessage(0);
 	}
+
+	//// 始めるとマウスの当たり判定
+	//if (GetMousePos().X >= START_X && GetMousePos().X <= START_X + START_X_SIZE &&
+	//	GetMousePos().Y >= START_Y && GetMousePos().Y <= START_Y + START_Y_SIZE &&
+	//	OnMouseDown(Left) == true)
+	//{
+	//	ChangeSceneStep(SceneStep::EndStep);
+	//}
+
+	//// 終わるとマウスの当たり判定
+	//if (GetMousePos().X >= END_X && GetMousePos().X <= END_X + END_X_SIZE &&
+	//	GetMousePos().Y >= END_Y && GetMousePos().Y <= END_Y + END_Y_SIZE &&
+	//	OnMouseDown(Left) == true)
+	//{
+	//	PostQuitMessage(0);
+	//}
 }
 
 SceneId FinishTitleScene()

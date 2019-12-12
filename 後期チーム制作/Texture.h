@@ -27,6 +27,8 @@ enum TitleCategoryTextureList
 	TitleBgTex,				//!< 背景
 	TitleStartTex,          //!< 始める
 	TitleEndTex,            //!< 終わる
+	TitleStartChoiceTex,          //!< 始めるを選んでるとき
+	TitleEndChoiceTex,            //!< 終わるを選んでるとき
 	TitleTextureMax			//!< リスト最大数
 };
 

@@ -3,6 +3,13 @@
 
 typedef struct
 {
+	bool choicestart;
+	bool choiceend;
+
+}TitleBgData;
+
+typedef struct
+{
 	float Tu, Tv;     //ムービー背景のTu,Tv
 	float movespeed;  //ムービー背景の移動スピード
 	int stopcount;    //背景の空き家を見せるときの止めている時間
@@ -22,11 +29,15 @@ typedef struct
 }SearchAreaData;
 
 extern SearchAreaData areadata;
+
+extern TitleBgData titlebg;
 	
 void InitMovieBg();
 
 //エリア移動フラグの初期化
 void InitArea();
+
+void DrawTitleBg();
 
 void DrawMovieBg();
 

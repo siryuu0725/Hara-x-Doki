@@ -79,7 +79,7 @@ void InitSearchScene()
 	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 	LoadTexture("Res/家具/観葉植物B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot);
 	LoadTexture("Res/家具/コート掛け.png", TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger);
-
+	//boyish.clear = true;
 	InitBoyish();
 	InitArea();
 	InitSearchPlayer();

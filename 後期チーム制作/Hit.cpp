@@ -2,6 +2,19 @@
 #include "Puzzle.h"
 #include <math.h>
 #include "Player.h"
+#include "Input.h"
+
+
+bool HitChoiseTitle(float x, float y, float width, float height)
+{
+	// 始めるとマウスの当たり判定
+	if (GetMousePos().X >= x && GetMousePos().X <= x + width &&
+		GetMousePos().Y >= y && GetMousePos().Y <= y + height)
+	{
+		return true;
+	}
+	return false;
+}
 
 
 bool HitNextArea(float left_x, float right_x, float up_y,float down_y)

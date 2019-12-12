@@ -2,12 +2,15 @@
 #include "Graphics.h"
 #include "Texture.h"
 #include "Player.h"
+#include "Title.h"
+#include "Hit.h"
 
 #define MOVIETEX_TU 0.0f
 #define MOVITEXE_TV 0.45f
 #define MOVIE_SPEED 0.001f
 #define MOVIE_STOP_TIME 120
 
+TitleBgData titlebg;
 MovieBgData bgdate;
 SearchAreaData areadata;
 extern MoviePlayerDate movieplayer;
@@ -28,6 +31,44 @@ void InitArea()
 	areadata.searchgamearea = 0;
 	areadata.searchtunderearea = false;
 	areadata.searchyuruhuwaarea = false;
+}
+
+void DrawTitleBg()
+{
+	DrawBgTexture(GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex));
+
+	if (HitChoiseTitle(START_X, START_Y, START_X_SIZE, START_Y_SIZE) == true)
+	{
+		titlebg.choicestart = true;
+	}
+	else if (HitChoiseTitle(END_X, END_Y, END_X_SIZE, END_Y_SIZE) == true)
+	{
+		titlebg.choiceend = true;
+	}
+	else
+	{
+		titlebg.choicestart = false;
+		titlebg.choiceend = false;
+	}
+
+
+	if (titlebg.choicestart == true)
+	{
+		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartChoiceTex));
+		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
+	}
+	if (titlebg.choiceend == true)
+	{
+		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
+		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndChoiceTex));
+		
+	}
+	else
+	{
+		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
+		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
+	}
+
 }
 
 void DrawMovieBg()

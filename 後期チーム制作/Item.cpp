@@ -225,6 +225,29 @@ void HitSearchObject()
 	}
 }
 
+void HitSearch2Object()
+{
+	//â‘ïr
+	if (HitPlayerObject(5.0f, 765.0f, 55.0f, 60.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	//â‘ïr2
+	else if (HitPlayerObject(5.0f, 765.0f, 55.0f, 60.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
+	else if (HitPlayerObject(5.0f, 530.0f, 55.0f, 60.0f) == true && boyish.clear == true)
+	{
+		searchplayer.hit = true;
+	}
+	else
+	{
+		searchplayer.hit = false;
+		searchplayer.eyehit = false;
+	}
+}
+
 void HitSearchGameObject()
 {
 	//âÊñ ç∂í[
