@@ -45,10 +45,15 @@ void DrawTitleBg()
 	{
 		titlebg.choiceend = true;
 	}
+	else if(HitChoiseTitle(LIST_X, LIST_Y, LIST_X_SIZE, LIST_Y_SIZE) == true)
+	{
+		titlebg.choicelist = true;
+	}
 	else
 	{
 		titlebg.choicestart = false;
 		titlebg.choiceend = false;
+		titlebg.choicelist = false;
 	}
 
 
@@ -56,17 +61,27 @@ void DrawTitleBg()
 	{
 		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartChoiceTex));
 		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
+		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex));
 	}
 	if (titlebg.choiceend == true)
 	{
 		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
 		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndChoiceTex));
+		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex));
 		
+	}
+	if (titlebg.choicelist == true)
+	{
+		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListChoiceTex));
+		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
+		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
+
 	}
 	else
 	{
 		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
 		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
+		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex));
 	}
 
 }

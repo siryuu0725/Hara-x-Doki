@@ -88,7 +88,7 @@ void InitSearch2Player()
 	else
 	{
 		searchplayer.pos_x = 1830.0f;
-		searchplayer.pos_y = 645.0f;
+		searchplayer.pos_y = 625.0f;
 		searchplayer.animetion_tu = 0.0f;
 		searchplayer.animetion_tv = 0.25f;
 	}
@@ -218,7 +218,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		searchplayer.animetion_tv = 0.25f;
 
 		searchplayer.eyepos_x = searchplayer.pos_x - 64.0f;
-		searchplayer.eyepos_y = searchplayer.pos_y + 16.0f;
+		searchplayer.eyepos_y = searchplayer.pos_y + 100.0f;
 
 		if (searchplayer.pos_x >= leftmax)
 		{
@@ -238,7 +238,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		searchplayer.animetion_tv = 0.75f;
 
 		searchplayer.eyepos_x = searchplayer.pos_x + 64.0f;
-		searchplayer.eyepos_y = searchplayer.pos_y + 16.0f;
+		searchplayer.eyepos_y = searchplayer.pos_y + 100.0f;
 
 		if (searchplayer.pos_x + 64.0f <= rightmax)
 		{

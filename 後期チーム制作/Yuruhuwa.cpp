@@ -40,8 +40,9 @@ void DrawYuruhuwaRoomScene()
 {
 	DrawSearchBg();
 	DrawPuzzleGameRobot();
+	DrawYuruhuwa();
+
 	DrawSearchPlayer();
-	DrawBoyish();
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	DrawTextBox();
@@ -70,7 +71,7 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	InitYuruhuwaRoomObject();
-	InitBoyish();
+	InitYuruhuwa();
 	InitGameRoomPlayer();
 	InitPuzzleGameRobot();
 	InitTextBox();

@@ -47,6 +47,7 @@ void DrawSearchScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
+	DrawYuruhuwa();
 	DrawMaidRobot();
 
 	DrawSearchPlayer();

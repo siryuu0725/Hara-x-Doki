@@ -77,9 +77,9 @@ void DrawTime()
 			time.end = true;
 		}
 
-		sprintf(time.timefont, "Žc‚èŽžŠÔ %d:%d%d", time.oneminutecounter, time.tensecondscounter, time.onesecondscounter);
+		sprintf(time.timefont, "%d:%d%d", time.oneminutecounter, time.tensecondscounter, time.onesecondscounter);
 
-		DrawFont(1500, 0, time.timefont, FontSize::Regular, FontColor::Red);
+		DrawFont(1780, 0, time.timefont, FontSize::Regular, FontColor::Red);
 	}
 	
 }

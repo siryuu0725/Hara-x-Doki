@@ -87,13 +87,13 @@ void LoadTundereFurnitureTex()
 void LoadYuruhuwaFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex);
-	LoadTexture("Res/家具/カーペット03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet);
+	LoadTexture("Res/家具/カーペット04.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet);
 	LoadTexture("Res/家具/窓.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow);
 	LoadTexture("Res/家具/ソファ02.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa);
 	LoadTexture("Res/家具/箪笥03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCloset);
 	LoadTexture("Res/家具/ライト.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight);
 	LoadTexture("Res/家具/ベッド.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaBed);
-	LoadTexture("Res/家具/テーブル03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk);
+	LoadTexture("Res/家具/テーブル02.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDesk);
 	LoadTexture("Res/家具/ぬいぐるみ03.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll);
 	LoadTexture("Res/家具/時計.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock);
 	LoadTexture("Res/家具/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
@@ -129,7 +129,7 @@ void LoadCriminalFurnitureTex()
 void HitSearchObject()
 {
 	//画面左端
-	if (HitPlayerObject(0.0f, 0.0f, 155.0f, 490.0f) == true)
+	if (HitPlayerObject(0.0f, 0.0f, 155.0f, 470.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -442,6 +442,11 @@ void HitYuruhuwaRoomObject()
 	{
 		searchplayer.hit = true;
 	}
+	//ゆるふわ
+	else if (HitPlayerObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//ベッド
 	else if (HitPlayerObject(475.0f, 745.0f, 145.0f, 255.0f) == true)
 	{
@@ -463,7 +468,7 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = true;
 	}
 	//椅子2
-	else if (HitPlayerObject(670.0f, 525.0f, 35.0f, 30.0f) == true)
+	else if (HitPlayerObject(680.0f, 525.0f, 25.0f, 30.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -473,12 +478,12 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = true;
 	}
 	//ソファ
-	else if (HitPlayerObject(1040.0f, 185.0f, 245.0f, 130.0f) == true)
+	else if (HitPlayerObject(1040.0f, 185.0f, 245.0f, 110.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//箪笥
-	else if (HitPlayerObject(870.0f, 70.0f, 125.0f, 245.0f) == true)
+	else if (HitPlayerObject(870.0f, 70.0f, 125.0f, 225.0f) == true)
 	{
 		searchplayer.hit = true;
 	}

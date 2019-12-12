@@ -5,6 +5,7 @@ typedef struct
 {
 	bool choicestart;
 	bool choiceend;
+	bool choicelist;
 
 }TitleBgData;
 

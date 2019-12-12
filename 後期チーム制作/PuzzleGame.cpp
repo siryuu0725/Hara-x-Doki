@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "Input.h"
 #include "JK.h"
+#include "Text.h"
 
 void InitPuzzleGameScene();
 
@@ -36,7 +37,7 @@ void DrawPuzzleGameScene()
 	DrawBgPuzzle();
 	DrawPuzzle();
 	
-
+	DrawTime();
 }
 
 void InitPuzzleGameScene()
@@ -61,7 +62,7 @@ void MainPuzzleGameScene()
 	}
 	if (OnMouseDown(Right) == true)
 	{
-		boyish.clear = true;
+		yuruhuwa.clear = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	

@@ -44,8 +44,10 @@ SceneId UpdateSearch2Scene()
 void DrawSearch2Scene()
 {
 	DrawSearchBg();
-	DrawSearchPlayer();
 	DrawBoyish();
+	DrawYuruhuwa();
+	DrawSearchPlayer();
+	
 	DrawMenu();
 	DrawTime();
 }
@@ -65,6 +67,7 @@ void InitSearch2Scene()
 
 	InitSearch2Player();
 	InitBoyish();
+	InitYuruhuwa();
 	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);
 }

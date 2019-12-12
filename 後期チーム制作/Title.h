@@ -4,12 +4,16 @@
 
 #define START_X 700 // 始めるのX座標
 #define START_X_SIZE 600 // 始めるのX座標のサイズ
-#define START_Y 700 // 始めるのY座標
+#define START_Y 650 // 始めるのY座標
 #define START_Y_SIZE 100 // 始めるのY座標のサイズ
 #define END_X 700 // 終わるのX座標
 #define END_X_SIZE 600 // 終わるのX座標のサイズ
-#define END_Y 900 // 終わるのY座標
+#define END_Y 800 // 終わるのY座標
 #define END_Y_SIZE 100 // 終わるのY座標のサイズ
+#define LIST_X 600 // 終わるのX座標
+#define LIST_X_SIZE 600 // 終わるのX座標のサイズ
+#define LIST_Y 950 // 終わるのY座標
+#define LIST_Y_SIZE 100 // 終わるのY座標のサイズ
 
 
 /**

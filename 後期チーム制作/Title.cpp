@@ -40,11 +40,15 @@ void DrawTitleScene()
 
 void InitTitleScene()
 {
-	LoadTexture("Res/TitleBg.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex);
+	LoadTexture("Res/タイトル.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex);
 	LoadTexture("Res/UI/はじめる.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex);
 	LoadTexture("Res/UI/おわる.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex);
+	LoadTexture("Res/UI/スチル.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex);
+
 	LoadTexture("Res/UI/はじめる02.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleStartChoiceTex);
 	LoadTexture("Res/UI/おわる02.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleEndChoiceTex);
+	LoadTexture("Res/UI/スチル02.png", TEXTURE_TITLE, TitleCategoryTextureList::TitleListChoiceTex);
+
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -62,22 +66,6 @@ void MainTitleScene()
 	{
 		PostQuitMessage(0);
 	}
-
-	//// 始めるとマウスの当たり判定
-	//if (GetMousePos().X >= START_X && GetMousePos().X <= START_X + START_X_SIZE &&
-	//	GetMousePos().Y >= START_Y && GetMousePos().Y <= START_Y + START_Y_SIZE &&
-	//	OnMouseDown(Left) == true)
-	//{
-	//	ChangeSceneStep(SceneStep::EndStep);
-	//}
-
-	//// 終わるとマウスの当たり判定
-	//if (GetMousePos().X >= END_X && GetMousePos().X <= END_X + END_X_SIZE &&
-	//	GetMousePos().Y >= END_Y && GetMousePos().Y <= END_Y + END_Y_SIZE &&
-	//	OnMouseDown(Left) == true)
-	//{
-	//	PostQuitMessage(0);
-	//}
 }
 
 SceneId FinishTitleScene()
