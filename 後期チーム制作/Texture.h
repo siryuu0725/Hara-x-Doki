@@ -117,6 +117,8 @@ enum YuruhuwaRoomCategoryTextureList
 	YuruhuwaRoomBgTex,				//!< ”wŒi
 	YuruhuwaRobotTex,          //!< ƒƒ{ƒbƒg
 	YuruhuwaTalkRobotTex,          //!< ƒƒ{ƒbƒg(–¢Š®¬)
+	YuruhuwaTalkTex,				//!< ”wŒi
+
 	YuruhuwaWindow,
 	YuruhuwaClock,
 	YuruhuwaCloset,

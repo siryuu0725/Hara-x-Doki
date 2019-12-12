@@ -35,6 +35,6 @@ void DrawBoyish();
 
 void DrawYuruhuwa();
 
-
+void DrawTalkYuruhuwa();
 #endif
 

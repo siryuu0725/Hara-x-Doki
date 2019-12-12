@@ -2,6 +2,10 @@
 #include "Graphics.h"
 #include "Texture.h"
 #include "Bg.h"
+#include "Robot.h"
+#include "Item.h"
+#include "Input.h"
+#include "Text.h"
 
 
 Boyish boyish;
@@ -80,8 +84,8 @@ void InitYuruhuwa()
 	}
 	if (areadata.searcharea1 == true && yuruhuwa.clear == true)
 	{
-		yuruhuwa.pos_x = 540.0f;
-		yuruhuwa.pos_y = 170.0f;
+		yuruhuwa.pos_x = 550.0f;
+		yuruhuwa.pos_y = 70.0f;
 		
 		yuruhuwa.tu = 0.0f;
 		yuruhuwa.tv = 0.0f;
@@ -132,5 +136,22 @@ void ClearSearchGame()
 	if (boyish.talk == true && boyish.clear == true)
 	{
 
+	}
+}
+
+void DrawTalkYuruhuwa()
+{
+	if (yuruhuwaobject.yuruhuwa == true && yuruhuwa.talk == false)
+	{
+		yuruhuwa.talk = true;
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && yuruhuwa.talk == true)
+	{
+		yuruhuwa.talk = false;
+	}
+	if (yuruhuwa.talk == true)
+	{
+		//DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 	}
 }

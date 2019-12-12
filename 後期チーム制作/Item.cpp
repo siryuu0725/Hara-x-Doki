@@ -819,6 +819,10 @@ void HitEyeYuruhuwaRoomObject()
 	{
 		yuruhuwaobject.robot = true;
 	}
+	else if (HitPlayerEyeObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		yuruhuwaobject.yuruhuwa = true;
+	}
 	//ƒxƒbƒh
 	else if (HitPlayerEyeObject(475.0f, 745.0f, 145.0f, 255.0f) == true)
 	{
@@ -877,6 +881,7 @@ void HitEyeYuruhuwaRoomObject()
 	else
 	{
 		yuruhuwaobject.robot = false;
+		yuruhuwaobject.yuruhuwa = false;
 		searchplayer.eyehit = false;
 	}
 }

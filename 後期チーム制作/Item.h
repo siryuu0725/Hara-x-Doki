@@ -32,6 +32,7 @@ typedef struct
 typedef struct
 {
 	bool robot;         //ƒƒ{
+	bool yuruhuwa;
 
 	bool light;         //ƒ‰ƒCƒg
 	bool desk;          //Š÷
