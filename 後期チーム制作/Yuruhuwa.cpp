@@ -9,6 +9,7 @@
 #include "Hit.h"
 #include "Text.h"
 #include "Yuruhuwa.h"
+#include "JK.h"
 
 // 犯人部屋シーンの初期化
 void InitYuruhuwaRoomScene();
@@ -40,7 +41,7 @@ void DrawYuruhuwaRoomScene()
 	DrawSearchBg();
 	DrawPuzzleGameRobot();
 	DrawSearchPlayer();
-	
+	DrawBoyish();
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	DrawTextBox();
@@ -58,6 +59,7 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex);
+	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
 
 	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
 	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
@@ -68,6 +70,7 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	InitYuruhuwaRoomObject();
+	InitBoyish();
 	InitGameRoomPlayer();
 	InitPuzzleGameRobot();
 	InitTextBox();
@@ -95,10 +98,10 @@ void MainYuruhuwaRoomScene()
 		areadata.cangearea2 = 3;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	/*if (yuruhuwaobject.robot == true)
+	if (yuruhuwaobject.robot == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
-	}*/
+	}
 	
 }
 

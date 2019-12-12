@@ -3,6 +3,7 @@
 #include "Graphics.h"
 #include "Texture.h"
 #include "Input.h"
+#include "JK.h"
 
 void InitPuzzleGameScene();
 
@@ -58,6 +59,11 @@ void MainPuzzleGameScene()
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
+	if (OnMouseDown(Right) == true)
+	{
+		boyish.clear = true;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
 	
 }
 
@@ -65,6 +71,6 @@ SceneId FinishPuzzleGameScene()
 {
 	ReleaseCategoryTexture(TEXTURE_PUZZLE);
 
-	return SceneId::GameClearScene;
+	return SceneId::YuruhuwaRoomScene;
 
 }

@@ -8,7 +8,7 @@ Boyish boyish;
 
 void InitBoyish()
 {
-	if (areadata.searchgamearea == true)
+	if (areadata.searchgamearea == true || areadata.searchyuruhuwaarea == true)
 	{
 		boyish.pos_x = 1040.0f;
 		boyish.pos_y = 180.0f;
@@ -51,7 +51,7 @@ void InitBoyish()
 
 void DrawBoyish()
 {
-	if (areadata.searchgamearea == true)
+	if (areadata.searchgamearea == true || areadata.searchyuruhuwaarea == true)
 	{
 		DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
 	}
