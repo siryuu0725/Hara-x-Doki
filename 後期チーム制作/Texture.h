@@ -4,21 +4,21 @@
 #include "Scene.h"
 
 //それぞれのテクスチャのカテゴリー
-#define TEXTURE_TITLE (SceneId::TitleScene)
-#define TEXTURE_SCENARIO (SceneId::ScenarioScene)
-#define TEXTURE_MOVIE (SceneId::MovieScene)	
-#define TEXTURE_SEARCH (SceneId::SearchScene)
-#define TEXTURE_SEARCH2 (SceneId::Search2Scene)
-#define TEXTURE_CRIMINAL_ROOM (SceneId::CriminalRoomScene)
-#define TEXTURE_TUNDERE_ROOM (SceneId::TundereRoomScene)
-#define TEXTURE_YURUHUWA_ROOM (SceneId::YuruhuwaRoomScene)
-#define TEXTURE_SEARCH_GAME (SceneId::SearchGameScene)
-#define TEXTURE_TALK (SceneId::TalkScene)
-#define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)
-#define TEXTURE_HELP (SceneId::HelpScene)				
-#define TEXTURE_GAME_OVER (SceneId::GameOverScene)	
-#define TEXTURE_GAME_CLEAR (SceneId::GameClearScene)	
-#define MAX_TEXTURE_ (SceneId::SceneIdMax)	//!< カテゴリー最大
+#define TEXTURE_TITLE (SceneId::TitleScene)                  //!<タイトルシーン
+#define TEXTURE_SCENARIO (SceneId::ScenarioScene)            //!<シナリオシーン
+#define TEXTURE_MOVIE (SceneId::MovieScene)	                 //!<ムービーシーン
+#define TEXTURE_SEARCH (SceneId::SearchScene)                //!<探索(大部屋)シーン
+#define TEXTURE_SEARCH2 (SceneId::Search2Scene)              //!<探索(廊下)シーン
+#define TEXTURE_CRIMINAL_ROOM (SceneId::CriminalRoomScene)   //!<犯人部屋シーン
+#define TEXTURE_TUNDERE_ROOM (SceneId::TundereRoomScene)     //!<ツンデレ部屋シーン
+#define TEXTURE_YURUHUWA_ROOM (SceneId::YuruhuwaRoomScene)   //!<ゆるふわ部屋シーン
+#define TEXTURE_SEARCH_GAME (SceneId::SearchGameScene)       //!<探索ゲーム(ボーイッシュ部屋)シーン
+#define TEXTURE_TALK (SceneId::TalkScene)                    //!<
+#define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)            //!パズルゲーム<シーン
+#define TEXTURE_HELP (SceneId::HelpScene)				     //!<
+#define TEXTURE_GAME_OVER (SceneId::GameOverScene)	         //!<ゲームオーバーシーン
+#define TEXTURE_GAME_CLEAR (SceneId::GameClearScene)	     //!<ゲームクリアシーン
+#define MAX_TEXTURE_ (SceneId::SceneIdMax)	                 //!< カテゴリー最大
 
 
 
@@ -27,10 +27,10 @@ enum TitleCategoryTextureList
 	TitleBgTex,				//!< 背景
 	TitleStartTex,          //!< 始める
 	TitleEndTex,            //!< 終わる
-	TitleListTex,            //!< 終わる
-	TitleStartChoiceTex,          //!< 始めるを選んでるとき
-	TitleEndChoiceTex,            //!< 終わるを選んでるとき
-	TitleListChoiceTex,            //!< 終わるを選んでるとき
+	TitleListTex,           //!< スチルリスト
+	TitleStartChoiceTex,    //!< 始めるを選んでるとき
+	TitleEndChoiceTex,      //!< 終わるを選んでるとき
+	TitleListChoiceTex,     //!< スチルリストを選んでるとき
 
 	TitleTextureMax			//!< リスト最大数
 };
@@ -50,92 +50,91 @@ enum MovieCategoryTextureList
 enum SearchCategoryTextureList
 {
 	SearchBgTex,				//!< 背景1
-	SearchPlayerTex,            //プレイヤー
-	Searchhanger,
-	SearchFlowerpot,
-	SearchRobotTex,          //!< ロボット
-	SearchMaidRobotTex,          //!<メイド
-	SearchTalkMaidTex,          //!< ロボット
-	SearchTextBoxTex,        //!< テキストボックス
-	SearchTextnameTex,       //!< 
-	SearchTextureMax,	        //!< リスト最大数
+	SearchPlayerTex,            //!< プレイヤー
+	Searchhanger,               //!< 服掛け
+	SearchFlowerpot,            //!< 植木鉢
+	SearchMaidRobotTex,         //!< メイド
+	SearchTalkMaidTex,          //!< メイド立ち絵
+	SearchTextBoxTex,           //!< テキストボックス
+	SearchTextnameTex,          //!< 名前テキストボックス 
+	SearchTextureMax,	        //!<  リスト最大数
 };
 
 enum Search2CategoryTextureList
 {
 	Search2BgTex,				//!< 背景
-	Search2Door,
-	Search2Vase,
+	Search2Door,                //!< ドア
+	Search2Vase,                //!< 花瓶
 	Search2TextureMax,	        //!< リスト最大数
 };
 
 enum CriminalRoomCategoryTextureList
 {
-	CriminalRoomBgTex,				//!< 背景
-	CriminalRedCarpet,
-	CriminalBuleCarpet,
-	CriminalGreenCarpet,
-	CriminalDesk,
-	CriminalRight,
-	CriminalCloset,
-	CriminalClock,
-	CriminalBed,
-	CriminalBookshelf,
-	CriminalBook,
-	CriminalBook2,
-	CriminalRobotAllParts,
-	CriminalRobotPartsArm,
-	CriminalRobotPartsLeg,
-	CriminalRobotPartsHead,
-	CriminalRobotDesign,
-	CriminalWorkbench,
-	CriminalPC,
-	CriminalCabinet,
-	CriminalRoomTextureMax,	        //!< リスト最大数
+	CriminalRoomBgTex,			 //!< 背景
+	CriminalRedCarpet,           //!< 赤色カーペット
+	CriminalBuleCarpet,		     //!< 青色カーペット
+	CriminalGreenCarpet,	     //!< 緑色カーペット
+	CriminalDesk,			     //!< 机
+	CriminalRight,			     //!< 照明
+	CriminalCloset,			     //!< 箪笥
+	CriminalClock,			     //!< 時計
+	CriminalBed,			     //!< ベッド
+	CriminalBookshelf,		     //!< 本棚
+	CriminalBook,			     //!< 本(落ちている)
+	CriminalBook2,			     //!< 本2(落ちている)
+	CriminalRobotAllParts,	     //!< ロボットのパーツがつられている
+	CriminalRobotPartsArm,	     //!< ロボットの腕
+	CriminalRobotPartsLeg,	     //!< ロボットの脚
+	CriminalRobotPartsHead,	     //!< ロボットの頭
+	CriminalRobotDesign,	     //!< ロボットの設計図
+	CriminalWorkbench,		     //!< 作業台
+	CriminalPC,				     //!< PC
+	CriminalCabinet,		     //!< キャビネット
+	CriminalRoomTextureMax,	     //!< リスト最大数
 
 };
 
 enum TundereRoomCategoryTextureList
 {
-	TundereRoomBgTex,				//!< 背景
+	TundereRoomBgTex,		  //!< 背景
 	TundereRobotTex,          //!< ロボット
-	TundereTalkRobotTex,          //!< ロボット(未完成)
-	TundereWindow,
-	TundereFlowerpot,
-	TundereCloset,
-	TundereSofa,
-	TundereCarpet,
-	TundereRight,
-	TundereDesk,
-	TundereBed,
-	TundereDoll,
-	TundereRoomTextureMax,	        //!< リスト最大数
+	TundereTalkRobotTex,      //!< ロボット(未完成)
+	TundereWindow,            //!< 窓
+	TundereFlowerpot,         //!< 花瓶
+	TundereCloset,	          //!< 箪笥
+	TundereSofa,	          //!< ソファ
+	TundereCarpet,	          //!< カーペット
+	TundereRight,	          //!< 照明
+	TundereDesk,	          //!< 机
+	TundereBed,		          //!< ベッド
+	TundereDoll,	          //!< 人形
+	TundereRoomTextureMax,	  //!< リスト最大数
 };
 
 enum YuruhuwaRoomCategoryTextureList
 {
-	YuruhuwaRoomBgTex,				//!< 背景
-	YuruhuwaRobotTex,          //!< ロボット
-	YuruhuwaTalkRobotTex,          //!< ロボット(未完成)
-	YuruhuwaTalkTex,				//!< 背景
-
-	YuruhuwaWindow,
-	YuruhuwaClock,
-	YuruhuwaCloset,
-	YuruhuwaSofa,
-	YuruhuwaCarpet,
-	YuruhuwaRight,
-	YuruhuwaDesk,
-	YuruhuwaBed,
-	YuruhuwaDoll,
-	YuruhuwaCabinet,
-	YuruhuwaRoomTextureMax,	        //!< リスト最大数
+	YuruhuwaRoomBgTex,		  //!< 背景
+	YuruhuwaRobotTex,         //!< ロボット
+	YuruhuwaTalkRobotTex,     //!< ロボット(未完成)
+	YuruhuwaTalkTex,		  //!< 背景
+	                          
+	YuruhuwaWindow,			  //!< 窓
+	YuruhuwaClock,			  //!< 時計
+	YuruhuwaCloset,			  //!< 箪笥
+	YuruhuwaSofa,			  //!< ソファ
+	YuruhuwaCarpet,			  //!< カーペット
+	YuruhuwaRight,			  //!< 照明
+	YuruhuwaDesk,			  //!< 机
+	YuruhuwaBed,			  //!< ベッド
+	YuruhuwaDoll,			  //!< 人形
+	YuruhuwaCabinet,		  //!< キャビネット
+	YuruhuwaRoomTextureMax,	  //!< リスト最大数
 };
 enum SearchGameCategoryTextureList
 {
 	SearchGameBgTex,             //!< 背景
 	SearchGamePlayerTex,         //!< プレイヤー
-	SearchGameTalkRobotTex,      //!< ロボット
+	SearchGameTalkRobotTex,      //!< ロボット立ち絵
 
 	SearchGameRobotTex,          //!< ロボット(未完成)
 	SearchGameCompleteRobotTex,  //!< ロボット(完成)
