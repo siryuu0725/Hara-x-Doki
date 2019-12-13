@@ -164,7 +164,7 @@ void UpDateMoviePlayer()
 
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax)
 {
-	searchplayer.movespeed = 10.0f;
+	searchplayer.movespeed = 5.0f;
 	searchplayer.oldpos_x = searchplayer.pos_x;
 	searchplayer.oldpos_y = searchplayer.pos_y;
 

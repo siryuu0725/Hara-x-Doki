@@ -44,7 +44,7 @@ void InitTimeCounter()
 		time.timecounter = 0;
 		time.onesecondscounter = 0;
 		time.tensecondscounter = 0;
-		time.oneminutecounter = 5;
+		time.oneminutecounter = 9;
 		time.tenminutecounter = 0;
 		time.end = false;
 	}
