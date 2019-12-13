@@ -10,8 +10,8 @@
 #include <Windows.h>
 
 #define SMALL_FONT_SIZE (16)	//!< フォントサイズ(小)
-#define REGULAR_FONT_SIZE (60)	//!< フォントサイズ(中)
-#define LARGE_FONT_SIZE (80)	//!< フォントサイズ(大)
+#define REGULAR_FONT_SIZE (50)	//!< フォントサイズ(中)
+#define LARGE_FONT_SIZE (70)	//!< フォントサイズ(大)
 
 struct TEXTURE_DATE
 {
@@ -27,6 +27,8 @@ enum FontColor
 	White,
 	Red,
 	Yellow,
+	Pink,
+	Aqua,
 };
 
 enum FontSize

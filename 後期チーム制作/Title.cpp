@@ -72,7 +72,9 @@ SceneId FinishTitleScene()
 {
 	ReleaseCategoryTexture(TEXTURE_TITLE);
 
-	return SceneId::MovieScene;
+	//return SceneId::MovieScene;
 	
 	//return SceneId::SearchGameScene;
+
+	return SceneId::ScenarioScene;
 }

@@ -11,6 +11,11 @@ typedef struct
 	bool onspacekey;
 }TextBoxData;
 
+typedef struct
+{
+	bool scenario;
+}ScenarioData;
+
 struct Time
 {
 	char timefont[20];
@@ -35,6 +40,9 @@ void InitTimeCounter();
 
 void DrawTime();
 
+void InitScenario();
+
+void DrawScenario();
 
 void DrawTxt();
 #endif

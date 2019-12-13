@@ -13,6 +13,8 @@
 
 TextBoxData textbox;
 Time time;
+ScenarioData scenario;
+
 void InitTextBox()
 {
 	textbox.pos_x = TEXTBOX_POS_X;
@@ -102,5 +104,35 @@ void DrawTxt()
 			}
 		}
 		fclose(fp);
+	}
+}
+
+void InitScenario()
+{
+	scenario.scenario = true;
+}
+
+void DrawScenario()
+{
+	if (scenario.scenario == true)
+	{
+		DrawFont(250, 440, "教師である　　　は、　　　　が", FontSize::Large, FontColor::White);
+		DrawFont(600, 440, "主人公", FontSize::Large, FontColor::Aqua);
+		DrawFont(950, 440, "女子高生", FontSize::Large, FontColor::Pink);
+		DrawFont(250, 640, "行方不明になっている噂を聞いた。", FontSize::Large, FontColor::White);
+	}
+
+	if (scenario.scenario == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		scenario.scenario = false;
+	}
+
+	if (scenario.scenario == false)
+	{
+		DrawFont(250, 340, "正義感の強い　　　は見回りをしている最中に、", FontSize::Large, FontColor::White);
+		DrawFont(670, 340, "主人公", FontSize::Large, FontColor::Aqua);
+		DrawFont(530, 540, "が連れ去られる怪しい現場を目撃。", FontSize::Large, FontColor::White);
+		DrawFont(250, 540, "女子高生", FontSize::Large, FontColor::Pink);
+		DrawFont(250, 740, "真相を突き止めるべく、後を追いかけたのだった。 ", FontSize::Large, FontColor::White);
 	}
 }

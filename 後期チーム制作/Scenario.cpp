@@ -2,6 +2,9 @@
 #include "Graphics.h"
 #include "Texture.h"
 #include "Input.h"
+#include "Text.h"
+
+extern ScenarioData scenario;
 
 void InitScenarioScene();
 
@@ -29,17 +32,18 @@ SceneId UpdateScenarioScene()
 
 void DrawScenarioScene()
 {
-	DrawFont(900, 540, "スペースでムービーに移動", FontSize::Small, FontColor::White);
+	DrawScenario();
 }
 
 void InitScenarioScene()
 {
+	InitScenario();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainScenarioScene()
 {
-	if (GetKeyDown(SPACE_KEY) == true)
+	if (scenario.scenario == false && GetKeyDown(SPACE_KEY) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}

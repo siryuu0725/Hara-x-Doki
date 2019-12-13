@@ -201,8 +201,8 @@ void DrawFont(float pos_x, float pos_y, const char* text, FontSize font_type, Fo
 	{
 		(long)pos_x,
 		(long)pos_y,
-		(long)pos_x + 400,
-		(long)pos_y + 200,
+		(long)pos_x + 10000,
+		(long)pos_y + 10000,
 	};
 
 	int r, g, b;
@@ -222,6 +222,24 @@ void DrawFont(float pos_x, float pos_y, const char* text, FontSize font_type, Fo
 		r = 255;
 		g = 225;
 		b = 0;
+	}
+	else if (color == FontColor::Pink)
+	{
+		r = 255;
+		g = 0;
+		b = 255;
+	}
+	else if (color == FontColor::White)
+	{
+		r = 255;
+		g = 255;
+		b = 255;
+	}
+	else if (color == FontColor::Aqua)
+	{
+		r = 0;
+		g = 255;
+		b = 255;
 	}
 
 	g_FontList[font_type]->DrawTextA(
