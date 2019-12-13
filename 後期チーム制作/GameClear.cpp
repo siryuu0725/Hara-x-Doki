@@ -36,7 +36,7 @@ void DrawGameClearScene()
 void InitGameClearScene()
 {
 
-	LoadTexture("Res/ボーイッシュ スチル.JPG", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::GameClearBgTex);
+	LoadTexture("Res/スチル 改変.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::GameClearBgTex);
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
