@@ -47,6 +47,7 @@ void InitTundereRoomObject()
 void InitYuruhuwaRoomObject()
 {
 	yuruhuwaobject.robot = false;
+	yuruhuwaobject.yuruhuwa = false;
 }
 
 void DrawRobotNeck()
@@ -163,6 +164,11 @@ void HitSearchObject()
 	{
 		searchplayer.hit = true;
 	}
+	//ボーイッシュ
+	else if (HitPlayerObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && yuruhuwa.clear == true)
+	{
+		searchplayer.hit = true;
+	}
 	//大テーブル
 	else if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true)
 	{
@@ -228,7 +234,7 @@ void HitSearchObject()
 void HitSearch2Object()
 {
 	//花瓶
-	if (HitPlayerObject(5.0f, 765.0f, 55.0f, 60.0f) == true)
+	if (HitPlayerObject(5.0f, 500.0f, 55.0f, 60.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -237,14 +243,15 @@ void HitSearch2Object()
 	{
 		searchplayer.hit = true;
 	}
-	else if (HitPlayerObject(5.0f, 530.0f, 55.0f, 60.0f) == true && boyish.clear == true)
+	//ボーイッシュ
+	else if (HitPlayerObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && yuruhuwa.clear == true)
 	{
 		searchplayer.hit = true;
 	}
 	else
 	{
 		searchplayer.hit = false;
-		searchplayer.eyehit = false;
+		
 	}
 }
 
@@ -438,7 +445,7 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = true;
 	}
 	//ロボット
-	else if (HitPlayerObject(puzzlegamerobot.pos_x + 20.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 62.0f) == true)
+	else if (HitPlayerObject(puzzlegamerobot.pos_x + 10.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 72.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -814,12 +821,12 @@ void HitEyeTundereRoomObject()
 void HitEyeYuruhuwaRoomObject()
 {
 	//ロボット
-	if (HitPlayerEyeObject(puzzlegamerobot.pos_x + 20.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 62.0f) == true
+	if (HitPlayerEyeObject(puzzlegamerobot.pos_x, puzzlegamerobot.pos_y, puzzlegamerobot.width, puzzlegamerobot.height) == true
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.robot = true;
 	}
-	else if (HitPlayerEyeObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(yuruhuwa.pos_x, yuruhuwa.pos_y, yuruhuwa.width, yuruhuwa.height) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.yuruhuwa = true;
 	}

@@ -43,7 +43,7 @@ bool HitPlayerEyeObject(float obj_x, float obj_y, float obj_width, float obj_hei
 	if ((searchplayer.eyepos_x < obj_x + obj_width)
 		&& (searchplayer.eyepos_x + 64.0f > obj_x)
 		&& (searchplayer.eyepos_y < obj_y + obj_height)
-		&& (searchplayer.eyepos_y + 100.0f > obj_y))
+		&& (searchplayer.eyepos_y + 10.0f > obj_y))
 	{
 		return true;
 	}

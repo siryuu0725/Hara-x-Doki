@@ -28,6 +28,12 @@ struct Time
 	bool end;
 };
 
+struct 
+{
+	
+
+};
+
 extern TextBoxData textbox;
 
 extern Time time;

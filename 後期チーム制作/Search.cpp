@@ -57,8 +57,9 @@ void DrawSearchScene()
 
 	DrawMenu();
 	DrawTime();
-	//DrawTxt();
+	DrawTxt();
 	DrawTalkMaid();
+	DrawTalkYuruhuwa();
 }
 
 void InitSearchScene()

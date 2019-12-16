@@ -6,6 +6,7 @@
 #include "Item.h"
 #include "Input.h"
 #include "Text.h"
+#include "Player.h"
 
 
 Boyish boyish;
@@ -58,8 +59,8 @@ void InitYuruhuwa()
 {
 	if (areadata.searchyuruhuwaarea == true)
 	{
-		yuruhuwa.pos_x = 1040.0f;
-		yuruhuwa.pos_y = 250.0f;
+		yuruhuwa.pos_x = 1200.0f;
+		yuruhuwa.pos_y = 240.0f;
 
 		yuruhuwa.tu = 0.0f;
 		yuruhuwa.tv = 0.0f;
@@ -82,7 +83,7 @@ void InitYuruhuwa()
 		
 		yuruhuwa.talk = false;
 	}
-	/*if (areadata.searcharea1 == true && yuruhuwa.clear == true)
+	if (areadata.searcharea1 == true && yuruhuwa.clear == true)
 	{
 		yuruhuwa.pos_x = 550.0f;
 		yuruhuwa.pos_y = 50.0f;
@@ -94,7 +95,7 @@ void InitYuruhuwa()
 		yuruhuwa.height = 128.0f;
 		
 		yuruhuwa.talk = false;
-	}*/
+	}
 }
 
 void DrawBoyish()
@@ -143,10 +144,20 @@ void DrawTalkYuruhuwa()
 {
 	if (yuruhuwaobject.yuruhuwa == true && yuruhuwa.talk == false)
 	{
+		if (searchplayer.animetion_tv == 0.25f)
+		{
+			yuruhuwa.tu = 0.65f;
+		}
+		if (searchplayer.animetion_tv == 0.75f)
+		{
+			
+			yuruhuwa.tu = 0.33f;
+		}
 		yuruhuwa.talk = true;
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && yuruhuwa.talk == true)
 	{
+		yuruhuwa.tu = 0.0f;
 		yuruhuwa.talk = false;
 	}
 	if (yuruhuwa.talk == true)

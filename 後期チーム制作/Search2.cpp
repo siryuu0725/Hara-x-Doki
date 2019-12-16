@@ -50,6 +50,7 @@ void DrawSearch2Scene()
 	
 	DrawMenu();
 	DrawTime();
+	DrawTalkYuruhuwa();
 }
 
 void InitSearch2Scene()
@@ -78,6 +79,10 @@ void MainSearch2Scene()
 	{
 		SearchPlayerControl(455.0f, 835.0f, 0.0f, 1920.0f);
 	}
+
+	HitSearch2Object();
+
+	UpDataPlayerPos();
 
 	if (OnMouseDown(Left) == true)
 	{

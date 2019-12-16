@@ -164,7 +164,7 @@ void UpDateMoviePlayer()
 
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax)
 {
-	searchplayer.movespeed = 5.0f;
+	searchplayer.movespeed = 7.0f;
 	searchplayer.oldpos_x = searchplayer.pos_x;
 	searchplayer.oldpos_y = searchplayer.pos_y;
 
@@ -174,7 +174,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		searchplayer.animetion_tv = 0.5f;
 
 		searchplayer.eyepos_x = searchplayer.pos_x;
-		searchplayer.eyepos_y = searchplayer.pos_y + 10.0f;
+		searchplayer.eyepos_y = searchplayer.pos_y + 70.0f;
 
 		if (searchplayer.pos_y >= upmax)
 		{
@@ -195,7 +195,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		searchplayer.animetion_tv = 0.0f;	
 
 		searchplayer.eyepos_x = searchplayer.pos_x;
-		searchplayer.eyepos_y = searchplayer.pos_y + PLAYER_HEIGHT + 64.0f;
+		searchplayer.eyepos_y = searchplayer.pos_y + PLAYER_HEIGHT;
 
 		if (searchplayer.pos_y + 128.0f <= downmax)
 		{
@@ -218,7 +218,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		searchplayer.animetion_tv = 0.25f;
 
 		searchplayer.eyepos_x = searchplayer.pos_x - 64.0f;
-		searchplayer.eyepos_y = searchplayer.pos_y + 100.0f;
+		searchplayer.eyepos_y = searchplayer.pos_y + 90.0f;
 
 		if (searchplayer.pos_x >= leftmax)
 		{
@@ -238,7 +238,7 @@ void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightm
 		searchplayer.animetion_tv = 0.75f;
 
 		searchplayer.eyepos_x = searchplayer.pos_x + 64.0f;
-		searchplayer.eyepos_y = searchplayer.pos_y + 100.0f;
+		searchplayer.eyepos_y = searchplayer.pos_y + 90.0f;
 
 		if (searchplayer.pos_x + 64.0f <= rightmax)
 		{

@@ -115,6 +115,8 @@ void LoadCriminalFurnitureTex();
 */
 void HitSearchObject();
 
+void HitSearch2Object();
+
 void HitTundereRoomObject();
 
 void HitYuruhuwaRoomObject();

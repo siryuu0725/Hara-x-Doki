@@ -47,7 +47,7 @@ void DrawYuruhuwaRoomScene()
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	//DrawTextBox();
 	DrawTalkYuruhuwa();
-	//DrawMenu();
+	DrawMenu();
 	DrawTime();
 	DrawTalkPuzzleGameRobot();
 }

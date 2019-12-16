@@ -7,8 +7,8 @@
 #include "Item.h"
 #include "Menu.h"
 #include <stdio.h>
-#include<stdlib.h>
-
+#include <stdlib.h>
+#include <string.h>
 
 
 TextBoxData textbox;
@@ -89,20 +89,31 @@ void DrawTime()
 void DrawTxt()
 {
 	FILE* fp;
-	char mozi[256];
+	char text[256];
+	char *oneline;
+	char* twoline;
+	char *threeline;
 
 	fopen_s(&fp,"Res/test.txt", "r");
 
 	if (fp != NULL)
 	{
-		while (fgets(mozi, 256, fp) != NULL)
+		while (fgets(text, 256, fp) != NULL)
 		{
 			
-			if (mozi[256] != '\n')
+			oneline = strtok(text, ",");
+			twoline = strtok(NULL, ",");
+			threeline = strtok(NULL, ",");
+			
+			DrawFont(100.0f, 300.0f, oneline, FontSize::Regular, FontColor::Red);
+			DrawFont(100.0f, 400.0f, twoline, FontSize::Regular, FontColor::Red);
+			DrawFont(100.0f, 500.0f, threeline, FontSize::Regular, FontColor::Red);
+			if (OnMouseDown(Left) == true)
 			{
-				DrawFont(100.0f, 500.0f, mozi, FontSize::Regular, FontColor::Red);
+
 			}
 		}
+		
 		fclose(fp);
 	}
 }
