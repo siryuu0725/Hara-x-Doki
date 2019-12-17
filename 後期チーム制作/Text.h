@@ -28,10 +28,12 @@ struct Time
 	bool end;
 };
 
-struct 
+struct TextData
 {
-	
-
+	char text[256];
+	char* oneline;
+	char* twoline;
+	char* threeline;
 };
 
 extern TextBoxData textbox;
@@ -50,7 +52,11 @@ void InitScenario();
 
 void DrawScenario();
 
-void DrawTxt();
+void InitLoadFile();
+
+void LoadText();
+
+void DrawTalkText();
 #endif
 
 

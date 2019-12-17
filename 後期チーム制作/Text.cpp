@@ -14,6 +14,8 @@
 TextBoxData textbox;
 Time time;
 ScenarioData scenario;
+TextData textdata;
+FILE* fp;
 
 void InitTextBox()
 {
@@ -85,37 +87,43 @@ void DrawTime()
 	}
 	
 }
-
-void DrawTxt()
+void InitLoadFile()
 {
-	FILE* fp;
-	char text[256];
-	char *oneline;
-	char* twoline;
-	char *threeline;
+	fopen_s(&fp, "Res/test.txt", "r");
+}
 
-	fopen_s(&fp,"Res/test.txt", "r");
+void LoadText()
+{
+	
+	for (int i = 0; i < 256; i++)
+	{
+		textdata.oneline = NULL;
+		textdata.twoline = NULL;
+		textdata.threeline = NULL;
+	}
+
+	//memset(&textdata.oneline, '\0', 256);
+	//memset(&textdata.twoline, '\0', 256);
+	//memset(&textdata.threeline, '\0', 256);
+	
+	
+	fgets(textdata.text, 256, fp);
 
 	if (fp != NULL)
 	{
-		while (fgets(text, 256, fp) != NULL)
-		{
-			
-			oneline = strtok(text, ",");
-			twoline = strtok(NULL, ",");
-			threeline = strtok(NULL, ",");
-			
-			DrawFont(100.0f, 300.0f, oneline, FontSize::Regular, FontColor::Red);
-			DrawFont(100.0f, 400.0f, twoline, FontSize::Regular, FontColor::Red);
-			DrawFont(100.0f, 500.0f, threeline, FontSize::Regular, FontColor::Red);
-			if (OnMouseDown(Left) == true)
-			{
-
-			}
-		}
-		
 		fclose(fp);
 	}
+
+	textdata.oneline = strtok(textdata.text, ",");
+	textdata.twoline = strtok(NULL, ",");
+	textdata.threeline = strtok(NULL, ",");
+}
+
+void DrawTalkText()
+{
+	DrawFont(100.0f, 300.0f, textdata.oneline, FontSize::Regular, FontColor::Red);
+	DrawFont(100.0f, 400.0f, textdata.twoline, FontSize::Regular, FontColor::Red);
+	DrawFont(100.0f, 500.0f, textdata.threeline, FontSize::Regular, FontColor::Red);
 }
 
 void InitScenario()

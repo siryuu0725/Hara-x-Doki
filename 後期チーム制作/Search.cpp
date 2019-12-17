@@ -57,7 +57,7 @@ void DrawSearchScene()
 
 	DrawMenu();
 	DrawTime();
-	DrawTxt();
+	DrawTalkText();
 	DrawTalkMaid();
 	DrawTalkYuruhuwa();
 }
@@ -86,7 +86,7 @@ void InitSearchScene()
 	InitArea();
 	InitSearchPlayer();
 	InitMaidRobot();
-	
+	InitLoadFile();
 	InitTextBox();
 	InitMenu();
 	InitTimeCounter();
@@ -108,6 +108,12 @@ void MainSearchScene()
 	UpDataPlayerPos();
 
 	UpDateMenu();
+
+	if (OnMouseDown(Left) == true)
+	{
+		LoadText();
+	}
+	
 
 	if (searchplayer.pos_x <= 70.0f && searchplayer.pos_y >= 390.0f && searchplayer.pos_y <= 500.0f)
 	{
