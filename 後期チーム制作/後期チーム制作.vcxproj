@@ -151,8 +151,8 @@
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scenario.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Search.cpp" />
-    <ClCompile Include="Search2.cpp" />
+    <ClCompile Include="LargeRoom.cpp" />
+    <ClCompile Include="Corridor.cpp" />
     <ClCompile Include="SearchGame.cpp" />
     <ClCompile Include="TalkScene.cpp" />
     <ClCompile Include="Text.cpp" />
@@ -180,8 +180,8 @@
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Scenario.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="Search.h" />
-    <ClInclude Include="Search2.h" />
+    <ClInclude Include="LargeRoom.h" />
+    <ClInclude Include="Corridor.h" />
     <ClInclude Include="SearchGame.h" />
     <ClInclude Include="TalkScene.h" />
     <ClInclude Include="Text.h" />

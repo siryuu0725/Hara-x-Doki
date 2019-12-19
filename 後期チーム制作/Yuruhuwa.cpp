@@ -64,13 +64,10 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
 	//LoadTexture("Res/キャラ/ボーイッシュ 改.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
 
-	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
-	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
-	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
-
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
+
+	LoadUI();
 
 	InitYuruhuwaRoomObject();
 	InitYuruhuwa();
@@ -97,7 +94,7 @@ void MainYuruhuwaRoomScene()
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchyuruhuwaarea = false;
-		areadata.searcharea2 = true;
+		areadata.corridor = true;
 		areadata.cangearea2 = 3;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
@@ -118,6 +115,6 @@ SceneId FinishYuruhuwaRoomScene()
 	}
 	if (areadata.cangearea2 == 3)
 	{
-		return SceneId::Search2Scene;
+		return SceneId::CorridorScene;
 	}
 }

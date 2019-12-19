@@ -27,7 +27,7 @@ void InitBoyish()
 
 		boyish.talk = false;
 	}
-	if (areadata.searcharea2 == true && boyish.clear == true)
+	if (areadata.corridor == true && boyish.clear == true)
 	{
 		boyish.pos_x = 1560.0f;
 		boyish.pos_y = 450.0f;
@@ -40,7 +40,7 @@ void InitBoyish()
 
 		boyish.talk = false;
 	}
-	if (areadata.searcharea1 == true && yuruhuwa.clear == true)
+	if (areadata.largeroom == true && yuruhuwa.clear == true)
 	{
 		boyish.pos_x = 540.0f;
 		boyish.pos_y = 170.0f;
@@ -70,7 +70,7 @@ void InitYuruhuwa()
 
 		yuruhuwa.talk = false;
 	}
-	if (areadata.searcharea2 == true && yuruhuwa.clear == true)
+	if (areadata.corridor == true && yuruhuwa.clear == true)
 	{
 		yuruhuwa.pos_x = 335.0f;
 		yuruhuwa.pos_y = 450.0f;
@@ -83,7 +83,7 @@ void InitYuruhuwa()
 		
 		yuruhuwa.talk = false;
 	}
-	if (areadata.searcharea1 == true && yuruhuwa.clear == true)
+	if (areadata.largeroom == true && yuruhuwa.clear == true)
 	{
 		yuruhuwa.pos_x = 550.0f;
 		yuruhuwa.pos_y = 50.0f;
@@ -104,11 +104,11 @@ void DrawBoyish()
 	{
 		DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
 	}
-	if (areadata.searcharea2 == true && boyish.clear == true)
+	if (areadata.corridor == true && boyish.clear == true)
 	{
 		DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
 	}
-	if (areadata.searcharea1 == true && boyish.clear == true)
+	if (areadata.largeroom == true && boyish.clear == true)
 	{
 		DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
 	}
@@ -121,13 +121,14 @@ void DrawYuruhuwa()
 	{
 		DrawUVTexture(yuruhuwa.pos_x, yuruhuwa.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), yuruhuwa.width, yuruhuwa.height, yuruhuwa.tu, yuruhuwa.tv);
 	}
-	if (areadata.searcharea2 == true && yuruhuwa.clear == true)
+	if (areadata.corridor == true && yuruhuwa.clear == true)
 	{
 		DrawUVTexture(yuruhuwa.pos_x, yuruhuwa.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), yuruhuwa.width, yuruhuwa.height, yuruhuwa.tu, yuruhuwa.tv);
 	}
-	if (areadata.searcharea1 == true && yuruhuwa.clear == true)
+	if (areadata.largeroom == true && yuruhuwa.clear == true)
 	{
-		DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
+		DrawUVTexture(yuruhuwa.pos_x, yuruhuwa.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), yuruhuwa.width, yuruhuwa.height, yuruhuwa.tu, yuruhuwa.tv);
+		//DrawUVTexture(boyish.pos_x, boyish.pos_y, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex), boyish.width, boyish.height, boyish.tu, boyish.tv);
 	}
 
 }
@@ -154,11 +155,13 @@ void DrawTalkYuruhuwa()
 			yuruhuwa.tu = 0.33f;
 		}
 		yuruhuwa.talk = true;
+		textbox.onspacekey = true;
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && yuruhuwa.talk == true)
 	{
 		yuruhuwa.tu = 0.0f;
 		yuruhuwa.talk = false;
+		textbox.onspacekey = false;
 	}
 	if (yuruhuwa.talk == true)
 	{

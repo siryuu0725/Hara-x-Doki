@@ -59,13 +59,10 @@ void InitTundereRoomScene()
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex);
 
-	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
-	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
-	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
-
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
+
+	LoadUI();
 
 	InitTundereRoomObject();
 	InitGameRoomPlayer();
@@ -88,7 +85,7 @@ void MainTundereRoomScene()
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchtunderearea = false;
-		areadata.searcharea2 = true;
+		areadata.corridor = true;
 		areadata.cangearea2 = 2;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
@@ -101,7 +98,7 @@ SceneId FinishTundereRoomScene()
 
 	if (areadata.cangearea2 == 2)
 	{
-		return SceneId::Search2Scene;
+		return SceneId::CorridorScene;
 	}
 	
 }

@@ -25,8 +25,8 @@ void InitMovieBg()
 
 void InitArea()
 {
-	areadata.searcharea1 = true;
-	areadata.searcharea2 = false;
+	areadata.largeroom = true;
+	areadata.corridor = false;
 	areadata.searchcriminalarea = false;
 	areadata.searchgamearea = 0;
 	areadata.searchtunderearea = false;
@@ -167,11 +167,11 @@ void DrawCriminalBg()
 //ƒGƒŠƒAˆÚ“®‚ÉØ‚è‘Ö‚¦
 void DrawSearchBg()
 {
-	if (areadata.searcharea1 == true)
+	if (areadata.largeroom == true)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex));
 	}
-	else if (areadata.searcharea2 == true)
+	else if (areadata.corridor == true)
 	{
 		DrawSearch2Bg();
 	}

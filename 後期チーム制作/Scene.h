@@ -8,7 +8,7 @@ enum SceneId
 	HelpScene,			//!< ƒwƒ‹ƒv(—V‹Yà–¾‰æ–Ê)ƒV[ƒ“
 	MovieScene,			//!< ƒQ[ƒ€–{•ÒƒV[ƒ“
 	SearchScene,		//!< ’TõƒV[ƒ“
-	Search2Scene,		//!<
+	CorridorScene,		//!<
 	CriminalRoomScene,
 	TundereRoomScene,
 	YuruhuwaRoomScene,

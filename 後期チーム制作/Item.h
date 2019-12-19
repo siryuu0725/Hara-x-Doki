@@ -8,8 +8,12 @@ typedef struct
 	bool desk;          //机
 	bool chair;         //椅子
 	bool flowerpot;     //植木鉢
+	bool sofa;          //
+	bool clock;			//
+	bool phone;			//
+	bool hanger;		//
 
-}SearchTouchObject;
+}LargeRoomTouchObject;
 
 typedef struct
 {
@@ -74,7 +78,7 @@ typedef struct
 
 }GetItem;
 
-extern SearchTouchObject searchobject;
+extern LargeRoomTouchObject largeroomobject;
 
 extern SearchGameTouchObject searchgameobject;
 
@@ -84,7 +88,7 @@ extern TundereTouchObject tundereobject;
 
 extern GetItem getitem;
 
-
+void InitLargeRoomObject();
 
 void InitSearchGameObject();
 
@@ -100,7 +104,7 @@ void DrawRobotNeck();
 /*
    それぞれの部屋の家具Tex
 */
-void LoadSearch2FurnitureTex();
+void LoadCorridorFurnitureTex();
 
 void LoadTundereFurnitureTex();
 
@@ -113,9 +117,9 @@ void LoadCriminalFurnitureTex();
 　　探索パートでのオブジェクトとのあたり判定
 　　矩形と矩形のあたり判定
 */
-void HitSearchObject();
+void HitLargeRoomObject();
 
-void HitSearch2Object();
+void HitCorridorObject();
 
 void HitTundereRoomObject();
 
@@ -135,7 +139,7 @@ void HitSearchGameObject();
   　オブジェクトとの視覚のあたり判定
 　　矩形と矩形のあたり判定
 */
-void HitEyeSearchObject();
+void HitEyeLargeRoomObject();
 
 
 /*

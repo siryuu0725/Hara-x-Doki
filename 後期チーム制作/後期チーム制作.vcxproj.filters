@@ -75,12 +75,6 @@
     <ClCompile Include="Robot.cpp">
       <Filter>object</Filter>
     </ClCompile>
-    <ClCompile Include="Search.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Search2.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>object</Filter>
     </ClCompile>
@@ -107,6 +101,12 @@
     </ClCompile>
     <ClCompile Include="JK.cpp">
       <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="LargeRoom.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Corridor.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,12 +158,6 @@
     <ClInclude Include="Robot.h">
       <Filter>object</Filter>
     </ClInclude>
-    <ClInclude Include="Search.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Search2.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>object</Filter>
     </ClInclude>
@@ -190,6 +184,12 @@
     </ClInclude>
     <ClInclude Include="JK.h">
       <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="LargeRoom.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Corridor.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

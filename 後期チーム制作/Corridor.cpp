@@ -1,5 +1,5 @@
-#include "Search.h"
-#include "Search2.h"
+#include "LargeRoom.h"
+#include "Corridor.h"
 #include "Scene.h"
 #include "Texture.h"
 #include "Graphics.h"
@@ -16,32 +16,32 @@ extern TextBoxData textbox;
 extern MenuData menu;
 
 
-void InitSearch2Scene();
+void InitCorridorScene();
 
-void MainSearch2Scene();
+void MainCorridorScene();
 
-SceneId FinishSearch2Scene();
+SceneId FinishCorridorScene();
 
 
-SceneId UpdateSearch2Scene()
+SceneId UpdateCorridorScene()
 {
 	switch (GetCurrentSceneStep())
 	{
 	case SceneStep::InitStep:
-		InitSearch2Scene();
+		InitCorridorScene();
 		break;
 	case SceneStep::MainStep:
-		MainSearch2Scene();
+		MainCorridorScene();
 		break;
 	case SceneStep::EndStep:
-		return FinishSearch2Scene();
+		return FinishCorridorScene();
 		break;
 	}
 
-	return SceneId::Search2Scene;
+	return SceneId::CorridorScene;
 }
 
-void DrawSearch2Scene()
+void DrawCorridorScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
@@ -53,34 +53,33 @@ void DrawSearch2Scene()
 	DrawTalkYuruhuwa();
 }
 
-void InitSearch2Scene()
+void InitCorridorScene()
 {
 
-	LoadSearch2FurnitureTex();
+	LoadCorridorFurnitureTex();
 	LoadSearchGameItem();
 
 	LoadTexture("Res/廊下_修正.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	
     LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
-	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
+	LoadUI();
 
-	InitSearch2Player();
+	InitCorridorPlayer();
 	InitBoyish();
 	InitYuruhuwa();
 	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
-void MainSearch2Scene()
+void MainCorridorScene()
 {
 	if (textbox.onspacekey == false && menu.onenterkey == false)
 	{
 		SearchPlayerControl(455.0f, 835.0f, 0.0f, 1920.0f);
 	}
 
-	HitSearch2Object();
+	HitCorridorObject();
 
 	UpDataPlayerPos();
 
@@ -90,8 +89,8 @@ void MainSearch2Scene()
 	}
 	if (searchplayer.pos_x + 64.0f >= 1900.0f)
 	{
-		areadata.searcharea2 = false;
-		areadata.searcharea1 = true;
+		areadata.corridor = false;
+		areadata.largeroom = true;
 		areadata.cangearea = true;
 		areadata.cangearea2 = false;
 		ChangeSceneStep(SceneStep::EndStep);
@@ -100,7 +99,7 @@ void MainSearch2Scene()
 	//キャラの幅+20程判定を大きくしている
 	if (HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
 	{
-		areadata.searcharea2 = false;
+		areadata.corridor = false;
 		areadata.searchgamearea = true;
 		getitem.breakdoorkey = true;
 
@@ -110,7 +109,7 @@ void MainSearch2Scene()
 	}
 	if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
 	{
-		areadata.searcharea2 = false;
+		areadata.corridor = false;
 		areadata.searchtunderearea = true;
 		getitem.breakdoorkey = true;
 		if (boyish.clear != true)
@@ -124,7 +123,7 @@ void MainSearch2Scene()
 
 	if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
 	{
-		areadata.searcharea2 = false;
+		areadata.corridor = false;
 		areadata.searchyuruhuwaarea = true;
 		getitem.breakdoorkey = true;
 		if (boyish.clear != true)
@@ -139,11 +138,11 @@ void MainSearch2Scene()
 	UpDateMenu();
 }
 
-SceneId FinishSearch2Scene()
+SceneId FinishCorridorScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH2);
 
-	if (areadata.searcharea1 == true)
+	if (areadata.largeroom == true)
 	{
 		return SceneId::SearchScene;
 	}

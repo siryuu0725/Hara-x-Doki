@@ -27,6 +27,7 @@ typedef struct
 	int animetioncount;                 //アニメーションスピード
 	bool hit;                           //プレイヤーとオブジェクトのあたり判定フラグ
 	bool eyehit;                        //プレイヤーの視覚とオブジェクトのあたり判定フラグ
+	
 }SearchPlayerData;
 
 typedef struct
@@ -43,9 +44,9 @@ extern BackPlayerData backplayer;
 #pragma region プレイヤーの初期化
 void InitMoviePlayer();
 
-void InitSearchPlayer();
+void InitLargeRoomPlayer();
 
-void InitSearch2Player();
+void InitCorridorPlayer();
 
 void InitGameRoomPlayer();
 

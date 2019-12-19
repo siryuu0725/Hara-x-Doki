@@ -2,8 +2,8 @@
 #define SEARCH_H_
 #include "Scene.h"
 
-SceneId UpdateSearchScene();
+SceneId UpdateLargeRoomScene();
 
-void DrawSearchScene();
+void DrawLargeRoomScene();
 
 #endif 

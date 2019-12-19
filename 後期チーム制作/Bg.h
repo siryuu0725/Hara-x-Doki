@@ -18,8 +18,8 @@ typedef struct
 
 typedef struct
 {
-	bool searcharea1;       //大部屋にいるときtrue
-	bool searcharea2;       //廊下にいるときtrue
+	bool largeroom;       //大部屋にいるときtrue
+	bool corridor;       //廊下にいるときtrue
 	bool searchcriminalarea;//犯人部屋にいるときtrue
 	bool searchgamearea;    //ボーイッシュ部屋にいるときtrue
 	bool searchtunderearea; //ツンデレ部屋にいるときtrue

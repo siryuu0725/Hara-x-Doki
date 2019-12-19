@@ -7,12 +7,25 @@
 #include "Input.h"
 #include "Text.h"
 #include "JK.h"
+#include "Bg.h"
 
-SearchTouchObject searchobject;
+LargeRoomTouchObject largeroomobject;
 SearchGameTouchObject searchgameobject;
 YuruhuwaTouchObject yuruhuwaobject;
 TundereTouchObject tundereobject;
 GetItem getitem;
+
+void InitLargeRoomObject()
+{
+	largeroomobject.chair = false;
+	largeroomobject.clock = false;
+	largeroomobject.desk = false;
+	largeroomobject.flowerpot = false;
+	largeroomobject.hanger = false;
+	largeroomobject.light = false;
+	largeroomobject.phone = false;
+	largeroomobject.sofa = false;
+}
 
 void InitSearchGameObject()
 {
@@ -28,15 +41,7 @@ void InitSearchGameObject()
 	searchgameobject.closet = false;
 	searchgameobject.bookshelf = false;
 
-	/*getitem.itemrobot = false;
-	getitem.itemkey = false;
-	getitem.itemenergy = false;
-	getitem.itemlight = false;*/
-
-	/*getitem.boyishdoorkey = false;
-	getitem.tunderedoorkey = false;
-	getitem.yuruhuwadoorkey = false;
-	getitem.breakdoorkey = false;*/
+	
 }
 
 void InitTundereRoomObject()
@@ -67,7 +72,7 @@ void LoadSearchGameItem()
 
 
 //背景と家具が別のため関数化
-void LoadSearch2FurnitureTex()
+void LoadCorridorFurnitureTex()
 {
 	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door);
 	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase);
@@ -127,7 +132,7 @@ void LoadCriminalFurnitureTex()
 
 
 #pragma region プレイヤーとオブジェクトのあたり判定
-void HitSearchObject()
+void HitLargeRoomObject()
 {
 	//画面左端
 	if (HitPlayerObject(0.0f, 0.0f, 155.0f, 470.0f) == true)
@@ -231,7 +236,7 @@ void HitSearchObject()
 	}
 }
 
-void HitSearch2Object()
+void HitCorridorObject()
 {
 	//花瓶
 	if (HitPlayerObject(5.0f, 500.0f, 55.0f, 60.0f) == true)
@@ -278,7 +283,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ロボット
-	else if (HitPlayerObject(searchgamerobot.pos_x + 20.0f, searchgamerobot.pos_y + 64.0f, searchgamerobot.width - 30.0f, searchgamerobot.height - 62.0f) == true)
+	else if (HitPlayerObject(searchgamerobot.pos_x + 20.0f, searchgamerobot.pos_y + 84.0f, searchgamerobot.width - 30.0f, searchgamerobot.height - 92.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -601,12 +606,12 @@ void HitCriminalRoomObject()
 #pragma endregion 
 
 #pragma region プレイヤーの視界とオブジェクトのあたり判定
-void HitEyeSearchObject()
+void HitEyeLargeRoomObject()
 {
 	//メイド
 	if (HitPlayerEyeObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchobject.maid = true;
+		largeroomobject.maid = true;
 	}
 	//大テーブル
 	else if (HitPlayerEyeObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)
@@ -660,7 +665,7 @@ void HitEyeSearchObject()
 	}
 	else
 	{
-		searchobject.maid = false;
+		largeroomobject.maid = false;
 		searchplayer.eyehit = false;
 	}
 }
@@ -1013,6 +1018,14 @@ void UpDataSearchGame()
 		getitem.tunderedoorkey = true;
 	}
 	
+}
+
+void SearchObject()
+{
+	if (areadata.largeroom == true)
+	{
+		
+	}
 }
 
 

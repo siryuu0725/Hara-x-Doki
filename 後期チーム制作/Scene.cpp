@@ -5,8 +5,9 @@
 #include "GameOverr.h"
 #include "Title.h"
 #include "Movie.h"
-#include "Search.h"
-#include "Search2.h"
+#include "LargeRoom.h"
+#include "Corridor.h"
+
 #include "SearchGame.h"
 #include "PuzzleGame.h"
 #include "TalkScene.h"
@@ -52,10 +53,10 @@ void UpdateScene()
 		scene_id = UpdateMovieScene();
 		break;
 	case SceneId::SearchScene:
-		scene_id = UpdateSearchScene();
+		scene_id = UpdateLargeRoomScene();
 		break;
-	case SceneId::Search2Scene:
-		scene_id = UpdateSearch2Scene();
+	case SceneId::CorridorScene:
+		scene_id = UpdateCorridorScene();
 		break;
 	case SceneId::TundereRoomScene:
 		scene_id = UpdateTundereRoomScene();
@@ -112,10 +113,10 @@ void DrawScene()
 			DrawMovieScene();
 			break;
 		case SceneId::SearchScene:
-			DrawSearchScene();
+			DrawLargeRoomScene();
 			break;
-		case SceneId::Search2Scene:
-			DrawSearch2Scene();
+		case SceneId::CorridorScene:
+			DrawCorridorScene();
 			break;
 		case SceneId::CriminalRoomScene:
 			DrawCriminalRoomScene();

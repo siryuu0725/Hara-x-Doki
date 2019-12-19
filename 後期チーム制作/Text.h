@@ -40,6 +40,9 @@ extern TextBoxData textbox;
 
 extern Time time;
 
+
+void LoadUI();
+
 void InitTextBox();
 
 void DrawTextBox();

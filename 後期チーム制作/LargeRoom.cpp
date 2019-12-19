@@ -1,4 +1,4 @@
-#include "Search.h"
+
 #include "Scene.h"
 #include "Texture.h"
 #include "Graphics.h"
@@ -17,37 +17,37 @@ extern TextBoxData textbox;
 extern MenuData menu;
 
 
-void InitSearchScene();
+void InitLargeRoomScene();
 
-void MainSearchScene();
-
-
-SceneId FinishSearchScene();
+void MainLargeRoomScene();
 
 
-SceneId UpdateSearchScene()
+SceneId FinishLargeRoomScene();
+
+
+SceneId UpdateLargeRoomScene()
 {
 	switch (GetCurrentSceneStep())
 	{
 	case SceneStep::InitStep:
-		InitSearchScene();
+		InitLargeRoomScene();
 		break;
 	case SceneStep::MainStep:
-		MainSearchScene();
+		MainLargeRoomScene();
 		break;
 	case SceneStep::EndStep:
-		return FinishSearchScene();
+		return FinishLargeRoomScene();
 		break;
 	}
 
 	return SceneId::SearchScene;
 }
 
-void DrawSearchScene()
+void DrawLargeRoomScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
-	DrawYuruhuwa();
+	//DrawYuruhuwa();
 	DrawMaidRobot();
 
 	DrawSearchPlayer();
@@ -62,7 +62,7 @@ void DrawSearchScene()
 	DrawTalkYuruhuwa();
 }
 
-void InitSearchScene()
+void InitLargeRoomScene()
 {
 	LoadSearchGameItem();
 
@@ -76,15 +76,15 @@ void InitSearchScene()
 	
 	LoadTexture("Res/探索ゲーム/鍵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex);
 
-	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
-	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 	LoadTexture("Res/家具/観葉植物B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot);
 	LoadTexture("Res/家具/コート掛け.png", TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger);
-	//boyish.clear = true;
+
+	LoadUI();
+
 	InitBoyish();
+	//InitYuruhuwa();
 	InitArea();
-	InitSearchPlayer();
+	InitLargeRoomPlayer();
 	InitMaidRobot();
 	InitLoadFile();
 	InitTextBox();
@@ -94,16 +94,16 @@ void InitSearchScene()
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
-void MainSearchScene()
+void MainLargeRoomScene()
 {
 	if (textbox.onspacekey == false && menu.onenterkey == false)
 	{
 		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
 	}
 
-	HitSearchObject();
+	HitLargeRoomObject();
 
-	HitEyeSearchObject();
+	HitEyeLargeRoomObject();
 
 	UpDataPlayerPos();
 
@@ -117,14 +117,14 @@ void MainSearchScene()
 
 	if (searchplayer.pos_x <= 70.0f && searchplayer.pos_y >= 390.0f && searchplayer.pos_y <= 500.0f)
 	{
-		areadata.searcharea1 = false;
-		areadata.searcharea2 = true;
+		areadata.largeroom = false;
+		areadata.corridor = true;
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 370.0f && searchplayer.pos_y <= 500.0f)
 	{
-		areadata.searcharea1 = false;
+		areadata.largeroom = false;
 		areadata.searchcriminalarea = true;
 
 		ChangeSceneStep(SceneStep::EndStep);
@@ -139,13 +139,13 @@ void MainSearchScene()
 	}
 }
 
-SceneId FinishSearchScene()
+SceneId FinishLargeRoomScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH);
 
-	if (areadata.searcharea2 == true)
+	if (areadata.corridor == true)
 	{
-		return SceneId::Search2Scene;
+		return SceneId::CorridorScene;
 	}
 	else if (areadata.searchcriminalarea == true)
 	{

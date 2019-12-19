@@ -103,6 +103,7 @@ void DrawSearchGameRobot()
 
 void DrawPuzzleGameRobot()
 {
+	DrawUVTexture(searchplayer.pos_x, searchplayer.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex), 64.0f, 128.0f, searchplayer.animetion_tu, searchplayer.animetion_tv);
 	DrawTexture(puzzlegamerobot.pos_x, puzzlegamerobot.pos_y, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex));
 }
 
@@ -115,14 +116,16 @@ void DrawMysteryGameRobot()
 #pragma region 会話関数
 void DrawTalkMaid()
 {
-	if (searchobject.maid == true && maidrobot.talk == false)
+	if (largeroomobject.maid == true && maidrobot.talk == false)
 	{
 		maidrobot.talk = true;
+		textbox.onspacekey = true;
 
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && maidrobot.talk == true)
 	{
 		maidrobot.talk = false;
+		textbox.onspacekey = false;
 
 		//会話が終わると同時に時間制限スタート
 		time.start = true;
@@ -147,11 +150,13 @@ void DrawTalkSearchGameRobot()
 	if (searchgameobject.robot == true && searchgamerobot.talk == false)
 	{
 		searchgamerobot.talk = true;
-
+		textbox.onspacekey = true;
+		
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && searchgamerobot.talk == true)
 	{
 		searchgamerobot.talk = false;
+		textbox.onspacekey = false;
 	}
 	if (searchgamerobot.talk == true)
 	{
@@ -165,11 +170,12 @@ void DrawTalkPuzzleGameRobot()
 	if (yuruhuwaobject.robot == true && puzzlegamerobot.talk == false)
 	{
 		puzzlegamerobot.talk = true;
-
+		textbox.onspacekey = true;
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && puzzlegamerobot.talk == true)
 	{
 		puzzlegamerobot.talk = false;
+		textbox.onspacekey = false;
 	}
 	if (puzzlegamerobot.talk == true)
 	{
@@ -183,11 +189,13 @@ void DrawTalkMysteryGameRobot()
 	if (tundereobject.robot == true && mysterygamerobot.talk == false)
 	{
 		mysterygamerobot.talk = true;
+		textbox.onspacekey = true;
 
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && mysterygamerobot.talk == true)
 	{
 		mysterygamerobot.talk = false;
+		textbox.onspacekey = false;
 	}
 	if (mysterygamerobot.talk == true)
 	{

@@ -1,5 +1,5 @@
-#include "Search.h"
-#include "Search2.h"
+#include "LargeRoom.h"
+#include "Corridor.h"
 #include "Scene.h"
 #include "Texture.h"
 #include "Graphics.h"
@@ -67,12 +67,10 @@ void InitSearchGameScene()
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex);
 
-	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
-	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
-	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
+
+	LoadUI();
 
 	InitSearchGameObject();
 	InitGameRoomPlayer();
@@ -109,7 +107,7 @@ void MainSearchGameScene()
 	else if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchgamearea = false;
-		areadata.searcharea2 = true;
+		areadata.corridor = true;
 		areadata.cangearea2 = 1;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
@@ -120,9 +118,9 @@ SceneId FinishSearchGameScene()
 {
 	ReleaseCategoryTexture(TEXTURE_SEARCH_GAME);
 
-	if (areadata.searcharea2 == 1)
+	if (areadata.corridor == 1)
 	{
-		return SceneId::Search2Scene;
+		return SceneId::CorridorScene;
 	}
 
 

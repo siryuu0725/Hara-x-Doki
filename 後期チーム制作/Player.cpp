@@ -32,7 +32,7 @@ void InitMoviePlayer()
 	movieplayer.nextmoviecount = 0;
 }
 
-void InitSearchPlayer()
+void InitLargeRoomPlayer()
 {
 	//プレイヤーが廊下から大部屋に戻った時
 	if (areadata.cangearea == true)
@@ -54,12 +54,14 @@ void InitSearchPlayer()
 		searchplayer.animetion_tv = 0.5f;
 		searchplayer.hit = false;
 		searchplayer.eyehit = false;
+		
+
 
 	}
 
 }
 
-void InitSearch2Player()
+void InitCorridorPlayer()
 {
 	//プレイヤーがボーイッシュ部屋から廊下に戻った時
 	if (areadata.cangearea2 == 1)
