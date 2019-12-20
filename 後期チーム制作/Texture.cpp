@@ -17,8 +17,9 @@ int TextureCaterogySize[] = {
 	TundereRoomCategoryTextureList::TundereRoomTextureMax,
 	YuruhuwaRoomCategoryTextureList::YuruhuwaRoomTextureMax,
 	SearchGameCategoryTextureList::SearchGameTextureMax,
-	TalkCategoryTextureList::TalkTextureMax,
 	PuzzleGameCategoryTextureList::PuzzleGameTextureMax,
+	MysteryGameCategoryTextureList::MysteryGameTextureMax,
+	TalkCategoryTextureList::TalkTextureMax,
 	GameClearCategoryTextureList::GameClearTextureMax,
 	GameOverCategoryTextureList::GameOverTextureMax,
 };

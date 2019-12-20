@@ -144,6 +144,7 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MysteryGame.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Puzzle.cpp" />
     <ClCompile Include="PuzzleGame.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="GameOverr.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MysteryGame.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Puzzle.h" />
     <ClInclude Include="PuzzleGame.h" />

@@ -15,6 +15,7 @@
 #include "CriminalRoom.h"
 #include "Tundere.h"
 #include "Yuruhuwa.h"
+#include "MysteryGame.h"
 
 
 static SceneId g_CurrentSceneId = SceneId::SearchScene;		// ìÆçÏíÜÉVÅ[ÉìID
@@ -70,11 +71,14 @@ void UpdateScene()
 	case SceneId::SearchGameScene:
 		scene_id = UpdateSearchGameScene();
 		break;
-	case SceneId::TalkScene:
-		scene_id = UpdateTalkScene();
-		break;
 	case SceneId::PuzzleGameScene:
 		scene_id = UpdatePuzzleGameScene();
+		break;
+	case SceneId::MysteryGameScene:
+		scene_id = UpdateMysteryGameScene();
+		break;
+	case SceneId::TalkScene:
+		scene_id = UpdateTalkScene();
 		break;
 	case SceneId::GameClearScene:
 		scene_id = UpdateGameClearScene();
@@ -130,11 +134,14 @@ void DrawScene()
 		case SceneId::SearchGameScene:
 			DrawSearchGameScene();
 			break;
-		case SceneId::TalkScene:
-			DrawTalkScene();
-			break;
 		case SceneId::PuzzleGameScene:
 			DrawPuzzleGameScene();
+			break;
+		case SceneId::MysteryGameScene:
+			DrawMysteryGameScene();
+			break;
+		case SceneId::TalkScene:
+			DrawTalkScene();
 			break;
 		case SceneId::GameClearScene:
 			DrawGameClearScene();

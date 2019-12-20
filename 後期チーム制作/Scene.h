@@ -13,8 +13,9 @@ enum SceneId
 	TundereRoomScene,
 	YuruhuwaRoomScene,
 	SearchGameScene,    //!<
-	TalkScene,          //!< 会話シーン
 	PuzzleGameScene,    //!< パズルゲームシーン
+	MysteryGameScene,
+	TalkScene,          //!< 会話シーン
 	GameClearScene,		//!< ゲームクリアシーン
 	GameOverScene,		//!< ゲームオーバーシーン
 	SceneIdMax			//!< シーンID最大

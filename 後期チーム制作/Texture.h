@@ -13,8 +13,9 @@
 #define TEXTURE_TUNDERE_ROOM (SceneId::TundereRoomScene)     //!<ツンデレ部屋シーン
 #define TEXTURE_YURUHUWA_ROOM (SceneId::YuruhuwaRoomScene)   //!<ゆるふわ部屋シーン
 #define TEXTURE_SEARCH_GAME (SceneId::SearchGameScene)       //!<探索ゲーム(ボーイッシュ部屋)シーン
-#define TEXTURE_TALK (SceneId::TalkScene)                    //!<
 #define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)            //!パズルゲーム<シーン
+#define TEXTURE_MYSTERY (SceneId::MysteryGameScene)            //!パズルゲーム<シーン
+#define TEXTURE_TALK (SceneId::TalkScene)                    //!<
 #define TEXTURE_HELP (SceneId::HelpScene)				     //!<
 #define TEXTURE_GAME_OVER (SceneId::GameOverScene)	         //!<ゲームオーバーシーン
 #define TEXTURE_GAME_CLEAR (SceneId::GameClearScene)	     //!<ゲームクリアシーン
@@ -153,15 +154,7 @@ enum SearchGameCategoryTextureList
 	SearchGameTextureMax,        //!< リスト最大数
 };
 
-enum TalkCategoryTextureList
-{
-	TalkBgTex,            //!< 背景
-	TalkPlayerTex,	      //!< プレイヤー
-	TalkRobotTex,	      //!< ロボット
-	TalkSurprisedTex,     //!< ビックリマーク
-	MenuTex,		      //!< 
-	TalkTextureMax,	      //!< リスト最大数
-};
+
 enum PuzzleGameCategoryTextureList
 {
 	PuzzleGameBgTex,			   //!< 背景
@@ -172,6 +165,20 @@ enum PuzzleGameCategoryTextureList
 	PuzzleGameTextureMax,		   //リスト最大数
 };
 
+enum MysteryGameCategoryTextureList
+{
+	MysteryGameTextureMax,		   //リスト最大数
+};
+
+enum TalkCategoryTextureList
+{
+	TalkBgTex,            //!< 背景
+	TalkPlayerTex,	      //!< プレイヤー
+	TalkRobotTex,	      //!< ロボット
+	TalkSurprisedTex,     //!< ビックリマーク
+	MenuTex,		      //!< 
+	TalkTextureMax,	      //!< リスト最大数
+};
 enum GameClearCategoryTextureList
 {
 	GameClearBgTex,			//!< 背景

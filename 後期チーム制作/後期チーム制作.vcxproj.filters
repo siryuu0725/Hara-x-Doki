@@ -108,6 +108,9 @@
     <ClCompile Include="Corridor.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="MysteryGame.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.h">
@@ -189,6 +192,9 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Corridor.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MysteryGame.h">
       <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
