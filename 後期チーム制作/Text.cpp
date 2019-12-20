@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Bg.h"
 
 
 TextBoxData textbox;
@@ -97,34 +98,42 @@ void DrawTime()
 }
 void InitLoadFile()
 {
+	textdata.nexttext = false;
+	if (areadata.searchgamearea == true)
+	{
+		fopen_s(&fp, "Res/boyshi.txt", "r");
+	}
 	fopen_s(&fp, "Res/test.txt", "r");
+	fgets(textdata.text, 256, fp);
 }
 
 void LoadText()
 {
-	
-	for (int i = 0; i < 256; i++)
-	{
-		textdata.oneline = NULL;
-		textdata.twoline = NULL;
-		textdata.threeline = NULL;
-	}
 
+	textdata.oneline = NULL;
+	textdata.twoline = NULL;
+	textdata.threeline = NULL;
+	
 	//memset(&textdata.oneline, '\0', 256);
 	//memset(&textdata.twoline, '\0', 256);
 	//memset(&textdata.threeline, '\0', 256);
-	
-	
-	fgets(textdata.text, 256, fp);
 
-	if (fp != NULL)
+	if (textdata.nexttext == true)
+	{
+		textdata.oneline = strtok(NULL, ",");
+	}
+	else
+	{
+		textdata.oneline = strtok(textdata.text, ",");
+	}
+	
+	textdata.twoline = strtok(NULL, ",");
+	textdata.threeline = strtok(NULL, ",");
+
+	if (textdata.text == strtok(NULL, "!"))
 	{
 		fclose(fp);
 	}
-
-	textdata.oneline = strtok(textdata.text, ",");
-	textdata.twoline = strtok(NULL, ",");
-	textdata.threeline = strtok(NULL, ",");
 }
 
 void DrawTalkText()

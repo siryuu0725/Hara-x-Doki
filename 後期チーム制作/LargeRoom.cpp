@@ -109,9 +109,11 @@ void MainLargeRoomScene()
 
 	UpDateMenu();
 
+	
 	if (OnMouseDown(Left) == true)
 	{
 		LoadText();
+		textdata.nexttext = true;
 	}
 	
 

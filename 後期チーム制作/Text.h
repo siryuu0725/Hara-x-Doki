@@ -34,12 +34,14 @@ struct TextData
 	char* oneline;
 	char* twoline;
 	char* threeline;
+	bool nexttext;
 };
 
 extern TextBoxData textbox;
 
 extern Time time;
 
+extern TextData textdata;
 
 void LoadUI();
 
