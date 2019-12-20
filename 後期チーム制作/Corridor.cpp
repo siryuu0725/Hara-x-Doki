@@ -144,7 +144,7 @@ SceneId FinishCorridorScene()
 
 	if (areadata.largeroom == true)
 	{
-		return SceneId::SearchScene;
+		return SceneId::LargeRoomScene;
 	}
 	else if (areadata.searchgamearea == true)
 	{

@@ -2,7 +2,7 @@
 #define HIT_
 #include "Puzzle.h"
 
-bool HitChoiseTitle(float x, float y, float width, float height);
+bool HitChoise(float x, float y, float width, float height);
 
 
 #pragma region ’Tõƒp[ƒg

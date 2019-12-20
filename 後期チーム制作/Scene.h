@@ -7,7 +7,7 @@ enum SceneId
 	ScenarioScene,      //!< シナリオシーン
 	HelpScene,			//!< ヘルプ(遊戯説明画面)シーン
 	MovieScene,			//!< ゲーム本編シーン
-	SearchScene,		//!< 探索シーン
+	LargeRoomScene,		//!< 探索シーン
 	CorridorScene,		//!<
 	CriminalRoomScene,
 	TundereRoomScene,

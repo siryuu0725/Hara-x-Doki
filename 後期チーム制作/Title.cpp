@@ -55,13 +55,13 @@ void InitTitleScene()
 void MainTitleScene()
 {
 
-	if (HitChoiseTitle(START_X, START_Y, START_X_SIZE, START_Y_SIZE) == true
+	if (HitChoise(START_X, START_Y, START_X_SIZE, START_Y_SIZE) == true
 		&& OnMouseDown(Left) == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
-	if (HitChoiseTitle(END_X, END_Y, END_X_SIZE, END_Y_SIZE) == true
+	if (HitChoise(END_X, END_Y, END_X_SIZE, END_Y_SIZE) == true
 		&& OnMouseDown(Left) == true)
 	{
 		PostQuitMessage(0);

@@ -65,6 +65,6 @@ SceneId FinishMovieScene()
 {
 	ReleaseCategoryTexture(TEXTURE_MOVIE);
 
-	return SceneId::SearchScene;
+	return SceneId::LargeRoomScene;
 
 }

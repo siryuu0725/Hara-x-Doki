@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "JK.h"
 #include "Text.h"
+#include "Mystery.h"
 
 void InitMysteryGameScene();
 
@@ -33,21 +34,29 @@ SceneId UpdateMysteryGameScene()
 
 void DrawMysteryGameScene()
 {
-	DrawTime();
+	
+	DrawMysteryBg();
+
 }
 
 void InitMysteryGameScene()
 {
 	
+	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/ì‰Ç©ÇØ.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax);
+	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/ëIëï∂éö.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextMax);
 
+	InitMysteryText();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainMysteryGameScene()
 {
-	
-	ChangeSceneStep(SceneStep::EndStep);
-	
+	UpDataChoiceText();
+
+	if (OnMouseDown(Right) == true)
+	{
+		ChangeSceneStep(SceneStep::EndStep);
+	}
 
 }
 

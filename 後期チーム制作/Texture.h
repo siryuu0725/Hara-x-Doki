@@ -7,7 +7,7 @@
 #define TEXTURE_TITLE (SceneId::TitleScene)                  //!<タイトルシーン
 #define TEXTURE_SCENARIO (SceneId::ScenarioScene)            //!<シナリオシーン
 #define TEXTURE_MOVIE (SceneId::MovieScene)	                 //!<ムービーシーン
-#define TEXTURE_SEARCH (SceneId::SearchScene)                //!<探索(大部屋)シーン
+#define TEXTURE_SEARCH (SceneId::LargeRoomScene)                //!<探索(大部屋)シーン
 #define TEXTURE_SEARCH2 (SceneId::CorridorScene)              //!<探索(廊下)シーン
 #define TEXTURE_CRIMINAL_ROOM (SceneId::CriminalRoomScene)   //!<犯人部屋シーン
 #define TEXTURE_TUNDERE_ROOM (SceneId::TundereRoomScene)     //!<ツンデレ部屋シーン
@@ -167,6 +167,8 @@ enum PuzzleGameCategoryTextureList
 
 enum MysteryGameCategoryTextureList
 {
+	MysteryGameBgMax,		   //!< 背景
+	MysteryGameTextMax,		   //!< 背景
 	MysteryGameTextureMax,		   //リスト最大数
 };
 

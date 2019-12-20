@@ -37,15 +37,15 @@ void DrawTitleBg()
 {
 	DrawBgTexture(GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleBgTex));
 
-	if (HitChoiseTitle(START_X, START_Y, START_X_SIZE, START_Y_SIZE) == true)
+	if (HitChoise(START_X, START_Y, START_X_SIZE, START_Y_SIZE) == true)
 	{
 		titlebg.choicestart = true;
 	}
-	else if (HitChoiseTitle(END_X, END_Y, END_X_SIZE, END_Y_SIZE) == true)
+	else if (HitChoise(END_X, END_Y, END_X_SIZE, END_Y_SIZE) == true)
 	{
 		titlebg.choiceend = true;
 	}
-	else if(HitChoiseTitle(LIST_X, LIST_Y, LIST_X_SIZE, LIST_Y_SIZE) == true)
+	else if(HitChoise(LIST_X, LIST_Y, LIST_X_SIZE, LIST_Y_SIZE) == true)
 	{
 		titlebg.choicelist = true;
 	}

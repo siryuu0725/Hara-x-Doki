@@ -1,5 +1,5 @@
-#ifndef Puzzle_H_
-#define Puzzle_H_
+#ifndef PUZZLEGAME_H_
+#define PUZZLEGAME_H_
 #include "Scene.h"
 
 SceneId UpdatePuzzleGameScene();

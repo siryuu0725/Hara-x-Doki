@@ -40,7 +40,7 @@ SceneId UpdateLargeRoomScene()
 		break;
 	}
 
-	return SceneId::SearchScene;
+	return SceneId::LargeRoomScene;
 }
 
 void DrawLargeRoomScene()

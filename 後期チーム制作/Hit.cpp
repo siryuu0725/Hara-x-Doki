@@ -5,7 +5,7 @@
 #include "Input.h"
 
 
-bool HitChoiseTitle(float x, float y, float width, float height)
+bool HitChoise(float x, float y, float width, float height)
 {
 	// 始めるとマウスの当たり判定
 	if (GetMousePos().X >= x && GetMousePos().X <= x + width &&

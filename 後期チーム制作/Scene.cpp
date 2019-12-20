@@ -18,7 +18,7 @@
 #include "MysteryGame.h"
 
 
-static SceneId g_CurrentSceneId = SceneId::SearchScene;		// 動作中シーンID
+static SceneId g_CurrentSceneId = SceneId::LargeRoomScene;		// 動作中シーンID
 static SceneStep g_CurrentSceneStep = SceneStep::InitStep;	// 動作中シーンのステップ
 
 SceneId GetCurrentSceneId()
@@ -53,7 +53,7 @@ void UpdateScene()
 	case SceneId::MovieScene:
 		scene_id = UpdateMovieScene();
 		break;
-	case SceneId::SearchScene:
+	case SceneId::LargeRoomScene:
 		scene_id = UpdateLargeRoomScene();
 		break;
 	case SceneId::CorridorScene:
@@ -116,7 +116,7 @@ void DrawScene()
 		case SceneId::MovieScene:
 			DrawMovieScene();
 			break;
-		case SceneId::SearchScene:
+		case SceneId::LargeRoomScene:
 			DrawLargeRoomScene();
 			break;
 		case SceneId::CorridorScene:
