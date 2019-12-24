@@ -16,8 +16,14 @@ typedef struct
 	float textboxwidth;
 	float textboxheight;
 
+	float problemtextpos_x;
+	float problemtextpos_y;
+
+
 	bool choicetext;
 	bool decisiontext;
+	bool correctanswer;
+
 }MysteryText;
 
 extern MysteryText mysterytext;

@@ -43,7 +43,8 @@ void InitMysteryGameScene()
 {
 	
 	LoadTexture("Res/謎かけゲーム/謎かけ.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax);
-	LoadTexture("Res/謎かけゲーム/選択文字.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextMax);
+	LoadTexture("Res/謎かけゲーム/選択文字.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax);
+	LoadTexture("Res/謎かけゲーム/問題.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextMax);
 
 	InitMysteryText();
 	ChangeSceneStep(SceneStep::MainStep);
@@ -51,7 +52,7 @@ void InitMysteryGameScene()
 
 void MainMysteryGameScene()
 {
-	//UpDataChoiceText();
+	UpDataChoiceText();
 
 	if (OnMouseDown(Right) == true)
 	{
