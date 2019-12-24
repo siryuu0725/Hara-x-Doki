@@ -36,7 +36,7 @@ void DrawMysteryGameScene()
 {
 	
 	DrawMysteryBg();
-
+	DrawMysteryChoiceText();
 }
 
 void InitMysteryGameScene()
@@ -51,7 +51,7 @@ void InitMysteryGameScene()
 
 void MainMysteryGameScene()
 {
-	UpDataChoiceText();
+	//UpDataChoiceText();
 
 	if (OnMouseDown(Right) == true)
 	{
