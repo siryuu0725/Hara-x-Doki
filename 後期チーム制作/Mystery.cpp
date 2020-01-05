@@ -35,16 +35,8 @@ void InitMysteryText()
 
 void DrawMysteryBg()
 {
-	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax));
-	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextMax));
-	if (mysterytext.correctanswer == true)
-	{
-		DrawTexture(mysterytext.problemtextpos_x + 70, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax));
-	}
-}
+	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxMax));
 
-void DrawMysteryChoiceText()
-{
 	for (int i = 0; i < 5; ++i)
 	{
 		for (int j = 0; j < 12; ++j)
@@ -56,7 +48,15 @@ void DrawMysteryChoiceText()
 
 		}
 	}
+
+	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax));
+	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextMax));
+	if (mysterytext.correctanswer == true)
+	{
+		DrawTexture(mysterytext.problemtextpos_x + 70, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax));
+	}
 }
+
 
 void UpDataChoiceText()
 {

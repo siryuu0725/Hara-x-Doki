@@ -34,16 +34,16 @@ SceneId UpdateMysteryGameScene()
 
 void DrawMysteryGameScene()
 {
-	
 	DrawMysteryBg();
-	DrawMysteryChoiceText();
+	
 }
 
 void InitMysteryGameScene()
 {
 	
-	LoadTexture("Res/謎かけゲーム/謎かけ.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax);
-	LoadTexture("Res/謎かけゲーム/選択文字.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax);
+	LoadTexture("Res/謎かけゲーム/あいうえお.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax);
+	LoadTexture("Res/謎かけゲーム/あいうえお枠.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxMax);
+	LoadTexture("Res/謎かけゲーム/選択中.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax);
 	LoadTexture("Res/謎かけゲーム/問題.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextMax);
 
 	InitMysteryText();

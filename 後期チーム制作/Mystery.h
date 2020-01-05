@@ -32,7 +32,6 @@ void InitMysteryText();
 
 void DrawMysteryBg();
 
-void DrawMysteryChoiceText();
 
 
 void UpDataChoiceText();
