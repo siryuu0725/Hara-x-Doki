@@ -26,9 +26,36 @@ typedef struct
 
 }MysteryText;
 
+typedef struct
+{
+	float pos_x;
+	float pos_y;
+	float width;
+	float height;
+	bool push;
+}DecisionButton;
+
+typedef struct
+{
+	float pos_x;
+	float pos_y;
+	float width;
+	float height;
+
+	bool correct;
+
+}ProblemData;
+
 extern MysteryText mysterytext;
 
+extern DecisionButton decisionbutton;
+
+extern ProblemData problemdata;
+
+
 void InitMysteryText();
+
+void InitDecisionButton();
 
 void DrawMysteryBg();
 

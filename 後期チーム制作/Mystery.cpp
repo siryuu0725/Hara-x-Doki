@@ -5,6 +5,8 @@
 #include "Hit.h"
 
 MysteryText mysterytext;
+DecisionButton decisionbutton;
+ProblemData problemdata;
 
 void InitMysteryText()
 {
@@ -33,9 +35,21 @@ void InitMysteryText()
 	}
 }
 
+void InitDecisionButton()
+{
+	decisionbutton.pos_x = 1200.0f;
+	decisionbutton.pos_y = 300.0f;
+
+	decisionbutton.width = 210.0f;
+	decisionbutton.height = 70.0f;
+
+	decisionbutton.push = false;
+}
+
+
 void DrawMysteryBg()
 {
-	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxMax));
+	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxTex));
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -43,18 +57,23 @@ void DrawMysteryBg()
 		{
 			if (HitChoise(mysterytext.textpos_x + 70 * j, mysterytext.textpos_y + 70 * i, mysterytext.textwidth, mysterytext.textheight) == true)
 			{
-				DrawTexture(mysterytext.textpos_x + 70 * j, mysterytext.textpos_y + 70 * i, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax));
+				DrawTexture(mysterytext.textpos_x + 70 * j, mysterytext.textpos_y + 70 * i, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex));
 			}
 
 		}
 	}
 
-	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax));
-	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextMax));
+	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex));
+	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextTex));
+
+	DrawTexture(decisionbutton.pos_x, decisionbutton.pos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameDecisionButtonTex));
+
 	if (mysterytext.correctanswer == true)
 	{
-		DrawTexture(mysterytext.problemtextpos_x + 70, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax));
+		DrawTexture(mysterytext.problemtextpos_x + 70, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex));
 	}
+
+
 }
 
 

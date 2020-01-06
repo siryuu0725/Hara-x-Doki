@@ -41,12 +41,14 @@ void DrawMysteryGameScene()
 void InitMysteryGameScene()
 {
 	
-	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/‚ ‚¢‚¤‚¦‚¨.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgMax);
-	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/‚ ‚¢‚¤‚¦‚¨˜g.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxMax);
-	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/‘I‘ğ’†.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextMax);
-	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/–â‘è.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextMax);
+	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/‚ ‚¢‚¤‚¦‚¨.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex);
+	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/‚ ‚¢‚¤‚¦‚¨˜g.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxTex);
+	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/‘I‘ğ’†.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex);
+	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/–â‘è.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextTex);
+	LoadTexture("Res/“ä‚©‚¯ƒQ[ƒ€/Œˆ’è.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameDecisionButtonTex);
 
 	InitMysteryText();
+	InitDecisionButton();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 

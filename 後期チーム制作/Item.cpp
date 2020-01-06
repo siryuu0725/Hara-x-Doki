@@ -616,56 +616,69 @@ void HitEyeLargeRoomObject()
 	//大テーブル
 	else if (HitPlayerEyeObject(720.0f, 380.0f, 460.0f, 360.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.desk = true;
 	}
 	//椅子１
 	else if (HitPlayerEyeObject(635.0f, 530.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.chair = true;
 	}
 	//椅子2
 	else if(HitPlayerEyeObject(830.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.chair = true;
 	}
 	//椅子3
 	else if (HitPlayerEyeObject(1005.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.chair = true;
 	}
 	//椅子4
 	else if (HitPlayerEyeObject(1602.0f, 890.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.chair = true;
 	}
 	//植木鉢
 	else if (HitPlayerEyeObject(155.0f, 885.0f, 100.0f, 105.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.flowerpot = true;
 	}
 	//時計
 	else if (HitPlayerEyeObject(225.0f, 120.0f, 70.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.clock = true;
 	}
 	//ソファー
 	else if (HitPlayerEyeObject(705.0f, 140.0f, 515.0f, 135.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.sofa = true;
 	}
 	//電話
 	else if (HitPlayerEyeObject(1395.0f, 185.0f, 65.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.phone = true;
+	}
+	//コート掛け
+	else if (HitPlayerEyeObject(1010.0f, 935.0f, 65.0f, 50.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		largeroomobject.hanger = true;
 	}
 	//照明
 	else if (HitPlayerEyeObject(1600.0f, 155.0f, 75.0f, 185.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		largeroomobject.light = true;
 	}
 	else
 	{
 		largeroomobject.maid = false;
+		largeroomobject.chair = false;
+		largeroomobject.clock = false;
+		largeroomobject.desk = false;
+		largeroomobject.flowerpot = false;
+		largeroomobject.hanger = false;
+		largeroomobject.light = false;
+		largeroomobject.phone = false;
+		largeroomobject.sofa = false;
 		searchplayer.eyehit = false;
 	}
 }
@@ -1022,9 +1035,22 @@ void UpDataSearchGame()
 
 void SearchObject()
 {
-	if (areadata.largeroom == true)
+	if (largeroomobject.maid == true && maidrobot.talk == false)
+	{
+		maidrobot.talk = true;
+		textbox.onspacekey = true;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && maidrobot.talk == true)
+	{
+		maidrobot.talk = false;
+		textbox.onspacekey = false;
+
+	}
+	if (maidrobot.talk == true)
 	{
 		
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 	}
 }
 

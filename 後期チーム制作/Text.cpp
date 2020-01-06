@@ -50,6 +50,28 @@ void DrawTextBox()
 	}
 }
 
+void DrawTalkObject(bool touchobject, bool tolkobject, char text)
+{
+	if (touchobject == true && tolkobject == false)
+	{
+		tolkobject = true;
+		textbox.onspacekey = true;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && tolkobject == true)
+	{
+		tolkobject = false;
+		textbox.onspacekey = false;
+
+	}
+	if (tolkobject == true)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+
+		DrawFont(250, 440, "教師である　　　は、　　　　が", FontSize::Large, FontColor::White);
+	}
+}
+
 void InitTimeCounter()
 {
 	if (time.start == false)

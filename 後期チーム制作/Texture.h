@@ -167,12 +167,13 @@ enum PuzzleGameCategoryTextureList
 
 enum MysteryGameCategoryTextureList
 {
-	MysteryGameBgMax,		   //!< ”wŒi
-	MysteryGameTextBoxMax,		   //!< ”wŒi
+	MysteryGameBgTex,		   //!< ”wŒi
+	MysteryGameTextBoxTex,		   //!< ‚ ‚¢‚¤‚¦‚¨•\” 
 
-	MysteryGameChoiceTextMax,		   //!< ”wŒi
-	MysteryGameProblemTextMax,		   //!< ”wŒi
+	MysteryGameChoiceTextTex,		   //!< ‘I‘ð’†
+	MysteryGameProblemTextTex,		   //!< –â‘è•¶
 
+	MysteryGameDecisionButtonTex,		   //!< –â‘è•¶
 	MysteryGameTextureMax,		   //ƒŠƒXƒgÅ‘å”
 };
 
