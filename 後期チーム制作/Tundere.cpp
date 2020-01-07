@@ -48,6 +48,7 @@ void DrawTundereRoomScene()
 	DrawMenu();
 	DrawTime();
 	DrawTalkMysteryGameRobot();
+	SearchObject();
 }
 
 void InitTundereRoomScene()

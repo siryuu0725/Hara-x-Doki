@@ -13,6 +13,15 @@ typedef struct
 	bool phone;			//
 	bool hanger;		//
 
+	bool desktalk;
+	bool chairtalk;
+	bool lighttalk;
+	bool flowerpottalk;
+	bool sofatalk;
+	bool clocktalk;
+	bool phonetalk;
+	bool hangertalk;
+	
 }LargeRoomTouchObject;
 
 typedef struct
@@ -22,7 +31,6 @@ typedef struct
 	bool completerobot; //ロボ完成形
 	bool light;         //ライト
 
-
 	bool desk;          //机
 	bool chair;         //椅子
 	bool doll;          //人形
@@ -31,6 +39,15 @@ typedef struct
 	bool closet;        //クローゼット
 	bool bookshelf;     //本棚
 
+	bool lighttalk;        
+	bool desktalk;         
+	bool chairtalk;        
+	bool dolltalk;
+	bool bedtalk;
+	bool flowerpottalk;
+	bool closettalk;
+	bool bookshelftalk;
+	
 }SearchGameTouchObject;
 
 typedef struct
@@ -41,18 +58,30 @@ typedef struct
 	bool light;         //ライト
 	bool desk;          //机
 	bool chair;         //椅子
+	bool sofa;
+	bool cabinet;
 	bool doll;          //人形
 	bool bed;           //ベッド
 	bool flowerpot;     //植木鉢
 	bool closet;        //クローゼット
 	bool bookshelf;     //本棚
 
+	bool lighttalk;         
+	bool desktalk;
+	bool chairtalk;
+	bool dolltalk;
+	bool cabinettalk;
+	bool bedtalk;
+	bool sofatalk;
+	bool flowerpottalk;
+	bool closettalk;
+	bool bookshelftalk;
 }YuruhuwaTouchObject;
 
 typedef struct
 {
 	bool robot;         //ロボ
-
+	bool sofa;
 	bool light;         //ライト
 	bool desk;          //机
 	bool chair;         //椅子
@@ -62,6 +91,15 @@ typedef struct
 	bool closet;        //クローゼット
 	bool bookshelf;     //本棚
 
+	bool lighttalk;
+	bool desktalk;
+	bool chairtalk;
+	bool dolltalk;
+	bool bedtalk;
+	bool flowerpottalk;
+	bool closettalk;
+	bool bookshelftalk;
+	bool sofatalk;
 }TundereTouchObject;
 
 
@@ -158,5 +196,7 @@ void HitEyeCriminalRoomObject();
 
 void UpDataSearchGame();
 
+
+void SearchObject();
 #endif
 

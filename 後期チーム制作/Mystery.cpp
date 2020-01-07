@@ -13,8 +13,8 @@ void InitMysteryText()
 	mysterytext.textcount = 1;
 	mysterytext.textpos_x = 500.0f;
 	mysterytext.textpos_y = 500.0f;
-	mysterytext.textheight = 70.0f;
-	mysterytext.textwidth = 70.0f;
+	mysterytext.textheight = 69.0f;
+	mysterytext.textwidth = 69.0f;
 
 	mysterytext.textboxheight = 840.0f;
 	mysterytext.textboxwidth = 350.0f;

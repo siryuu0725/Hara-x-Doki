@@ -50,6 +50,7 @@ void DrawYuruhuwaRoomScene()
 	DrawMenu();
 	DrawTime();
 	DrawTalkPuzzleGameRobot();
+	SearchObject();
 }
 
 void InitYuruhuwaRoomScene()

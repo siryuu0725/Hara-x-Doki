@@ -52,6 +52,7 @@ void DrawSearchGameScene()
 	DrawMenu();
 	DrawTime();
 	DrawTalkSearchGameRobot();
+	SearchObject();
 }
 
 void InitSearchGameScene()

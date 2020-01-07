@@ -35,40 +35,41 @@ void InitTextBox()
 
 void DrawTextBox()
 {
-	// プレイヤーとロボットが当たってスペースを押したらテキストボックス描画
-	if (searchgameobject.robot == true && textbox.onspacekey == false)
-	{
-		textbox.onspacekey = true;
-	}
-	else if (GetKeyDown(SPACE_KEY) == true && textbox.onspacekey == true)
-	{
-		textbox.onspacekey = false;
-	}
-	if (textbox.onspacekey == true)
-	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-	}
+	//// プレイヤーとロボットが当たってスペースを押したらテキストボックス描画
+	//if (searchgameobject.robot == true && textbox.onspacekey == false)
+	//{
+	//	textbox.onspacekey = true;
+	//}
+	//else if (GetKeyDown(SPACE_KEY) == true && textbox.onspacekey == true)
+	//{
+	//	textbox.onspacekey = false;
+	//}
+	//if (textbox.onspacekey == true)
+	//{
+	//	DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+	//}
 }
 
-void DrawTalkObject(bool touchobject, bool tolkobject, char text)
+void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 {
-	if (touchobject == true && tolkobject == false)
+	if (*touchobject == true && *tolkobject == false)
 	{
-		tolkobject = true;
+		*tolkobject = true;
 		textbox.onspacekey = true;
 
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && tolkobject == true)
+	else if (GetKeyDown(SPACE_KEY) == true && *tolkobject == true)
 	{
-		tolkobject = false;
+		*tolkobject = false;
+		
 		textbox.onspacekey = false;
 
 	}
-	if (tolkobject == true)
+	if (*tolkobject == true)
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 
-		DrawFont(250, 440, "教師である　　　は、　　　　が", FontSize::Large, FontColor::White);
+		DrawFont(400, 800, text, FontSize::Regular, FontColor::White);
 	}
 }
 

@@ -60,6 +60,8 @@ void DrawLargeRoomScene()
 	DrawTalkText();
 	DrawTalkMaid();
 	DrawTalkYuruhuwa();
+	
+	SearchObject();
 }
 
 void InitLargeRoomScene()
