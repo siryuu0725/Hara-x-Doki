@@ -328,7 +328,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//‰æ–Ê‰E‰º
-	else if (HitPlayerObject(975.0f, 1020.0f, 470.0f, 90.0f) == true)
+	else if (HitPlayerObject(980.0f, 1020.0f, 470.0f, 90.0f) == true)
 	{
 		searchplayer.hit = true;
 	}

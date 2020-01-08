@@ -46,8 +46,8 @@ void DrawSearchGameScene()
 	DrawSearchBg();
 	DrawBoyish();
 	DrawRobotNeck();
-	DrawSearchGameRobot();
-	DrawSearchPlayer();
+	//DrawSearchGameRobot();
+	DrawSearchPlayerAndRobot();
 	//DrawTextBox();
 	DrawMenu();
 	DrawTime();

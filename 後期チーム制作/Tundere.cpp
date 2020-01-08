@@ -39,8 +39,8 @@ SceneId UpdateTundereRoomScene()
 void DrawTundereRoomScene()
 {
 	DrawSearchBg();
-	DrawMysteryGameRobot();
-	DrawSearchPlayer();
+	//DrawMysteryGameRobot();
+	DrawSearchPlayerAndRobot();
 	
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));

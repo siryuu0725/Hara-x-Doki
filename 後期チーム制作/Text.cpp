@@ -69,7 +69,7 @@ void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 
-		DrawFont(400, 800, text, FontSize::Regular, FontColor::White);
+		DrawFont(500, 850, text, FontSize::Regular, FontColor::White);
 	}
 }
 

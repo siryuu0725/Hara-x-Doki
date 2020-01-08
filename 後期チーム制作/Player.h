@@ -58,7 +58,7 @@ void InitBackPlayer();
 #pragma region ƒvƒŒƒCƒ„[‚Ì•`‰æ
 void DrawMoviePlayer();
 
-void DrawSearchPlayer();
+void DrawSearchPlayerAndRobot();
 
 void DrawBackPlayer();
 #pragma endregion

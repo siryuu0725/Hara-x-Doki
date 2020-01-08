@@ -46,7 +46,7 @@ void DrawCorridorScene()
 	DrawSearchBg();
 	DrawBoyish();
 	DrawYuruhuwa();
-	DrawSearchPlayer();
+	DrawSearchPlayerAndRobot();
 	
 	DrawMenu();
 	DrawTime();

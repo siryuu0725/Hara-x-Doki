@@ -50,7 +50,7 @@ void DrawLargeRoomScene()
 	//DrawYuruhuwa();
 	DrawMaidRobot();
 
-	DrawSearchPlayer();
+	DrawSearchPlayerAndRobot();
 	DrawTexture(960.0f, 755.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger));
 	DrawTexture(160.0f, 770.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot));
 	
