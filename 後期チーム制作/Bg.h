@@ -14,6 +14,9 @@ typedef struct
 	float Tu, Tv;     //ムービー背景のTu,Tv
 	float movespeed;  //ムービー背景の移動スピード
 	int stopcount;    //背景の空き家を見せるときの止めている時間
+
+	bool endmovie;
+
 }MovieBgData;
 
 typedef struct
@@ -28,6 +31,8 @@ typedef struct
 	int cangearea2;        //廊下と女子高生部屋を移動するとき
 
 }SearchAreaData;
+
+extern MovieBgData moviebgdate;
 
 extern SearchAreaData areadata;
 

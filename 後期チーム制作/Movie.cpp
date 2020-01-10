@@ -57,6 +57,7 @@ void MainMovieScene()
 	
 	if (movieplayer.pos_y < -200.0f)//‰æ–Ê’[‚És‚­‚Æ•Ï‚í‚é
 	{
+		moviebgdate.endmovie = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 }

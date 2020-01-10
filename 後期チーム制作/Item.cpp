@@ -65,7 +65,6 @@ void InitTundereRoomObject()
 {
 	tundereobject.robot = false;
 	tundereobject.bed = false;
-	tundereobject.bookshelf = false;
 	tundereobject.chair = false;
 	tundereobject.closet = false;
 	tundereobject.desk = false;
@@ -74,7 +73,6 @@ void InitTundereRoomObject()
 	tundereobject.light = false;
 
 	tundereobject.bedtalk = false;
-	tundereobject.bookshelftalk = false;
 	tundereobject.chairtalk = false;
 	tundereobject.closettalk = false;
 	tundereobject.desktalk = false;
@@ -88,23 +86,18 @@ void InitYuruhuwaRoomObject()
 	yuruhuwaobject.robot = false;
 	yuruhuwaobject.yuruhuwa = false;
 	yuruhuwaobject.bed = false;
-	yuruhuwaobject.bookshelf = false;
 	yuruhuwaobject.chair = false;
 	yuruhuwaobject.closet = false;
 	yuruhuwaobject.desk = false;
-	yuruhuwaobject.doll = false;
-	yuruhuwaobject.flowerpot = false;
 	yuruhuwaobject.light = false;
 	yuruhuwaobject.sofa = false;
 
 
 	yuruhuwaobject.bedtalk = false;
-	yuruhuwaobject.bookshelftalk = false;
 	yuruhuwaobject.chairtalk = false;
 	yuruhuwaobject.closettalk = false;
 	yuruhuwaobject.desktalk = false;
-	yuruhuwaobject.dolltalk = false;
-	yuruhuwaobject.flowerpottalk = false;
+	
 	yuruhuwaobject.lighttalk = false;
 	yuruhuwaobject.sofatalk = false;
 	yuruhuwaobject.cabinet = false;
@@ -275,12 +268,12 @@ void HitLargeRoomObject()
 		searchplayer.hit = true;	
 	}
 	//電話
-	else if (HitPlayerObject(1395.0f, 185.0f, 65.0f, 100.0f) == true)
+	else if (HitPlayerObject(1395.0f, 185.0f, 65.0f, 80.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//照明
-	else if (HitPlayerObject(1600.0f, 155.0f, 75.0f, 185.0f) == true)
+	else if (HitPlayerObject(1600.0f, 155.0f, 75.0f, 175.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -393,7 +386,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ぬいぐるみ
-	else if (HitPlayerObject(525.0f, 625.0f, 35.0f, 70.0f) == true)
+	else if (HitPlayerObject(525.0f, 625.0f, 35.0f, 40.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -442,12 +435,12 @@ void HitTundereRoomObject()
 		searchplayer.hit = true;
 	}
 	//椅子１
-	else if (HitPlayerObject(1130.0f, 930.0f, 30.0f, 30.0f) == true)
+	else if (HitPlayerObject(1130.0f, 930.0f, 30.0f, 20.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//椅子2
-	else if (HitPlayerObject(1250.0f, 930.0f, 30.0f, 30.0f) == true)
+	else if (HitPlayerObject(1250.0f, 930.0f, 30.0f, 20.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -519,8 +512,8 @@ void HitYuruhuwaRoomObject()
 	{
 		searchplayer.hit = true;
 	}
-	//小テーブル
-	else if (HitPlayerObject(1390.0f, 460.0f, 50.0f, 65.0f) == true)
+	//キャビネット
+	else if (HitPlayerObject(1400.0f, 460.0f, 50.0f, 65.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -669,7 +662,7 @@ void HitEyeLargeRoomObject()
 		largeroomobject.maid = true;
 	}
 	//大テーブル
-	else if (HitPlayerEyeObject(720.0f, 380.0f, 460.0f, 380.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(780.0f, 380.0f, 380.0f, 380.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		largeroomobject.desk = true;
 	}
@@ -679,12 +672,12 @@ void HitEyeLargeRoomObject()
 		largeroomobject.chair = true;
 	}
 	//椅子2
-	else if(HitPlayerEyeObject(830.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if(HitPlayerEyeObject(830.0f, 780.0f, 58.0f, 38.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		largeroomobject.chair = true;
 	}
 	//椅子3
-	else if (HitPlayerEyeObject(1005.0f, 780.0f, 58.0f, 58.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1005.0f, 780.0f, 58.0f, 38.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		largeroomobject.chair = true;
 	}
@@ -709,7 +702,7 @@ void HitEyeLargeRoomObject()
 		largeroomobject.sofa = true;
 	}
 	//電話
-	else if (HitPlayerEyeObject(1395.0f, 185.0f, 65.0f, 120.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1395.0f, 185.0f, 65.0f, 140.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		largeroomobject.phone = true;
 	}
@@ -719,7 +712,7 @@ void HitEyeLargeRoomObject()
 		largeroomobject.hanger = true;
 	}
 	//照明
-	else if (HitPlayerEyeObject(1600.0f, 155.0f, 75.0f, 205.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1600.0f, 155.0f, 75.0f, 225.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		largeroomobject.light = true;
 	}
@@ -759,20 +752,20 @@ void HitEyeSearchGameObject()
 		searchgameobject.robotneck = true;
 	}
 	//ベッド
-	else if (HitPlayerEyeObject(480.0f, 755.0f, 265.0f, 146.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(480.0f, 755.0f, 265.0f, 166.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		
 		searchgameobject.bed = true;
 	}
-	//小テーブル
+	//キャビネット
 	else if(HitPlayerEyeObject(480.0f, 910.0f, 50.0f, 65.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchgameobject.desk = true;
+		searchgameobject.cabinet = true;
 	}
 	//大テーブル
-	else if (HitPlayerEyeObject(1045.0f, 510.0f, 315.0f, 250.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1045.0f, 510.0f, 315.0f, 270.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		searchplayer.eyehit = true;
+		searchgameobject.desk = true;
 	}
 	//椅子１
 	else if (HitPlayerEyeObject(990.0f, 610.0f, 40.0f, 40.0f) == true && GetKeyDown(SPACE_KEY) == true)
@@ -795,25 +788,20 @@ void HitEyeSearchGameObject()
 		searchgameobject.flowerpot = true;
 	}
 	//照明
-	else if (HitPlayerEyeObject(1340.0f, 95.0f, 100.0f, 190.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1340.0f, 95.0f, 100.0f, 210.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchgameobject.light = true;
 	}
 	//箪笥
-	else if (HitPlayerEyeObject(460.0f, 35.0f, 125.0f, 255.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(460.0f, 35.0f, 125.0f, 295.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		searchgameobject.closet = true;
 	}
 	//本棚
-	else if (HitPlayerEyeObject(630.0f, 30.0f, 290.0f, 260.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(630.0f, 30.0f, 290.0f, 250.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		
 		searchgameobject.bookshelf = true;
-	}
-	//ぬいぐるみ
-	else if (HitPlayerEyeObject(522.0f, 625.0f, 45.0f, 75.0f) == true && GetKeyDown(SPACE_KEY) == true)
-	{
-		searchgameobject.doll = true;
 	}
 	else
 	{
@@ -825,7 +813,6 @@ void HitEyeSearchGameObject()
 
 		searchgameobject.desk = false;
 		searchgameobject.chair = false;
-		searchgameobject.doll = false;
 		searchgameobject.bed = false;
 		searchgameobject.flowerpot = false;
 		searchgameobject.bookshelf = false;
@@ -889,7 +876,6 @@ void HitEyeTundereRoomObject()
 	else
 	{
 		tundereobject.bed = false;
-		tundereobject.bookshelf = false;
 		tundereobject.chair = false;
 		tundereobject.closet = false;
 		tundereobject.desk = false;
@@ -923,25 +909,25 @@ void HitEyeYuruhuwaRoomObject()
 	//小テーブル
 	else if (HitPlayerEyeObject(1390.0f, 460.0f, 50.0f, 65.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		yuruhuwaobject.desk = true;
+		yuruhuwaobject.cabinet = true;
 	}
 	//大テーブル
-	else if (HitPlayerEyeObject(460.0f, 260.0f, 315.0f, 250.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(460.0f, 260.0f, 275.0f, 270.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.desk = true;
 	}
 	//椅子１
-	else if (HitPlayerEyeObject(540.0f, 525.0f, 30.0f, 30.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(550.0f, 525.0f, 30.0f, 40.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.chair = true;
 	}
 	//椅子2
-	else if (HitPlayerEyeObject(660.0f, 525.0f, 35.0f, 30.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(670.0f, 525.0f, 30.0f, 40.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.chair = true;
 	}
 	//椅子3
-	else if (HitPlayerEyeObject(790.0f, 360.0f, 35.0f, 30.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(790.0f, 360.0f, 35.0f, 40.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.chair = true;
 	}
@@ -973,12 +959,9 @@ void HitEyeYuruhuwaRoomObject()
 	else
 	{
 		yuruhuwaobject.bed = false;
-		yuruhuwaobject.bookshelf = false;
 		yuruhuwaobject.chair = false;
 		yuruhuwaobject.closet = false;
 		yuruhuwaobject.desk = false;
-		yuruhuwaobject.doll = false;
-		yuruhuwaobject.flowerpot = false;
 		yuruhuwaobject.light = false;
 		yuruhuwaobject.cabinet = false;
 
@@ -1131,21 +1114,28 @@ void SearchObject()
 #pragma endregion 
 
 #pragma region ボーイッシュ部屋のオブジェクト説明
-	DrawTalkObject(&searchgameobject.bookshelf, &searchgameobject.bookshelftalk, (char*)"本棚だ。古い本が詰まっている。");
+	DrawTalkObject(&searchgameobject.bookshelf, &searchgameobject.bookshelftalk, (char*)"本棚だ。下に本が落ちてしまっている。");
 
 	DrawTalkObject(&searchgameobject.chair, &searchgameobject.chairtalk, (char*)"普通の椅子。動かす必要はない。");
 
-	DrawTalkObject(&searchgameobject.desk, &searchgameobject.desktalk, (char*)"机だ。倒れたコップが置いてある。");
+	DrawTalkObject(&searchgameobject.desk, &searchgameobject.desktalk, (char*)"机だ。机の上には人形が置いてある。");
+
+	DrawTalkObject(&searchgameobject.bed, &searchgameobject.bedtalk, (char*)"ただのベッドだ。それほど汚れていない。");
+
+	DrawTalkObject(&searchgameobject.flowerpot, &searchgameobject.flowerpottalk, (char*)"観葉植物だ。倒れてしまっている。");
 
 	DrawTalkObject(&searchgameobject.doll, &searchgameobject.dolltalk, (char*)"くまの人形だ。少し笑っているような...");
 
-	DrawTalkObject(&searchgameobject.flowerpot, &searchgameobject.flowerpottalk, (char*)"観葉植物だ。倒れてしまっている。");
+	DrawTalkObject(&searchgameobject.cabinet, &searchgameobject.cabinettalk, (char*)"キャビネットがある。");
+
+
+
 #pragma endregion 
 	
 #pragma region ゆるふわ部屋のオブジェクト説明
 	DrawTalkObject(&yuruhuwaobject.bed, &yuruhuwaobject.bedtalk, (char*)"ただのベッドだ。それほど汚れていない。");
 
-	DrawTalkObject(&yuruhuwaobject.bookshelf, &yuruhuwaobject.bookshelftalk, (char*)"本棚だ。古い本が詰まっている。");
+	DrawTalkObject(&yuruhuwaobject.cabinet, &yuruhuwaobject.cabinettalk, (char*)"キャビネットがある。");
 
 	DrawTalkObject(&yuruhuwaobject.chair, &yuruhuwaobject.chairtalk, (char*)"普通の椅子。動かす必要はない。");
 
@@ -1153,17 +1143,11 @@ void SearchObject()
 
 	DrawTalkObject(&yuruhuwaobject.desk, &yuruhuwaobject.desktalk, (char*)"机だ。倒れたコップが置いてある。");
 
-	DrawTalkObject(&yuruhuwaobject.doll, &yuruhuwaobject.dolltalk, (char*)"くまの人形だ。少し笑っているような...");
-
-	DrawTalkObject(&yuruhuwaobject.flowerpot, &yuruhuwaobject.flowerpottalk, (char*)"観葉植物だ。倒れてしまっている。");
-
 	DrawTalkObject(&yuruhuwaobject.light, &yuruhuwaobject.lighttalk, (char*)"ライトだ。消す必要はない。");
 #pragma endregion
 
 #pragma region ツンデレ部屋のオブジェクト説明
 	DrawTalkObject(&tundereobject.bed, &tundereobject.bedtalk, (char*)"ただのベッドだ。それほど汚れていない。");
-
-	DrawTalkObject(&tundereobject.bookshelf, &tundereobject.bookshelftalk, (char*)"本棚だ。古い本が詰まっている。");
 
 	DrawTalkObject(&tundereobject.chair, &tundereobject.chairtalk, (char*)"普通の椅子。動かす必要はない。");
 

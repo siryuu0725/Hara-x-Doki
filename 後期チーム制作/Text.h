@@ -28,6 +28,12 @@ struct Time
 	bool end;
 };
 
+typedef struct
+{
+	int displaytimecounter;
+}DisplayTimeData;
+
+
 struct TextData
 {
 	char text[256];
@@ -37,11 +43,24 @@ struct TextData
 	bool nexttext;
 };
 
+typedef struct 
+{
+	float pos_x;
+	float pos_y;
+
+	int Choicepos;
+	bool decision;
+}ChoiceTextureData;
+
 extern TextBoxData textbox;
 
 extern Time time;
 
+extern DisplayTimeData displaytimedata;
+
 extern TextData textdata;
+
+extern ChoiceTextureData choicetexturedata;
 
 void LoadUI();
 
@@ -59,11 +78,19 @@ void InitScenario();
 
 void DrawScenario();
 
-void InitLoadFile();
+//void InitLoadFile(char* file);
+
+void InitLoadFile2();
 
 void LoadText();
 
 void DrawTalkText();
+
+void UpDataText();
+
+void InitChoiceTexture();
+
+void DrawChoiceTexture();
 #endif
 
 

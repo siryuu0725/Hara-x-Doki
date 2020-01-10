@@ -79,7 +79,6 @@ void InitSearchGameScene()
 	InitSearchGameRobot();
 	InitTextBox();
 	InitMenu();
-
 	ChangeSceneStep(SceneStep::MainStep);
 }
 

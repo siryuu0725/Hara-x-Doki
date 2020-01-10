@@ -26,11 +26,12 @@ typedef struct
 
 typedef struct
 {
+	bool boyish;
 	bool robot;         //ロボ
 	bool robotneck;     //ロボの頭
 	bool completerobot; //ロボ完成形
-	bool light;         //ライト
 
+	bool light;         //ライト
 	bool desk;          //机
 	bool chair;         //椅子
 	bool doll;          //人形
@@ -38,7 +39,9 @@ typedef struct
 	bool flowerpot;     //植木鉢
 	bool closet;        //クローゼット
 	bool bookshelf;     //本棚
+	bool cabinet;
 
+	bool cabinettalk;
 	bool lighttalk;        
 	bool desktalk;         
 	bool chairtalk;        
@@ -60,26 +63,23 @@ typedef struct
 	bool chair;         //椅子
 	bool sofa;
 	bool cabinet;
-	bool doll;          //人形
 	bool bed;           //ベッド
-	bool flowerpot;     //植木鉢
 	bool closet;        //クローゼット
-	bool bookshelf;     //本棚
 
 	bool lighttalk;         
 	bool desktalk;
 	bool chairtalk;
-	bool dolltalk;
+	
 	bool cabinettalk;
 	bool bedtalk;
 	bool sofatalk;
-	bool flowerpottalk;
 	bool closettalk;
-	bool bookshelftalk;
+
 }YuruhuwaTouchObject;
 
 typedef struct
 {
+	bool tundere;
 	bool robot;         //ロボ
 	bool sofa;
 	bool light;         //ライト
@@ -89,7 +89,6 @@ typedef struct
 	bool bed;           //ベッド
 	bool flowerpot;     //植木鉢
 	bool closet;        //クローゼット
-	bool bookshelf;     //本棚
 
 	bool lighttalk;
 	bool desktalk;
@@ -98,7 +97,6 @@ typedef struct
 	bool bedtalk;
 	bool flowerpottalk;
 	bool closettalk;
-	bool bookshelftalk;
 	bool sofatalk;
 }TundereTouchObject;
 

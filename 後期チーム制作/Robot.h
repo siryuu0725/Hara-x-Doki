@@ -12,6 +12,8 @@ typedef struct
 	float width, height;
 	bool talk;
 
+	bool description;
+
 }MaidRobotData;
 
 typedef struct

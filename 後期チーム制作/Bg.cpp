@@ -11,16 +11,18 @@
 #define MOVIE_STOP_TIME 120
 
 TitleBgData titlebg;
-MovieBgData bgdate;
+MovieBgData moviebgdate;
 SearchAreaData areadata;
 extern MoviePlayerDate movieplayer;
 
 void InitMovieBg()
 {
-	bgdate.Tu = MOVIETEX_TU;
-	bgdate.Tv = MOVITEXE_TV;
-	bgdate.movespeed = 0.002f;
-	bgdate.stopcount = 0;
+	moviebgdate.Tu = MOVIETEX_TU;
+	moviebgdate.Tv = MOVITEXE_TV;
+	moviebgdate.movespeed = 0.002f;
+	moviebgdate.stopcount = 0;
+
+	moviebgdate.endmovie = false;
 }
 
 void InitArea()
@@ -88,7 +90,7 @@ void DrawTitleBg()
 
 void DrawMovieBg()
 {
-	DrawUVTexture(0.0f, 0.0f, GetTexture(TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex), 1920, 2500, bgdate.Tu, bgdate.Tv);
+	DrawUVTexture(0.0f, 0.0f, GetTexture(TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex), 1920, 2500, moviebgdate.Tu, moviebgdate.Tv);
 }
 
 void DrawTalkBg()
@@ -201,28 +203,28 @@ void UpDateBg()
 	if (movieplayer.Bg_pos == true)
 	{
 		//ÉvÉåÉCÉÑÅ[ÇÕìÆÇ©Ç∏îwåiÇæÇØà⁄ìÆ
-		bgdate.Tv -= bgdate.movespeed;
+		moviebgdate.Tv -= moviebgdate.movespeed;
 		movieplayer.pos_y += movieplayer.movespeed;
 
 
-		if (bgdate.Tv <= 0.01f)
+		if (moviebgdate.Tv <= 0.01f)
 		{
-			bgdate.movespeed = 0.0f;
+			moviebgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
-			bgdate.stopcount++;
+			moviebgdate.stopcount++;
 
-			if (bgdate.stopcount == MOVIE_STOP_TIME)
+			if (moviebgdate.stopcount == MOVIE_STOP_TIME)
 			{
-				bgdate.movespeed = -0.002f;
+				moviebgdate.movespeed = -0.002f;
 				movieplayer.movespeed -= 4.7;
 			}
 
 		}
 		
 
-		if (bgdate.Tv >= 0.5)//å≥ÇÃâÊñ Ç…ñﬂÇ¡ÇΩéû
+		if (moviebgdate.Tv >= 0.5)//å≥ÇÃâÊñ Ç…ñﬂÇ¡ÇΩéû
 		{
-			bgdate.movespeed = 0.0f;
+			moviebgdate.movespeed = 0.0f;
 			movieplayer.movespeed = 0.0f;
 		
 			movieplayer.moveanimesion = false;

@@ -58,6 +58,7 @@ enum SearchCategoryTextureList
 	SearchTalkMaidTex,          //!< メイド立ち絵
 	SearchTextBoxTex,           //!< テキストボックス
 	SearchTextnameTex,          //!< 名前テキストボックス 
+	ChoiceTex,
 	SearchTextureMax,	        //!<  リスト最大数
 };
 

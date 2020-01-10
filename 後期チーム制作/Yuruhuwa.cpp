@@ -39,14 +39,13 @@ SceneId UpdateYuruhuwaRoomScene()
 void DrawYuruhuwaRoomScene()
 {
 	DrawSearchBg();
-	//DrawPuzzleGameRobot();
 	DrawYuruhuwa();
 
 	DrawSearchPlayerAndRobot();
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
-	//DrawTextBox();
-	DrawTalkYuruhuwa();
+	
+	//DrawTalkYuruhuwa();
 	DrawMenu();
 	DrawTime();
 	DrawTalkPuzzleGameRobot();
@@ -58,17 +57,17 @@ void InitYuruhuwaRoomScene()
 	LoadYuruhuwaFurnitureTex();
 	LoadSearchGameItem();
 
-
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex);
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
-	//LoadTexture("Res/キャラ/ボーイッシュ 改.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	LoadUI();
+	//InitLoadFile((char*)"テキスト/ゆるふわシステム.txt");
+	//InitLoadFile2();
 
 	InitYuruhuwaRoomObject();
 	InitYuruhuwa();
@@ -76,6 +75,7 @@ void InitYuruhuwaRoomScene()
 	InitPuzzleGameRobot();
 	InitTextBox();
 	InitMenu();
+	getitem.yuruhuwadoorkey = true;
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -92,6 +92,10 @@ void MainYuruhuwaRoomScene()
 	HitEyeYuruhuwaRoomObject();
 
 	UpDateMenu();
+
+	//UpDataText();
+
+	//LoadText();
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchyuruhuwaarea = false;

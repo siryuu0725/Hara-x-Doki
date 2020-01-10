@@ -32,6 +32,7 @@ void InitMaidRobot()
 	maidrobot.height = 128.0f;
 	maidrobot.width = 64.0f;
 	maidrobot.talk = false;
+	maidrobot.description = false;
 }
 
 void InitSearchGameRobot()
@@ -142,6 +143,7 @@ void DrawTalkMaid()
 	{
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawChoiceTexture();
 	}
 }
 
@@ -201,6 +203,7 @@ void DrawTalkMysteryGameRobot()
 	{
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		
 	}
 }
 #pragma endregion

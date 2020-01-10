@@ -58,8 +58,9 @@ void DrawLargeRoomScene()
 	DrawMenu();
 	DrawTime();
 	DrawTalkText();
+
 	DrawTalkMaid();
-	DrawTalkYuruhuwa();
+	//DrawTalkYuruhuwa();
 	
 	SearchObject();
 }
@@ -88,11 +89,13 @@ void InitLargeRoomScene()
 	InitArea();
 	InitLargeRoomPlayer();
 	InitMaidRobot();
-	InitLoadFile();
+	//InitLoadFile((char*)"text.txt");
+	//InitLoadFile2();
 	InitTextBox();
 	InitMenu();
 	InitTimeCounter();
 
+	InitChoiceTexture();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -112,7 +115,7 @@ void MainLargeRoomScene()
 	UpDateMenu();
 
 	
-	if (OnMouseDown(Left) == true)
+	if (GetKeyDown(SPACE_KEY) == true)
 	{
 		LoadText();
 		textdata.nexttext = true;
