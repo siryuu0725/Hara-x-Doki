@@ -897,7 +897,7 @@ void HitEyeYuruhuwaRoomObject()
 	{
 		yuruhuwaobject.robot = true;
 	}
-	else if (HitPlayerEyeObject(yuruhuwa.pos_x, yuruhuwa.pos_y, yuruhuwa.width, yuruhuwa.height) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(yuruhuwa.pos_x+20.0f, yuruhuwa.pos_y+64.0f, yuruhuwa.width-30.0f, yuruhuwa.height-62.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.yuruhuwa = true;
 	}
@@ -964,6 +964,7 @@ void HitEyeYuruhuwaRoomObject()
 		yuruhuwaobject.desk = false;
 		yuruhuwaobject.light = false;
 		yuruhuwaobject.cabinet = false;
+		yuruhuwaobject.sofa = false;
 
 		yuruhuwaobject.robot = false;
 		yuruhuwaobject.yuruhuwa = false;
@@ -1144,6 +1145,9 @@ void SearchObject()
 	DrawTalkObject(&yuruhuwaobject.desk, &yuruhuwaobject.desktalk, (char*)"机だ。倒れたコップが置いてある。");
 
 	DrawTalkObject(&yuruhuwaobject.light, &yuruhuwaobject.lighttalk, (char*)"ライトだ。消す必要はない。");
+
+	DrawTalkObject(&yuruhuwaobject.sofa, &yuruhuwaobject.sofatalk, (char*)"ふかふかだ！");
+
 #pragma endregion
 
 #pragma region ツンデレ部屋のオブジェクト説明

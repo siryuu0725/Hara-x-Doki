@@ -60,7 +60,7 @@ void DrawLargeRoomScene()
 	DrawTalkText();
 
 	DrawTalkMaid();
-	//DrawTalkYuruhuwa();
+	
 	
 	SearchObject();
 }
@@ -85,12 +85,11 @@ void InitLargeRoomScene()
 	LoadUI();
 
 	InitBoyish();
-	//InitYuruhuwa();
 	InitArea();
 	InitLargeRoomPlayer();
 	InitMaidRobot();
-	//InitLoadFile((char*)"text.txt");
-	//InitLoadFile2();
+	
+	InitLoadFile();
 	InitTextBox();
 	InitMenu();
 	InitTimeCounter();

@@ -36,7 +36,7 @@ typedef struct
 
 struct TextData
 {
-	char text[256];
+	char text[1000];
 	char* oneline;
 	char* twoline;
 	char* threeline;
@@ -80,7 +80,7 @@ void DrawScenario();
 
 //void InitLoadFile(char* file);
 
-void InitLoadFile2();
+void InitLoadFile();
 
 void LoadText();
 

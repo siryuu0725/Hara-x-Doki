@@ -186,12 +186,12 @@ void DrawTalkYuruhuwa()
 		yuruhuwa.talk = true;
 		textbox.onspacekey = true;
 	}
-	/*else if (GetKeyDown(SPACE_KEY) == true && yuruhuwa.talk == true)
+	else if (textdata.oneline == NULL && yuruhuwa.talk == true)
 	{
 		yuruhuwa.tu = 0.0f;
 		yuruhuwa.talk = false;
 		textbox.onspacekey = false;
-	}*/
+	}
 	if (yuruhuwa.talk == true)
 	{
 		//DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));

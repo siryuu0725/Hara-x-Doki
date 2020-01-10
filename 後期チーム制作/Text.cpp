@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Bg.h"
+#include "JK.h"
 
 
 TextBoxData textbox;
@@ -18,7 +19,6 @@ DisplayTimeData displaytimedata;
 ScenarioData scenario;
 TextData textdata;
 ChoiceTextureData choicetexturedata;
-FILE* fp;
 
 void LoadUI()
 {
@@ -122,22 +122,15 @@ void DrawTime()
 	
 }
 
-//void InitLoadFile(char* file)
-//{
-//	textdata.nexttext = false;
-//	if (areadata.searchgamearea == true)
-//	{
-//		fopen_s(&fp, file, "r");
-//	}
-//	fopen_s(&fp, file, "r");
-//	fgets(textdata.text, 256, fp);	
-//}
-
-void InitLoadFile2()
+void InitLoadFile()
 {
 	textdata.nexttext = false;
-	fopen_s(&fp, "text.txt","r");
-	fgets(textdata.text, 256, fp);
+	FILE* fp;
+
+	fopen_s(&fp, "Res/テキスト/ゆるふわシステム.txt","r");
+	
+	fgets(textdata.text, 1000, fp);
+	fclose(fp);
 }
 
 void LoadText()
@@ -163,18 +156,14 @@ void LoadText()
 	textdata.twoline = strtok(NULL,",");
 	textdata.threeline = strtok(NULL,",");
 
-	if (textdata.text == strtok(NULL, "!"))
-	{
-		fp == NULL;
-		fclose(fp);
-	}
+ 	
 }
 
 void DrawTalkText()
 {
-	DrawFont(100.0f, 300.0f, textdata.oneline, FontSize::Regular, FontColor::Red);
-	DrawFont(100.0f, 400.0f, textdata.twoline, FontSize::Regular, FontColor::Red);
-	DrawFont(100.0f, 500.0f, textdata.threeline, FontSize::Regular, FontColor::Red);
+	DrawFont(300.0f, 760.0f, textdata.oneline, FontSize::Regular, FontColor::White);
+	DrawFont(300.0f, 860.0f, textdata.twoline, FontSize::Regular, FontColor::White);
+	DrawFont(300.0f, 960.0f, textdata.threeline, FontSize::Regular, FontColor::White);
 }
 
 void UpDataText()
@@ -189,6 +178,7 @@ void UpDataText()
 		{
 			LoadText();
 			textdata.nexttext = true;
+			
 		}
 	}
 }
