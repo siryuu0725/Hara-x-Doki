@@ -27,7 +27,7 @@ void InitMysteryText()
 
 	for (int i = 0; i < 5; ++i)
 	{
-		for (int j = 0; j < 12; ++j)
+		for (int j = 0; j < 11; ++j)
 		{
 			mysterytext.text[i][j] = mysterytext.textcount;
 			mysterytext.textcount++;
@@ -49,21 +49,22 @@ void InitDecisionButton()
 
 void DrawMysteryBg()
 {
+	DrawBgTexture(GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex));
 	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxTex));
 
 	for (int i = 0; i < 5; ++i)
 	{
-		for (int j = 0; j < 12; ++j)
+		for (int j = 0; j < 11; ++j)
 		{
 			if (HitChoise(mysterytext.textpos_x + 70 * j, mysterytext.textpos_y + 70 * i, mysterytext.textwidth, mysterytext.textheight) == true)
 			{
-				DrawTexture(mysterytext.textpos_x + 70 * j, mysterytext.textpos_y + 70 * i, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex));
+				DrawTexture(mysterytext.textpos_x + 5.0f + 70 * j, mysterytext.textpos_y + 5.0f + 70 * i, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex));
 			}
 
 		}
 	}
 
-	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex));
+	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextTex));
 	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextTex));
 
 	DrawTexture(decisionbutton.pos_x, decisionbutton.pos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameDecisionButtonTex));

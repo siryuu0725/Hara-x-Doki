@@ -106,6 +106,9 @@ void MainCorridorScene()
 
 		getitem.tunderedoorkey = false;
 		getitem.yuruhuwadoorkey = false;
+
+		DrawTalkObject(&getitem.breakdoorkey, &corridorobject.doortalk,(char*)"");
+
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)

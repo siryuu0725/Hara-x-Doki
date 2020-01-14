@@ -40,8 +40,8 @@ void DrawMysteryGameScene()
 
 void InitMysteryGameScene()
 {
-	
-	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/Ç†Ç¢Ç§Ç¶Ç®.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex);
+	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/Ç»ÇºÇ»Çºîwåi.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex);
+	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/Ç†Ç¢Ç§Ç¶Ç®.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextTex);
 	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/Ç†Ç¢Ç§Ç¶Ç®òg.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxTex);
 	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/ëIëíÜ.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex);
 	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/ñ‚ëË.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextTex);

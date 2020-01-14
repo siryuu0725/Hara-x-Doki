@@ -3,7 +3,7 @@
 
 typedef struct
 {
-	int text[5][12];
+	int text[5][11];
 	int textcount;
 
 	float textpos_x;

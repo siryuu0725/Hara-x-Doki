@@ -156,7 +156,7 @@
     <ClCompile Include="LargeRoom.cpp" />
     <ClCompile Include="Corridor.cpp" />
     <ClCompile Include="SearchGame.cpp" />
-    <ClCompile Include="TalkScene.cpp" />
+    <ClCompile Include="Talk.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
@@ -187,7 +187,7 @@
     <ClInclude Include="LargeRoom.h" />
     <ClInclude Include="Corridor.h" />
     <ClInclude Include="SearchGame.h" />
-    <ClInclude Include="TalkScene.h" />
+    <ClInclude Include="Talk.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />

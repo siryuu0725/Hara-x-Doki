@@ -169,6 +169,7 @@ enum PuzzleGameCategoryTextureList
 enum MysteryGameCategoryTextureList
 {
 	MysteryGameBgTex,		   //!< ”wŒi
+	MysteryGameTextTex,
 	MysteryGameTextBoxTex,		   //!< ‚ ‚¢‚¤‚¦‚¨•\” 
 
 	MysteryGameChoiceTextTex,		   //!< ‘I‘ð’†
