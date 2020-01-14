@@ -69,7 +69,6 @@ void InitTextBox();
 
 void DrawTextBox();
 
-void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text);
 
 void InitTimeCounter();
 
@@ -79,11 +78,8 @@ void InitScenario();
 
 void DrawScenario();
 
-void InitLoadFile();
 
-void LoadText();
 
-void DrawTalkText();
 
 void UpDataDescriptionText();
 
@@ -91,7 +87,6 @@ void InitChoiceTexture();
 
 void DrawChoiceTexture();
 
-void DrawDescription();
 #endif
 
 

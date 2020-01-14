@@ -10,7 +10,6 @@
 
 #include "SearchGame.h"
 #include "PuzzleGame.h"
-#include "TalkScene.h"
 #include "Scenario.h"
 #include "CriminalRoom.h"
 #include "Tundere.h"
@@ -77,9 +76,6 @@ void UpdateScene()
 	case SceneId::MysteryGameScene:
 		scene_id = UpdateMysteryGameScene();
 		break;
-	case SceneId::TalkScene:
-		scene_id = UpdateTalkScene();
-		break;
 	case SceneId::GameClearScene:
 		scene_id = UpdateGameClearScene();
 		break;
@@ -139,9 +135,6 @@ void DrawScene()
 			break;
 		case SceneId::MysteryGameScene:
 			DrawMysteryGameScene();
-			break;
-		case SceneId::TalkScene:
-			DrawTalkScene();
 			break;
 		case SceneId::GameClearScene:
 			DrawGameClearScene();

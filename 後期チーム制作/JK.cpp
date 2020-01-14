@@ -7,6 +7,7 @@
 #include "Input.h"
 #include "Text.h"
 #include "Player.h"
+#include "Talk.h"
 
 
 Boyish boyish;

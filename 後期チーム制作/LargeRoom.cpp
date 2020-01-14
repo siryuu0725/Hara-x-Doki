@@ -11,6 +11,7 @@
 #include "Text.h"
 #include "Robot.h"
 #include "JK.h"
+#include "Talk.h"
 
 extern SearchPlayerData serachplayer;
 extern TextBoxData textbox;

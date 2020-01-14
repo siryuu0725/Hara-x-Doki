@@ -11,6 +11,7 @@
 #include "Text.h"
 #include "Item.h"
 #include "JK.h"
+#include "Talk.h"
 
 extern TextBoxData textbox;
 extern MenuData menu;

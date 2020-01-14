@@ -10,6 +10,7 @@
 #include "Text.h"
 #include "Yuruhuwa.h"
 #include "JK.h"
+#include "Talk.h"
 
 // ”Æl•”‰®ƒV[ƒ“‚Ì‰Šú‰»
 void InitYuruhuwaRoomScene();

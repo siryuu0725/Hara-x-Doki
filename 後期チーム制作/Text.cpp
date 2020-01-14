@@ -11,6 +11,7 @@
 #include <string.h>
 #include "Bg.h"
 #include "JK.h"
+#include "Talk.h"
 
 
 TextBoxData textbox;
@@ -54,29 +55,6 @@ void DrawTextBox()
 	//{
 	//	DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 	//}
-}
-
-void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
-{
-	if (*touchobject == true && *tolkobject == false)
-	{
-		*tolkobject = true;
-		textbox.onspacekey = true;
-
-	}
-	else if (GetKeyDown(SPACE_KEY) == true && *tolkobject == true)
-	{
-		*tolkobject = false;
-		
-		textbox.onspacekey = false;
-
-	}
-	if (*tolkobject == true)
-	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-
-		DrawFont(500, 850, text, FontSize::Regular, FontColor::White);
-	}
 }
 
 void InitTimeCounter()
@@ -123,62 +101,6 @@ void DrawTime()
 		DrawFont(1780, 0, time.timefont, FontSize::Regular, FontColor::Red);
 	}
 	
-}
-
-void InitLoadFile()
-{
-	textdata.nexttext = false;
-	if (moviebgdate.endmovie == true)
-	{
-		FILE* DescriptionFp;
-
-		fopen_s(&DescriptionFp, "Res/テキスト/操作説明.txt", "r");
-
-		fgets(textdata.text, 1000, DescriptionFp);
-		fclose(DescriptionFp);
-	}
-	else if (areadata.searchyuruhuwaarea == true)
-	{
-		FILE* fp;
-
-		fopen_s(&fp, "Res/テキスト/ゆるふわシステム.txt", "r");
-
-		fgets(textdata.text, 1000, fp);
-		fclose(fp);
-	}
-
-	
-}
-
-void LoadText()
-{
-
-	textdata.oneline = NULL;
-	textdata.twoline = NULL;
-	textdata.threeline = NULL;
-	
-	//memset(&textdata.oneline, '\0', 256);
-	//memset(&textdata.twoline, '\0', 256);
-	//memset(&textdata.threeline, '\0', 256);
-
-	if (textdata.nexttext == true)
-	{
-		textdata.oneline = strtok(NULL,",");
-	}
-	else
-	{
-		textdata.oneline = strtok(textdata.text,",");
-	}
-	
-	textdata.twoline = strtok(NULL,",");
-	textdata.threeline = strtok(NULL,",");
-}
-
-void DrawTalkText()
-{
-	DrawFont(300.0f, 760.0f, textdata.oneline, FontSize::Regular, FontColor::White);
-	DrawFont(300.0f, 860.0f, textdata.twoline, FontSize::Regular, FontColor::White);
-	DrawFont(300.0f, 960.0f, textdata.threeline, FontSize::Regular, FontColor::White);
 }
 
 void UpDataDescriptionText()
@@ -231,32 +153,6 @@ void DrawScenario()
 		DrawFont(250, 540, "女子高生", FontSize::Large, FontColor::Pink);
 		DrawFont(250, 740, "真相を突き止めるべく、後を追いかけたのだった。 ", FontSize::Large, FontColor::White);
 	}
-}
-
-void DrawDescription()
-{
-	
-	if (maidrobot.description == false && moviebgdate.endmovie == true)
-	{
-		maidrobot.description = true;
-		textbox.onspacekey = true;
-	}
-	else if (textdata.threeline == NULL && maidrobot.description == true && moviebgdate.endmovie == false || choicetexturedata.decision == true)
-	{
-		maidrobot.description = false;
-		textbox.onspacekey = false;
-	}
- 	if (maidrobot.description == true)
-	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-		DrawTalkText();
-		if (displaydata.choicescenecounter == 1)
-		{
-			DrawChoiceTexture();
-		}
-	}
-	
 }
 
 void InitChoiceTexture()
