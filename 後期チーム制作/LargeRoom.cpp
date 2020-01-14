@@ -57,11 +57,9 @@ void DrawLargeRoomScene()
 
 	DrawMenu();
 	DrawTime();
-	DrawTalkText();
-
 	DrawTalkMaid();
 	
-	
+	DrawDescription();
 	SearchObject();
 }
 
@@ -114,11 +112,7 @@ void MainLargeRoomScene()
 	UpDateMenu();
 
 	
-	if (GetKeyDown(SPACE_KEY) == true)
-	{
-		LoadText();
-		textdata.nexttext = true;
-	}
+	UpDataDescriptionText();
 	
 
 	if (searchplayer.pos_x <= 70.0f && searchplayer.pos_y >= 390.0f && searchplayer.pos_y <= 500.0f)

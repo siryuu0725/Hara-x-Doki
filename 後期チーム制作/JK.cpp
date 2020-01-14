@@ -186,7 +186,7 @@ void DrawTalkYuruhuwa()
 		yuruhuwa.talk = true;
 		textbox.onspacekey = true;
 	}
-	else if (textdata.oneline == NULL && yuruhuwa.talk == true)
+	else if (textdata.threeline == NULL && yuruhuwa.talk == true)
 	{
 		yuruhuwa.tu = 0.0f;
 		yuruhuwa.talk = false;

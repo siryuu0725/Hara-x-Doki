@@ -22,11 +22,11 @@ void InitMovieBg()
 	moviebgdate.movespeed = 0.002f;
 	moviebgdate.stopcount = 0;
 
-	moviebgdate.endmovie = false;
 }
 
 void InitArea()
 {
+	moviebgdate.endmovie = true;
 	areadata.largeroom = true;
 	areadata.corridor = false;
 	areadata.searchcriminalarea = false;

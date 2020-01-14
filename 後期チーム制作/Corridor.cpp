@@ -51,6 +51,7 @@ void DrawCorridorScene()
 	DrawMenu();
 	DrawTime();
 	DrawTalkYuruhuwa();
+	DrawDoorTalk();
 }
 
 void InitCorridorScene()
@@ -107,7 +108,7 @@ void MainCorridorScene()
 		getitem.yuruhuwadoorkey = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
+	else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
 	{
 		areadata.corridor = false;
 		areadata.searchtunderearea = true;
@@ -120,8 +121,7 @@ void MainCorridorScene()
 	
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-
-	if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
+	else if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
 	{
 		areadata.corridor = false;
 		areadata.searchyuruhuwaarea = true;
@@ -133,6 +133,12 @@ void MainCorridorScene()
 		}
 		
 		ChangeSceneStep(SceneStep::EndStep);
+	}
+	else if((HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+		|| (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+		|| (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true))
+	{
+		corridorobject.door = true;
 	}
 
 	UpDateMenu();

@@ -11,6 +11,7 @@
 #include <string>
 
 LargeRoomTouchObject largeroomobject;
+CorridorTouchObject corridorobject;
 SearchGameTouchObject searchgameobject;
 YuruhuwaTouchObject yuruhuwaobject;
 TundereTouchObject tundereobject;
@@ -1169,4 +1170,26 @@ void SearchObject()
 #pragma endregion
 }
 
+void DrawDoorTalk()
+{
+	if (corridorobject.door == true && corridorobject.doortalk == false)
+	{
+		corridorobject.doortalk = true;
+		textbox.onspacekey = true;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.doortalk == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.door = false;
+		textbox.onspacekey = false;
+
+	}
+	if (corridorobject.doortalk == true)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+
+		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
+	}
+}
 

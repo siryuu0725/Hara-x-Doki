@@ -30,8 +30,9 @@ struct Time
 
 typedef struct
 {
-	int displaytimecounter;
-}DisplayTimeData;
+	int choicescenecounter;
+	int name_uicounter;
+}DisplayData;
 
 
 struct TextData
@@ -56,7 +57,7 @@ extern TextBoxData textbox;
 
 extern Time time;
 
-extern DisplayTimeData displaytimedata;
+extern DisplayData displaydata;
 
 extern TextData textdata;
 
@@ -78,19 +79,19 @@ void InitScenario();
 
 void DrawScenario();
 
-//void InitLoadFile(char* file);
-
 void InitLoadFile();
 
 void LoadText();
 
 void DrawTalkText();
 
-void UpDataText();
+void UpDataDescriptionText();
 
 void InitChoiceTexture();
 
 void DrawChoiceTexture();
+
+void DrawDescription();
 #endif
 
 

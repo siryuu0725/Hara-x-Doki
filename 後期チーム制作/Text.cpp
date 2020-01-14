@@ -15,7 +15,7 @@
 
 TextBoxData textbox;
 Time time;
-DisplayTimeData displaytimedata;
+DisplayData displaydata;
 ScenarioData scenario;
 TextData textdata;
 ChoiceTextureData choicetexturedata;
@@ -34,6 +34,9 @@ void InitTextBox()
 	textbox.pos_x = TEXTBOX_POS_X;
 	textbox.pos_y = TEXTBOX_POS_Y;
 	textbox.onspacekey = false;
+
+	displaydata.choicescenecounter = 0;
+	displaydata.name_uicounter = 0;
 }
 
 void DrawTextBox()
@@ -125,12 +128,26 @@ void DrawTime()
 void InitLoadFile()
 {
 	textdata.nexttext = false;
-	FILE* fp;
+	if (moviebgdate.endmovie == true)
+	{
+		FILE* DescriptionFp;
 
-	fopen_s(&fp, "Res/テキスト/ゆるふわシステム.txt","r");
+		fopen_s(&DescriptionFp, "Res/テキスト/操作説明.txt", "r");
+
+		fgets(textdata.text, 1000, DescriptionFp);
+		fclose(DescriptionFp);
+	}
+	else if (areadata.searchyuruhuwaarea == true)
+	{
+		FILE* fp;
+
+		fopen_s(&fp, "Res/テキスト/ゆるふわシステム.txt", "r");
+
+		fgets(textdata.text, 1000, fp);
+		fclose(fp);
+	}
+
 	
-	fgets(textdata.text, 1000, fp);
-	fclose(fp);
 }
 
 void LoadText()
@@ -155,8 +172,6 @@ void LoadText()
 	
 	textdata.twoline = strtok(NULL,",");
 	textdata.threeline = strtok(NULL,",");
-
- 	
 }
 
 void DrawTalkText()
@@ -166,27 +181,32 @@ void DrawTalkText()
 	DrawFont(300.0f, 960.0f, textdata.threeline, FontSize::Regular, FontColor::White);
 }
 
-void UpDataText()
+void UpDataDescriptionText()
 {
+	
 	if (GetKeyDown(SPACE_KEY) == true)
 	{
 		if ((maidrobot.description == true && choicetexturedata.Choicepos == 2))
 		{
-			maidrobot.description = false;
+			choicetexturedata.decision = true;
 		}
-		else
-		{
-			LoadText();
-			textdata.nexttext = true;
-			
-		}
+		LoadText();
+		textdata.nexttext = true;
+		displaydata.choicescenecounter++;
+	}
+	if (moviebgdate.endmovie == true)
+	{
+		LoadText();
+		moviebgdate.endmovie = false;
+		textdata.nexttext = true;
+
 	}
 }
 
 void InitScenario()
 {
 	scenario.scenario = true;
-}
+}    
 
 void DrawScenario()
 {
@@ -215,36 +235,33 @@ void DrawScenario()
 
 void DrawDescription()
 {
-	bool descriptionflg;
-	if (moviebgdate.endmovie == true)
+	
+	if (maidrobot.description == false && moviebgdate.endmovie == true)
 	{
-		for (int i=0; i <= 60; i++)
+		maidrobot.description = true;
+		textbox.onspacekey = true;
+	}
+	else if (textdata.threeline == NULL && maidrobot.description == true && moviebgdate.endmovie == false || choicetexturedata.decision == true)
+	{
+		maidrobot.description = false;
+		textbox.onspacekey = false;
+	}
+ 	if (maidrobot.description == true)
+	{
+		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTalkText();
+		if (displaydata.choicescenecounter == 1)
 		{
-			displaytimedata.displaytimecounter++;
-		}
-		if (displaytimedata.displaytimecounter==60)
-		{
-			maidrobot.description = true;
-			textbox.onspacekey = true;
-		}
-		else if (maidrobot.description == false)
-		{
-			textbox.onspacekey = false;
-		}
-		if (maidrobot.description == true && descriptionflg == true)
-		{
-			DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
-			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-			DrawTalkText();
 			DrawChoiceTexture();
 		}
 	}
-
+	
 }
 
 void InitChoiceTexture()
 {
-	choicetexturedata.pos_x = 300.0f;
+	choicetexturedata.pos_x = 230.0f;
 	choicetexturedata.pos_y = 760.0f;
 	choicetexturedata.Choicepos = 1;
 
@@ -254,7 +271,7 @@ void InitChoiceTexture()
 
 void DrawChoiceTexture()
 {
-	if (GetKeyDown(DOWN_KEY) == true && choicetexturedata.Choicepos < 3)
+	if (GetKeyDown(DOWN_KEY) == true && choicetexturedata.Choicepos < 2)
 	{
 		choicetexturedata.Choicepos++;
 	}
@@ -270,9 +287,5 @@ void DrawChoiceTexture()
 	else if (choicetexturedata.Choicepos == 2)
 	{
 		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y + 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::ChoiceTex));
-	}
-	else if (choicetexturedata.Choicepos == 3)
-	{
-		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y + 200.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::ChoiceTex));
 	}
 }

@@ -26,6 +26,12 @@ typedef struct
 
 typedef struct
 {
+	bool door;
+	bool doortalk;
+}CorridorTouchObject;
+
+typedef struct
+{
 	bool boyish;
 	bool robot;         //ロボ
 	bool robotneck;     //ロボの頭
@@ -107,6 +113,7 @@ typedef struct
 	bool itemkey;     //鍵
 	bool itemenergy;  //電池
 	bool itemlight;   //ライト
+
 	bool boyishdoorkey;
 	bool yuruhuwadoorkey;
 	bool tunderedoorkey;
@@ -115,6 +122,8 @@ typedef struct
 }GetItem;
 
 extern LargeRoomTouchObject largeroomobject;
+
+extern CorridorTouchObject corridorobject;
 
 extern SearchGameTouchObject searchgameobject;
 
@@ -196,5 +205,7 @@ void UpDataSearchGame();
 
 
 void SearchObject();
+
+void DrawDoorTalk();
 #endif
 
