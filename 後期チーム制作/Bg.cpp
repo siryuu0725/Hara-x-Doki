@@ -26,7 +26,6 @@ void InitMovieBg()
 
 void InitArea()
 {
-	moviebgdate.endmovie = true;
 	areadata.largeroom = true;
 	areadata.corridor = false;
 	areadata.searchcriminalarea = false;

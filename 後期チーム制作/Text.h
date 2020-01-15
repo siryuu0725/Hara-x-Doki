@@ -30,8 +30,8 @@ struct Time
 
 typedef struct
 {
-	int choicescenecounter;
 	int name_uicounter;
+	bool displaynext;
 }DisplayData;
 
 

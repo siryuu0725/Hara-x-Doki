@@ -45,7 +45,7 @@ SceneId UpdateCorridorScene()
 void DrawCorridorScene()
 {
 	DrawSearchBg();
-	DrawBoyish();
+	//DrawBoyish();
 	DrawYuruhuwa();
 	DrawSearchPlayerAndRobot();
 	
@@ -53,6 +53,7 @@ void DrawCorridorScene()
 	DrawTime();
 	DrawTalkYuruhuwa();
 	DrawDoorTalk();
+	//DrawDoorTalk2();
 }
 
 void InitCorridorScene()
@@ -71,6 +72,9 @@ void InitCorridorScene()
 	InitBoyish();
 	InitYuruhuwa();
 	InitMenu();
+	InitLoadFile();
+	InitChoiceTexture();
+
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -85,67 +89,66 @@ void MainCorridorScene()
 
 	UpDataPlayerPos();
 
-	if (OnMouseDown(Left) == true)
-	{
-		ChangeSceneStep(SceneStep::EndStep);
-	}
+	UpDataDoorText();
+
+	UpDateMenu();
+
 	if (searchplayer.pos_x + 64.0f >= 1900.0f)
 	{
 		areadata.corridor = false;
 		areadata.largeroom = true;
 		areadata.cangearea = true;
-		areadata.cangearea2 = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 
 	//ÉLÉÉÉâÇÃïù+20íˆîªíËÇëÂÇ´Ç≠ÇµÇƒÇ¢ÇÈ
 	if (HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
 	{
-		areadata.corridor = false;
+		corridorobject.boyishdoor = true;
+		
 		areadata.searchgamearea = true;
-		getitem.breakdoorkey = true;
+		areadata.searchtunderearea = false;
+		areadata.searchyuruhuwaarea = false;
 
-		getitem.tunderedoorkey = false;
-		getitem.yuruhuwadoorkey = false;
-
-		DrawTalkObject(&getitem.breakdoorkey, &corridorobject.doortalk,(char*)"");
-
-		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
 	{
-		areadata.corridor = false;
+		corridorobject.tunderedoor = true;
+		
 		areadata.searchtunderearea = true;
-		getitem.breakdoorkey = true;
-		if (boyish.clear != true)
-		{
-			getitem.boyishdoorkey = false;
-			getitem.yuruhuwadoorkey = false;
-		}
-	
-		ChangeSceneStep(SceneStep::EndStep);
+		areadata.searchgamearea = false;
+		areadata.searchyuruhuwaarea = false;
+
 	}
 	else if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
 	{
-		areadata.corridor = false;
-		areadata.searchyuruhuwaarea = true;
-		getitem.breakdoorkey = true;
-		if (boyish.clear != true)
-		{
-			getitem.boyishdoorkey = false;
-			getitem.tunderedoorkey = false;
-		}
+		corridorobject.yuruhuwadoor = true;
 		
-		ChangeSceneStep(SceneStep::EndStep);
+		areadata.searchyuruhuwaarea = true;
+		areadata.searchgamearea = false;
+		areadata.searchtunderearea = false;
+		
 	}
-	else if((HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		|| (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
-		|| (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true))
+	else if(HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		corridorobject.door = true;
+		corridorobject.boyishdoor = true;
+	}
+	else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.tunderedoor = true;
+	}
+	else if(HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.yuruhuwadoor = true;
 	}
 
-	UpDateMenu();
+	if (displaydata.displaynext == true)
+	{
+		areadata.corridor = false;
+		getitem.breakdoorkey = true;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
+
 }
 
 SceneId FinishCorridorScene()

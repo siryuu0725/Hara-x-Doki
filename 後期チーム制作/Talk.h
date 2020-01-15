@@ -11,4 +11,8 @@ void DrawDescription();
 void InitLoadFile();
 
 void LoadText();
+
+void UpDataDoorText();
+
+void DrawDoorTalk2();
 #endif

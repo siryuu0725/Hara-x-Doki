@@ -26,7 +26,10 @@ typedef struct
 
 typedef struct
 {
-	bool door;
+	bool boyishdoor;
+	bool tunderedoor;
+	bool yuruhuwadoor;
+
 	bool doortalk;
 }CorridorTouchObject;
 

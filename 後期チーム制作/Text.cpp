@@ -36,8 +36,8 @@ void InitTextBox()
 	textbox.pos_y = TEXTBOX_POS_Y;
 	textbox.onspacekey = false;
 
-	displaydata.choicescenecounter = 0;
 	displaydata.name_uicounter = 0;
+	displaydata.displaynext = false;
 }
 
 void DrawTextBox()
@@ -114,7 +114,6 @@ void UpDataDescriptionText()
 		}
 		LoadText();
 		textdata.nexttext = true;
-		displaydata.choicescenecounter++;
 	}
 	if (moviebgdate.endmovie == true)
 	{

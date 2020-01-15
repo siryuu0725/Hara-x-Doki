@@ -7,6 +7,8 @@
 #include "Bg.h"
 #include <cstdio>
 #include "Item.h"
+#include "JK.h"
+#include <string.h>
 
 void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 {
@@ -44,7 +46,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, DescriptionFp);
 		fclose(DescriptionFp);
 	}
-	else if (areadata.corridor == true && getitem.breakdoorkey == true)
+	else if (areadata.corridor == true)
 	{
 		FILE* BreakKyeFp;
 
@@ -68,6 +70,7 @@ void InitLoadFile()
 
 void LoadText()
 {
+	
 
 	textdata.oneline = NULL;
 	textdata.twoline = NULL;
@@ -77,7 +80,12 @@ void LoadText()
 	//memset(&textdata.twoline, '\0', 256);
 	//memset(&textdata.threeline, '\0', 256);
 
-	if (textdata.nexttext == true)
+	if (choicetexturedata.decision == true)
+	{
+		textdata.oneline = strtok(textdata.text, ",");
+		
+	}
+	else if (textdata.nexttext == true)
 	{
 		textdata.oneline = strtok(NULL, ",");
 	}
@@ -109,16 +117,17 @@ void DrawDescription()
 	{
 		maidrobot.description = false;
 		textbox.onspacekey = false;
+		
 	}
 	if (maidrobot.description == true)
 	{
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		DrawTalkText();
-		if (displaydata.choicescenecounter == 1)
+		if (strstr(textdata.oneline, "はい"))
 		{
 			DrawChoiceTexture();
-			displaydata.choicescenecounter = 0;
+			
 		}
 	}
 
@@ -126,64 +135,250 @@ void DrawDescription()
 
 void DrawDoorTalk()
 {
-	if (corridorobject.door == true && corridorobject.doortalk == false)
+#pragma region ボーイッシュ扉会話
+	//最初の鍵が壊れていない時
+	if (corridorobject.boyishdoor == true && corridorobject.doortalk == false  && getitem.breakdoorkey == false)
 	{
 		corridorobject.doortalk = true;
 		textbox.onspacekey = true;
 
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.doortalk == true)
+	//鍵を持っていない状態で最初の鍵が壊れているとき
+	else if (corridorobject.boyishdoor == true && corridorobject.doortalk == false && getitem.boyishdoorkey == false && getitem.breakdoorkey == true)
 	{
-		corridorobject.doortalk = false;
-		corridorobject.door = false;
-		textbox.onspacekey = false;
+		corridorobject.doortalk = true;
+		textbox.onspacekey = true;
 
 	}
-	if (corridorobject.doortalk == true)
+	//最初のの鍵を使った後同じ部屋で使うとき
+	else if (corridorobject.boyishdoor == true && corridorobject.doortalk == false && getitem.boyishdoorkey == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.boyishdoor = false;
+		textbox.onspacekey = false;
+		displaydata.displaynext = true;
+	}
+	//いいえを選択したとき
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.boyishdoor == true && corridorobject.doortalk == true
+		&& getitem.boyishdoorkey == true && choicetexturedata.decision == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.boyishdoor = false;
+		textbox.onspacekey = false;
+		choicetexturedata.Choicepos = 1;
+
+
+	}
+	//はいを選択したとき
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.boyishdoor == true && corridorobject.doortalk == true
+		&& getitem.boyishdoorkey == true && textdata.threeline == NULL)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.boyishdoor = false;
+
+		getitem.tunderedoorkey = false;
+		getitem.yuruhuwadoorkey = false;
+		
+		textbox.onspacekey = false;
+		displaydata.displaynext = true;
+
+
+	}
+	//他の扉でいいえをを選択したとき
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey != true)
+	{
+ 		corridorobject.doortalk = false;
+		corridorobject.boyishdoor = false;
+		textbox.onspacekey = false;
+		textdata.nexttext = false;
+
+	}
+
+	if (corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey == false)
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 
 		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
+	else if (corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey == true && getitem.breakdoorkey == false)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTalkText();
+		if (strstr(textdata.oneline,"はい"))
+		{
+			DrawChoiceTexture();
+		}
+		
+	}
+#pragma endregion
+
+#pragma region ツンデレ扉会話
+	if (corridorobject.tunderedoor == true && corridorobject.doortalk == false && getitem.breakdoorkey == false)
+	{
+		corridorobject.doortalk = true;
+		textbox.onspacekey = true;
+
+	}
+	else if (corridorobject.tunderedoor == true && corridorobject.doortalk == false && getitem.tunderedoorkey == false && getitem.breakdoorkey == true)
+	{
+		corridorobject.doortalk = true;
+		textbox.onspacekey = true;
+
+	}
+	else if (corridorobject.tunderedoor == true && corridorobject.doortalk == false && getitem.tunderedoorkey == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.tunderedoor = false;
+		textbox.onspacekey = false;
+		displaydata.displaynext = true;
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
+		&& getitem.tunderedoorkey == true && choicetexturedata.decision == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.tunderedoor = false;
+		textbox.onspacekey = false;
+		choicetexturedata.Choicepos = 1;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
+		&& getitem.tunderedoorkey == true && textdata.threeline == NULL)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.tunderedoor = false;
+
+	
+
+		getitem.boyishdoorkey = false;
+		getitem.yuruhuwadoorkey = false;
+
+		textbox.onspacekey = false;
+		displaydata.displaynext = true;
+
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
+		&& corridorobject.doortalk == true && getitem.tunderedoorkey != true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.tunderedoor = false;
+		textbox.onspacekey = false;
+		textdata.nexttext = false;
+
+	}
+	if (corridorobject.tunderedoor == true && corridorobject.doortalk == true && getitem.tunderedoorkey == false)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+
+		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
+	}
+	else if (corridorobject.tunderedoor == true && corridorobject.doortalk == true && getitem.tunderedoorkey == true && getitem.breakdoorkey == false)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTalkText();
+		if (strstr(textdata.oneline, "はい"))
+		{
+			DrawChoiceTexture();
+		}
+	}
+#pragma endregion
+
+#pragma region ゆるふわ扉会話
+	//最初の鍵が壊れていない時
+	if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == false && getitem.breakdoorkey == false)
+	{
+		corridorobject.doortalk = true;
+		textbox.onspacekey = true;
+
+	}
+	//鍵を持っていない状態で最初の鍵が壊れているとき
+	else if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == false && getitem.yuruhuwadoorkey == false && getitem.breakdoorkey == true)
+	{
+		corridorobject.doortalk = true;
+		textbox.onspacekey = true;
+
+	}
+	//最初のの鍵を使った後同じ部屋で使うとき
+	else if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == false && getitem.yuruhuwadoorkey == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.yuruhuwadoor = false;
+		textbox.onspacekey = false;
+		displaydata.displaynext = true;
+	}
+	//いいえを選択したとき
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true
+		&& getitem.yuruhuwadoorkey == true && choicetexturedata.decision == true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.yuruhuwadoor = false;
+		textbox.onspacekey = false;
+		choicetexturedata.Choicepos = 1;
+
+
+	}
+	//はいを選択したとき
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true
+		&& getitem.yuruhuwadoorkey == true && textdata.threeline == NULL)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.yuruhuwadoor = false;
+
+		getitem.tunderedoorkey = false;
+		getitem.boyishdoorkey = false;
+
+		textbox.onspacekey = false;
+		displaydata.displaynext = true;
+
+
+	}
+	//他の扉でいいえをを選択したとき
+	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true && getitem.yuruhuwadoorkey != true)
+	{
+		corridorobject.doortalk = false;
+		corridorobject.yuruhuwadoor = false;
+		textbox.onspacekey = false;
+		textdata.nexttext = false;
+
+	}
+	if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true && getitem.yuruhuwadoorkey == false)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+
+		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
+	}
+	else if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true && getitem.yuruhuwadoorkey == true && getitem.breakdoorkey == false)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTalkText();
+		if (strstr(textdata.oneline, "はい"))
+		{
+			DrawChoiceTexture();
+		}
+
+	}
+#pragma endregion
 }
 
 void UpDataDoorText()
 {
 	if (GetKeyDown(SPACE_KEY) == true)
 	{
-		if ((corridorobject.doortalk == true && choicetexturedata.Choicepos == 2))
+		if (choicetexturedata.decision == true)
+		{
+			InitLoadFile();
+		}
+		if (choicetexturedata.decision == true)
+		{
+			choicetexturedata.decision = false;
+		}
+		else if ((corridorobject.doortalk == true && choicetexturedata.Choicepos == 2))
 		{
 			choicetexturedata.decision = true;
 		}
 		LoadText();
 		textdata.nexttext = true;
-		displaydata.choicescenecounter++;
+
 	}
 }
 
-void DrawDoorTalk2()
-{
-
-	if (corridorobject.doortalk == false && getitem.breakdoorkey == true)
-	{
-		corridorobject.doortalk = true;
-		textbox.onspacekey = true;
-	}
-	else if (textdata.threeline == NULL && corridorobject.doortalk == true || choicetexturedata.decision == true)
-	{
-		corridorobject.doortalk = false;
-		textbox.onspacekey = false;
-	}
-	if (corridorobject.doortalk == true)
-	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-		DrawTalkText();
-		if (displaydata.choicescenecounter == 4)
-		{
-			DrawChoiceTexture();
-			displaydata.choicescenecounter = 0;
-		}
-	}
-
-}
