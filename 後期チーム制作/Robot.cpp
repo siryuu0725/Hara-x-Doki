@@ -6,6 +6,7 @@
 #include "Hit.h"
 #include "Item.h"
 #include "Text.h"
+#include "Talk.h"
 
 #define ROBOTSIZE 150
 #define SURPRISEDSIZE 50
@@ -33,6 +34,7 @@ void InitMaidRobot()
 	maidrobot.width = 64.0f;
 	maidrobot.talk = false;
 	maidrobot.description = false;
+	maidrobot.talktype = 0;
 }
 
 void InitSearchGameRobot()
@@ -121,9 +123,9 @@ void DrawTalkMaid()
 	{
 		maidrobot.talk = true;
 		textbox.onspacekey = true;
-
+		maidrobot.talktype++;
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && maidrobot.talk == true)
+	else if (textdata.threeline == NULL && maidrobot.talk == true)
 	{
 		maidrobot.talk = false;
 		textbox.onspacekey = false;
@@ -143,7 +145,9 @@ void DrawTalkMaid()
 	{
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-		DrawChoiceTexture();
+		DrawTalkText();
+
+		//DrawChoiceTexture();
 	}
 }
 
@@ -204,6 +208,16 @@ void DrawTalkMysteryGameRobot()
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		
+	}
+}
+
+void UpDateTalkMaid()
+{
+	if (GetKeyDown(SPACE_KEY) == true)
+	{
+		
+		LoadText();
+		textdata.nexttext = true;
 	}
 }
 #pragma endregion

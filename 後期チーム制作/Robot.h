@@ -12,6 +12,7 @@ typedef struct
 	float width, height;
 	bool talk;
 
+	int talktype;
 	bool description;
 
 }MaidRobotData;
@@ -97,5 +98,6 @@ void DrawTalkPuzzleGameRobot();
 void DrawTalkMysteryGameRobot();
 #pragma endregion
 
+void UpDateTalkMaid();
 
 #endif

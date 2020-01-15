@@ -55,6 +55,15 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, BreakKyeFp);
 		fclose(BreakKyeFp);
 	}
+	else if (maidrobot.talktype == 0)
+	{
+		FILE* MaidTalkFp;
+
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン1).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
+	}
 	else if (areadata.searchyuruhuwaarea == true)
 	{
 		FILE* fp;
@@ -70,7 +79,6 @@ void InitLoadFile()
 
 void LoadText()
 {
-	
 
 	textdata.oneline = NULL;
 	textdata.twoline = NULL;

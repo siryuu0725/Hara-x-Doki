@@ -113,9 +113,9 @@ void MainLargeRoomScene()
 	UpDateMenu();
 
 	
-	UpDataDescriptionText();
+	//UpDataDescriptionText();
 	
-
+	UpDateTalkMaid();
 	if (searchplayer.pos_x <= 70.0f && searchplayer.pos_y >= 390.0f && searchplayer.pos_y <= 500.0f)
 	{
 		areadata.largeroom = false;

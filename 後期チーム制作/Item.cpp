@@ -662,6 +662,7 @@ void HitEyeLargeRoomObject()
 	if (HitPlayerEyeObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		largeroomobject.maid = true;
+		
 	}
 	//ëÂÉeÅ[ÉuÉã
 	else if (HitPlayerEyeObject(780.0f, 380.0f, 380.0f, 380.0f) == true && GetKeyDown(SPACE_KEY) == true)
