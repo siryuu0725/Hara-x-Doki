@@ -195,8 +195,27 @@ void DrawTalkYuruhuwa()
 	}
 	if (yuruhuwa.talk == true)
 	{
-		//DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+
+		if (strstr(textdata.oneline, "あ、")|| strstr(textdata.oneline, "お友達") || strstr(textdata.oneline, "ハルカ") || strstr(textdata.oneline, "あ、"))
+		{
+			DrawTexture(1000.0f, 0.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
+			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+			DrawFont(100, 610, "ハルカ", FontSize::Regular, FontColor::Yellow);
+		}
+		if (strstr(textdata.oneline, "おぉ、") || strstr(textdata.oneline, "これは"))
+		{
+			DrawTexture(1000.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex));
+			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+			DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
+		}
+		if (strstr(textdata.oneline, "どうやら") || strstr(textdata.oneline, "俺は") || strstr(textdata.oneline, "・・・"))
+		{
+			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+			DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
+		}
+		
+
 		DrawTalkText();
 	}
 }

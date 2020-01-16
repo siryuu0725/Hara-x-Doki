@@ -147,6 +147,16 @@ void DrawTalkMaid()
 	{
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+		if (strstr(textdata.oneline, "ÅdÅd"))
+		{
+			DrawFont(100, 610, "éÂêlåˆ", FontSize::Regular, FontColor::Yellow);
+		}
+		else
+		{
+			DrawFont(100, 610, "ÉÅÉCÉh", FontSize::Regular, FontColor::Yellow);
+
+		}
 		DrawTalkText();
 
 		//DrawChoiceTexture();
@@ -215,7 +225,7 @@ void DrawTalkMysteryGameRobot()
 
 void UpDateTalkMaid()
 {
-	if (GetKeyDown(SPACE_KEY) == true)
+	if (GetKeyDown(SPACE_KEY) == true && largeroomobject.maid==true)
 	{
 		LoadText();
 		textdata.nexttext = true;

@@ -55,7 +55,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, BreakKyeFp);
 		fclose(BreakKyeFp);
 	}
-	else if (maidrobot.talktype == 0)
+	else if (areadata.largeroom == true && maidrobot.talktype == 0)
 	{
 		FILE* MaidTalkFp_0;
 
@@ -64,7 +64,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_0);
 		fclose(MaidTalkFp_0);
 	}
-	else if (maidrobot.talktype == 1)
+	else if (areadata.largeroom == true && maidrobot.talktype == 1)
 	{
 		FILE* MaidTalkFp_1;
 
@@ -73,7 +73,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_1);
 		fclose(MaidTalkFp_1);
 	}
-	else if (maidrobot.talktype == 2)
+	else if (areadata.largeroom == true && maidrobot.talktype == 2)
 	{
 		FILE* MaidTalkFp_2;
 
@@ -82,7 +82,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_2);
 		fclose(MaidTalkFp_2);
 	}
-	else if (maidrobot.talktype == 3)
+	else if (areadata.largeroom == true && maidrobot.talktype == 3)
 	{
 		FILE* MaidTalkFp_3;
 
@@ -91,7 +91,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_3);
 		fclose(MaidTalkFp_3);
 	}
-	else if (maidrobot.talktype == 4)
+	else if (areadata.largeroom == true && maidrobot.talktype == 4)
 	{
 		FILE* MaidTalkFp_4;
 
@@ -100,7 +100,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_4);
 		fclose(MaidTalkFp_4);
 	}
-	else if (maidrobot.talktype == 5)
+	else if (areadata.largeroom == true && maidrobot.talktype == 5)
 	{
 		FILE* MaidTalkFp_5;
 
@@ -109,7 +109,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_5);
 		fclose(MaidTalkFp_5);
 	}
-	else if (maidrobot.talktype == 6)
+	else if (areadata.largeroom == true &&maidrobot.talktype == 6)
 	{
 		FILE* MaidTalkFp_6;
 
@@ -438,8 +438,11 @@ void UpDataDoorText()
 		{
 			choicetexturedata.decision = true;
 		}
+		
 		LoadText();
 		textdata.nexttext = true;
+		
+		
 
 	}
 }

@@ -50,6 +50,9 @@ typedef struct
 	bool bookshelf;     //–{’I
 	bool cabinet;
 
+	bool robottalk;         //ƒƒ{
+	bool robotnecktalk;     //ƒƒ{‚Ì“ª
+
 	bool cabinettalk;
 	bool lighttalk;        
 	bool desktalk;         

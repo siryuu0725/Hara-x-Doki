@@ -62,12 +62,14 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex);
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
+	LoadTexture("Res/キャラ/ゆるふわ立ち絵１.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
+	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	LoadUI();
-	//InitLoadFile((char*)"テキスト/ゆるふわシステム.txt");
+	
 	InitLoadFile();
 
 	InitYuruhuwaRoomObject();

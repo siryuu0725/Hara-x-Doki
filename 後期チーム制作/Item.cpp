@@ -107,7 +107,7 @@ void InitYuruhuwaRoomObject()
 
 void DrawRobotNeck()
 {
-	if (searchgameobject.robotneck == false && searchgameobject.completerobot != true)
+	if (searchgameobject.robotneck == false && getitem.itemrobot == false)
 	{
 		DrawTexture(700.0f, 500.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex));
 	}
@@ -343,7 +343,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//首
-	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 64.0f) == true && searchgameobject.robotneck == false)
+	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 44.0f) == true && getitem.itemrobot == false)
 	{
 		searchplayer.hit = true;
 	}
@@ -750,7 +750,7 @@ void HitEyeSearchGameObject()
 		boyish.talk = true;
 	}
 	//首
-	else if (HitPlayerEyeObject(700.0f, 500.0f, 64.0f, 64.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(700.0f, 500.0f, 64.0f, 64.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.itemrobot == false)
 	{
 		searchgameobject.robotneck = true;
 	}
@@ -806,10 +806,16 @@ void HitEyeSearchGameObject()
 		
 		searchgameobject.bookshelf = true;
 	}
+	//人形
+	else if (HitPlayerEyeObject(525.0f, 625.0f, 35.0f, 60.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+
+		searchgameobject.doll = true;
+	}
 	else
 	{
 		searchgameobject.robot = false;
-		//searchgameobject.robotneck = false;
+		searchgameobject.robotneck = false;
 		
 		searchgameobject.light = false;
 		searchgameobject.closet = false;
@@ -819,6 +825,8 @@ void HitEyeSearchGameObject()
 		searchgameobject.bed = false;
 		searchgameobject.flowerpot = false;
 		searchgameobject.bookshelf = false;
+		searchgameobject.cabinet = false;
+		searchgameobject.doll = false;
 		searchplayer.hit = false;
 	}
 }
@@ -1118,13 +1126,40 @@ void SearchObject()
 #pragma endregion 
 
 #pragma region ボーイッシュ部屋のオブジェクト説明
+
+	if (searchgameobject.completerobot == false)
+	{
+		DrawTalkObject(&searchgameobject.robot, &searchgameobject.robottalk, (char*)"頭が取れて、エネルギーが抜けている。");
+	}
+
+	DrawTalkObject(&searchgameobject.light, &searchgameobject.lighttalk, (char*)"照明についているライトが使えそうだ。取っておこう。");
+
+	if (getitem.itemlight == false)
+	{
+		DrawTalkObject(&searchgameobject.bed, &searchgameobject.bedtalk, (char*)"ただのベッドだ。下に何かあるが暗くて見えない。");
+	}
+	else if (getitem.itemlight == true)
+	{
+		DrawTalkObject(&searchgameobject.bed, &searchgameobject.bedtalk, (char*)"ライトを使って下を見ると鍵を見つけた。");
+	}
+
+	if (getitem.itemkey == false)
+	{
+		DrawTalkObject(&searchgameobject.closet, &searchgameobject.closettalk, (char*)"箪笥があるが、鍵がついている...。");
+	}
+	else if (getitem.itemkey == true)
+	{
+		DrawTalkObject(&searchgameobject.closet, &searchgameobject.closettalk, (char*)"見つけた鍵を使って中を見るとエネルギーを見つけた。");
+	}
+
+	DrawTalkObject(&searchgameobject.robotneck, &searchgameobject.robotnecktalk, (char*)"取れたロボットの頭だ。あとはエネルギーだけだ。");
+
 	DrawTalkObject(&searchgameobject.bookshelf, &searchgameobject.bookshelftalk, (char*)"本棚だ。下に本が落ちてしまっている。");
 
 	DrawTalkObject(&searchgameobject.chair, &searchgameobject.chairtalk, (char*)"普通の椅子。動かす必要はない。");
 
-	DrawTalkObject(&searchgameobject.desk, &searchgameobject.desktalk, (char*)"机だ。机の上には人形が置いてある。");
+	DrawTalkObject(&searchgameobject.desk, &searchgameobject.desktalk, (char*)"机だ。机の上には倒れたコップが置いてある。");
 
-	DrawTalkObject(&searchgameobject.bed, &searchgameobject.bedtalk, (char*)"ただのベッドだ。それほど汚れていない。");
 
 	DrawTalkObject(&searchgameobject.flowerpot, &searchgameobject.flowerpottalk, (char*)"観葉植物だ。倒れてしまっている。");
 
