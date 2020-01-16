@@ -158,7 +158,7 @@ void DrawTalkBoyish()
 		boyish.talk = true;
 		textbox.onspacekey = true;
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && boyish.talk == true)
+	else if (textdata.threeline == NULL && boyish.talk == true)
 	{
 		boyish.tu = 0.0f;
 		boyish.talk = false;
@@ -168,6 +168,7 @@ void DrawTalkBoyish()
 	{
 		//DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTalkText();
 	}
 }
 
@@ -220,4 +221,13 @@ void DrawTalkYuruhuwa()
 	}
 }
 
+void UpDataJKTalk()
+{
+	if (GetKeyDown(SPACE_KEY) == true)
+	{
+		InitLoadFile();
+		LoadText();
+		textdata.nexttext = true;
 
+	}
+}

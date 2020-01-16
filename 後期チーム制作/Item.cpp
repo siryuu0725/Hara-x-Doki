@@ -338,7 +338,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ボーイッシュ
-	else if (HitPlayerObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 62.0f) == true)
+	else if (HitPlayerObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 82.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -745,9 +745,9 @@ void HitEyeSearchGameObject()
 		searchgameobject.robot = true;
 	}
 	//ボーイッシュ
-	else if (HitPlayerEyeObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 62.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(boyish.pos_x + 20.0f, boyish.pos_y + 64.0f, boyish.width - 30.0f, boyish.height - 52.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
-		boyish.talk = true;
+		searchgameobject.boyish = true;
 	}
 	//首
 	else if (HitPlayerEyeObject(700.0f, 500.0f, 64.0f, 64.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.itemrobot == false)
@@ -816,6 +816,7 @@ void HitEyeSearchGameObject()
 	{
 		searchgameobject.robot = false;
 		searchgameobject.robotneck = false;
+		searchgameobject.boyish = false;
 		
 		searchgameobject.light = false;
 		searchgameobject.closet = false;

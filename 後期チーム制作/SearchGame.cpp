@@ -12,6 +12,7 @@
 #include "Hit.h"
 #include "Text.h"
 #include "JK.h"
+#include "Talk.h"
 
 extern TextBoxData textbox;
 
@@ -48,10 +49,12 @@ void DrawSearchGameScene()
 	DrawRobotNeck();
 	//DrawSearchGameRobot();
 	DrawSearchPlayerAndRobot();
-	//DrawTextBox();
+	
 	DrawMenu();
 	DrawTime();
 	DrawTalkSearchGameRobot();
+	DrawTalkBoyish();
+
 	SearchObject();
 }
 
@@ -84,6 +87,7 @@ void InitSearchGameScene()
 
 void MainSearchGameScene()
 {
+	
 	if (textbox.onspacekey == false && menu.onenterkey == false)
 	{
 		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
@@ -98,7 +102,7 @@ void MainSearchGameScene()
 
 	UpDateMenu();
 
-	
+	UpDataJKTalk();
 
 	if (OnMouseDown(Left) == true)
 	{

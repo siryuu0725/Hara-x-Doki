@@ -37,6 +37,7 @@ void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 void InitLoadFile()
 {
 	textdata.nexttext = false;
+#pragma region メイド会話
 	if (moviebgdate.endmovie == true)
 	{
 		FILE* DescriptionFp;
@@ -109,7 +110,7 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_5);
 		fclose(MaidTalkFp_5);
 	}
-	else if (areadata.largeroom == true &&maidrobot.talktype == 6)
+	else if (areadata.largeroom == true && maidrobot.talktype == 6)
 	{
 		FILE* MaidTalkFp_6;
 
@@ -118,6 +119,17 @@ void InitLoadFile()
 		fgets(textdata.text, 1000, MaidTalkFp_6);
 		fclose(MaidTalkFp_6);
 	}
+#pragma endregion
+	else if (areadata.searchgamearea == true && searchgameobject.boyish == true)
+	{
+		FILE* BoyishFp;
+
+		fopen_s(&BoyishFp, "Res/テキスト/ボーイッシュシステム.txt", "r");
+
+		fgets(textdata.text, 1000, BoyishFp);
+		fclose(BoyishFp);
+	}
+	
 	else if (areadata.searchyuruhuwaarea == true)
 	{
 		FILE* fp;
@@ -413,7 +425,7 @@ void DrawDoorTalk()
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		DrawTalkText();
-		if (strstr(textdata.oneline, "はい"))
+		if (strstr(textdata.text, "はい"))
 		{
 			DrawChoiceTexture();
 		}

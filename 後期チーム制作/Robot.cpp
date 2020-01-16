@@ -225,7 +225,7 @@ void DrawTalkMysteryGameRobot()
 
 void UpDateTalkMaid()
 {
-	if (GetKeyDown(SPACE_KEY) == true && largeroomobject.maid==true)
+	if (GetKeyDown(SPACE_KEY) == true && largeroomobject.maid == true)
 	{
 		LoadText();
 		textdata.nexttext = true;

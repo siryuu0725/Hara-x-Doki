@@ -51,5 +51,8 @@ void DrawYuruhuwa();
 void DrawTalkYuruhuwa();
 
 void DrawTalkBoyish();
+
+void UpDataJKTalk();
+
 #endif
 

@@ -51,6 +51,7 @@ typedef struct
 
 	int Choicepos;
 	bool decision;
+	
 }ChoiceTextureData;
 
 extern TextBoxData textbox;
