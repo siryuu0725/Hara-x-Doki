@@ -123,13 +123,15 @@ void DrawTalkMaid()
 	{
 		maidrobot.talk = true;
 		textbox.onspacekey = true;
-		maidrobot.talktype++;
+		
 	}
 	else if (textdata.threeline == NULL && maidrobot.talk == true)
 	{
 		maidrobot.talk = false;
 		textbox.onspacekey = false;
-
+		maidrobot.talktype++;
+		
+		InitLoadFile();
 		//会話が終わると同時に時間制限スタート
 		time.start = true;
 		
@@ -215,9 +217,12 @@ void UpDateTalkMaid()
 {
 	if (GetKeyDown(SPACE_KEY) == true)
 	{
-		
 		LoadText();
 		textdata.nexttext = true;
+		if (maidrobot.talktype == 6)
+		{
+			maidrobot.talktype = 1;
+		}
 	}
 }
 #pragma endregion

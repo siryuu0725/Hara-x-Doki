@@ -57,12 +57,66 @@ void InitLoadFile()
 	}
 	else if (maidrobot.talktype == 0)
 	{
-		FILE* MaidTalkFp;
+		FILE* MaidTalkFp_0;
 
-		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン1).txt", "r");
+		fopen_s(&MaidTalkFp_0, "Res/テキスト/メイド会話(鍵入手).txt", "r");
 
-		fgets(textdata.text, 1000, MaidTalkFp);
-		fclose(MaidTalkFp);
+		fgets(textdata.text, 1000, MaidTalkFp_0);
+		fclose(MaidTalkFp_0);
+	}
+	else if (maidrobot.talktype == 1)
+	{
+		FILE* MaidTalkFp_1;
+
+		fopen_s(&MaidTalkFp_1, "Res/テキスト/メイド会話(パターン1).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp_1);
+		fclose(MaidTalkFp_1);
+	}
+	else if (maidrobot.talktype == 2)
+	{
+		FILE* MaidTalkFp_2;
+
+		fopen_s(&MaidTalkFp_2, "Res/テキスト/メイド会話(パターン2).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp_2);
+		fclose(MaidTalkFp_2);
+	}
+	else if (maidrobot.talktype == 3)
+	{
+		FILE* MaidTalkFp_3;
+
+		fopen_s(&MaidTalkFp_3, "Res/テキスト/メイド会話(パターン3).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp_3);
+		fclose(MaidTalkFp_3);
+	}
+	else if (maidrobot.talktype == 4)
+	{
+		FILE* MaidTalkFp_4;
+
+		fopen_s(&MaidTalkFp_4, "Res/テキスト/メイド会話(パターン4).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp_4);
+		fclose(MaidTalkFp_4);
+	}
+	else if (maidrobot.talktype == 5)
+	{
+		FILE* MaidTalkFp_5;
+
+		fopen_s(&MaidTalkFp_5, "Res/テキスト/メイド会話(パターン5).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp_5);
+		fclose(MaidTalkFp_5);
+	}
+	else if (maidrobot.talktype == 6)
+	{
+		FILE* MaidTalkFp_6;
+
+		fopen_s(&MaidTalkFp_6, "Res/テキスト/メイド会話(パターン6).txt", "r");
+
+		fgets(textdata.text, 1000, MaidTalkFp_6);
+		fclose(MaidTalkFp_6);
 	}
 	else if (areadata.searchyuruhuwaarea == true)
 	{

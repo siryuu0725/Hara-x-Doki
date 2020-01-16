@@ -49,11 +49,11 @@ void DrawCorridorScene()
 	DrawYuruhuwa();
 	DrawSearchPlayerAndRobot();
 	
-	DrawMenu();
+	
 	DrawTime();
 	DrawTalkYuruhuwa();
 	DrawDoorTalk();
-	//DrawDoorTalk2();
+	DrawMenu();
 }
 
 void InitCorridorScene()
