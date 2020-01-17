@@ -79,12 +79,13 @@ void InitSearchGameScene()
 	
 	LoadUI();
 	areadata.searchgamearea = true;
+	InitBoyish();
+
 	InitChoiceTexture();
 	InitRobotLoadFile();
 	InitJKLoadFile();
 	InitSearchGameObject();
 	InitGameRoomPlayer();
-	InitBoyish();
 	InitSearchGameRobot();
 	InitTextBox();
 	InitMenu();

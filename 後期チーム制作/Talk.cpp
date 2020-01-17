@@ -153,6 +153,7 @@ void InitJKLoadFile()
 
 		fgets(textdata.jk_text, 1000, BoyishFp);
 		fclose(BoyishFp);
+		boyish.talktype = 1;
 	}
 	else if (areadata.searchgamearea == true && boyish.talktype == 1 && searchgameobject.completerobot == false)
 	{
@@ -162,6 +163,7 @@ void InitJKLoadFile()
 
 		fgets(textdata.jk_text, 1000, BoyishFp_1);
 		fclose(BoyishFp_1);
+
 	}
 	else if (areadata.searchgamearea == true && boyish.talktype == 1 && searchgameobject.completerobot == true)
 	{
@@ -171,6 +173,16 @@ void InitJKLoadFile()
 
 		fgets(textdata.jk_text, 2000, BoyishFp_2);
 		fclose(BoyishFp_2);
+		boyish.talktype = 2;
+	}
+	else if (areadata.searchgamearea == true && boyish.talktype == 2)
+	{
+		FILE* BoyishFp_3;
+
+		fopen_s(&BoyishFp_3, "Res/テキスト/ボーイッシュ会話(救出後).txt", "r");
+
+		fgets(textdata.jk_text, 2000, BoyishFp_3);
+		fclose(BoyishFp_3);
 	}
 	else if (areadata.searchyuruhuwaarea == true)
 	{

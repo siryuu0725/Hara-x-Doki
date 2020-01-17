@@ -150,7 +150,7 @@ void ClearSearchGame()
 
 void DrawTalkBoyish()
 {
-	if (searchgameobject.boyish == true && boyish.talk == false)
+	if ((searchgameobject.boyish == true || corridorobject.boyish == true) && boyish.talk == false)
 	{
 		if (searchplayer.animetion_tv == 0.25f)
 		{
@@ -170,9 +170,10 @@ void DrawTalkBoyish()
 		boyish.tu = 0.0f;
 		boyish.talk = false;
 		textbox.onspacekey = false;
-		boyish.talktype = 1;
+		
 		textdata.jk_nexttext = false;
 
+		
 		InitJKLoadFile();
 	}
 	if (boyish.talk == true)
@@ -245,7 +246,7 @@ void UpDataBoyishTalk()
 {
 	if (GetKeyDown(SPACE_KEY) == true && searchgameobject.boyish == true)
 	{
-		if (searchgameobject.completerobot == true)
+		if (searchgameobject.completerobot == true && boyish.talktype == 1)
 		{
 			InitJKLoadFile();
 		}

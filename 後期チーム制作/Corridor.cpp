@@ -45,7 +45,7 @@ SceneId UpdateCorridorScene()
 void DrawCorridorScene()
 {
 	DrawSearchBg();
-	//DrawBoyish();
+	DrawBoyish();
 	DrawYuruhuwa();
 	DrawSearchPlayerAndRobot();
 	

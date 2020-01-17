@@ -30,6 +30,11 @@ typedef struct
 	bool tunderedoor;
 	bool yuruhuwadoor;
 
+
+	bool boyish;
+	bool tundere;
+	bool yuruhuwa;
+
 	bool doortalk;
 }CorridorTouchObject;
 

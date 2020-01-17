@@ -304,6 +304,11 @@ void HitCorridorObject()
 	{
 		searchplayer.hit = true;
 	}
+	else if (HitPlayerObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && boyish.clear == true)
+	{
+		searchplayer.hit = true;
+	}
+	
 	else
 	{
 		searchplayer.hit = false;
@@ -737,6 +742,13 @@ void HitEyeLargeRoomObject()
 	}
 }
 
+void HitEyeCorridorObject()
+{
+	if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && boyish.clear == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.boyish = true;
+	}
+}
 void HitEyeSearchGameObject()
 {
 	//ÉçÉ{ÉbÉg
