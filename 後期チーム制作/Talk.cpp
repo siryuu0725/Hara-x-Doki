@@ -131,12 +131,12 @@ void InitRobotLoadFile()
 	}
 	else if (areadata.searchgamearea == true && areadata.corridor == false && searchgamerobot.talktype == 1)
 	{
-	FILE* SearchGameRobotFp_1;
-
-	fopen_s(&SearchGameRobotFp_1, "Res/テキスト/ボーイッシュ執事クリア時システム.txt", "r");
-
-	fgets(textdata.robot_text, 1000, SearchGameRobotFp_1);
-	fclose(SearchGameRobotFp_1);
+	    FILE* SearchGameRobotFp_1;
+	    
+	    fopen_s(&SearchGameRobotFp_1, "Res/テキスト/ボーイッシュ執事クリア時システム.txt", "r");
+	    
+	    fgets(textdata.robot_text, 1000, SearchGameRobotFp_1);
+	    fclose(SearchGameRobotFp_1);
 	}
 	
 
@@ -169,7 +169,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_2, "Res/テキスト/ボーイッシュクリア時システム.txt", "r");
 
-		fgets(textdata.jk_text, 1000, BoyishFp_2);
+		fgets(textdata.jk_text, 2000, BoyishFp_2);
 		fclose(BoyishFp_2);
 	}
 	else if (areadata.searchyuruhuwaarea == true)
@@ -194,7 +194,7 @@ void RobotLoadText()
 	//memset(&textdata.twoline, '\0', 256);
 	//memset(&textdata.threeline, '\0', 256);
 
-	if (choicetexturedata.decision == true)
+	if (choicetexturedata.decision_1 == true)
 	{
 		textdata.robot_oneline = strtok(textdata.robot_text, ",");
 		
@@ -223,22 +223,44 @@ void JKLoadText()
 	//memset(&textdata.twoline, '\0', 256);
 	//memset(&textdata.threeline, '\0', 256);
 
-	if (choicetexturedata.decision == true)
+	//好感度
+	if (choicetexturedata.decision_1 == true)
 	{
-		textdata.jk_oneline = strtok(textdata.jk_text, ",");
+		textdata.jk_oneline = strtok(NULL, ",");
+		textdata.jk_twoline = strtok(NULL, ",");
+		textdata.jk_threeline = strtok(NULL, ",");
 
+		textdata.jk_lossoneline = strtok(NULL, ",");
+		textdata.jk_losstwoline = strtok(NULL, ",");
+		textdata.jk_lossthreeline = strtok(NULL, ",");
+		choicetexturedata.decision_1 = false;
+		boyish.heart++;
+	}
+	//好感度
+	else if (choicetexturedata.decision_2 == true)
+	{
+		textdata.jk_lossoneline = strtok(NULL, ",");
+		textdata.jk_losstwoline = strtok(NULL, ",");
+		textdata.jk_lossthreeline = strtok(NULL, ",");
+
+		textdata.jk_oneline = strtok(NULL, ",");
+		textdata.jk_twoline = strtok(NULL, ",");
+		textdata.jk_threeline = strtok(NULL, ",");
+		choicetexturedata.decision_2 = false;
 	}
 	else if (textdata.jk_nexttext == true)
 	{
-		textdata.jk_oneline = strtok(NULL, ",");
+  		textdata.jk_oneline = strtok(NULL, ",");
+		textdata.jk_twoline = strtok(NULL, ",");
+		textdata.jk_threeline = strtok(NULL, ",");
 	}
 	else
 	{
 		textdata.jk_oneline = strtok(textdata.jk_text, ",");
+		textdata.jk_twoline = strtok(NULL, ",");
+		textdata.jk_threeline = strtok(NULL, ",");
 	}
 
-	textdata.jk_twoline = strtok(NULL, ",");
-	textdata.jk_threeline = strtok(NULL, ",");
 }
 
 void DrawRobotTalkText()
@@ -263,7 +285,7 @@ void DrawDescription()
 		maidrobot.description = true;
 		textbox.onspacekey = true;
 	}
-	else if (textdata.robot_threeline == NULL && maidrobot.description == true && moviebgdate.endmovie == false || choicetexturedata.decision == true)
+	else if (textdata.robot_threeline == NULL && maidrobot.description == true && moviebgdate.endmovie == false || choicetexturedata.decision_2 == true)
 	{
 		maidrobot.description = false;
 		textbox.onspacekey = false;
@@ -310,13 +332,12 @@ void DrawDoorTalk()
 	}
 	//いいえを選択したとき
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.boyishdoor == true && corridorobject.doortalk == true
-		&& getitem.boyishdoorkey == true && choicetexturedata.decision == true)
+		&& getitem.boyishdoorkey == true && choicetexturedata.decision_2 == true)
 	{
 		corridorobject.doortalk = false;
 		corridorobject.boyishdoor = false;
 		textbox.onspacekey = false;
-		choicetexturedata.Choicepos = 1;
-
+		//choicetexturedata.Choicepos = 1;
 
 	}
 	//はいを選択したとき
@@ -383,12 +404,12 @@ void DrawDoorTalk()
 		displaydata.displaynext = true;
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
-		&& getitem.tunderedoorkey == true && choicetexturedata.decision == true)
+		&& getitem.tunderedoorkey == true && choicetexturedata.decision_2 == true)
 	{
 		corridorobject.doortalk = false;
 		corridorobject.tunderedoor = false;
 		textbox.onspacekey = false;
-		choicetexturedata.Choicepos = 1;
+		//choicetexturedata.Choicepos = 1;
 
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
@@ -458,12 +479,12 @@ void DrawDoorTalk()
 	}
 	//いいえを選択したとき
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true
-		&& getitem.yuruhuwadoorkey == true && choicetexturedata.decision == true)
+		&& getitem.yuruhuwadoorkey == true && choicetexturedata.decision_2 == true)
 	{
 		corridorobject.doortalk = false;
 		corridorobject.yuruhuwadoor = false;
 		textbox.onspacekey = false;
-		choicetexturedata.Choicepos = 1;
+		//choicetexturedata.Choicepos = 1;
 
 
 	}
@@ -514,17 +535,17 @@ void UpDataDoorText()
 {
 	if (GetKeyDown(SPACE_KEY) == true)
 	{
-		if (choicetexturedata.decision == true)
+		if (choicetexturedata.decision_2 == true)
 		{
 			InitRobotLoadFile();
 		}
-		if (choicetexturedata.decision == true)
+		if (choicetexturedata.decision_2 == true)
 		{
-			choicetexturedata.decision = false;
+			choicetexturedata.decision_2 = false;
 		}
 		else if ((corridorobject.doortalk == true && choicetexturedata.Choicepos == 2))
 		{
-			choicetexturedata.decision = true;
+			choicetexturedata.decision_2 = true;
 		}
 		
 		RobotLoadText();

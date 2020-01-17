@@ -38,7 +38,7 @@ typedef struct
 struct TextData
 {
 	char robot_text[1000];
-	char jk_text[1000];
+	char jk_text[2000];
 	char* robot_oneline;
 	char* robot_twoline;
 	char* robot_threeline;
@@ -46,6 +46,11 @@ struct TextData
 	char* jk_oneline;
 	char* jk_twoline;
 	char* jk_threeline;
+
+	char* jk_lossoneline;
+	char* jk_losstwoline;
+	char* jk_lossthreeline;
+
 	bool robot_nexttext;
 	bool jk_nexttext;
 };
@@ -56,8 +61,10 @@ typedef struct
 	float pos_y;
 
 	int Choicepos;
-	bool decision;
-	
+	bool decision_1;
+	bool decision_2;
+
+	int display;
 }ChoiceTextureData;
 
 extern TextBoxData textbox;

@@ -11,6 +11,8 @@ typedef struct
 	bool talk;
 	int talktype;
 	bool clear;
+
+	int heart;
 }Boyish;
 
 typedef struct
@@ -22,6 +24,7 @@ typedef struct
 
 	bool talk;
 	bool clear;
+	int heart;
 }Yuruhuwa;
 
 typedef struct
@@ -33,6 +36,7 @@ typedef struct
 
 	bool talk;
 	bool clear;
+	int heart;
 }Tundere;
 
 extern Boyish boyish;

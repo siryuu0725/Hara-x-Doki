@@ -129,7 +129,7 @@ void MainLargeRoomScene()
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f && yuruhuwa.clear == true)
+	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f && boyish.heart == 3)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}

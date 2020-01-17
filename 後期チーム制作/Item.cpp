@@ -1092,6 +1092,7 @@ void UpDataSearchGame()
 		searchgameobject.completerobot = true;
 		getitem.itemrobot = false;
 		getitem.itemenergy = false;
+		getitem.itemlight = false;
 		getitem.boyishdoorkey = true;
 		getitem.yuruhuwadoorkey = true;
 		getitem.tunderedoorkey = true;

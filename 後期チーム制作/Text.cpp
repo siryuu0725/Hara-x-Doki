@@ -110,7 +110,7 @@ void UpDataDescriptionText()
 	{
 		if ((maidrobot.description == true && choicetexturedata.Choicepos == 2))
 		{
-			choicetexturedata.decision = true;
+			choicetexturedata.decision_1 = true;
 		}
 		RobotLoadText();
 		textdata.robot_nexttext = true;
@@ -158,23 +158,33 @@ void InitChoiceTexture()
 {
 	choicetexturedata.pos_x = 230.0f;
 	choicetexturedata.pos_y = 760.0f;
-	choicetexturedata.Choicepos = 1;
-
-	choicetexturedata.decision = false;
+	choicetexturedata.Choicepos = 0;
+	choicetexturedata.display = 0;
+	choicetexturedata.decision_1 = false;
+	choicetexturedata.decision_2 = false;
 
 }
 
 void DrawChoiceTexture()
 {
-	if (GetKeyDown(DOWN_KEY) == true && choicetexturedata.Choicepos < 2)
-	{
-		choicetexturedata.Choicepos++;
-	}
-	if (GetKeyDown(UP_KEY) == true && choicetexturedata.Choicepos > 1)
-	{
-		choicetexturedata.Choicepos--;
-	}
+	
+	choicetexturedata.display++;
 
+	if (choicetexturedata.display == 1)
+	{
+		choicetexturedata.Choicepos = 1;
+		choicetexturedata.display = 2;
+	}
+	
+	if (GetKeyDown(UP_KEY) == true)
+	{
+		choicetexturedata.Choicepos = 1;
+	}
+	else if (GetKeyDown(DOWN_KEY) == true)
+	{
+		choicetexturedata.Choicepos = 2;
+	}
+	
 	if (choicetexturedata.Choicepos == 1)
 	{
 		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::ChoiceTex));

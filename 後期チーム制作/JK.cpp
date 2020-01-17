@@ -28,6 +28,9 @@ void InitBoyish()
 
 		boyish.talktype = 0;
 		boyish.talk = false;
+
+		boyish.clear = false;
+		boyish.heart = 0;
 	}
 	if (areadata.corridor == true && boyish.clear == true)
 	{
@@ -177,6 +180,10 @@ void DrawTalkBoyish()
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		DrawJKTalkText();
+		if (strstr(textdata.jk_oneline, "ñ≥óùÇ‚ÇË")|| strstr(textdata.jk_oneline, "åNÇÃÇ±Ç∆")|| strstr(textdata.jk_oneline, "Ç†Çü"))
+		{
+			DrawChoiceTexture();
+		}
 	}
 }
 
@@ -242,10 +249,23 @@ void UpDataBoyishTalk()
 		{
 			InitJKLoadFile();
 		}
+		if ((boyish.talk == true && choicetexturedata.Choicepos == 1))
+		{
+			choicetexturedata.decision_1 = true;
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+		}
+		else if ((boyish.talk == true && choicetexturedata.Choicepos == 2))
+		{
+			choicetexturedata.decision_2 = true;
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+
+		}
+
 		JKLoadText();
 		
 		textdata.jk_nexttext = true;
-
 	}
 }
 
