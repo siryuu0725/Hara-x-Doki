@@ -9,6 +9,7 @@ typedef struct
 	float height;
 
 	bool talk;
+	int talktype;
 	bool clear;
 }Boyish;
 
@@ -52,7 +53,10 @@ void DrawTalkYuruhuwa();
 
 void DrawTalkBoyish();
 
-void UpDataJKTalk();
+void UpDataBoyishTalk();
+
+void UpDataYuruhuwaTalk();
+
 
 #endif
 

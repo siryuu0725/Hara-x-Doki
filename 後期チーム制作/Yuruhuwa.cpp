@@ -62,16 +62,16 @@ void InitYuruhuwaRoomScene()
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex);
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
-	LoadTexture("Res/キャラ/ゆるふわ立ち絵１.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
-	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex);
+	LoadTexture("Res/キャラ/ツンデレ改.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
+	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	LoadUI();
 	
-	InitLoadFile();
-
+	InitRobotLoadFile();
+	InitJKLoadFile();
 	InitYuruhuwaRoomObject();
 	InitYuruhuwa();
 	InitGameRoomPlayer();
@@ -97,6 +97,8 @@ void MainYuruhuwaRoomScene()
 	UpDateMenu();
 
 	UpDataDescriptionText();
+
+	UpDataYuruhuwaTalk();
 
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{

@@ -3,16 +3,21 @@
 
 void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text);
 
-void DrawTalkText();
+void DrawRobotTalkText();
 
 void DrawDescription();
 
 
-void InitLoadFile();
+void InitRobotLoadFile();
 
-void LoadText();
+void InitJKLoadFile();
+
+void RobotLoadText();
+
+void DrawJKTalkText();
+
+void JKLoadText();
 
 void UpDataDoorText();
 
-void DrawDoorTalk2();
 #endif

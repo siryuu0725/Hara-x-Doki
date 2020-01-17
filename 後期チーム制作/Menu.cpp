@@ -35,7 +35,7 @@ void DrawMenu()
 		}
 		if (getitem.itemlight == true)
 		{
-			//DrawTexture(320.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRobotPartTex);
+			DrawTexture(320.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRightTex));
 		}
 		if (getitem.itemkey == true)
 		{

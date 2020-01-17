@@ -50,6 +50,7 @@ void DrawSearchGameScene()
 	//DrawSearchGameRobot();
 	DrawSearchPlayerAndRobot();
 	
+	
 	DrawMenu();
 	DrawTime();
 	DrawTalkSearchGameRobot();
@@ -66,16 +67,20 @@ void InitSearchGameScene()
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
 
+	LoadTexture("Res/キャラ/ボーイッシュ立ち絵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex);
 	LoadTexture("Res/キャラ/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
 	LoadTexture("Res/キャラ/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
-	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex);
+	LoadTexture("Res/キャラ/立ち絵執事かおなし.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex);
+	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot);
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
-
+	
 	LoadUI();
 
+	InitRobotLoadFile();
+	InitJKLoadFile();
 	InitSearchGameObject();
 	InitGameRoomPlayer();
 	InitBoyish();
@@ -92,6 +97,7 @@ void MainSearchGameScene()
 	{
 		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
 	}
+
 	UpDataSearchGame();
 
 	HitSearchGameObject();
@@ -102,13 +108,11 @@ void MainSearchGameScene()
 
 	UpDateMenu();
 
-	UpDataJKTalk();
+	UpDataBoyishTalk();
 
-	if (OnMouseDown(Left) == true)
-	{
-		ChangeSceneStep(SceneStep::EndStep);
-	}
-	else if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	UpDateTalkSearchGameRobot();
+
+	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchgamearea = false;
 		areadata.corridor = true;

@@ -22,6 +22,7 @@ typedef struct
 	float pos_x, pos_y;
 	float width, height;
 	bool talk;
+	int talktype;
 	
 }SearchGameRobotData;
 
@@ -99,5 +100,7 @@ void DrawTalkMysteryGameRobot();
 #pragma endregion
 
 void UpDateTalkMaid();
+
+void UpDateTalkSearchGameRobot();
 
 #endif

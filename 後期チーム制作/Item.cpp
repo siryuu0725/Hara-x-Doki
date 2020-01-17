@@ -107,7 +107,7 @@ void InitYuruhuwaRoomObject()
 
 void DrawRobotNeck()
 {
-	if (searchgameobject.robotneck == false && getitem.itemrobot == false)
+	if (searchgameobject.robotneck == false && getitem.itemrobot == false && searchgameobject.completerobot == false)
 	{
 		DrawTexture(700.0f, 500.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex));
 	}
@@ -117,6 +117,7 @@ void LoadSearchGameItem()
 {
 	LoadTexture("Res/探索ゲーム/鍵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex);
 	LoadTexture("Res/探索ゲーム/電池.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemEnergyTex);
+	LoadTexture("Res/探索ゲーム/懐中電灯.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRightTex);
 	LoadTexture("Res/探索ゲーム/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRobotPartTex);
 }
 
@@ -333,7 +334,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//ロボット
-	else if (HitPlayerObject(searchgamerobot.pos_x + 20.0f, searchgamerobot.pos_y + 84.0f, searchgamerobot.width - 30.0f, searchgamerobot.height - 92.0f) == true)
+	else if (HitPlayerObject(searchgamerobot.pos_x + 10.0f, searchgamerobot.pos_y + 84.0f, searchgamerobot.width - 30.0f, searchgamerobot.height - 92.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -343,7 +344,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//首
-	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 44.0f) == true && getitem.itemrobot == false)
+	else if (HitPlayerObject(700.0f, 500.0f, 64.0f, 44.0f) == true && getitem.itemrobot == false && searchgameobject.completerobot == false)
 	{
 		searchplayer.hit = true;
 	}
@@ -1073,23 +1074,15 @@ void UpDataSearchGame()
 		getitem.itemlight = true;
 	}
 
-
 	if (searchgameobject.bed == true && getitem.itemlight == true)
 	{
 		getitem.itemkey = true;
 	}
-	else if (searchgameobject.bed == true)
-	{
-
-	}
-
 
 	if (searchgameobject.closet == true && getitem.itemkey == true)
 	{
 		getitem.itemenergy = true;
-	}
-	else if (searchgameobject.closet == true)
-	{
+		searchgamerobot.talktype = 1;
 
 	}
 
@@ -1102,6 +1095,7 @@ void UpDataSearchGame()
 		getitem.boyishdoorkey = true;
 		getitem.yuruhuwadoorkey = true;
 		getitem.tunderedoorkey = true;
+		
 	}
 	
 }
@@ -1128,10 +1122,6 @@ void SearchObject()
 
 #pragma region ボーイッシュ部屋のオブジェクト説明
 
-	if (searchgameobject.completerobot == false)
-	{
-		DrawTalkObject(&searchgameobject.robot, &searchgameobject.robottalk, (char*)"頭が取れて、エネルギーが抜けている。");
-	}
 
 	DrawTalkObject(&searchgameobject.light, &searchgameobject.lighttalk, (char*)"照明についているライトが使えそうだ。取っておこう。");
 

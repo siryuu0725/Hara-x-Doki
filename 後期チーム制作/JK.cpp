@@ -26,6 +26,7 @@ void InitBoyish()
 		boyish.width = 64.0f;
 		boyish.height = 128.0f;
 
+		boyish.talktype = 0;
 		boyish.talk = false;
 	}
 	if (areadata.corridor == true && boyish.clear == true)
@@ -39,6 +40,7 @@ void InitBoyish()
 		boyish.width = 64.0f;
 		boyish.height = 128.0f;
 
+		boyish.talktype = 0;
 		boyish.talk = false;
 	}
 	if (areadata.largeroom == true && yuruhuwa.clear == true)
@@ -52,6 +54,7 @@ void InitBoyish()
 		boyish.width = 64.0f;
 		boyish.height = 128.0f;
 
+		boyish.talktype = 0;
 		boyish.talk = false;
 	}
 }
@@ -155,20 +158,25 @@ void DrawTalkBoyish()
 
 			boyish.tu = 0.33f;
 		}
+		
 		boyish.talk = true;
 		textbox.onspacekey = true;
 	}
-	else if (textdata.threeline == NULL && boyish.talk == true)
+	else if (textdata.jk_threeline == NULL && boyish.talk == true)
 	{
 		boyish.tu = 0.0f;
 		boyish.talk = false;
 		textbox.onspacekey = false;
+		boyish.talktype = 1;
+		textdata.jk_nexttext = false;
+
+		InitJKLoadFile();
 	}
 	if (boyish.talk == true)
 	{
-		//DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
+		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-		DrawTalkText();
+		DrawJKTalkText();
 	}
 }
 
@@ -188,46 +196,65 @@ void DrawTalkYuruhuwa()
 		yuruhuwa.talk = true;
 		textbox.onspacekey = true;
 	}
-	else if (textdata.threeline == NULL && yuruhuwa.talk == true)
+	else if (textdata.jk_threeline == NULL && yuruhuwa.talk == true)
 	{
 		yuruhuwa.tu = 0.0f;
 		yuruhuwa.talk = false;
 		textbox.onspacekey = false;
+
+		textdata.jk_nexttext = false;
+
+		InitJKLoadFile();
 	}
 	if (yuruhuwa.talk == true)
 	{
 		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
-
-		if (strstr(textdata.oneline, "あ、")|| strstr(textdata.oneline, "お友達") || strstr(textdata.oneline, "ハルカ") || strstr(textdata.oneline, "あ、"))
+		//DrawTexture(1000.0f, 0.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
+		//DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		if (strstr(textdata.jk_oneline, "あ、")|| strstr(textdata.jk_oneline, "お友達") || strstr(textdata.jk_oneline, "ハルカ") || strstr(textdata.jk_oneline, "あ、"))
 		{
-			DrawTexture(1000.0f, 0.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
+			DrawTexture(350.0f, 0.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "ハルカ", FontSize::Regular, FontColor::Yellow);
 		}
-		if (strstr(textdata.oneline, "おぉ、") || strstr(textdata.oneline, "これは"))
+		if (strstr(textdata.jk_oneline, "おぉ、") || strstr(textdata.jk_oneline, "これは"))
 		{
-			DrawTexture(1000.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex));
+			DrawTexture(800.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex));
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
 		}
-		if (strstr(textdata.oneline, "どうやら") || strstr(textdata.oneline, "俺は") || strstr(textdata.oneline, "・・・"))
+		if (strstr(textdata.jk_oneline, "どうやら") || strstr(textdata.jk_oneline, "俺は") || strstr(textdata.jk_oneline, "・・・"))
 		{
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
 		}
 		
 
-		DrawTalkText();
+		DrawJKTalkText();
 	}
 }
 
-void UpDataJKTalk()
+void UpDataBoyishTalk()
 {
-	if (GetKeyDown(SPACE_KEY) == true)
+	if (GetKeyDown(SPACE_KEY) == true && searchgameobject.boyish == true)
 	{
-		InitLoadFile();
-		LoadText();
-		textdata.nexttext = true;
+		if (searchgameobject.completerobot == true)
+		{
+			InitJKLoadFile();
+		}
+		JKLoadText();
+		
+		textdata.jk_nexttext = true;
+
+	}
+}
+
+void UpDataYuruhuwaTalk()
+{
+	if (GetKeyDown(SPACE_KEY) == true && yuruhuwaobject.yuruhuwa == true)
+	{
+		JKLoadText();
+		textdata.jk_nexttext = true;
 
 	}
 }

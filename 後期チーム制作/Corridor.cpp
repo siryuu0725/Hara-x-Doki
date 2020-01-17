@@ -72,7 +72,7 @@ void InitCorridorScene()
 	InitBoyish();
 	InitYuruhuwa();
 	InitMenu();
-	InitLoadFile();
+	InitRobotLoadFile();
 	InitChoiceTexture();
 
 	ChangeSceneStep(SceneStep::MainStep);

@@ -37,11 +37,17 @@ typedef struct
 
 struct TextData
 {
-	char text[1000];
-	char* oneline;
-	char* twoline;
-	char* threeline;
-	bool nexttext;
+	char robot_text[1000];
+	char jk_text[1000];
+	char* robot_oneline;
+	char* robot_twoline;
+	char* robot_threeline;
+
+	char* jk_oneline;
+	char* jk_twoline;
+	char* jk_threeline;
+	bool robot_nexttext;
+	bool jk_nexttext;
 };
 
 typedef struct 

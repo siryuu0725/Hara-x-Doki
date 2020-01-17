@@ -112,14 +112,14 @@ void UpDataDescriptionText()
 		{
 			choicetexturedata.decision = true;
 		}
-		LoadText();
-		textdata.nexttext = true;
+		RobotLoadText();
+		textdata.robot_nexttext = true;
 	}
 	if (moviebgdate.endmovie == true)
 	{
-		LoadText();
+		RobotLoadText();
 		moviebgdate.endmovie = false;
-		textdata.nexttext = true;
+		textdata.robot_nexttext = true;
 
 	}
 }

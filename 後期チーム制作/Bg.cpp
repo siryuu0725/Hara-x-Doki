@@ -29,7 +29,7 @@ void InitArea()
 	areadata.largeroom = true;
 	areadata.corridor = false;
 	areadata.searchcriminalarea = false;
-	areadata.searchgamearea = 0;
+	areadata.searchgamearea = false;
 	areadata.searchtunderearea = false;
 	areadata.searchyuruhuwaarea = false;
 }

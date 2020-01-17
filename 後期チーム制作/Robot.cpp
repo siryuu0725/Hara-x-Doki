@@ -44,6 +44,7 @@ void InitSearchGameRobot()
 	searchgamerobot.height = 128.0f;
 	searchgamerobot.width = 64.0f;
 	searchgamerobot.talk = false;
+	searchgamerobot.talktype = 0;
 }
 
 void InitPuzzleGameRobot()
@@ -125,13 +126,13 @@ void DrawTalkMaid()
 		textbox.onspacekey = true;
 		
 	}
-	else if (textdata.threeline == NULL && maidrobot.talk == true)
+	else if (textdata.robot_threeline == NULL && maidrobot.talk == true)
 	{
 		maidrobot.talk = false;
 		textbox.onspacekey = false;
 		maidrobot.talktype++;
 		
-		InitLoadFile();
+		InitRobotLoadFile();
 		//会話が終わると同時に時間制限スタート
 		time.start = true;
 		
@@ -148,7 +149,7 @@ void DrawTalkMaid()
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
-		if (strstr(textdata.oneline, "‥‥"))
+		if (strstr(textdata.robot_oneline, "‥‥"))
 		{
 			DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
 		}
@@ -157,9 +158,9 @@ void DrawTalkMaid()
 			DrawFont(100, 610, "メイド", FontSize::Regular, FontColor::Yellow);
 
 		}
-		DrawTalkText();
+		DrawRobotTalkText();
 
-		//DrawChoiceTexture();
+		
 	}
 }
 
@@ -171,15 +172,28 @@ void DrawTalkSearchGameRobot()
 		textbox.onspacekey = true;
 		
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && searchgamerobot.talk == true)
+	else if (textdata.robot_threeline == NULL && searchgamerobot.talk == true)
 	{
 		searchgamerobot.talk = false;
 		textbox.onspacekey = false;
+		textdata.robot_nexttext = false;
+		InitRobotLoadFile();
+
 	}
 	if (searchgamerobot.talk == true)
 	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobotTex));
+		if (searchgameobject.completerobot == false)
+		{
+			DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex));
+		}
+		else
+		{
+			DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
+		}
+
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+
+		DrawRobotTalkText();
 	}
 }
 
@@ -227,11 +241,30 @@ void UpDateTalkMaid()
 {
 	if (GetKeyDown(SPACE_KEY) == true && largeroomobject.maid == true)
 	{
-		LoadText();
-		textdata.nexttext = true;
+		RobotLoadText();
+		//JKLoadText();
+		textdata.robot_nexttext = true;
 		if (maidrobot.talktype == 6)
 		{
 			maidrobot.talktype = 1;
+		}
+	}
+}
+
+void UpDateTalkSearchGameRobot()
+{
+	if (GetKeyDown(SPACE_KEY) == true && searchgameobject.robot == true)
+	{
+		if (getitem.itemenergy == true)
+		{
+			InitRobotLoadFile();
+		}
+		RobotLoadText();
+		
+		textdata.robot_nexttext = true;
+		if (searchgamerobot.talktype == 3)
+		{
+			searchgamerobot.talktype = 1;
 		}
 	}
 }

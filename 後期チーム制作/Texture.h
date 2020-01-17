@@ -136,11 +136,13 @@ enum SearchGameCategoryTextureList
 {
 	SearchGameBgTex,             //!< 背景
 	SearchGamePlayerTex,         //!< プレイヤー
-	SearchGameTalkRobotTex,      //!< ロボット立ち絵
+	SearchGameTalkRobot_NoNeckTex,      //!< ロボット立ち絵
+	SearchGameTalkRobot,
 
 	SearchGameRobotTex,          //!< ロボット(未完成)
 	SearchGameCompleteRobotTex,  //!< ロボット(完成)
 	SearchGameBoyishTex,            //プレイヤー
+	SearchGameTalkBoyishTex,            //プレイヤー
 
 	SearchGameRobotNeckTex,      //!< ロボットの首
 	SearchGameSurprisedTex,      //!< ビックリマーク
@@ -149,6 +151,7 @@ enum SearchGameCategoryTextureList
 	SearchGameItemBoxTex,        //!< アイテムボックス
 	SearchGameItemMenuTex,       //!< 
 	SearchGameItemKeyTex,        //!< 鍵
+	SearchGameItemRightTex,
 	SearchGameItemEnergyTex,     //!< 電池
 	SearchGameItemRobotPartTex,  //!< パーツ
 

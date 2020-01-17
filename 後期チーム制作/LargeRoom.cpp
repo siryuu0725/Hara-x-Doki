@@ -86,7 +86,7 @@ void InitLargeRoomScene()
 	InitLargeRoomPlayer();
 	InitMaidRobot();
 	
-	InitLoadFile();
+	InitRobotLoadFile();
 	InitTextBox();
 	InitMenu();
 	InitTimeCounter();
@@ -118,6 +118,7 @@ void MainLargeRoomScene()
 	{
 		areadata.largeroom = false;
 		areadata.corridor = true;
+
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
