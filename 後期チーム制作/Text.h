@@ -65,6 +65,8 @@ typedef struct
 	bool decision_2;
 
 	int display;
+	bool flg;
+
 }ChoiceTextureData;
 
 extern TextBoxData textbox;

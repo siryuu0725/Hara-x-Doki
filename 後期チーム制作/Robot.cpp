@@ -152,6 +152,7 @@ void DrawTalkMaid()
 		if (strstr(textdata.robot_oneline, "ÅdÅd"))
 		{
 			DrawFont(100, 610, "éÂêlåˆ", FontSize::Regular, FontColor::Yellow);
+
 		}
 		else
 		{
@@ -253,7 +254,7 @@ void UpDateTalkMaid()
 
 void UpDateTalkSearchGameRobot()
 {
-	if (GetKeyDown(SPACE_KEY) == true && searchgameobject.robot == true)
+	if (searchgameobject.robot == true)
 	{
 		if (getitem.itemenergy == true)
 		{

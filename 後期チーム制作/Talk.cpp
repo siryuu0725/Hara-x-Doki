@@ -349,7 +349,8 @@ void DrawDoorTalk()
 		corridorobject.doortalk = false;
 		corridorobject.boyishdoor = false;
 		textbox.onspacekey = false;
-		//choicetexturedata.Choicepos = 1;
+		choicetexturedata.Choicepos = 1;
+
 
 	}
 	//‚Í‚¢‚ð‘I‘ð‚µ‚½‚Æ‚«
@@ -366,6 +367,7 @@ void DrawDoorTalk()
 		displaydata.displaynext = true;
 
 
+
 	}
 	//‘¼‚Ì”à‚Å‚¢‚¢‚¦‚ð‚ð‘I‘ð‚µ‚½‚Æ‚«
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey != true)
@@ -374,6 +376,7 @@ void DrawDoorTalk()
 		corridorobject.boyishdoor = false;
 		textbox.onspacekey = false;
 		textdata.robot_nexttext = false;
+
 
 	}
 
@@ -387,10 +390,10 @@ void DrawDoorTalk()
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
-		/*if (strstr(textdata.robot_oneline,"‚Í‚¢"))
+		if (strstr(textdata.robot_oneline,"‚Í‚¢"))
 		{
 			DrawChoiceTexture();
-		}*/
+		}
 		
 	}
 #pragma endregion
@@ -421,7 +424,8 @@ void DrawDoorTalk()
 		corridorobject.doortalk = false;
 		corridorobject.tunderedoor = false;
 		textbox.onspacekey = false;
-		//choicetexturedata.Choicepos = 1;
+		choicetexturedata.Choicepos = 1;
+
 
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
@@ -439,6 +443,7 @@ void DrawDoorTalk()
 		displaydata.displaynext = true;
 
 
+
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
 		&& corridorobject.doortalk == true && getitem.tunderedoorkey != true)
@@ -447,6 +452,7 @@ void DrawDoorTalk()
 		corridorobject.tunderedoor = false;
 		textbox.onspacekey = false;
 		textdata.robot_nexttext = false;
+
 
 	}
 	if (corridorobject.tunderedoor == true && corridorobject.doortalk == true && getitem.tunderedoorkey == false)
@@ -463,6 +469,7 @@ void DrawDoorTalk()
 		{
 			DrawChoiceTexture();
 		}
+		
 	}
 #pragma endregion
 
@@ -496,7 +503,7 @@ void DrawDoorTalk()
 		corridorobject.doortalk = false;
 		corridorobject.yuruhuwadoor = false;
 		textbox.onspacekey = false;
-		//choicetexturedata.Choicepos = 1;
+		choicetexturedata.Choicepos = 1;
 
 
 	}
@@ -512,6 +519,7 @@ void DrawDoorTalk()
 
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
+
 
 
 	}
@@ -538,15 +546,17 @@ void DrawDoorTalk()
 		{
 			DrawChoiceTexture();
 		}
-
+		
 	}
 #pragma endregion
 }
 
 void UpDataDoorText()
 {
-	if (corridorobject.boyishdoor == true || corridorobject.tunderedoor == true || corridorobject.yuruhuwadoor == true)
+	if (/*GetKeyDown(SPACE_KEY) == true*/	choicetexturedata.flg == true)
 	{
+		
+		choicetexturedata.flg = false;
 		if (choicetexturedata.decision_2 == true)
 		{
 			InitRobotLoadFile();

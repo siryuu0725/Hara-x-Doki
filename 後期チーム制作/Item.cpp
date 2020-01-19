@@ -744,22 +744,38 @@ void HitEyeLargeRoomObject()
 
 void HitEyeCorridorObject()
 {
-	if (HitPlayerEyeObject(1455.0f, 405.0f, 80.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	if (HitPlayerEyeObject(1455.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
 	{
 		corridorobject.boyishdoor = true;
+
+		areadata.searchgamearea = true;
+		areadata.searchtunderearea = false;
+		areadata.searchyuruhuwaarea = false;
+
+		choicetexturedata.flg = true;
 	}
-	else if (HitPlayerEyeObject(845.0f, 405.0f, 80.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(845.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
 	{
 		corridorobject.tunderedoor = true;
+
+		areadata.searchtunderearea = true;
+		areadata.searchgamearea = false;
+		areadata.searchyuruhuwaarea = false;
+
 	}
-	else if (HitPlayerEyeObject(230.0f, 405.0f, 80.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(230.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
 	{
-		corridorobject.boyish = true;
+		corridorobject.yuruhuwadoor = true;
+
+		areadata.searchyuruhuwaarea = true;
+		areadata.searchgamearea = false;
+		areadata.searchtunderearea = false;
 	}
 	else if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && boyish.clear == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		corridorobject.boyish = true;
 	}
+	
 }
 void HitEyeSearchGameObject()
 {

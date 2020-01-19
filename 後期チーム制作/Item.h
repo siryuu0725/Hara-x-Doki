@@ -198,11 +198,15 @@ void HitSearchGameObject();
 void HitEyeLargeRoomObject();
 
 
+void HitEyeCorridorObject();
+
+
 /*
 　　探索ゲームでのプレイヤーとがアクションを起こすときの
   　オブジェクトとの視覚のあたり判定
 　　矩形と矩形のあたり判定
 */
+
 void HitEyeSearchGameObject();
 
 void HitEyeTundereRoomObject();
