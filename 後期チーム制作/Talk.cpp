@@ -387,10 +387,10 @@ void DrawDoorTalk()
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
-		if (strstr(textdata.robot_oneline,"‚Í‚¢"))
+		/*if (strstr(textdata.robot_oneline,"‚Í‚¢"))
 		{
 			DrawChoiceTexture();
-		}
+		}*/
 		
 	}
 #pragma endregion
@@ -545,7 +545,7 @@ void DrawDoorTalk()
 
 void UpDataDoorText()
 {
-	if (GetKeyDown(SPACE_KEY) == true)
+	if (corridorobject.boyishdoor == true || corridorobject.tunderedoor == true || corridorobject.yuruhuwadoor == true)
 	{
 		if (choicetexturedata.decision_2 == true)
 		{

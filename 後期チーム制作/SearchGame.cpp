@@ -78,7 +78,7 @@ void InitSearchGameScene()
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 	
 	LoadUI();
-	areadata.searchgamearea = true;
+	
 	InitBoyish();
 
 	InitChoiceTexture();

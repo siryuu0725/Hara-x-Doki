@@ -744,7 +744,19 @@ void HitEyeLargeRoomObject()
 
 void HitEyeCorridorObject()
 {
-	if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && boyish.clear == true && GetKeyDown(SPACE_KEY) == true)
+	if (HitPlayerEyeObject(1455.0f, 405.0f, 80.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.boyishdoor = true;
+	}
+	else if (HitPlayerEyeObject(845.0f, 405.0f, 80.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.tunderedoor = true;
+	}
+	else if (HitPlayerEyeObject(230.0f, 405.0f, 80.0f, 100.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.boyish = true;
+	}
+	else if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && boyish.clear == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		corridorobject.boyish = true;
 	}
