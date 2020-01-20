@@ -4,6 +4,8 @@
 #include "Texture.h"
 #include "Text.h"
 #include "Item.h"
+#include "Bg.h"
+#include "JK.h"
 
 #define MENU_POS_X 0
 #define MENU_POS_Y 680
@@ -65,4 +67,12 @@ void UpDateMenu()
 	{
 		menu.onenterkey = false;
 	}
+}
+
+
+void Reset()
+{
+	areadata.cangearea = false;
+	boyish.clear = false;
+	boyish.heart = 0;
 }

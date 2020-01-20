@@ -2,6 +2,10 @@
 #include "Texture.h"
 #include "GameClear.h"
 #include "Input.h"
+#include "Talk.h"
+#include "JK.h"
+#include "Bg.h"
+#include "Text.h"
 
 // ゲームクリアシーンの初期化
 void InitGameClearScene();
@@ -30,21 +34,39 @@ SceneId UpdateGameClearScene()
 
 void DrawGameClearScene()
 {
-	DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::GameClearBgTex));
+	GameClearBg();
+
+	DrawTalkClearBoyish();
+
 }
 
 void InitGameClearScene()
 {
+	//areadata.largeroom = false;
+	//areadata.cleararea = true;
+	//boyish.clear = true;
 
-	LoadTexture("Res/スチル 改変.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::GameClearBgTex);
+	LoadTexture("Res/スチル 改変.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::BoyishClearBgTex);
+
+	LoadUI();
+
+	InitTextBox();
+
+	InitJKLoadFile();
+
+	JKLoadText();
+	
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
 void MainGameClearScene()
 {
 	
-	if (GetKeyDown(SPACE_KEY) == true)
+	UpDataClearText();
+
+	if (boyish.end == true)
 	{
+		boyish.end = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	

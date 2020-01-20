@@ -193,7 +193,9 @@ enum TalkCategoryTextureList
 };
 enum GameClearCategoryTextureList
 {
-	GameClearBgTex,			//!< ”wŒi
+	BoyishClearBgTex,			//!< ”wŒi
+	TundereClearBgTex,			//!< ”wŒi
+	YuruhuwaClearBgTex,			//!< ”wŒi
 	GameClearTextureMax,	//!< ƒŠƒXƒgÅ‘å”
 };
 

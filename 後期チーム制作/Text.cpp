@@ -103,26 +103,7 @@ void DrawTime()
 	
 }
 
-void UpDataDescriptionText()
-{
-	
-	if (GetKeyDown(SPACE_KEY) == true)
-	{
-		if ((maidrobot.description == true && choicetexturedata.Choicepos == 2))
-		{
-			choicetexturedata.decision_1 = true;
-		}
-		RobotLoadText();
-		textdata.robot_nexttext = true;
-	}
-	if (moviebgdate.endmovie == true)
-	{
-		RobotLoadText();
-		moviebgdate.endmovie = false;
-		textdata.robot_nexttext = true;
 
-	}
-}
 
 void InitScenario()
 {

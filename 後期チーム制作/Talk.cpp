@@ -37,7 +37,7 @@ void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 void InitRobotLoadFile()
 {
 	textdata.robot_nexttext = false;
-#pragma region メイド会話
+
 	if (moviebgdate.endmovie == true)
 	{
 		FILE* DescriptionFp;
@@ -56,6 +56,7 @@ void InitRobotLoadFile()
 		fgets(textdata.robot_text, 1000, BreakKyeFp);
 		fclose(BreakKyeFp);
 	}
+#pragma region メイド会話
 	else if (areadata.largeroom == true && maidrobot.talktype == 0)
 	{
 		FILE* MaidTalkFp_0;
@@ -120,6 +121,8 @@ void InitRobotLoadFile()
 		fclose(MaidTalkFp_6);
 	}
 #pragma endregion
+
+#pragma region ボーイッシュ執事会話
 	if (areadata.searchgamearea == true && areadata.corridor == false && searchgamerobot.talktype == 0)
 	{
 		FILE* SearchGameRobotFp;
@@ -138,7 +141,7 @@ void InitRobotLoadFile()
 	    fgets(textdata.robot_text, 1000, SearchGameRobotFp_1);
 	    fclose(SearchGameRobotFp_1);
 	}
-	
+#pragma endregion
 
 
 }
@@ -184,6 +187,42 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 2000, BoyishFp_3);
 		fclose(BoyishFp_3);
 	}
+	else if (areadata.corridor == true && boyish.heart == 3)
+	{
+		FILE* BoyishFp_4;
+
+		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下好感度MAX).txt", "r");
+
+		fgets(textdata.jk_text, 2000, BoyishFp_4);
+		fclose(BoyishFp_4);
+	}
+	else if (areadata.corridor == true && boyish.heart != 3)
+	{
+		FILE* BoyishFp_5;
+
+		fopen_s(&BoyishFp_5, "Res/テキスト/ボーイッシュ会話(廊下好感度MIN).txt", "r");
+
+		fgets(textdata.jk_text, 2000, BoyishFp_5);
+		fclose(BoyishFp_5);
+	}
+	else if (areadata.largeroom == true)
+	{
+		FILE* BoyishFp_4;
+
+		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(大部屋).txt", "r");
+
+		fgets(textdata.jk_text, 2000, BoyishFp_4);
+		fclose(BoyishFp_4);
+	}
+	else if (areadata.largeroom == false && boyish.clear == true && boyish.heart == 3)
+	{
+		FILE* BoyishFp_Clear;
+
+		fopen_s(&BoyishFp_Clear, "Res/テキスト/ボーイッシュ会話(クリア).txt", "r");
+
+		fgets(textdata.jk_text, 5000, BoyishFp_Clear);
+		fclose(BoyishFp_Clear);
+	}
 	else if (areadata.searchyuruhuwaarea == true)
 	{
 		FILE* fp;
@@ -206,7 +245,7 @@ void RobotLoadText()
 	//memset(&textdata.twoline, '\0', 256);
 	//memset(&textdata.threeline, '\0', 256);
 
-	if (choicetexturedata.decision_1 == true)
+	if (choicetexturedata.decision_2 == true)
 	{
 		textdata.robot_oneline = strtok(textdata.robot_text, ",");
 		
@@ -284,9 +323,26 @@ void DrawRobotTalkText()
 
 void DrawJKTalkText()
 {
-	DrawFont(300.0f, 760.0f, textdata.jk_oneline, FontSize::Regular, FontColor::White);
-	DrawFont(300.0f, 860.0f, textdata.jk_twoline, FontSize::Regular, FontColor::White);
-	DrawFont(300.0f, 960.0f, textdata.jk_threeline, FontSize::Regular, FontColor::White);
+	
+
+	if (displaydata.display_cleartext == false && areadata.cleararea == true)
+	{
+		DrawFont(400.0f, 460.0f, textdata.jk_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(400.0f, 560.0f, textdata.jk_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(400.0f, 660.0f, textdata.jk_threeline, FontSize::Regular, FontColor::White);
+	}
+	else if(boyish.end == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.jk_oneline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 860.0f, textdata.jk_twoline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 960.0f, textdata.jk_threeline, FontSize::Regular, FontColor::Yellow);
+	}
+	else
+	{
+		DrawFont(300.0f, 760.0f, textdata.jk_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 860.0f, textdata.jk_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 960.0f, textdata.jk_threeline, FontSize::Regular, FontColor::White);
+	}
 }
 
 void DrawDescription()
@@ -294,6 +350,7 @@ void DrawDescription()
 
 	if (maidrobot.description == false && moviebgdate.endmovie == true)
 	{
+		UpDataDescriptionText();
 		maidrobot.description = true;
 		textbox.onspacekey = true;
 	}
@@ -301,6 +358,8 @@ void DrawDescription()
 	{
 		maidrobot.description = false;
 		textbox.onspacekey = false;
+		choicetexturedata.decision_2 = false;
+		InitRobotLoadFile();
 		
 	}
 	if (maidrobot.description == true)
@@ -310,11 +369,31 @@ void DrawDescription()
 		DrawRobotTalkText();
 		if (strstr(textdata.robot_oneline, "はい"))
 		{
-			DrawChoiceTexture();
-			
+			DrawChoiceTexture();	
 		}
 	}
 
+}
+
+void UpDataDescriptionText()
+{
+
+	if (GetKeyDown(SPACE_KEY) == true && maidrobot.description == true)
+	{
+		if ((maidrobot.description == true && choicetexturedata.Choicepos == 2))
+		{
+			choicetexturedata.decision_2 = true;
+		}
+		RobotLoadText();
+		textdata.robot_nexttext = true;
+	}
+	if (moviebgdate.endmovie == true)
+	{
+		RobotLoadText();
+		moviebgdate.endmovie = false;
+		textdata.robot_nexttext = true;
+
+	}
 }
 
 void DrawDoorTalk()
@@ -341,6 +420,8 @@ void DrawDoorTalk()
 		corridorobject.boyishdoor = false;
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
+		areadata.searchgamearea = true;
+
 	}
 	//いいえを選択したとき
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.boyishdoor == true && corridorobject.doortalk == true
@@ -366,7 +447,9 @@ void DrawDoorTalk()
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
 
-
+		areadata.searchgamearea = true;
+		areadata.searchtunderearea = false;
+		areadata.searchyuruhuwaarea = false;
 
 	}
 	//他の扉でいいえをを選択したとき
@@ -417,6 +500,7 @@ void DrawDoorTalk()
 		corridorobject.tunderedoor = false;
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
+		areadata.searchtunderearea = true;
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
 		&& getitem.tunderedoorkey == true && choicetexturedata.decision_2 == true)
@@ -434,15 +518,15 @@ void DrawDoorTalk()
 		corridorobject.doortalk = false;
 		corridorobject.tunderedoor = false;
 
-	
-
 		getitem.boyishdoorkey = false;
 		getitem.yuruhuwadoorkey = false;
 
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
 
-
+		areadata.searchtunderearea = true;
+		areadata.searchgamearea = false;
+		areadata.searchyuruhuwaarea = false;
 
 	}
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.tunderedoor == true && corridorobject.doortalk == true
@@ -495,6 +579,8 @@ void DrawDoorTalk()
 		corridorobject.yuruhuwadoor = false;
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
+
+		areadata.searchyuruhuwaarea = true;
 	}
 	//いいえを選択したとき
 	else if (GetKeyDown(SPACE_KEY) == true && corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true
@@ -520,7 +606,9 @@ void DrawDoorTalk()
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
 
-
+		areadata.searchyuruhuwaarea = true;
+		areadata.searchgamearea = false;
+		areadata.searchtunderearea = false;
 
 	}
 	//他の扉でいいえをを選択したとき
@@ -553,10 +641,9 @@ void DrawDoorTalk()
 
 void UpDataDoorText()
 {
-	if (/*GetKeyDown(SPACE_KEY) == true*/	choicetexturedata.flg == true)
+	if (choicetexturedata.door_touch == true)
 	{
-		
-		choicetexturedata.flg = false;
+		choicetexturedata.door_touch = false;
 		if (choicetexturedata.decision_2 == true)
 		{
 			InitRobotLoadFile();

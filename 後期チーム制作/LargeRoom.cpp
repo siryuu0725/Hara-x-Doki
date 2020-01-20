@@ -48,22 +48,25 @@ void DrawLargeRoomScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
-	//DrawYuruhuwa();
+	
 	DrawMaidRobot();
 
 	DrawSearchPlayerAndRobot();
 	DrawTexture(960.0f, 755.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger));
 	DrawTexture(160.0f, 770.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot));
 	
+	DrawDescription();
+
 	DrawTime();
 	SearchObject();
 	DrawTalkMaid();
-	DrawDescription();
+	DrawTalkBoyish();
 	DrawMenu();
 }
 
 void InitLargeRoomScene()
 {
+	moviebgdate.endmovie = true;
 	LoadSearchGameItem();
 
 	LoadTexture("Res/‘å•”‰®B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
@@ -87,11 +90,14 @@ void InitLargeRoomScene()
 	InitMaidRobot();
 	
 	InitRobotLoadFile();
+	InitJKLoadFile();
+
 	InitTextBox();
 	InitMenu();
 	InitTimeCounter();
 
 	InitChoiceTexture();
+
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -110,9 +116,10 @@ void MainLargeRoomScene()
 
 	UpDateMenu();
 
-	
-	//UpDataDescriptionText();
-	
+	UpDataBoyishTalk();
+
+	UpDataDescriptionText();
+
 	UpDateTalkMaid();
 	if (searchplayer.pos_x <= 70.0f && searchplayer.pos_y >= 390.0f && searchplayer.pos_y <= 500.0f)
 	{
@@ -131,6 +138,8 @@ void MainLargeRoomScene()
 	}
 	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f && boyish.heart == 3)
 	{
+		areadata.largeroom = false;
+		areadata.cleararea = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (time.end == true)
@@ -151,7 +160,7 @@ SceneId FinishLargeRoomScene()
 	{
 		return SceneId::CriminalRoomScene;
 	}
-	else if (yuruhuwa.clear == true)
+	else if (areadata.cleararea == true)
 	{
 		return SceneId::GameClearScene;
 	}

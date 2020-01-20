@@ -27,6 +27,8 @@ typedef struct
 	bool searchgamearea;    //ボーイッシュ部屋にいるときtrue
 	bool searchtunderearea; //ツンデレ部屋にいるときtrue
 	bool searchyuruhuwaarea;//ゆるふわ部屋にいるときtrue
+	bool cleararea;
+
 	bool cangearea;         //廊下と大部屋を移動するとき
 	int cangearea2;        //廊下と女子高生部屋を移動するとき
 
@@ -60,5 +62,7 @@ void DrawCriminalBg();
 void DrawTalkBg();
 
 void UpDateBg();
+
+void GameClearBg();
 
 #endif

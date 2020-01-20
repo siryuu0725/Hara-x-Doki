@@ -46,11 +46,12 @@ void DrawCorridorScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
-	DrawYuruhuwa();
+	//DrawYuruhuwa();
 	DrawSearchPlayerAndRobot();
 	
 	
 	DrawTime();
+	DrawTalkBoyish();
 	DrawTalkYuruhuwa();
 	DrawDoorTalk();
 	DrawMenu();
@@ -65,6 +66,8 @@ void InitCorridorScene()
 	LoadTexture("Res/廊下_修正.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
 	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
 	
+	LoadTexture("Res/キャラ/ボーイッシュ立ち絵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex);
+
     LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
 	LoadUI();
 
@@ -73,6 +76,7 @@ void InitCorridorScene()
 	InitYuruhuwa();
 	InitMenu();
 	InitRobotLoadFile();
+	InitJKLoadFile();
 	InitChoiceTexture();
 
 	ChangeSceneStep(SceneStep::MainStep);
@@ -93,6 +97,8 @@ void MainCorridorScene()
 
 	UpDataDoorText();
 
+	UpDataBoyishTalk();
+
 	UpDateMenu();
 
 	if (searchplayer.pos_x + 64.0f >= 1900.0f)
@@ -104,70 +110,8 @@ void MainCorridorScene()
 	}
 
 	//キャラの幅+20程判定を大きくしている
-	/*if (HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
-	{
-		corridorobject.boyishdoor = true;
-		
-		areadata.searchgamearea = true;
-		areadata.searchtunderearea = false;
-		areadata.searchyuruhuwaarea = false;
-
-	}
-	else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
-	{
-		corridorobject.tunderedoor = true;
-		
-		areadata.searchtunderearea = true;
-		areadata.searchgamearea = false;
-		areadata.searchyuruhuwaarea = false;
-
-	}
-	else if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
-	{
-		corridorobject.yuruhuwadoor = true;
-		
-		areadata.searchyuruhuwaarea = true;
-		areadata.searchgamearea = false;
-		areadata.searchtunderearea = false;
-		
-	}*/
-	/*if (HitPlayerEyeObject(1455.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
-	{
-		corridorobject.boyishdoor = true;
-
-		areadata.searchgamearea = true;
-		areadata.searchtunderearea = false;
-		areadata.searchyuruhuwaarea = false;
-	}
-	else if (HitPlayerEyeObject(845.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.tunderedoorkey == true)
-	{
-		corridorobject.tunderedoor = true;
-
-		areadata.searchtunderearea = true;
-		areadata.searchgamearea = false;
-		areadata.searchyuruhuwaarea = false;
-	}
-	else if (HitPlayerEyeObject(230.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.yuruhuwadoorkey == true)
-	{
-		corridorobject.yuruhuwadoor = true;
-
-		areadata.searchyuruhuwaarea = true;
-		areadata.searchgamearea = false;
-		areadata.searchtunderearea = false;
-	}*/
-	//else if(HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
-	//{
-	//	corridorobject.boyishdoor = true;
-	//}
-	//else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
-	//{
-	//	corridorobject.tunderedoor = true;
-	//}
-	//else if(HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
-	//{
-	//	corridorobject.yuruhuwadoor = true;
-	//}
-
+	
+	
 	if (displaydata.displaynext == true)
 	{
 		areadata.corridor = false;

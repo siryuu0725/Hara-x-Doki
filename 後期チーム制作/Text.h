@@ -32,13 +32,14 @@ typedef struct
 {
 	int name_uicounter;
 	bool displaynext;
+	bool display_cleartext;
 }DisplayData;
 
 
 struct TextData
 {
 	char robot_text[1000];
-	char jk_text[2000];
+	char jk_text[5000];
 	char* robot_oneline;
 	char* robot_twoline;
 	char* robot_threeline;
@@ -65,7 +66,7 @@ typedef struct
 	bool decision_2;
 
 	int display;
-	bool flg;
+	bool door_touch;
 
 }ChoiceTextureData;
 

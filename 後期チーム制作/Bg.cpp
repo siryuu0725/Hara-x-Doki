@@ -4,6 +4,8 @@
 #include "Player.h"
 #include "Title.h"
 #include "Hit.h"
+#include "JK.h"
+#include "Text.h"
 
 #define MOVIETEX_TU 0.0f
 #define MOVITEXE_TV 0.45f
@@ -32,6 +34,7 @@ void InitArea()
 	areadata.searchgamearea = false;
 	areadata.searchtunderearea = false;
 	areadata.searchyuruhuwaarea = false;
+	areadata.cleararea = false;
 }
 
 void DrawTitleBg()
@@ -230,4 +233,20 @@ void UpDateBg()
 		}
 	}
 	
+}
+
+void GameClearBg()
+{
+	if (boyish.clear == true && boyish.heart == 3&& displaydata.display_cleartext == true)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::BoyishClearBgTex));
+	}
+	/*else if (tundere.clear == true && tundere.heart == 3)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::TundereClearBgTex));
+	}
+	else if (yuruhuwa.clear == true && yuruhuwa.heart == 3)
+	{
+		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::YuruhuwaClearBgTex));
+	}*/
 }

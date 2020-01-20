@@ -4,6 +4,10 @@
 typedef struct
 {
 	bool maid;         //ロボ
+	bool boyish;         //ロボ
+	bool tundere;         //ロボ
+	bool yuruhuaw;         //ロボ
+
 	bool light;         //ライト
 	bool desk;          //机
 	bool chair;         //椅子

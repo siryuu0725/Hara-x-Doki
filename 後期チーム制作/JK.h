@@ -13,6 +13,7 @@ typedef struct
 	bool clear;
 
 	int heart;
+	bool end;
 }Boyish;
 
 typedef struct
@@ -61,6 +62,9 @@ void UpDataBoyishTalk();
 
 void UpDataYuruhuwaTalk();
 
+void DrawTalkClearBoyish();
+
+void UpDataClearText();
 
 #endif
 
