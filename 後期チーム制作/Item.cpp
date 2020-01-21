@@ -18,6 +18,8 @@ YuruhuwaTouchObject yuruhuwaobject;
 TundereTouchObject tundereobject;
 GetItem getitem;
 
+
+#pragma region 家具初期化
 void InitLargeRoomObject()
 {
 	largeroomobject.chair = false;
@@ -105,6 +107,8 @@ void InitYuruhuwaRoomObject()
 	yuruhuwaobject.cabinet = false;
 }
 
+#pragma endregion
+
 void DrawRobotNeck()
 {
 	if (searchgameobject.robotneck == false && getitem.itemrobot == false && searchgameobject.completerobot == false)
@@ -128,6 +132,8 @@ void LoadCorridorFurnitureTex()
 	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door);
 	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase);
 }
+
+#pragma region 家具テクスチャ読み込み
 void LoadTundereFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex);
@@ -180,6 +186,7 @@ void LoadCriminalFurnitureTex()
 	LoadTexture("Res/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
 
 }
+#pragma endregion
 
 
 #pragma region プレイヤーとオブジェクトのあたり判定
@@ -221,7 +228,7 @@ void HitLargeRoomObject()
 		searchplayer.hit = true;
 	}
 	//ボーイッシュ
-	else if (HitPlayerObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 92.0f) == true/* && boyish.clear == true*/)
+	else if (HitPlayerObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 92.0f) == true && boyish.clear == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -309,7 +316,7 @@ void HitCorridorObject()
 	{
 		searchplayer.hit = true;
 	}
-	else if (HitPlayerObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && yuruhuwa.clear == true)
+	else if (HitPlayerObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 92.0f) == true && yuruhuwa.clear == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -510,7 +517,7 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = true;
 	}
 	//ロボット
-	else if (HitPlayerObject(puzzlegamerobot.pos_x + 10.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 92.0f) == true)
+	else if (HitPlayerObject(puzzlegamerobot.pos_x + 10.0f, puzzlegamerobot.pos_y + 84.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 92.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -774,25 +781,30 @@ void HitEyeCorridorObject()
 
 		choicetexturedata.door_touch = true;
 	}
-	else if (HitNextArea(1430.0f, 1550.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(1455.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		corridorobject.boyishdoor = true;
 	}
-	else if (HitNextArea(820.0f, 945.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(845.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		corridorobject.tunderedoor = true;
 	}
-	else if (HitNextArea(225.0f, 350.0f, 440.0f, 450.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(230.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		corridorobject.yuruhuwadoor = true;
 	}
-	else if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true /*&& boyish.clear == true*/ && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && boyish.clear == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		corridorobject.boyish = true;
+	}
+	else if (HitPlayerEyeObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && yuruhuwa.clear == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.yuruhuwa = true;
 	}
 	else
 	{
 		corridorobject.boyish = false;
+		corridorobject.yuruhuwa = false;
 	}
 	
 }
@@ -965,7 +977,7 @@ void HitEyeTundereRoomObject()
 void HitEyeYuruhuwaRoomObject()
 {
 	//ロボット
-	if (HitPlayerEyeObject(puzzlegamerobot.pos_x, puzzlegamerobot.pos_y, puzzlegamerobot.width, puzzlegamerobot.height) == true
+	if (HitPlayerEyeObject(puzzlegamerobot.pos_x + 20.0f, puzzlegamerobot.pos_y + 64.0f, puzzlegamerobot.width - 30.0f, puzzlegamerobot.height - 42.0f) == true
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.robot = true;

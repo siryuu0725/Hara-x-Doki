@@ -40,22 +40,6 @@ void InitTextBox()
 	displaydata.displaynext = false;
 }
 
-void DrawTextBox()
-{
-	//// プレイヤーとロボットが当たってスペースを押したらテキストボックス描画
-	//if (searchgameobject.robot == true && textbox.onspacekey == false)
-	//{
-	//	textbox.onspacekey = true;
-	//}
-	//else if (GetKeyDown(SPACE_KEY) == true && textbox.onspacekey == true)
-	//{
-	//	textbox.onspacekey = false;
-	//}
-	//if (textbox.onspacekey == true)
-	//{
-	//	DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-	//}
-}
 
 void InitTimeCounter()
 {

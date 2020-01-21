@@ -32,6 +32,9 @@ typedef struct
 	float pos_x, pos_y;
 	float width, height;
 	bool talk;
+	int talktype;
+	bool play;
+
 
 }PuzzleGameRobotData;
 
@@ -102,5 +105,7 @@ void DrawTalkMysteryGameRobot();
 void UpDateTalkMaid();
 
 void UpDateTalkSearchGameRobot();
+
+void UpDateTalkPuzzleGameRobot();
 
 #endif

@@ -84,7 +84,6 @@ void LoadUI();
 
 void InitTextBox();
 
-void DrawTextBox();
 
 
 void InitTimeCounter();

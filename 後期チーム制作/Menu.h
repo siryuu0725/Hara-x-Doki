@@ -14,4 +14,6 @@ void InitMenu();
 void DrawMenu();
 
 void UpDateMenu();
+
+void Reset();
 #endif

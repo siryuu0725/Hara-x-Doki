@@ -8,6 +8,8 @@ typedef struct
 	float width;
 	float height;
 
+	bool areachange;
+
 	bool talk;
 	int talktype;
 	bool clear;
@@ -23,9 +25,14 @@ typedef struct
 	float width;
 	float height;
 
+	bool areachange;
+
+	int talktype;
 	bool talk;
 	bool clear;
 	int heart;
+
+	bool end;
 }Yuruhuwa;
 
 typedef struct
@@ -34,6 +41,10 @@ typedef struct
 	float tu, tv;
 	float width;
 	float height;
+
+	bool areachange;
+
+	int talktype;
 
 	bool talk;
 	bool clear;
@@ -46,7 +57,10 @@ extern Yuruhuwa yuruhuwa;
 
 extern Tundere tundere;
 
+void LoadCharacter();
+
 void InitBoyish();
+
 
 void InitYuruhuwa();
 

@@ -6,6 +6,7 @@
 #include "JK.h"
 #include "Bg.h"
 #include "Text.h"
+#include "Menu.h"
 
 // ゲームクリアシーンの初期化
 void InitGameClearScene();
@@ -67,6 +68,7 @@ void MainGameClearScene()
 	if (boyish.end == true)
 	{
 		boyish.end = false;
+		Reset();
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	

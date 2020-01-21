@@ -70,9 +70,17 @@ void UpDateMenu()
 }
 
 
+//ゲームクリア/ゲームオーバー時のリセット関数
 void Reset()
 {
+	time.start = false;
 	areadata.cangearea = false;
+	getitem.breakdoorkey = false;
+	getitem.boyishdoorkey = false;
+	getitem.tunderedoorkey = false;
+	getitem.yuruhuwadoorkey = false;
+	textdata.jk_nexttext = false;
 	boyish.clear = false;
+	searchgameobject.completerobot = false;
 	boyish.heart = 0;
 }

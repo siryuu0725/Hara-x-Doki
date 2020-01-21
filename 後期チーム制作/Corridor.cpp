@@ -46,7 +46,7 @@ void DrawCorridorScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
-	//DrawYuruhuwa();
+	DrawYuruhuwa();
 	DrawSearchPlayerAndRobot();
 	
 	
@@ -64,11 +64,7 @@ void InitCorridorScene()
 	LoadSearchGameItem();
 
 	LoadTexture("Res/廊下_修正.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
-	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	
-	LoadTexture("Res/キャラ/ボーイッシュ立ち絵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex);
-
-    LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
+	LoadCharacter();
 	LoadUI();
 
 	InitCorridorPlayer();
@@ -98,6 +94,7 @@ void MainCorridorScene()
 	UpDataDoorText();
 
 	UpDataBoyishTalk();
+	UpDataYuruhuwaTalk();
 
 	UpDateMenu();
 

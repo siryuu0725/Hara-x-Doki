@@ -46,10 +46,13 @@ void DrawYuruhuwaRoomScene()
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(1330.0f, 780.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRight));
 	
-	DrawTalkYuruhuwa();
 	DrawMenu();
 	DrawTime();
+	
+
 	DrawTalkPuzzleGameRobot();
+
+	DrawTalkYuruhuwa();
 	SearchObject();
 }
 
@@ -58,27 +61,22 @@ void InitYuruhuwaRoomScene()
 	LoadYuruhuwaFurnitureTex();
 	LoadSearchGameItem();
 
-	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
-	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex);
-	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
-	LoadTexture("Res/キャラ/ツンデレ改.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
-	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex);
+	LoadCharacter();
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
 	LoadUI();
-	
-	InitRobotLoadFile();
-	InitJKLoadFile();
-	InitYuruhuwaRoomObject();
 	InitYuruhuwa();
 	InitGameRoomPlayer();
 	InitPuzzleGameRobot();
+	InitRobotLoadFile();
+	InitJKLoadFile();
+	InitYuruhuwaRoomObject();
+	
 	InitTextBox();
 	InitMenu();
-	getitem.yuruhuwadoorkey = true;
+	InitChoiceTexture();
 	ChangeSceneStep(SceneStep::MainStep);
 }
 
@@ -88,17 +86,19 @@ void MainYuruhuwaRoomScene()
 	{
 		SearchPlayerControl(175.0f, 1080.0f, 0.0f, 1920.0f);
 	}
+	
 	HitYuruhuwaRoomObject();
-
-	UpDataPlayerPos();
 
 	HitEyeYuruhuwaRoomObject();
 
+	UpDataPlayerPos();
+
 	UpDateMenu();
 
-	UpDataDescriptionText();
-
 	UpDataYuruhuwaTalk();
+
+	UpDateTalkPuzzleGameRobot();
+
 
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
@@ -107,7 +107,7 @@ void MainYuruhuwaRoomScene()
 		areadata.cangearea2 = 3;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	if (yuruhuwaobject.robot == true)
+	else if (puzzlegamerobot.play == true)
 	{
 		ChangeSceneStep(SceneStep::EndStep);
 	}
@@ -118,8 +118,9 @@ SceneId FinishYuruhuwaRoomScene()
 {
 	ReleaseCategoryTexture(TEXTURE_YURUHUWA_ROOM);
 
-	if (yuruhuwaobject.robot == true)
+	if (puzzlegamerobot.play == true)
 	{
+		puzzlegamerobot.play = false;
 		return SceneId::PuzzleGameScene;
 	}
 	if (areadata.cangearea2 == 3)

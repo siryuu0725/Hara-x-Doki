@@ -9,6 +9,7 @@
 #include "Item.h"
 #include "JK.h"
 #include <string.h>
+#include "Puzzle.h"
 
 void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 {
@@ -142,12 +143,30 @@ void InitRobotLoadFile()
 	    fclose(SearchGameRobotFp_1);
 	}
 #pragma endregion
+	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 0)
+	{
+		FILE* PuzzleGameRobotFp;
 
+		fopen_s(&PuzzleGameRobotFp, "Res/テキスト/ゆるふわ執事システム.txt", "r");
+
+		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp);
+		fclose(PuzzleGameRobotFp);
+	}
+	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 1)
+	{
+		FILE* PuzzleGameRobotFp_1;
+
+		fopen_s(&PuzzleGameRobotFp_1, "Res/テキスト/ゆるふわ執事クリア時システム.txt", "r");
+
+		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp_1);
+		fclose(PuzzleGameRobotFp_1);
+	}
 
 }
 
 void InitJKLoadFile()
 {
+#pragma region ボーイッシュ
 	if (areadata.searchgamearea == true && boyish.talktype == 0)
 	{
 		FILE* BoyishFp;
@@ -223,15 +242,86 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 5000, BoyishFp_Clear);
 		fclose(BoyishFp_Clear);
 	}
-	else if (areadata.searchyuruhuwaarea == true)
+#pragma endregion
+
+#pragma region ゆるふわ
+	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 0)
 	{
-		FILE* fp;
+		FILE* YuruhuwaFp;
 
-		fopen_s(&fp, "Res/テキスト/ゆるふわシステム.txt", "r");
+		fopen_s(&YuruhuwaFp, "Res/テキスト/ゆるふわシステム.txt", "r");
 
-		fgets(textdata.jk_text, 1000, fp);
-		fclose(fp);
+		fgets(textdata.jk_text, 1000, YuruhuwaFp);
+		fclose(YuruhuwaFp);
+
+		yuruhuwa.talktype = 1;
 	}
+	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 1 && puzzle.goal_key == false)
+	{
+		FILE* YuruhuwaFp_1;
+
+		fopen_s(&YuruhuwaFp_1, "Res/テキスト/ゆるふわ会話(鍵入手前).txt", "r");
+
+		fgets(textdata.jk_text, 1000, YuruhuwaFp_1);
+		fclose(YuruhuwaFp_1);
+
+	}
+	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 1 && puzzle.goal_key == true)
+	{
+		FILE* YuruhuwaFp_2;
+
+		fopen_s(&YuruhuwaFp_2, "Res/テキスト/ゆるふわクリア時システム.txt", "r");
+
+		fgets(textdata.jk_text, 2000, YuruhuwaFp_2);
+		fclose(YuruhuwaFp_2);
+		yuruhuwa.talktype = 2;
+	}
+	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 2)
+	{
+		FILE* YuruhuwaFp_3;
+
+		fopen_s(&YuruhuwaFp_3, "Res/テキスト/ゆるふわ会話(救出後).txt", "r");
+
+		fgets(textdata.jk_text, 2000, YuruhuwaFp_3);
+		fclose(YuruhuwaFp_3);
+	}
+	else if (areadata.corridor == true && yuruhuwa.heart == 3)
+	{
+		FILE* YuruhuwaFp_4;
+
+		fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下好感度MAX).txt", "r");
+
+		fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
+		fclose(YuruhuwaFp_4);
+	}
+	else if (areadata.corridor == true && yuruhuwa.heart != 3)
+	{
+		FILE* YuruhuwaFp_5;
+
+		fopen_s(&YuruhuwaFp_5, "Res/テキスト/ゆるふわ会話(廊下好感度MIN).txt", "r");
+
+		fgets(textdata.jk_text, 2000, YuruhuwaFp_5);
+		fclose(YuruhuwaFp_5);
+	}
+	else if (areadata.largeroom == true)
+	{
+		FILE* YuruhuwaFp_4;
+
+		fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話大部屋.txt", "r");
+
+		fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
+		fclose(YuruhuwaFp_4);
+	}
+	//else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart == 3)
+	//{
+	//	FILE* YuruhuwaFp_Clear;
+
+	//	fopen_s(&YuruhuwaFp_Clear, "Res/テキスト/ボーイッシュ会話(クリア).txt", "r");
+
+	//	fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear);
+	//	fclose(YuruhuwaFp_Clear);
+	//}
+#pragma endregion
 }
 
 void RobotLoadText()
@@ -286,6 +376,8 @@ void JKLoadText()
 		textdata.jk_lossthreeline = strtok(NULL, ",");
 		choicetexturedata.decision_1 = false;
 		boyish.heart++;
+		yuruhuwa.heart++;
+
 	}
 	//好感度
 	else if (choicetexturedata.decision_2 == true)
@@ -421,6 +513,7 @@ void DrawDoorTalk()
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
 		areadata.searchgamearea = true;
+		boyish.areachange = true;
 
 	}
 	//いいえを選択したとき
@@ -580,6 +673,7 @@ void DrawDoorTalk()
 		textbox.onspacekey = false;
 		displaydata.displaynext = true;
 
+		yuruhuwa.areachange = true;
 		areadata.searchyuruhuwaarea = true;
 	}
 	//いいえを選択したとき

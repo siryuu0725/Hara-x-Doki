@@ -38,7 +38,6 @@ void DrawCriminalRoomScene()
 	DrawSearchBg();
 
 	DrawSearchPlayerAndRobot();
-	DrawTextBox();
 	DrawMenu();
 }
 

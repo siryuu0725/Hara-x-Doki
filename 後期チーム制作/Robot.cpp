@@ -35,7 +35,15 @@ void InitMaidRobot()
 	maidrobot.width = 64.0f;
 	maidrobot.talk = false;
 	maidrobot.description = false;
-	maidrobot.talktype = 0;
+	
+	if (areadata.cangearea == true)
+	{
+		maidrobot.talktype = 1;
+	}
+	else
+	{
+		maidrobot.talktype = 0;
+	}
 }
 
 void InitSearchGameRobot()
@@ -55,7 +63,7 @@ void InitPuzzleGameRobot()
 	puzzlegamerobot.height = 128.0f;
 	puzzlegamerobot.width = 64.0f;
 	puzzlegamerobot.talk = false;
-
+	puzzlegamerobot.talktype = 0;
 }
 
 void InitMysteryGameRobot()
@@ -119,6 +127,8 @@ void DrawMysteryGameRobot()
 #pragma endregion
 
 #pragma region 会話関数
+
+//メイド会話描画
 void DrawTalkMaid()
 {
 	if (largeroomobject.maid == true && maidrobot.talk == false)
@@ -162,6 +172,7 @@ void DrawTalkMaid()
 	}
 }
 
+//探索ゲームロボット会話描画
 void DrawTalkSearchGameRobot()
 {
 	if (searchgameobject.robot == true && searchgamerobot.talk == false)
@@ -222,25 +233,64 @@ void DrawTalkSearchGameRobot()
 	}
 }
 
+//パズルゲームロボット会話描画
 void DrawTalkPuzzleGameRobot()
 {
 	if (yuruhuwaobject.robot == true && puzzlegamerobot.talk == false)
 	{
 		puzzlegamerobot.talk = true;
 		textbox.onspacekey = true;
+
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && puzzlegamerobot.talk == true)
+	else if (textdata.robot_threeline == NULL && puzzlegamerobot.talk == true)
 	{
 		puzzlegamerobot.talk = false;
 		textbox.onspacekey = false;
+		textdata.robot_nexttext = false;
+		InitRobotLoadFile();
+
 	}
 	if (puzzlegamerobot.talk == true)
 	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkRobotTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		if (puzzle.goal_key == true)
+		{
+			if (strstr(textdata.robot_oneline, "これで"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
+			}
+			else
+			{
+				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+			}
+		}
+		else
+		{
+			if (strstr(textdata.robot_oneline, "さぁご友人") || strstr(textdata.robot_oneline, "やりますね"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
+			}
+			else
+			{
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+			}
+			if (strstr(textdata.robot_oneline, "はい"))
+			{
+				DrawChoiceTexture();
+			}
+
+		}
+		
+		DrawRobotTalkText();
 	}
 }
 
+//謎解きゲームロボット会話描画
 void DrawTalkMysteryGameRobot()
 {
 	if (tundereobject.robot == true && mysterygamerobot.talk == false)
@@ -293,6 +343,38 @@ void UpDateTalkSearchGameRobot()
 		if (searchgamerobot.talktype == 3)
 		{
 			searchgamerobot.talktype = 1;
+		}
+	}
+}
+
+void UpDateTalkPuzzleGameRobot()
+{
+	if (yuruhuwaobject.robot == true)
+	{
+		if (puzzle.goal_key == true)
+		{
+			InitRobotLoadFile();
+		}
+
+		if ((puzzlegamerobot.talk == true && choicetexturedata.Choicepos == 1))
+		{
+			puzzlegamerobot.play = true;
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+		}
+		else if ((puzzlegamerobot.talk == true && choicetexturedata.Choicepos == 2))
+		{
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+
+		}
+
+		RobotLoadText();
+
+		textdata.robot_nexttext = true;
+		if (puzzlegamerobot.talktype == 3)
+		{
+			puzzlegamerobot.talktype = 1;
 		}
 	}
 }

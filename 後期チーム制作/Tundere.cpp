@@ -9,6 +9,7 @@
 #include "Hit.h"
 #include "Text.h"
 #include "Tundere.h"
+#include "JK.h"
 
 
 // 犯人部屋シーンの初期化
@@ -44,7 +45,6 @@ void DrawTundereRoomScene()
 	
 	//プレイヤーの奥行きを出すため描画位置変更
 	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
-	DrawTextBox();
 	DrawMenu();
 	DrawTime();
 	DrawTalkMysteryGameRobot();
@@ -56,9 +56,8 @@ void InitTundereRoomScene()
 	LoadTundereFurnitureTex();
 	LoadSearchGameItem();
 
-	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRobotTex);
-	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex);
+	LoadCharacter();
+
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);

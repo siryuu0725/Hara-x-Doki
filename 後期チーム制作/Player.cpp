@@ -8,6 +8,7 @@
 #include "Bg.h"
 #include "Text.h"
 #include "Item.h"
+#include "JK.h"
 
 #define BACKPLAYERSIZE 150
 #define ROBOTSIZE 150
@@ -100,10 +101,14 @@ void InitCorridorPlayer()
 
 void InitGameRoomPlayer()
 {
-	searchplayer.pos_x = 900.0f;
-	searchplayer.pos_y = 950.0f;
-	searchplayer.animetion_tu = 0.0f;
-	searchplayer.animetion_tv = 0.5f;
+	if (yuruhuwa.clear != true)
+	{
+		searchplayer.pos_x = 900.0f;
+		searchplayer.pos_y = 950.0f;
+		searchplayer.animetion_tu = 0.0f;
+		searchplayer.animetion_tv = 0.5f;
+	}
+	
 	
 }
 

@@ -6,7 +6,7 @@ typedef struct
 	bool maid;         //ロボ
 	bool boyish;         //ロボ
 	bool tundere;         //ロボ
-	bool yuruhuaw;         //ロボ
+	bool yuruhuwa;         //ロボ
 
 	bool light;         //ライト
 	bool desk;          //机

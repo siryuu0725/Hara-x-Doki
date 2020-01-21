@@ -47,7 +47,7 @@ void DrawSearchGameScene()
 	DrawSearchBg();
 	DrawBoyish();
 	DrawRobotNeck();
-	//DrawSearchGameRobot();
+
 	DrawSearchPlayerAndRobot();
 	
 	
@@ -63,16 +63,10 @@ void InitSearchGameScene()
 {
 	LoadSearchGameItem();
 
-	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
-	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
+	LoadCharacter();
 
-	LoadTexture("Res/キャラ/ボーイッシュ立ち絵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex);
-	LoadTexture("Res/キャラ/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
-	LoadTexture("Res/キャラ/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
-	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
-	LoadTexture("Res/キャラ/立ち絵執事かおなし.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex);
-	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot);
+	LoadTexture("Res/個室（女子部屋）.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
+	
 
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
@@ -80,13 +74,13 @@ void InitSearchGameScene()
 	LoadUI();
 	
 	InitBoyish();
+	InitSearchGameRobot();
 
 	InitChoiceTexture();
 	InitRobotLoadFile();
 	InitJKLoadFile();
 	InitSearchGameObject();
 	InitGameRoomPlayer();
-	InitSearchGameRobot();
 	InitTextBox();
 	InitMenu();
 	ChangeSceneStep(SceneStep::MainStep);

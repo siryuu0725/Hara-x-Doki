@@ -48,7 +48,7 @@ void DrawLargeRoomScene()
 {
 	DrawSearchBg();
 	DrawBoyish();
-	
+	DrawYuruhuwa();
 	DrawMaidRobot();
 
 	DrawSearchPlayerAndRobot();
@@ -66,17 +66,12 @@ void DrawLargeRoomScene()
 
 void InitLargeRoomScene()
 {
-	moviebgdate.endmovie = true;
 	LoadSearchGameItem();
 
-	LoadTexture("Res/大部屋B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
-	
-	LoadTexture("Res/キャラ/主人公統合ファイル.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
+	LoadCharacter();
 
-	LoadTexture("Res/キャラ/メイド_立ち絵.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex);
-	LoadTexture("Res/キャラ/メイド_ちび.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex);
-	
+	LoadTexture("Res/大部屋B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
+		
 	LoadTexture("Res/探索ゲーム/鍵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex);
 
 	LoadTexture("Res/家具/観葉植物B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot);
@@ -85,6 +80,7 @@ void InitLargeRoomScene()
 	LoadUI();
 
 	InitBoyish();
+	InitYuruhuwa();
 	InitArea();
 	InitLargeRoomPlayer();
 	InitMaidRobot();
@@ -125,8 +121,8 @@ void MainLargeRoomScene()
 	{
 		areadata.largeroom = false;
 		areadata.corridor = true;
-
-
+		areadata.cangearea2 = 0;
+		choicetexturedata.decision_2 = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (searchplayer.pos_x >= 1770.0f && searchplayer.pos_y >= 370.0f && searchplayer.pos_y <= 500.0f)
@@ -140,6 +136,7 @@ void MainLargeRoomScene()
 	{
 		areadata.largeroom = false;
 		areadata.cleararea = true;
+		areadata.cangearea2 = 0;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (time.end == true)

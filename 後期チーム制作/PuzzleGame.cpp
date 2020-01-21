@@ -62,7 +62,9 @@ void MainPuzzleGameScene()
 	}
 	if (OnMouseDown(Right) == true)
 	{
+
 		yuruhuwa.clear = true;
+		puzzle.goal_key = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	
