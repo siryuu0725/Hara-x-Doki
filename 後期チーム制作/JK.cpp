@@ -25,6 +25,8 @@ void LoadCharacter()
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
 	LoadTexture("Res/キャラ/ボーイッシュ立ち絵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex);
 
+	LoadTexture("Res/キャラ/ゆるふわ改.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
+
 	LoadTexture("Res/キャラ/ちびロボパーツ.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex);
 	LoadTexture("Res/キャラ/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
@@ -208,6 +210,11 @@ void DrawTalkBoyish()
 		textdata.jk_nexttext = false;
 
 		InitJKLoadFile();
+		if (boyish.heart <= 2)
+		{
+			getitem.tunderedoorkey = true;
+			getitem.yuruhuwadoorkey = true;
+		}
 	
 	}
 	if (boyish.talk == true)
@@ -218,11 +225,11 @@ void DrawTalkBoyish()
 			|| strstr(textdata.jk_oneline, "ところで") || strstr(textdata.jk_oneline, "アキラさん") || strstr(textdata.jk_oneline, "そうなんすね")
 			|| strstr(textdata.jk_oneline, "本当っすか！？") || strstr(textdata.jk_oneline, " 私さ、") || strstr(textdata.jk_oneline, "そ、そんなこと")
 			|| strstr(textdata.jk_twoline, "やったー！") || strstr(textdata.jk_oneline, "それは、そうだけどさ") || strstr(textdata.jk_oneline, "ほかの部屋も")
-			|| strstr(textdata.jk_oneline, "ちょっと待ってください！") || strstr(textdata.jk_oneline, "これさっきの") || strstr(textdata.jk_oneline, "電気もあって"))
+			|| strstr(textdata.jk_oneline, "ちょっと待ってください！") || strstr(textdata.jk_oneline, "扉の鍵") || strstr(textdata.jk_oneline, "電気もあって"))
 		{
 			DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 
-			DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
+			DrawTexture(600.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "ナツナ", FontSize::Regular, FontColor::Yellow);
 		}
@@ -279,13 +286,18 @@ void DrawTalkYuruhuwa()
 		choicetexturedata.decision_2 = false;
 		textdata.jk_nexttext = false;
 
-		if (puzzle.goal_key == true)
+		if (yuruhuwa.clear == true)
 		{
 			yuruhuwa.talktype = 2;
 
 		}
  		InitJKLoadFile();
 
+		if (yuruhuwa.heart <= 2)
+		{
+			getitem.tunderedoorkey = true;
+			getitem.boyishdoorkey = true;
+		}
 	}
 	if (yuruhuwa.talk == true)
 	{
@@ -296,11 +308,11 @@ void DrawTalkYuruhuwa()
 			|| strstr(textdata.jk_oneline, "ふふ、") || strstr(textdata.jk_oneline, "うぅ、")|| strstr(textdata.jk_oneline, "それじゃあ")
 			|| strstr(textdata.jk_oneline, "わかりました")|| strstr(textdata.jk_oneline, "たしかに") || strstr(textdata.jk_oneline, "それでは") 
 			|| strstr(textdata.jk_oneline, "アキラさんは")|| strstr(textdata.jk_oneline, "はい。") || strstr(textdata.jk_oneline, "それにしても") 
-			|| strstr(textdata.jk_oneline, "私はここで") || strstr(textdata.jk_oneline, "他の部屋"))
+			|| strstr(textdata.jk_oneline, "私はここで") || strstr(textdata.jk_oneline, "ちょっと待ってください！") || strstr(textdata.jk_oneline, "鍵は"))
 		{
 			DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 
-			DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
+			DrawTexture(400.0f, -80.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex));
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "ハルカ", FontSize::Regular, FontColor::Yellow);
 		}
@@ -316,7 +328,7 @@ void DrawTalkYuruhuwa()
 		else if (strstr(textdata.jk_oneline, "おぉ、") || strstr(textdata.jk_oneline, "これは"))
 		{
 			DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
-			DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
+			DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
 		}

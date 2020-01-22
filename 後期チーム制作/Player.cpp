@@ -102,11 +102,11 @@ void InitCorridorPlayer()
 
 void InitGameRoomPlayer()
 {
-	if (yuruhuwa.unlock == false && puzzle.goal_key == true && yuruhuwa.clear == true)
+	if (yuruhuwa.unlock == false && puzzle.goal_key == true && yuruhuwa.clear == false)
 	{
-		
+
 	}
-	else if (areadata.searchyuruhuwaarea == true)
+	else if (areadata.searchyuruhuwaarea == true || areadata.searchgamearea == true)
 	{
 		searchplayer.pos_x = 900.0f;
 		searchplayer.pos_y = 950.0f;

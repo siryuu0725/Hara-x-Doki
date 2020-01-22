@@ -60,66 +60,66 @@ void InitRobotLoadFile()
 #pragma region メイド会話
 	else if (areadata.largeroom == true && maidrobot.talktype == 0)
 	{
-		FILE* MaidTalkFp_0;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_0, "Res/テキスト/メイド会話(鍵入手).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(鍵入手).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_0);
-		fclose(MaidTalkFp_0);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 	else if (areadata.largeroom == true && maidrobot.talktype == 1)
 	{
-		FILE* MaidTalkFp_1;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_1, "Res/テキスト/メイド会話(パターン1).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン1).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_1);
-		fclose(MaidTalkFp_1);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 	else if (areadata.largeroom == true && maidrobot.talktype == 2)
 	{
-		FILE* MaidTalkFp_2;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_2, "Res/テキスト/メイド会話(パターン2).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン2).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_2);
-		fclose(MaidTalkFp_2);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 	else if (areadata.largeroom == true && maidrobot.talktype == 3)
 	{
-		FILE* MaidTalkFp_3;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_3, "Res/テキスト/メイド会話(パターン3).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン3).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_3);
-		fclose(MaidTalkFp_3);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 	else if (areadata.largeroom == true && maidrobot.talktype == 4)
 	{
-		FILE* MaidTalkFp_4;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_4, "Res/テキスト/メイド会話(パターン4).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン4).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_4);
-		fclose(MaidTalkFp_4);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 	else if (areadata.largeroom == true && maidrobot.talktype == 5)
 	{
-		FILE* MaidTalkFp_5;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_5, "Res/テキスト/メイド会話(パターン5).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン5).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_5);
-		fclose(MaidTalkFp_5);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 	else if (areadata.largeroom == true && maidrobot.talktype == 6)
 	{
-		FILE* MaidTalkFp_6;
+		FILE* MaidTalkFp;
 
-		fopen_s(&MaidTalkFp_6, "Res/テキスト/メイド会話(パターン6).txt", "r");
+		fopen_s(&MaidTalkFp, "Res/テキスト/メイド会話(パターン6).txt", "r");
 
-		fgets(textdata.robot_text, 1000, MaidTalkFp_6);
-		fclose(MaidTalkFp_6);
+		fgets(textdata.robot_text, 1000, MaidTalkFp);
+		fclose(MaidTalkFp);
 	}
 #pragma endregion
 
@@ -135,22 +135,22 @@ void InitRobotLoadFile()
 	}
 	else if (areadata.searchgamearea == true && areadata.corridor == false && searchgamerobot.talktype == 1)
 	{
-	    FILE* SearchGameRobotFp_1;
+	    FILE* SearchGameRobotFp;
 	    
-	    fopen_s(&SearchGameRobotFp_1, "Res/テキスト/ボーイッシュ執事クリア時システム.txt", "r");
+	    fopen_s(&SearchGameRobotFp, "Res/テキスト/ボーイッシュ執事クリア時システム.txt", "r");
 	    
-	    fgets(textdata.robot_text, 1000, SearchGameRobotFp_1);
-	    fclose(SearchGameRobotFp_1);
+	    fgets(textdata.robot_text, 1000, SearchGameRobotFp);
+	    fclose(SearchGameRobotFp);
 		searchgamerobot.talktype = 2;
 	}
 	else if (areadata.searchgamearea == true && areadata.corridor == false && searchgamerobot.talktype == 2)
 	{
-		FILE* SearchGameRobotFp_2;
+		FILE* SearchGameRobotFp;
 
-		fopen_s(&SearchGameRobotFp_2, "Res/テキスト/ボーイッシュ執事会話.txt", "r");
+		fopen_s(&SearchGameRobotFp, "Res/テキスト/ボーイッシュ執事会話.txt", "r");
 
-		fgets(textdata.robot_text, 1000, SearchGameRobotFp_2);
-		fclose(SearchGameRobotFp_2);
+		fgets(textdata.robot_text, 1000, SearchGameRobotFp);
+		fclose(SearchGameRobotFp);
 	}
 #pragma endregion
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 0)
@@ -165,22 +165,22 @@ void InitRobotLoadFile()
 	}
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 1)
 	{
-		FILE* PuzzleGameRobotFp_1;
+		FILE* PuzzleGameRobotFp;
 
-		fopen_s(&PuzzleGameRobotFp_1, "Res/テキスト/ゆるふわ執事クリア時システム.txt", "r");
+		fopen_s(&PuzzleGameRobotFp, "Res/テキスト/ゆるふわ執事クリア時システム.txt", "r");
 
-		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp_1);
-		fclose(PuzzleGameRobotFp_1);
+		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp);
+		fclose(PuzzleGameRobotFp);
 		puzzlegamerobot.talktype = 2;
 	}
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 2)
 	{
-		FILE* PuzzleGameRobotFp_2;
+		FILE* PuzzleGameRobotFp;
 
-		fopen_s(&PuzzleGameRobotFp_2, "Res/テキスト/ゆるふわ執事会話.txt", "r");
+		fopen_s(&PuzzleGameRobotFp, "Res/テキスト/ゆるふわ執事会話.txt", "r");
 
-		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp_2);
-		fclose(PuzzleGameRobotFp_2);
+		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp);
+		fclose(PuzzleGameRobotFp);
 	}
 
 }
@@ -227,11 +227,20 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 2000, BoyishFp_3);
 		fclose(BoyishFp_3);
 	}
-	else if (areadata.corridor == true && boyish.clear == true)
+	else if (areadata.corridor == true && boyish.clear == true && boyish.heart == 3)
 	{
 		FILE* BoyishFp_4;
 
 		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下).txt", "r");
+
+		fgets(textdata.jk_text, 2000, BoyishFp_4);
+		fclose(BoyishFp_4);
+	}
+	else if (areadata.corridor == true && boyish.clear == true)
+	{
+		FILE* BoyishFp_4;
+
+		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下好感度MIN).txt", "r");
 
 		fgets(textdata.jk_text, 2000, BoyishFp_4);
 		fclose(BoyishFp_4);
@@ -277,7 +286,7 @@ void InitJKLoadFile()
 
 		yuruhuwa.talktype = 1;
 	}
-	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 1 && puzzle.goal_key == false)
+	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 1 && yuruhuwa.clear == false)
 	{
 		FILE* YuruhuwaFp_1;
 
@@ -287,7 +296,7 @@ void InitJKLoadFile()
 		fclose(YuruhuwaFp_1);
 
 	}
-	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 1 && puzzle.goal_key == true)
+	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 1 && yuruhuwa.clear == true)
 	{
 		FILE* YuruhuwaFp_2;
 
@@ -314,6 +323,15 @@ void InitJKLoadFile()
 
 		fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
 		fclose(YuruhuwaFp_4);
+	}
+	else if (areadata.corridor == true && yuruhuwa.clear == true)
+	{
+	FILE* YuruhuwaFp_4;
+
+	fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下好感度MIN).txt", "r");
+
+	fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
+	fclose(YuruhuwaFp_4);
 	}
 	else if (areadata.largeroom == true && yuruhuwa.clear == true)
 	{

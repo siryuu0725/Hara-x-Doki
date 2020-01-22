@@ -1,0 +1,9 @@
+diff a/後期チーム制作/JK.cpp b/後期チーム制作/JK.cpp	(rejected hunks)
+@@ -208,7 +208,6 @@
+ 		textdata.jk_nexttext = false;
+ 
+ 		InitJKLoadFile();
+-		}
+ 	
+ 	}
+ 	if (boyish.talk == true)
