@@ -129,8 +129,8 @@ void LoadSearchGameItem()
 //背景と家具が別のため関数化
 void LoadCorridorFurnitureTex()
 {
-	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door);
-	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase);
+	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door);
+	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase);
 }
 
 #pragma region 家具テクスチャ読み込み
@@ -150,6 +150,7 @@ void LoadTundereFurnitureTex()
 void LoadYuruhuwaFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex);
+	LoadTexture("Res/家具/足枷.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaFetters);
 	LoadTexture("Res/家具/カーペット04.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCarpet);
 	LoadTexture("Res/家具/窓.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow);
 	LoadTexture("Res/家具/ソファ02.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa);
@@ -736,15 +737,20 @@ void HitEyeLargeRoomObject()
 	{
 		largeroomobject.light = true;
 	}
-	else if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 92.0f) == true && GetKeyDown(SPACE_KEY) == true && boyish.clear == true)
+	else if (HitPlayerEyeObject(boyish.pos_x, boyish.pos_y + 64.0f, boyish.width, boyish.height - 72.0f) == true && GetKeyDown(SPACE_KEY) == true && boyish.clear == true)
 	{
 		largeroomobject.boyish = true;
 
+	}
+	else if (HitPlayerEyeObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 84.0f, yuruhuwa.width, yuruhuwa.height - 72.0f) == true && GetKeyDown(SPACE_KEY) == true && yuruhuwa.clear == true)
+	{
+ 		largeroomobject.yuruhuwa = true;
 	}
 	else
 	{
 		largeroomobject.maid = false;
 		largeroomobject.boyish = false;
+		largeroomobject.yuruhuwa = false;
 
 		largeroomobject.chair = false;
 		largeroomobject.clock = false;
@@ -982,7 +988,7 @@ void HitEyeYuruhuwaRoomObject()
 	{
 		yuruhuwaobject.robot = true;
 	}
-	else if (HitPlayerEyeObject(yuruhuwa.pos_x+20.0f, yuruhuwa.pos_y+64.0f, yuruhuwa.width-30.0f, yuruhuwa.height-62.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	else if (HitPlayerEyeObject(yuruhuwa.pos_x + 20.0f, yuruhuwa.pos_y + 64.0f, yuruhuwa.width - 30.0f, yuruhuwa.height - 62.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		yuruhuwaobject.yuruhuwa = true;
 	}

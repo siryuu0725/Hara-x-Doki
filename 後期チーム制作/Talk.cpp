@@ -28,7 +28,7 @@ void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
 	}
 	if (*tolkobject == true)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
 		DrawFont(500, 850, text, FontSize::Regular, FontColor::White);
 	}
@@ -141,6 +141,16 @@ void InitRobotLoadFile()
 	    
 	    fgets(textdata.robot_text, 1000, SearchGameRobotFp_1);
 	    fclose(SearchGameRobotFp_1);
+		searchgamerobot.talktype = 2;
+	}
+	else if (areadata.searchgamearea == true && areadata.corridor == false && searchgamerobot.talktype == 2)
+	{
+		FILE* SearchGameRobotFp_2;
+
+		fopen_s(&SearchGameRobotFp_2, "Res/テキスト/ボーイッシュ執事会話.txt", "r");
+
+		fgets(textdata.robot_text, 1000, SearchGameRobotFp_2);
+		fclose(SearchGameRobotFp_2);
 	}
 #pragma endregion
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 0)
@@ -151,6 +161,7 @@ void InitRobotLoadFile()
 
 		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp);
 		fclose(PuzzleGameRobotFp);
+		
 	}
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 1)
 	{
@@ -160,6 +171,16 @@ void InitRobotLoadFile()
 
 		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp_1);
 		fclose(PuzzleGameRobotFp_1);
+		puzzlegamerobot.talktype = 2;
+	}
+	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 2)
+	{
+		FILE* PuzzleGameRobotFp_2;
+
+		fopen_s(&PuzzleGameRobotFp_2, "Res/テキスト/ゆるふわ執事会話.txt", "r");
+
+		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp_2);
+		fclose(PuzzleGameRobotFp_2);
 	}
 
 }
@@ -206,25 +227,16 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 2000, BoyishFp_3);
 		fclose(BoyishFp_3);
 	}
-	else if (areadata.corridor == true && boyish.heart == 3)
+	else if (areadata.corridor == true && boyish.clear == true)
 	{
 		FILE* BoyishFp_4;
 
-		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下好感度MAX).txt", "r");
+		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下).txt", "r");
 
 		fgets(textdata.jk_text, 2000, BoyishFp_4);
 		fclose(BoyishFp_4);
 	}
-	else if (areadata.corridor == true && boyish.heart != 3)
-	{
-		FILE* BoyishFp_5;
-
-		fopen_s(&BoyishFp_5, "Res/テキスト/ボーイッシュ会話(廊下好感度MIN).txt", "r");
-
-		fgets(textdata.jk_text, 2000, BoyishFp_5);
-		fclose(BoyishFp_5);
-	}
-	else if (areadata.largeroom == true)
+	else if (areadata.largeroom == true && boyish.clear == true)
 	{
 		FILE* BoyishFp_4;
 
@@ -241,6 +253,15 @@ void InitJKLoadFile()
 
 		fgets(textdata.jk_text, 5000, BoyishFp_Clear);
 		fclose(BoyishFp_Clear);
+	}
+	else if (areadata.largeroom == false && boyish.clear == true && boyish.heart != 3)
+	{
+		FILE* BoyishFp_Clear2;
+
+		fopen_s(&BoyishFp_Clear2, "Res/テキスト/ボーイッシュ会話(クリア好感度MIN).txt", "r");
+
+		fgets(textdata.jk_text, 5000, BoyishFp_Clear2);
+		fclose(BoyishFp_Clear2);
 	}
 #pragma endregion
 
@@ -274,7 +295,7 @@ void InitJKLoadFile()
 
 		fgets(textdata.jk_text, 2000, YuruhuwaFp_2);
 		fclose(YuruhuwaFp_2);
-		yuruhuwa.talktype = 2;
+		
 	}
 	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 2)
 	{
@@ -285,42 +306,42 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 2000, YuruhuwaFp_3);
 		fclose(YuruhuwaFp_3);
 	}
-	else if (areadata.corridor == true && yuruhuwa.heart == 3)
+	else if (areadata.corridor == true && yuruhuwa.clear == true)
 	{
 		FILE* YuruhuwaFp_4;
 
-		fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下好感度MAX).txt", "r");
+		fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下).txt", "r");
 
 		fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
 		fclose(YuruhuwaFp_4);
 	}
-	else if (areadata.corridor == true && yuruhuwa.heart != 3)
+	else if (areadata.largeroom == true && yuruhuwa.clear == true)
 	{
 		FILE* YuruhuwaFp_5;
 
-		fopen_s(&YuruhuwaFp_5, "Res/テキスト/ゆるふわ会話(廊下好感度MIN).txt", "r");
+		fopen_s(&YuruhuwaFp_5, "Res/テキスト/ゆるふわ会話(大部屋).txt", "r");
 
 		fgets(textdata.jk_text, 2000, YuruhuwaFp_5);
 		fclose(YuruhuwaFp_5);
 	}
-	else if (areadata.largeroom == true)
+	else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart == 3)
 	{
-		FILE* YuruhuwaFp_4;
+		FILE* YuruhuwaFp_Clear;
 
-		fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話大部屋.txt", "r");
+		fopen_s(&YuruhuwaFp_Clear, "Res/テキスト/ゆるふわ会話(クリア好感度MAX).txt", "r");
 
-		fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
-		fclose(YuruhuwaFp_4);
+		fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear);
+		fclose(YuruhuwaFp_Clear);
 	}
-	//else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart == 3)
-	//{
-	//	FILE* YuruhuwaFp_Clear;
+	else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart != 3)
+	{
+	FILE* YuruhuwaFp_Clear2;
 
-	//	fopen_s(&YuruhuwaFp_Clear, "Res/テキスト/ボーイッシュ会話(クリア).txt", "r");
+	fopen_s(&YuruhuwaFp_Clear2, "Res/テキスト/ゆるふわ会話(クリア好感度MIN).txt", "r");
 
-	//	fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear);
-	//	fclose(YuruhuwaFp_Clear);
-	//}
+	fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear2);
+	fclose(YuruhuwaFp_Clear2);
+	}
 #pragma endregion
 }
 
@@ -456,8 +477,8 @@ void DrawDescription()
 	}
 	if (maidrobot.description == true)
 	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomTalkMaidTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
 		if (strstr(textdata.robot_oneline, "はい"))
 		{
@@ -558,13 +579,13 @@ void DrawDoorTalk()
 
 	if (corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey == false)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
 		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
 	else if (corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey == true && getitem.breakdoorkey == false)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
 		if (strstr(textdata.robot_oneline,"はい"))
 		{
@@ -634,13 +655,13 @@ void DrawDoorTalk()
 	}
 	if (corridorobject.tunderedoor == true && corridorobject.doortalk == true && getitem.tunderedoorkey == false)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
 		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
 	else if (corridorobject.tunderedoor == true && corridorobject.doortalk == true && getitem.tunderedoorkey == true && getitem.breakdoorkey == false)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
 		if (strstr(textdata.robot_oneline, "はい"))
 		{
@@ -716,13 +737,13 @@ void DrawDoorTalk()
 	}
 	if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true && getitem.yuruhuwadoorkey == false)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
 		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
 	else if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true && getitem.yuruhuwadoorkey == true && getitem.breakdoorkey == false)
 	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
 		if (strstr(textdata.robot_oneline, "はい"))
 		{

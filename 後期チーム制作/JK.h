@@ -8,6 +8,7 @@ typedef struct
 	float width;
 	float height;
 
+	bool unlock;
 	bool areachange;
 
 	bool talk;
@@ -24,6 +25,7 @@ typedef struct
 	float tu, tv;
 	float width;
 	float height;
+	bool unlock;
 
 	bool areachange;
 
@@ -77,6 +79,8 @@ void UpDataBoyishTalk();
 void UpDataYuruhuwaTalk();
 
 void DrawTalkClearBoyish();
+
+void DrawTalkClearYuruhuwa();
 
 void UpDataClearText();
 

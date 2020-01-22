@@ -23,11 +23,11 @@ ChoiceTextureData choicetexturedata;
 
 void LoadUI()
 {
-	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex);
-	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex);
+	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex);
+	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex);
 	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
 	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
-	LoadTexture("Res/UI/矢印.png", TEXTURE_SEARCH, SearchCategoryTextureList::ChoiceTex);
+	LoadTexture("Res/UI/矢印.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::ChoiceTex);
 }
 
 void InitTextBox()
@@ -152,10 +152,10 @@ void DrawChoiceTexture()
 	
 	if (choicetexturedata.Choicepos == 1)
 	{
-		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::ChoiceTex));
+		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::ChoiceTex));
 	}
 	else if (choicetexturedata.Choicepos == 2)
 	{
-		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y + 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::ChoiceTex));
+		DrawTexture(choicetexturedata.pos_x, choicetexturedata.pos_y + 100.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::ChoiceTex));
 	}
 }

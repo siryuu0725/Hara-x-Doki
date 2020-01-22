@@ -8,6 +8,7 @@
 #include "Text.h"
 #include "Talk.h"
 #include "Bg.h"
+#include "JK.h"
 
 #define ROBOTSIZE 150
 #define SURPRISEDSIZE 50
@@ -53,7 +54,10 @@ void InitSearchGameRobot()
 	searchgamerobot.height = 128.0f;
 	searchgamerobot.width = 64.0f;
 	searchgamerobot.talk = false;
-	searchgamerobot.talktype = 0;
+	if (puzzle.goal_key == false)
+	{
+		searchgamerobot.talktype = 0;
+	}
 }
 
 void InitPuzzleGameRobot()
@@ -63,7 +67,11 @@ void InitPuzzleGameRobot()
 	puzzlegamerobot.height = 128.0f;
 	puzzlegamerobot.width = 64.0f;
 	puzzlegamerobot.talk = false;
-	puzzlegamerobot.talktype = 0;
+	if (puzzle.goal_key == false)
+	{
+		puzzlegamerobot.talktype = 0;
+
+	}
 }
 
 void InitMysteryGameRobot()
@@ -99,7 +107,7 @@ void DrawSuprised()
 #pragma region ロボット描画
 void DrawMaidRobot()
 {
-	DrawTexture(maidrobot.pos_x, maidrobot.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchMaidRobotTex));
+	DrawTexture(maidrobot.pos_x, maidrobot.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomMaidRobotTex));
 }
 
 void DrawSearchGameRobot()
@@ -116,7 +124,7 @@ void DrawSearchGameRobot()
 
 void DrawPuzzleGameRobot()
 {
-	DrawUVTexture(searchplayer.pos_x, searchplayer.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchPlayerTex), 64.0f, 128.0f, searchplayer.animetion_tu, searchplayer.animetion_tv);
+	DrawUVTexture(searchplayer.pos_x, searchplayer.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchPlayerTex), 64.0f, 128.0f, searchplayer.animetion_tu, searchplayer.animetion_tv);
 	DrawTexture(puzzlegamerobot.pos_x, puzzlegamerobot.pos_y, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex));
 }
 
@@ -157,9 +165,9 @@ void DrawTalkMaid()
 	}
 	if (maidrobot.talk == true)
 	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTalkMaidTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
-		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomTalkMaidTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
  		if (strstr(textdata.robot_oneline, "‥‥"))
 		{
 			DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
@@ -194,16 +202,16 @@ void DrawTalkSearchGameRobot()
 		if (searchgameobject.completerobot == true)
 		{
 			
-			if (strstr(textdata.robot_oneline, "再起動します。") || strstr(textdata.robot_oneline, "少女を移動させる"))
+			if (strstr(textdata.robot_oneline, "再起動します。") || strstr(textdata.robot_oneline, "少女を移動させる")|| strstr(textdata.robot_oneline, "まさか"))
 			{
-				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
 			}
 			else
 			{
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			}
 			
 		}
@@ -211,21 +219,21 @@ void DrawTalkSearchGameRobot()
 		{
 			if (strstr(textdata.robot_oneline, "あ、それ"))
 			{
-				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "ナツナ", FontSize::Regular, FontColor::Yellow);
 			}
 			else if (strstr(textdata.robot_oneline, "やってみよう"))
 			{
-				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
 			}
 			else
 			{
 				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
 			}
 		}
@@ -247,6 +255,13 @@ void DrawTalkPuzzleGameRobot()
 		puzzlegamerobot.talk = false;
 		textbox.onspacekey = false;
 		textdata.robot_nexttext = false;
+
+		if (puzzle.goal_key == true)
+		{
+			yuruhuwa.clear = true;
+
+		}
+
 		InitRobotLoadFile();
 
 	}
@@ -256,28 +271,30 @@ void DrawTalkPuzzleGameRobot()
 		{
 			if (strstr(textdata.robot_oneline, "これで"))
 			{
-				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
 			}
 			else
 			{
-				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
 			}
 		}
 		else
 		{
-			if (strstr(textdata.robot_oneline, "さぁご友人") || strstr(textdata.robot_oneline, "やりますね"))
+			if (strstr(textdata.robot_oneline, "さぁご友人") || strstr(textdata.robot_oneline, "やりますね") || strstr(textdata.robot_oneline, "この問題"))
 			{
-				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextnameTex));
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
 			}
 			else
 			{
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			}
 			if (strstr(textdata.robot_oneline, "はい"))
 			{
@@ -307,7 +324,7 @@ void DrawTalkMysteryGameRobot()
 	if (mysterygamerobot.talk == true)
 	{
 		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		
 	}
 }
@@ -351,10 +368,10 @@ void UpDateTalkPuzzleGameRobot()
 {
 	if (yuruhuwaobject.robot == true)
 	{
-		if (puzzle.goal_key == true)
+		/*if (puzzle.goal_key == true)
 		{
 			InitRobotLoadFile();
-		}
+		}*/
 
 		if ((puzzlegamerobot.talk == true && choicetexturedata.Choicepos == 1))
 		{
@@ -372,10 +389,6 @@ void UpDateTalkPuzzleGameRobot()
 		RobotLoadText();
 
 		textdata.robot_nexttext = true;
-		if (puzzlegamerobot.talktype == 3)
-		{
-			puzzlegamerobot.talktype = 1;
-		}
 	}
 }
 #pragma endregion

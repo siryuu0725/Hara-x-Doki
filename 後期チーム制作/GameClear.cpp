@@ -39,6 +39,8 @@ void DrawGameClearScene()
 
 	DrawTalkClearBoyish();
 
+	DrawTalkClearYuruhuwa();
+
 }
 
 void InitGameClearScene()
@@ -65,9 +67,12 @@ void MainGameClearScene()
 	
 	UpDataClearText();
 
-	if (boyish.end == true)
+	
+
+	if (boyish.end == true || yuruhuwa.end == true)
 	{
 		boyish.end = false;
+		yuruhuwa.end = false;
 		Reset();
 		ChangeSceneStep(SceneStep::EndStep);
 	}

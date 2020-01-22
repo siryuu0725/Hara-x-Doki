@@ -6,6 +6,7 @@
 #include "Item.h"
 #include "Bg.h"
 #include "JK.h"
+#include "Robot.h"
 
 #define MENU_POS_X 0
 #define MENU_POS_Y 680
@@ -81,6 +82,13 @@ void Reset()
 	getitem.yuruhuwadoorkey = false;
 	textdata.jk_nexttext = false;
 	boyish.clear = false;
+	yuruhuwa.clear = false;
 	searchgameobject.completerobot = false;
 	boyish.heart = 0;
+	yuruhuwa.heart = 0;
+	boyish.unlock = false;
+	yuruhuwa.unlock = false;
+
+	searchgamerobot.talktype = 0;
+	puzzlegamerobot.talktype = 0;
 }

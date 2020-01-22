@@ -63,7 +63,7 @@ void InitCorridorScene()
 	LoadCorridorFurnitureTex();
 	LoadSearchGameItem();
 
-	LoadTexture("Res/òLâ∫_èCê≥.png", TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex);
+	LoadTexture("Res/òLâ∫_èCê≥.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2BgTex);
 	LoadCharacter();
 	LoadUI();
 

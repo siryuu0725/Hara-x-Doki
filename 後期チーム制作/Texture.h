@@ -48,21 +48,21 @@ enum MovieCategoryTextureList
 	MovieTextureMax,	    //!< リスト最大数
 };
 
-enum SearchCategoryTextureList
+enum LargeRoomCategoryTextureList
 {
-	SearchBgTex,				//!< 背景1
+	LargeRoomBgTex,				//!< 背景1
 	SearchPlayerTex,            //!< プレイヤー
-	Searchhanger,               //!< 服掛け
-	SearchFlowerpot,            //!< 植木鉢
-	SearchMaidRobotTex,         //!< メイド
-	SearchTalkMaidTex,          //!< メイド立ち絵
+	LargeRoomhanger,               //!< 服掛け
+	LargeRoomFlowerpot,            //!< 植木鉢
+	LargeRoomMaidRobotTex,         //!< メイド
+	LargeRoomTalkMaidTex,          //!< メイド立ち絵
 	SearchTextBoxTex,           //!< テキストボックス
 	SearchTextnameTex,          //!< 名前テキストボックス 
 	ChoiceTex,
 	SearchTextureMax,	        //!<  リスト最大数
 };
 
-enum Search2CategoryTextureList
+enum CorridorCategoryTextureList
 {
 	Search2BgTex,				//!< 背景
 	Search2Door,                //!< ドア
@@ -120,6 +120,7 @@ enum YuruhuwaRoomCategoryTextureList
 	YuruhuwaTalkRobotTex,     //!< ロボット(未完成)
 	YuruhuwaTalkTex,		  //!< 背景
 	                          
+	YuruhuwaFetters,	      //!< 足枷
 	YuruhuwaWindow,			  //!< 窓
 	YuruhuwaClock,			  //!< 時計
 	YuruhuwaCloset,			  //!< 箪笥
@@ -145,7 +146,7 @@ enum SearchGameCategoryTextureList
 	SearchGameTalkBoyishTex,            //プレイヤー
 
 	SearchGameRobotNeckTex,      //!< ロボットの首
-	SearchGameSurprisedTex,      //!< ビックリマーク
+	SearchGameFetters,        //!< アイテムボックス
 	
 	
 	SearchGameItemBoxTex,        //!< アイテムボックス

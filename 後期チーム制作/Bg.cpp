@@ -103,12 +103,12 @@ void DrawTalkBg()
 
 void DrawSearch2Bg()
 {
-	DrawBgTexture(GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2BgTex));
-	DrawTexture(1435.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door));
-	DrawTexture(845.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door));
-	DrawTexture(230.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Door));
-	DrawTexture(5.0f,700.0f,GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase));
-	DrawTexture(5.0f, 460.0f, GetTexture(TEXTURE_SEARCH2, Search2CategoryTextureList::Search2Vase));
+	DrawBgTexture(GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2BgTex));
+	DrawTexture(1435.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door));
+	DrawTexture(845.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door));
+	DrawTexture(230.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door));
+	DrawTexture(5.0f,700.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase));
+	DrawTexture(5.0f, 460.0f, GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase));
 
 }
 //â∆ãÔÇÃîzíuÇ‡àÍèèÇ…Ç‚Ç¡ÇƒÇ¢ÇÈ
@@ -139,6 +139,10 @@ void DrawYuruhuwaBg()
 	DrawTexture(1100.0f, 160.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaDoll));
 	DrawTexture(1000.0f, 160.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaSofa));
 	DrawTexture(520.0f, 25.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaWindow));
+	if (yuruhuwa.unlock == false)
+	{
+		DrawTexture(1230.0f, 340.0f, GetTexture(TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaFetters));
+	}
 
 }
 
@@ -173,7 +177,7 @@ void DrawSearchBg()
 {
 	if (areadata.largeroom == true)
 	{
-		DrawBgTexture(GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex));
+		DrawBgTexture(GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomBgTex));
 	}
 	else if (areadata.corridor == true)
 	{
@@ -182,7 +186,11 @@ void DrawSearchBg()
 	else if (areadata.searchgamearea == true)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex));
-	}
+		if (boyish.unlock == false)
+		{
+			DrawTexture(1070.0f, 280.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters));
+		}
+	}																								 
 	else if (areadata.searchtunderearea == true)
 	{
 		DrawTundereBg();

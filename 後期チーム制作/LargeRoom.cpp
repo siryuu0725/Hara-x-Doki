@@ -52,8 +52,8 @@ void DrawLargeRoomScene()
 	DrawMaidRobot();
 
 	DrawSearchPlayerAndRobot();
-	DrawTexture(960.0f, 755.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger));
-	DrawTexture(160.0f, 770.0f, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot));
+	DrawTexture(960.0f, 755.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomhanger));
+	DrawTexture(160.0f, 770.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomFlowerpot));
 	
 	DrawDescription();
 
@@ -61,6 +61,7 @@ void DrawLargeRoomScene()
 	SearchObject();
 	DrawTalkMaid();
 	DrawTalkBoyish();
+	DrawTalkYuruhuwa();
 	DrawMenu();
 }
 
@@ -70,12 +71,12 @@ void InitLargeRoomScene()
 
 	LoadCharacter();
 
-	LoadTexture("Res/‘å•”‰®B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchBgTex);
+	LoadTexture("Res/‘å•”‰®B.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomBgTex);
 		
 	LoadTexture("Res/’TõƒQ[ƒ€/Œ®.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex);
 
-	LoadTexture("Res/‰Æ‹ï/ŠÏ—tA•¨B.png", TEXTURE_SEARCH, SearchCategoryTextureList::SearchFlowerpot);
-	LoadTexture("Res/‰Æ‹ï/ƒR[ƒgŠ|‚¯.png", TEXTURE_SEARCH, SearchCategoryTextureList::Searchhanger);
+	LoadTexture("Res/‰Æ‹ï/ŠÏ—tA•¨B.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomFlowerpot);
+	LoadTexture("Res/‰Æ‹ï/ƒR[ƒgŠ|‚¯.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomhanger);
 
 	LoadUI();
 
@@ -114,6 +115,8 @@ void MainLargeRoomScene()
 
 	UpDataBoyishTalk();
 
+	UpDataYuruhuwaTalk();
+
 	UpDataDescriptionText();
 
 	UpDateTalkMaid();
@@ -132,7 +135,18 @@ void MainLargeRoomScene()
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f && boyish.heart == 3)
+	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f
+		&& (boyish.clear == true || yuruhuwa.clear == true) && (boyish.heart != 3 || yuruhuwa.heart != 3)
+		&& GetKeyDown(SPACE_KEY) == true)
+	{
+		areadata.largeroom = false;
+		areadata.cleararea = true;
+		areadata.cangearea2 = 0;
+		ChangeSceneStep(SceneStep::EndStep);
+	}
+	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f 
+		&& (boyish.clear == true || yuruhuwa.clear == true) && (boyish.heart == 3 || yuruhuwa.heart == 3)
+		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.largeroom = false;
 		areadata.cleararea = true;

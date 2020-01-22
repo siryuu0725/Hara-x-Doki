@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "JK.h"
 #include "Text.h"
+#include "Robot.h"
 
 void InitPuzzleGameScene();
 
@@ -62,8 +63,7 @@ void MainPuzzleGameScene()
 	}
 	if (OnMouseDown(Right) == true)
 	{
-
-		yuruhuwa.clear = true;
+		puzzlegamerobot.talktype = 1;
 		puzzle.goal_key = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
