@@ -48,7 +48,8 @@ void DrawCorridorScene()
 	DrawBoyish();
 	DrawYuruhuwa();
 	DrawSearchPlayerAndRobot();
-	
+	DrawTexture(5.0f, 700.0f, GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase));
+
 	
 	DrawTime();
 	DrawTalkBoyish();

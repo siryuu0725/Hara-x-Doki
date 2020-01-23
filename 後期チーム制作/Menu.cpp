@@ -44,7 +44,7 @@ void DrawMenu()
 		{
 			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
 		}
-		if (getitem.boyishdoorkey == true && getitem.tunderedoorkey == true && getitem.yuruhuwadoorkey == true)
+		if (getitem.boyishdoorkey == true && getitem.tunderedoorkey == true && getitem.yuruhuwadoorkey == true && getitem.breakdoorkey == false)
 		{
 			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
 		}

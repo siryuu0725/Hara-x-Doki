@@ -101,13 +101,13 @@ void DrawTalkBg()
 }
 
 
-void DrawSearch2Bg()
+void DrawCorridorBg()
 {
 	DrawBgTexture(GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2BgTex));
 	DrawTexture(1435.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door));
 	DrawTexture(845.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door));
 	DrawTexture(230.0f, 395.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door));
-	DrawTexture(5.0f,700.0f,GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase));
+	
 	DrawTexture(5.0f, 460.0f, GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase));
 
 }
@@ -181,7 +181,7 @@ void DrawSearchBg()
 	}
 	else if (areadata.corridor == true)
 	{
-		DrawSearch2Bg();
+		DrawCorridorBg();
 	}
 	else if (areadata.searchgamearea == true)
 	{

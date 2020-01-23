@@ -209,6 +209,12 @@ void DrawTalkSearchGameRobot()
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "é∑éñ", FontSize::Regular, FontColor::Yellow);
 			}
+			else if (strstr(textdata.robot_oneline, "Ç±ÇÍÇ≈"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "éÂêlåˆ", FontSize::Regular, FontColor::Yellow);
+			}
 			else
 			{
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));

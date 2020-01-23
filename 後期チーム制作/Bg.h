@@ -49,7 +49,7 @@ void DrawTitleBg();
 
 void DrawMovieBg();
 
-void DrawSearch2Bg();
+void DrawCorridorBg();
 
 void DrawTundereBg();
 

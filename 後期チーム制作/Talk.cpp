@@ -153,6 +153,8 @@ void InitRobotLoadFile()
 		fclose(SearchGameRobotFp);
 	}
 #pragma endregion
+
+#pragma region ボーイッシュ執事会話
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 0)
 	{
 		FILE* PuzzleGameRobotFp;
@@ -182,7 +184,7 @@ void InitRobotLoadFile()
 		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp);
 		fclose(PuzzleGameRobotFp);
 	}
-
+#pragma endregion
 }
 
 void InitJKLoadFile()
@@ -263,7 +265,7 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 5000, BoyishFp_Clear);
 		fclose(BoyishFp_Clear);
 	}
-	else if (areadata.largeroom == false && boyish.clear == true && boyish.heart != 3)
+	else if (areadata.largeroom == false && boyish.clear == true && boyish.heart != 3 && areadata.cleararea == true)
 	{
 		FILE* BoyishFp_Clear2;
 
@@ -495,7 +497,6 @@ void DrawDescription()
 	}
 	if (maidrobot.description == true)
 	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		DrawRobotTalkText();
 		if (strstr(textdata.robot_oneline, "はい"))
@@ -599,7 +600,7 @@ void DrawDoorTalk()
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
-		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
+		DrawFont(300, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
 	else if (corridorobject.boyishdoor == true && corridorobject.doortalk == true && getitem.boyishdoorkey == true && getitem.breakdoorkey == false)
 	{
@@ -675,7 +676,7 @@ void DrawDoorTalk()
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
-		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
+		DrawFont(300, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
 	else if (corridorobject.tunderedoor == true && corridorobject.doortalk == true && getitem.tunderedoorkey == true && getitem.breakdoorkey == false)
 	{
@@ -757,7 +758,7 @@ void DrawDoorTalk()
 	{
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 
-		DrawFont(500, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
+		DrawFont(300, 850, "ドアがある。鍵がかかっていて、入ることはできない。", FontSize::Regular, FontColor::White);
 	}
 	else if (corridorobject.yuruhuwadoor == true && corridorobject.doortalk == true && getitem.yuruhuwadoorkey == true && getitem.breakdoorkey == false)
 	{

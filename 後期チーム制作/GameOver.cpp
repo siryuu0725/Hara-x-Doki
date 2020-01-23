@@ -2,6 +2,7 @@
 #include "Input.h"
 #include "Texture.h"
 #include "GameOverr.h"
+#include "Text.h"
 
 // ゲームオーバーシーンの初期化
 void InitGameOverScene();
@@ -43,6 +44,7 @@ void MainGameOverScene()
 {
 	if (GetKeyDown(SPACE_KEY) == true)
 	{
+		time.end = false;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 }
