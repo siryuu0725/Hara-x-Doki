@@ -204,12 +204,12 @@ void HitLargeRoomObject()
 		searchplayer.hit = true;
 	}
 	//âÊñ ç∂â∫
-	else if (HitPlayerObject(155.0f, 990.0f, 715.0f, 90.0f) == true)
+	else if (HitPlayerObject(155.0f, 990.0f, 700.0f, 90.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
 	//âÊñ âEâ∫
-	else if (HitPlayerObject(960.0f, 990.0f, 770.0f, 90.0f) == true)
+	else if (HitPlayerObject(970.0f, 990.0f, 770.0f, 90.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -336,7 +336,7 @@ void HitSearchGameObject()
 		searchplayer.hit = true;
 	}
 	//âÊñ ç∂â∫
-	else if (HitPlayerObject(460.0f, 1020.0f, 440.0f, 60.0f) == true)
+	else if (HitPlayerObject(460.0f, 1020.0f, 430.0f, 60.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -424,7 +424,7 @@ void HitTundereRoomObject()
 		searchplayer.hit = true;
 	}
 	//âÊñ ç∂â∫
-	else if (HitPlayerObject(460.0f, 1020.0f, 440.0f, 60.0f) == true)
+	else if (HitPlayerObject(460.0f, 1020.0f, 430.0f, 60.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -503,7 +503,7 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = true;
 	}
 	//âÊñ ç∂â∫
-	else if (HitPlayerObject(460.0f, 1020.0f, 440.0f, 60.0f) == true)
+	else if (HitPlayerObject(460.0f, 1020.0f, 430.0f, 60.0f) == true)
 	{
 		searchplayer.hit = true;
 	}

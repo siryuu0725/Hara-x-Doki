@@ -119,6 +119,7 @@ enum YuruhuwaRoomCategoryTextureList
 	YuruhuwaRobotTex,         //!< ƒƒ{ƒbƒg
 	YuruhuwaTalkRobotTex,     //!< ƒƒ{ƒbƒg(–¢Š®¬)
 	YuruhuwaTalkTex,		  //!< ”wŒi
+	YuruhuwaTex,		  //!< ”wŒi
 	                          
 	YuruhuwaFetters,	      //!< ‘«žg
 	YuruhuwaWindow,			  //!< ‘‹
@@ -163,6 +164,7 @@ enum SearchGameCategoryTextureList
 enum PuzzleGameCategoryTextureList
 {
 	PuzzleGameBgTex,			   //!< ”wŒi
+	PuzzleGameBgTex2,			   //!< ”wŒi
 	PuzzleKeyTex,                  //Œ®@@@
 	PuzzleSquareTex,			   //³•ûŒ`
 	PuzzleLandscapeTex,			   //‰¡’·

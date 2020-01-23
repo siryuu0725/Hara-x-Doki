@@ -50,6 +50,7 @@ void InitGameClearScene()
 	//boyish.clear = true;
 
 	LoadTexture("Res/スチル 改変.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::BoyishClearBgTex);
+	LoadTexture("Res/スチルゆるふわ.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::YuruhuwaClearBgTex);
 
 	LoadUI();
 

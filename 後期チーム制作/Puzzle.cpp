@@ -65,7 +65,8 @@ void InitPuzzle()
 
 void DrawBgPuzzle()
 {
-	DrawBgTexture(GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex));
+	DrawBgTexture(GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex2));
+	//DrawBgTexture(GetTexture(TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex));
 
 }
 

@@ -252,9 +252,9 @@ void GameClearBg()
 	/*else if (tundere.clear == true && tundere.heart == 3)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::TundereClearBgTex));
-	}
+	}*/
 	else if (yuruhuwa.clear == true && yuruhuwa.heart == 3)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::YuruhuwaClearBgTex));
-	}*/
+	}
 }
