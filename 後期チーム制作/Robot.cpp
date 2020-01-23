@@ -226,7 +226,7 @@ void DrawTalkSearchGameRobot()
 			if (strstr(textdata.robot_oneline, "あ、それ"))
 			{
 				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
-				DrawTexture(600.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
+				DrawTexture(600.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex));
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "ナツナ", FontSize::Regular, FontColor::Yellow);
 			}

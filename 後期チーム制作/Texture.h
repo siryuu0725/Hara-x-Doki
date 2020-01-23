@@ -164,7 +164,6 @@ enum SearchGameCategoryTextureList
 enum PuzzleGameCategoryTextureList
 {
 	PuzzleGameBgTex,			   //!< ”wŒi
-	PuzzleGameBgTex2,			   //!< ”wŒi
 	PuzzleKeyTex,                  //Œ®@@@
 	PuzzleSquareTex,			   //³•ûŒ`
 	PuzzleLandscapeTex,			   //‰¡’·

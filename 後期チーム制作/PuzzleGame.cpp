@@ -45,7 +45,6 @@ void InitPuzzleGameScene()
 {
 	InitPuzzle();
 	LoadTexture("Res/パズルゲーム/パズル背景.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex);
-	LoadTexture("Res/パズルゲーム/背景.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleGameBgTex2);
 	LoadTexture("Res/パズルゲーム/ピースメイン.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleKeyTex);
 	LoadTexture("Res/パズルゲーム/ピース正方形.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleSquareTex);
 	LoadTexture("Res/パズルゲーム/ピース横.png", TEXTURE_PUZZLE, PuzzleGameCategoryTextureList::PuzzleLandscapeTex);
