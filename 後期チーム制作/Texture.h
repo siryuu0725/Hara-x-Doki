@@ -52,13 +52,13 @@ enum LargeRoomCategoryTextureList
 {
 	LargeRoomBgTex,				//!< 背景1
 	SearchPlayerTex,            //!< プレイヤー
-	LargeRoomhanger,               //!< 服掛け
-	LargeRoomFlowerpot,            //!< 植木鉢
-	LargeRoomMaidRobotTex,         //!< メイド
-	LargeRoomTalkMaidTex,          //!< メイド立ち絵
+	LargeRoomhanger,            //!< 服掛け
+	LargeRoomFlowerpot,         //!< 植木鉢
+	LargeRoomMaidRobotTex,      //!< メイド
+	LargeRoomTalkMaidTex,       //!< メイド立ち絵
 	SearchTextBoxTex,           //!< テキストボックス
 	SearchTextnameTex,          //!< 名前テキストボックス 
-	ChoiceTex,
+	ChoiceTex,                  //!< 会話選択テキスト
 	SearchTextureMax,	        //!<  リスト最大数
 };
 
@@ -118,8 +118,8 @@ enum YuruhuwaRoomCategoryTextureList
 	YuruhuwaRoomBgTex,		  //!< 背景
 	YuruhuwaRobotTex,         //!< ロボット
 	YuruhuwaTalkRobotTex,     //!< ロボット(未完成)
-	YuruhuwaTalkTex,		  //!< 背景
-	YuruhuwaTex,		  //!< 背景
+	YuruhuwaTalkTex,		  //!< ゆるふわ
+	YuruhuwaTex,		      //!< ゆるふわ会話
 	                          
 	YuruhuwaFetters,	      //!< 足枷
 	YuruhuwaWindow,			  //!< 窓
@@ -136,28 +136,28 @@ enum YuruhuwaRoomCategoryTextureList
 };
 enum SearchGameCategoryTextureList
 {
-	SearchGameBgTex,             //!< 背景
-	SearchGamePlayerTex,         //!< プレイヤー
-	SearchGameTalkRobot_NoNeckTex,      //!< ロボット立ち絵
-	SearchGameTalkRobot,
+	SearchGameBgTex,                 //!< 背景
+	SearchGamePlayerTex,             //!< プレイヤー
+	SearchGameTalkRobot_NoNeckTex,   //!< ロボット(首無し)立ち絵
+	SearchGameTalkRobot,             //!< ロボット立ち絵
 
-	SearchGameRobotTex,          //!< ロボット(未完成)
-	SearchGameCompleteRobotTex,  //!< ロボット(完成)
-	SearchGameBoyishTex,            //プレイヤー
-	SearchGameTalkBoyishTex,            //プレイヤー
+	SearchGameRobotTex,              //!< ロボット(未完成)
+	SearchGameCompleteRobotTex,      //!< ロボット(完成)
+	SearchGameBoyishTex,             //!<ボーイッシュ
+	SearchGameTalkBoyishTex,         //!<ボーイッシュ立ち絵
 
-	SearchGameRobotNeckTex,      //!< ロボットの首
-	SearchGameFetters,        //!< アイテムボックス
+	SearchGameRobotNeckTex,          //!< ロボットの首
+	SearchGameFetters,               //!< アイテムボックス
 	
 	
-	SearchGameItemBoxTex,        //!< アイテムボックス
-	SearchGameItemMenuTex,       //!< 
-	SearchGameItemKeyTex,        //!< 鍵
-	SearchGameItemRightTex,
-	SearchGameItemEnergyTex,     //!< 電池
-	SearchGameItemRobotPartTex,  //!< パーツ
-
-	SearchGameTextureMax,        //!< リスト最大数
+	SearchGameItemBoxTex,            //!< アイテムボックス
+	SearchGameItemMenuTex,           //!< 
+	SearchGameItemKeyTex,            //!< 鍵
+	SearchGameItemRightTex,		     //!< ライト
+	SearchGameItemEnergyTex,         //!< 電池
+	SearchGameItemRobotPartTex,      //!< パーツ
+								     
+	SearchGameTextureMax,            //!< リスト最大数
 };
 
 
@@ -195,16 +195,16 @@ enum TalkCategoryTextureList
 };
 enum GameClearCategoryTextureList
 {
-	BoyishClearBgTex,			//!< 背景
-	TundereClearBgTex,			//!< 背景
-	YuruhuwaClearBgTex,			//!< 背景
+	BoyishClearBgTex,		//!< 背景
+	TundereClearBgTex,		//!< 背景
+	YuruhuwaClearBgTex,		//!< 背景
 	GameClearTextureMax,	//!< リスト最大数
 };
 
 enum GameOverCategoryTextureList
 {
 	GameOverBgTex,			//!< 背景
-	GameOverLogoTex,			//!< 背景
+	GameOverLogoTex,	    //!< 背景
 
 	GameOverTextureMax,		//!< リスト最大数
 };

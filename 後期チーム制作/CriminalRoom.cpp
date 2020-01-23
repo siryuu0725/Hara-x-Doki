@@ -7,6 +7,7 @@
 #include "Bg.h"
 #include "Text.h"
 #include "Menu.h"
+#include "JK.h"
 
 // 犯人部屋シーンの初期化
 void InitCriminalRoomScene();
@@ -45,12 +46,8 @@ void InitCriminalRoomScene()
 {
 	LoadCriminalFurnitureTex();
 
-	LoadTexture("Res/主人公統合ファイル.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchPlayerTex);
-	LoadTexture("Res/UI/テキストボックス.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex);
-	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex);
-	LoadTexture("Res/UI/アイテムメニュー.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemMenuTex);
-	LoadTexture("Res/UI/アイテムボックス.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemBoxTex);
-
+	LoadUI();
+	LoadCharacter();
 	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
 	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
 
@@ -71,6 +68,8 @@ void MainCriminalRoomScene()
 	HitCriminalRoomObject();
 
 	UpDataPlayerPos();
+
+	UpDateMenu();
 
 	HitEyeCriminalRoomObject();
 	if (OnMouseDown(Left) == true)

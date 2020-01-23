@@ -602,7 +602,7 @@ void HitCriminalRoomObject()
 		searchplayer.hit = true;
 	}
 	//ƒxƒbƒh
-	else if (HitPlayerObject(335.0f, 865.0f, 265.0f, 145.0f) == true)
+	else if (HitPlayerObject(335.0f, 865.0f, 265.0f, 130.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
