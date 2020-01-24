@@ -211,7 +211,12 @@ void DrawTalkBoyish()
 		textdata.jk_nexttext = false;
 
 		InitJKLoadFile();
-		if (boyish.heart <= 2)
+		if (boyish.heart == 3)
+		{
+			getitem.tunderedoorkey = false;
+			getitem.yuruhuwadoorkey = false;
+		}
+		else if (boyish.heart <= 2)
 		{
 			getitem.tunderedoorkey = true;
 			getitem.yuruhuwadoorkey = true;
@@ -294,7 +299,12 @@ void DrawTalkYuruhuwa()
 		}
  		InitJKLoadFile();
 
-		if (yuruhuwa.heart <= 2)
+		if (yuruhuwa.heart == 3)
+		{
+			getitem.tunderedoorkey = false;
+			getitem.boyishdoorkey = false;
+		}
+		else if (yuruhuwa.heart <= 2)
 		{
 			getitem.tunderedoorkey = true;
 			getitem.boyishdoorkey = true;

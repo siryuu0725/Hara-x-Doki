@@ -37,7 +37,7 @@ void InitMaidRobot()
 	maidrobot.talk = false;
 	maidrobot.description = false;
 	
-	if (areadata.cangearea == true)
+	if (areadata.cangearea == true && maidrobot.talktype != 0)
 	{
 		maidrobot.talktype = 1;
 	}
@@ -168,7 +168,7 @@ void DrawTalkMaid()
 		DrawTexture(500.0f, 0.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::LargeRoomTalkMaidTex));
 		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 		DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
- 		if (strstr(textdata.robot_oneline, "ÅdÅd"))
+		if (strstr(textdata.robot_oneline, "ÅdÅd") || strstr(textdata.robot_oneline, "ïsãCñ°"))
 		{
 			DrawFont(100, 610, "éÂêlåˆ", FontSize::Regular, FontColor::Yellow);
 		}
