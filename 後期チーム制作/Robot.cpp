@@ -174,7 +174,7 @@ void DrawTalkMaid()
 		}
 		else
 		{
-			DrawFont(100, 610, "メイド", FontSize::Regular, FontColor::Yellow);
+			DrawFont(100, 610, "メイドロボ", FontSize::Regular, FontColor::Yellow);
 		}
 		DrawRobotTalkText();
 	}
@@ -207,7 +207,7 @@ void DrawTalkSearchGameRobot()
 				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(400.0f, 100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
+				DrawFont(100, 610, "執事ロボ", FontSize::Regular, FontColor::Yellow);
 			}
 			else if (strstr(textdata.robot_oneline, "これで"))
 			{
@@ -286,7 +286,7 @@ void DrawTalkPuzzleGameRobot()
 				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
+				DrawFont(100, 610, "執事ロボ", FontSize::Regular, FontColor::Yellow);
 			}
 		}
 		else
@@ -296,7 +296,7 @@ void DrawTalkPuzzleGameRobot()
 				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-				DrawFont(100, 610, "執事", FontSize::Regular, FontColor::Yellow);
+				DrawFont(100, 610, "執事ロボ", FontSize::Regular, FontColor::Yellow);
 			}
 			else
 			{

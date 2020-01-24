@@ -341,7 +341,7 @@ void DrawTalkYuruhuwa()
 			DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 			DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-			DrawFont(100, 610, "é∑éñ", FontSize::Regular, FontColor::Yellow);
+			DrawFont(100, 610, "é∑éñÉçÉ{", FontSize::Regular, FontColor::Yellow);
 		}
 		else
 		{

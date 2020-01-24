@@ -135,7 +135,7 @@ void MainLargeRoomScene()
 
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f
+	else if (searchplayer.pos_x >= 860.0f && searchplayer.pos_x <= 920.0f && searchplayer.pos_y >= 950.0f
 		&& (boyish.clear == true || yuruhuwa.clear == true) && (boyish.heart != 3 || yuruhuwa.heart != 3)
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
@@ -144,7 +144,7 @@ void MainLargeRoomScene()
 		areadata.cangearea2 = 0;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
-	else if (searchplayer.pos_x >= 870.0f && searchplayer.pos_x <= 900.0f && searchplayer.pos_y >= 950.0f 
+	else if (searchplayer.pos_x >= 860.0f && searchplayer.pos_x <= 920.0f && searchplayer.pos_y >= 950.0f 
 		&& (boyish.clear == true || yuruhuwa.clear == true) && (boyish.heart == 3 || yuruhuwa.heart == 3)
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
