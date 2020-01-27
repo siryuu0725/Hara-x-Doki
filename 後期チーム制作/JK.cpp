@@ -182,13 +182,14 @@ void DrawYuruhuwa()
 #pragma region Jk会話
 void DrawTalkBoyish()
 {
+	//各部屋でボーイッシュに話しかけたとき
 	if ((searchgameobject.boyish == true || corridorobject.boyish == true || largeroomobject.boyish == true) && boyish.talk == false)
 	{
 		if (boyish.clear == true)
 		{
 			boyish.unlock = true;
 		}
-
+		//プレイヤーが向いている方向に向く
 		if (searchplayer.animetion_tv == 0.25f)
 		{
 			boyish.tu = 0.65f;
@@ -200,8 +201,9 @@ void DrawTalkBoyish()
 		}
 
 		boyish.talk = true;
-		textbox.onspacekey = true;
+		textbox.onspacekey = true; //プレイヤーを止めておくフラグ
 	}
+	//txtがNULLのとき
 	else if (textdata.jk_threeline == NULL && boyish.talk == true)
 	{
 		boyish.tu = 0.0f;
@@ -211,6 +213,7 @@ void DrawTalkBoyish()
 		textdata.jk_nexttext = false;
 
 		InitJKLoadFile();
+		//好感度システム
 		if (boyish.heart == 3)
 		{
 			getitem.tunderedoorkey = false;
@@ -225,7 +228,7 @@ void DrawTalkBoyish()
 	}
 	if (boyish.talk == true)
 	{
-		
+		//txtに指定した文字列があった場合
 		if (strstr(textdata.jk_oneline, "たすけて") || strstr(textdata.jk_oneline, "な、ナツナ") || strstr(textdata.jk_oneline, "パーツ？")
 			|| strstr(textdata.jk_oneline, "とにかく！") || strstr(textdata.jk_oneline, "助けてってば") || strstr(textdata.jk_oneline, "た、助かった")
 			|| strstr(textdata.jk_oneline, "ところで") || strstr(textdata.jk_oneline, "アキラさん") || strstr(textdata.jk_oneline, "そうなんすね")
@@ -239,6 +242,7 @@ void DrawTalkBoyish()
 			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			DrawFont(100, 610, "ナツナ", FontSize::Regular, FontColor::Yellow);
 		}
+		//txtに指定した文字列があった場合
 		else if (strstr(textdata.jk_oneline, "落ち着いて、") || strstr(textdata.jk_oneline, "もう大丈夫だ")
 			|| strstr(textdata.jk_oneline, "無理やり") || strstr(textdata.jk_oneline, "君のこと") || strstr(textdata.jk_oneline, "あぁ。")
 			|| strstr(textdata.jk_oneline, "これでナツナ"))
@@ -358,7 +362,7 @@ void DrawTalkYuruhuwa()
 
 
 
-
+//次の会話へ行く関数
 void UpDataBoyishTalk()
 {
 	if (searchgameobject.boyish == true || corridorobject.boyish == true || largeroomobject.boyish == true)

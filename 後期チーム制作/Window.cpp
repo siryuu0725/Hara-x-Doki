@@ -7,7 +7,7 @@ LRESULT CALLBACK WindowProc(HWND window_handle, UINT message_id, WPARAM wparam, 
 	case WM_CLOSE:
 		PostQuitMessage(0);
 		break;
-	case WM_KEYDOWN:   //フルスクリーンかどうか
+	case WM_KEYDOWN:   
 		if (wparam == VK_ESCAPE)
 		{
 			PostMessage(window_handle, WM_CLOSE, NULL, NULL);
@@ -45,7 +45,7 @@ HWND MakeWindow(HINSTANCE instance, int width, int height)
 	hWnd = CreateWindow(
 		TEXT("チーム制作"),
 		TEXT("チーム制作"),
-		WS_VISIBLE | WS_POPUP,
+		WS_VISIBLE | WS_POPUP, //フルスクリーンかどうか
 		CW_USEDEFAULT,
 		0,
 		width,

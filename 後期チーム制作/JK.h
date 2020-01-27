@@ -8,15 +8,15 @@ typedef struct
 	float width;
 	float height;
 
-	bool unlock;
-	bool areachange;
+	bool unlock;        //足枷を外すフラグ
+	bool areachange;    //部屋移動フラグ
 
-	bool talk;
-	int talktype;
-	bool clear;
-
-	int heart;
-	bool end;
+	bool talk;          //会話時フラグ
+	int talktype;       //会話種類
+	bool clear;	        //クリア時フラグ
+				        
+	int heart;	        //好感度
+	bool end;	        //大部屋から救出したとき
 }Boyish;
 
 typedef struct
@@ -25,16 +25,17 @@ typedef struct
 	float tu, tv;
 	float width;
 	float height;
-	bool unlock;
 
-	bool areachange;
 
-	int talktype;
-	bool talk;
-	bool clear;
-	int heart;
+	bool unlock;       //足枷を外すフラグ
+	bool areachange;   //部屋移動フラグ
 
-	bool end;
+	int talktype;	   //会話時フラグ
+	bool talk;		   //会話種類
+	bool clear;		   //クリア時フラグ
+
+	int heart;         //好感度
+	bool end;		   //大部屋から救出したとき
 }Yuruhuwa;
 
 typedef struct
@@ -43,16 +44,19 @@ typedef struct
 	float tu, tv;
 	float width;
 	float height;
+	                      
+	bool unlock;         //足枷を外すフラグ
+	bool areachange;     //部屋移動フラグ
 
-	bool areachange;
+	bool talk;		     //会話時フラグ
+	int talktype;        //会話種類
+			             
+	bool clear;          //クリア時フラグ
+	int heart;			 //好感度
+	bool end;            //大部屋から救出したとき
 
-	int talktype;
-
-	bool talk;
-	bool clear;
-	int heart;
-}Tundere;
-
+}Tundere;				
+						 
 extern Boyish boyish;
 
 extern Yuruhuwa yuruhuwa;
@@ -61,26 +65,26 @@ extern Tundere tundere;
 
 void LoadCharacter();
 
+//JK初期化
 void InitBoyish();
-
-
 void InitYuruhuwa();
 
-void DrawBoyish();
 
+//JK描画
+void DrawBoyish();
 void DrawYuruhuwa();
 
-void DrawTalkYuruhuwa();
 
+//JK会話描画
+void DrawTalkYuruhuwa();
 void DrawTalkBoyish();
 
+void DrawTalkClearBoyish();   //クリア時
+void DrawTalkClearYuruhuwa(); //クリア時
+
+//次の会話へ移行
 void UpDataBoyishTalk();
-
 void UpDataYuruhuwaTalk();
-
-void DrawTalkClearBoyish();
-
-void DrawTalkClearYuruhuwa();
 
 void UpDataClearText();
 

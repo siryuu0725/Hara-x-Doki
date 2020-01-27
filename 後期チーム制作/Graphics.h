@@ -60,10 +60,13 @@ void DrawEnd();
 
 bool CreateTexture(const char* file_name, TEXTURE_DATE* texture_data);
 
+//背景用
 void DrawBgTexture(TEXTURE_DATE*);
 
+//座標指定用
 void DrawTexture(float x, float y, TEXTURE_DATE* texture_data);
 
+//アニメーション用
 void DrawUVTexture(float x, float y, TEXTURE_DATE* texture, float sprite_width, float sprite_height, float tu, float tv);
 
 void ReleaseTexture(TEXTURE_DATE*);

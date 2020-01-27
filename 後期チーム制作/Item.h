@@ -3,21 +3,22 @@
 
 typedef struct
 {
-	bool maid;         //ロボ
-	bool boyish;         //ロボ
-	bool tundere;         //ロボ
-	bool yuruhuwa;         //ロボ
+	bool maid;          //メイドロボ
+	bool boyish;        //ボーイッシュ
+	bool tundere;       //ツンデレ
+	bool yuruhuwa;      //ゆるふわ
 
 	bool light;         //ライト
 	bool desk;          //机
 	bool chair;         //椅子
 	bool flowerpot;     //植木鉢
-	bool sofa;          //
-	bool clock;			//
-	bool phone;			//
-	bool hanger;		//
+	bool sofa;          //ソファ
+	bool clock;			//時計
+	bool phone;			//電話
+	bool hanger;		//コート掛け
 
-	bool desktalk;
+	//アクション時フラグ
+	bool desktalk;      
 	bool chairtalk;
 	bool lighttalk;
 	bool flowerpottalk;
@@ -181,28 +182,16 @@ void HitLargeRoomObject();
 
 void HitCorridorObject();
 
+void HitSearchGameObject();
+
 void HitTundereRoomObject();
 
 void HitYuruhuwaRoomObject();
 
 void HitCriminalRoomObject();
 
-/*
-　　探索ゲームでのオブジェクトとのあたり判定
-　　矩形と矩形のあたり判定
-*/
-void HitSearchGameObject();
 
 
-/*
-　　探索パートでのプレイヤーとがアクションを起こすときの
-  　オブジェクトとの視覚のあたり判定
-　　矩形と矩形のあたり判定
-*/
-void HitEyeLargeRoomObject();
-
-
-void HitEyeCorridorObject();
 
 
 /*
@@ -210,6 +199,10 @@ void HitEyeCorridorObject();
   　オブジェクトとの視覚のあたり判定
 　　矩形と矩形のあたり判定
 */
+
+void HitEyeLargeRoomObject();
+
+void HitEyeCorridorObject();
 
 void HitEyeSearchGameObject();
 
@@ -220,11 +213,13 @@ void HitEyeYuruhuwaRoomObject();
 void HitEyeCriminalRoomObject();
 
 
+//探索ゲーム進行フラグ
 void UpDataSearchGame();
 
-
+//オブジェクトアクション時関数
 void SearchObject();
 
+//扉アクション時関数
 void DrawDoorTalk();
 #endif
 

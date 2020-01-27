@@ -7,16 +7,14 @@
 #define TEXTURE_TITLE (SceneId::TitleScene)                  //!<タイトルシーン
 #define TEXTURE_SCENARIO (SceneId::ScenarioScene)            //!<シナリオシーン
 #define TEXTURE_MOVIE (SceneId::MovieScene)	                 //!<ムービーシーン
-#define TEXTURE_SEARCH (SceneId::LargeRoomScene)                //!<探索(大部屋)シーン
-#define TEXTURE_SEARCH2 (SceneId::CorridorScene)              //!<探索(廊下)シーン
+#define TEXTURE_SEARCH (SceneId::LargeRoomScene)             //!<探索(大部屋)シーン
+#define TEXTURE_SEARCH2 (SceneId::CorridorScene)             //!<探索(廊下)シーン
 #define TEXTURE_CRIMINAL_ROOM (SceneId::CriminalRoomScene)   //!<犯人部屋シーン
 #define TEXTURE_TUNDERE_ROOM (SceneId::TundereRoomScene)     //!<ツンデレ部屋シーン
 #define TEXTURE_YURUHUWA_ROOM (SceneId::YuruhuwaRoomScene)   //!<ゆるふわ部屋シーン
 #define TEXTURE_SEARCH_GAME (SceneId::SearchGameScene)       //!<探索ゲーム(ボーイッシュ部屋)シーン
 #define TEXTURE_PUZZLE (SceneId::PuzzleGameScene)            //!パズルゲーム<シーン
-#define TEXTURE_MYSTERY (SceneId::MysteryGameScene)            //!パズルゲーム<シーン
-#define TEXTURE_TALK (SceneId::TalkScene)                    //!<
-#define TEXTURE_HELP (SceneId::HelpScene)				     //!<
+#define TEXTURE_MYSTERY (SceneId::MysteryGameScene)          //!パズルゲーム<シーン
 #define TEXTURE_GAME_OVER (SceneId::GameOverScene)	         //!<ゲームオーバーシーン
 #define TEXTURE_GAME_CLEAR (SceneId::GameClearScene)	     //!<ゲームクリアシーン
 #define MAX_TEXTURE_ (SceneId::SceneIdMax)	                 //!< カテゴリー最大
@@ -39,12 +37,14 @@ enum TitleCategoryTextureList
 enum ScenarioCategoryTextureList
 {
 	ScenarioBgTex,          //!< 背景
+
 	ScenarioTextureMax      //!< リスト最大数
 };
 enum MovieCategoryTextureList
 {
 	MovieBgTex,				//!< 背景
 	MoviePlayerTex,         //!< プレイヤー
+
 	MovieTextureMax,	    //!< リスト最大数
 };
 
@@ -59,6 +59,7 @@ enum LargeRoomCategoryTextureList
 	SearchTextBoxTex,           //!< テキストボックス
 	SearchTextnameTex,          //!< 名前テキストボックス 
 	ChoiceTex,                  //!< 会話選択テキスト
+
 	SearchTextureMax,	        //!<  リスト最大数
 };
 
@@ -92,6 +93,7 @@ enum CriminalRoomCategoryTextureList
 	CriminalWorkbench,		     //!< 作業台
 	CriminalPC,				     //!< PC
 	CriminalCabinet,		     //!< キャビネット
+
 	CriminalRoomTextureMax,	     //!< リスト最大数
 
 };
@@ -110,6 +112,7 @@ enum TundereRoomCategoryTextureList
 	TundereDesk,	          //!< 机
 	TundereBed,		          //!< ベッド
 	TundereDoll,	          //!< 人形
+
 	TundereRoomTextureMax,	  //!< リスト最大数
 };
 
@@ -132,6 +135,7 @@ enum YuruhuwaRoomCategoryTextureList
 	YuruhuwaBed,			  //!< ベッド
 	YuruhuwaDoll,			  //!< 人形
 	YuruhuwaCabinet,		  //!< キャビネット
+
 	YuruhuwaRoomTextureMax,	  //!< リスト最大数
 };
 enum SearchGameCategoryTextureList
@@ -168,19 +172,20 @@ enum PuzzleGameCategoryTextureList
 	PuzzleSquareTex,			   //正方形
 	PuzzleLandscapeTex,			   //横長
 	PuzzlePortraitTex,			   //縦長
+
 	PuzzleGameTextureMax,		   //リスト最大数
 };
 
 enum MysteryGameCategoryTextureList
 {
-	MysteryGameBgTex,		   //!< 背景
+	MysteryGameBgTex,		       //!< 背景
 	MysteryGameTextTex,
 	MysteryGameTextBoxTex,		   //!< あいうえお表箱
 
-	MysteryGameChoiceTextTex,		   //!< 選択中
-	MysteryGameProblemTextTex,		   //!< 問題文
+	MysteryGameChoiceTextTex,	   //!< 選択中
+	MysteryGameProblemTextTex,	   //!< 問題文
 
-	MysteryGameDecisionButtonTex,		   //!< 問題文
+	MysteryGameDecisionButtonTex,  //!< 問題文
 	MysteryGameTextureMax,		   //リスト最大数
 };
 

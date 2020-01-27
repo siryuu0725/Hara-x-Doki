@@ -1,6 +1,7 @@
 #ifndef BG_
 #define BG_
 
+//タイトル用
 typedef struct
 {
 	bool choicestart;
@@ -9,6 +10,7 @@ typedef struct
 
 }TitleBgData;
 
+//ムービー用
 typedef struct
 {
 	float Tu, Tv;     //ムービー背景のTu,Tv
@@ -19,6 +21,7 @@ typedef struct
 
 }MovieBgData;
 
+//部屋移動時のフラグ
 typedef struct
 {
 	bool largeroom;       //大部屋にいるときtrue
@@ -49,14 +52,21 @@ void DrawTitleBg();
 
 void DrawMovieBg();
 
-void DrawCorridorBg();
-
-void DrawTundereBg();
-
-void DrawYuruhuwaBg();
-
+//背景まとめ
 void DrawSearchBg();
 
+
+//廊下
+void DrawCorridorBg();
+
+//ツンデレ部屋
+void DrawTundereBg();
+
+//ゆるふわ
+void DrawYuruhuwaBg();
+
+
+//犯人部屋
 void DrawCriminalBg();
 
 void DrawTalkBg();

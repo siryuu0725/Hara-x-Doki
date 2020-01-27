@@ -191,6 +191,7 @@ void LoadCriminalFurnitureTex()
 
 
 #pragma region プレイヤーとオブジェクトのあたり判定
+//大部屋
 void HitLargeRoomObject()
 {
 	//画面左端
@@ -299,7 +300,7 @@ void HitLargeRoomObject()
 		searchplayer.eyehit = false;
 	}
 }
-
+//廊下
 void HitCorridorObject()
 {
 	//花瓶
@@ -327,7 +328,7 @@ void HitCorridorObject()
 		
 	}
 }
-
+//ボーイッシュ部屋
 void HitSearchGameObject()
 {
 	//画面左端
@@ -415,7 +416,7 @@ void HitSearchGameObject()
 		searchplayer.hit= false;
 	}
 }
-
+//ツンデレ部屋
 void HitTundereRoomObject()
 {
 	//画面左端
@@ -494,7 +495,7 @@ void HitTundereRoomObject()
 		searchplayer.hit = false;
 	}
 }
-
+//ゆるふわ部屋
 void HitYuruhuwaRoomObject()
 {
 	//画面左端
@@ -588,7 +589,7 @@ void HitYuruhuwaRoomObject()
 		searchplayer.hit = false;
 	}
 }
-
+//犯人部屋
 void HitCriminalRoomObject()
 {
 	//画面左端
@@ -674,6 +675,7 @@ void HitCriminalRoomObject()
 #pragma endregion 
 
 #pragma region プレイヤーの視界とオブジェクトのあたり判定
+//大部屋
 void HitEyeLargeRoomObject()
 {
 	//メイド
@@ -765,7 +767,7 @@ void HitEyeLargeRoomObject()
 		
 	}
 }
-
+//廊下
 void HitEyeCorridorObject()
 {
 	if (HitPlayerEyeObject(1455.0f, 405.0f, 80.0f, 128.0f) == true && GetKeyDown(SPACE_KEY) == true && getitem.boyishdoorkey == true)
@@ -814,7 +816,7 @@ void HitEyeCorridorObject()
 	}
 	
 }
-
+//ボーイッシュ部屋
 void HitEyeSearchGameObject()
 {
 	//ロボット
@@ -910,7 +912,7 @@ void HitEyeSearchGameObject()
 		searchplayer.hit = false;
 	}
 }
-
+//ツンデレ部屋
 void HitEyeTundereRoomObject()
 {
 	//ロボット
@@ -979,7 +981,7 @@ void HitEyeTundereRoomObject()
 		searchplayer.eyehit = false;
 	}
 }
-
+//ゆるふわ部屋
 void HitEyeYuruhuwaRoomObject()
 {
 	//ロボット
@@ -1062,7 +1064,7 @@ void HitEyeYuruhuwaRoomObject()
 		searchplayer.eyehit = false;
 	}
 }
-
+//犯人部屋
 void HitEyeCriminalRoomObject()
 {
 	//ベッド

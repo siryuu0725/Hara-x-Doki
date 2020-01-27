@@ -90,7 +90,6 @@ void DrawMysteryGameRobot();
 #pragma endregion
 
 
-void DrawSuprised();
 
 #pragma region ‰ï˜b•`‰æ
 void DrawTalkMaid();
