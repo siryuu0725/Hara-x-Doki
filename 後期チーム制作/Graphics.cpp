@@ -87,7 +87,7 @@ void DrawEnd()
 }
 
 
-bool CreateTexture(const char* file_name, TEXTURE_DATE* texture_data)
+bool CreateTexture(const char* file_name, TEXTURE_DATA* texture_data)
 {
 	D3DXIMAGE_INFO info;
 
@@ -129,7 +129,7 @@ bool CreateTexture(const char* file_name, TEXTURE_DATE* texture_data)
 }
 
 //背景用
-void DrawBgTexture(TEXTURE_DATE* texture)
+void DrawBgTexture(TEXTURE_DATA* texture)
 {
 
 	CUSTOM_VERTEX bg[4] =
@@ -152,7 +152,7 @@ void DrawBgTexture(TEXTURE_DATE* texture)
 }
 
 //自キャラ敵キャラ用
-void DrawTexture(float x, float y, TEXTURE_DATE* texture)
+void DrawTexture(float x, float y, TEXTURE_DATA* texture)
 {
 	CUSTOM_VERTEX obj[4] =
 	{
@@ -172,7 +172,7 @@ void DrawTexture(float x, float y, TEXTURE_DATE* texture)
 }
 
 //アニメーション用
-void DrawUVTexture(float x, float y, TEXTURE_DATE* texture, float sprite_width, float sprite_height, float tu, float tv)
+void DrawUVTexture(float x, float y, TEXTURE_DATA* texture, float sprite_width, float sprite_height, float tu, float tv)
 {
 	float Ttu = sprite_width / texture->Width;
 	float Ttv = sprite_height / texture->Height;

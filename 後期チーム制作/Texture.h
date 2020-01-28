@@ -229,6 +229,6 @@ void AllReleaseTexture();
 
 bool LoadTexture(const char* file_name, int category_id, int texture_id);
 
-TEXTURE_DATE* GetTexture(int category_id, int texture_id);
+TEXTURE_DATA* GetTexture(int category_id, int texture_id);
 
 #endif

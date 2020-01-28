@@ -13,7 +13,7 @@
 #define REGULAR_FONT_SIZE (50)	//!< フォントサイズ(中)
 #define LARGE_FONT_SIZE (70)	//!< フォントサイズ(大)
 
-struct TEXTURE_DATE
+struct TEXTURE_DATA
 {
 	LPDIRECT3DTEXTURE9 Texture;
 	float Width;
@@ -58,18 +58,18 @@ bool DrawStart();
 
 void DrawEnd();
 
-bool CreateTexture(const char* file_name, TEXTURE_DATE* texture_data);
+bool CreateTexture(const char* file_name, TEXTURE_DATA* texture_data);
 
 //背景用
-void DrawBgTexture(TEXTURE_DATE*);
+void DrawBgTexture(TEXTURE_DATA*);
 
 //座標指定用
-void DrawTexture(float x, float y, TEXTURE_DATE* texture_data);
+void DrawTexture(float x, float y, TEXTURE_DATA* texture_data);
 
 //アニメーション用
-void DrawUVTexture(float x, float y, TEXTURE_DATE* texture, float sprite_width, float sprite_height, float tu, float tv);
+void DrawUVTexture(float x, float y, TEXTURE_DATA* texture, float sprite_width, float sprite_height, float tu, float tv);
 
-void ReleaseTexture(TEXTURE_DATE*);
+void ReleaseTexture(TEXTURE_DATA*);
 
 void DrawFont(float pos_x, float pos_y, const char* text, FontSize font_type, FontColor color);
 

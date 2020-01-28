@@ -3,7 +3,7 @@
 #include "Texture.h"
 
 // カテゴリごとのテクスチャ保存用配列
-static TEXTURE_DATE** g_TextureList[MAX_TEXTURE_] = { nullptr };
+static TEXTURE_DATA** g_TextureList[MAX_TEXTURE_] = { nullptr };
 
 // カテゴリのテクスチャ最大サイズの配列
 int TextureCaterogySize[] = {
@@ -34,11 +34,11 @@ void InitTexture()
 
 	for (int i = 0; i < MAX_TEXTURE_; i++)
 	{
-		g_TextureList[i] = (TEXTURE_DATE**)malloc(sizeof(TEXTURE_DATE*) * TextureCaterogySize[i]);
+		g_TextureList[i] = (TEXTURE_DATA**)malloc(sizeof(TEXTURE_DATA*) * TextureCaterogySize[i]);
 
 		for (int j = 0; j < TextureCaterogySize[i]; j++)
 		{
-			g_TextureList[i][j] = (TEXTURE_DATE*)malloc(sizeof(TEXTURE_DATE));
+			g_TextureList[i][j] = (TEXTURE_DATA*)malloc(sizeof(TEXTURE_DATA));
 			g_TextureList[i][j]->Texture = nullptr;
 		}
 	}
@@ -105,7 +105,7 @@ bool LoadTexture(const char* file_name, int id, int texture_id)
 	return CreateTexture(file_name, g_TextureList[id][texture_id]);
 }
 
-TEXTURE_DATE* GetTexture(int category_id, int texture_id)
+TEXTURE_DATA* GetTexture(int category_id, int texture_id)
 {
 	if (IsCategoryRangeCheck(category_id, texture_id) == false)
 	{
