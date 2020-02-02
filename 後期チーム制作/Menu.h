@@ -4,8 +4,8 @@
 typedef struct
 {
 	float pos_x, pos_y; // メニューのX座標とY座標
-	bool onenterkey; // ENTERキーを押したフラグ
-}MenuData; // メニュー構造体
+	bool onenterkey;    // ENTERキーを押したフラグ
+}MenuData;              // メニュー構造体
 
 extern MenuData menu;
 

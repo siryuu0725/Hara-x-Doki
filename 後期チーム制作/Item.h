@@ -191,9 +191,6 @@ void HitYuruhuwaRoomObject();
 void HitCriminalRoomObject();
 
 
-
-
-
 /*
 　　探索ゲームでのプレイヤーとがアクションを起こすときの
   　オブジェクトとの視覚のあたり判定

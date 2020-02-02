@@ -8,7 +8,7 @@ typedef struct
 {
 	float pos_x;
 	float pos_y;
-	bool onspacekey;
+	bool onspacekey; //プレイヤーを止めるためのフラグ
 }TextBoxData;
 
 typedef struct
@@ -18,14 +18,14 @@ typedef struct
 
 struct Time
 {
-	char timefont[20];
-	int timecounter;
-	int onesecondscounter;
-	int tensecondscounter;
-	int oneminutecounter;
-	int tenminutecounter;
-	bool start;
-	bool end;
+	char timefont[20];      //<!文字
+	int timecounter;		//<!1秒数える
+	int onesecondscounter;	//<!1の単位
+	int tensecondscounter;	//<!10の単位
+	int oneminutecounter;	//<!1分の単位
+	int tenminutecounter;	//<!10分の単位
+	bool start;             
+	bool end;				
 };
 
 typedef struct
