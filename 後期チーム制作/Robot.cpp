@@ -91,19 +91,6 @@ void InitSuprised()
 	surprised.pos_y = robot.pos_y - SURPRISEDSIZE;
 }
 
-void DrawRobot()
-{
-	DrawTexture(robot.pos_x, robot.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkRobotTex));
-}
-
-void DrawSuprised()
-{
-	if (backplayer.pos_x >= robot.pos_x - ROBOTSIZE && backplayer.pos_x <= robot.pos_x + ROBOTSIZE && backplayer.pos_y >= robot.pos_y - ROBOTSIZE && backplayer.pos_y <= robot.pos_y + ROBOTSIZE)
-	{
-		DrawTexture(surprised.pos_x, surprised.pos_y, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex));
-	}
-}
-
 #pragma region ƒƒ{ƒbƒg•`‰æ
 void DrawMaidRobot()
 {

@@ -42,32 +42,31 @@ extern SearchPlayerData searchplayer;
 extern BackPlayerData backplayer;
 
 #pragma region プレイヤーの初期化
+//ムービー
 void InitMoviePlayer();
-
+//大部屋
 void InitLargeRoomPlayer();
-
+//廊下
 void InitCorridorPlayer();
-
+//ボーイッシュ部屋
 void InitGameRoomPlayer();
-
+//廊下
 void InitCriminalPlayer();
-
-void InitBackPlayer();
 #pragma endregion
 
-#pragma region プレイヤーの描画
+#pragma region プレイヤーとロボの描画
+//ムービー
 void DrawMoviePlayer();
-
+//コントロール時
 void DrawSearchPlayerAndRobot();
-
-void DrawBackPlayer();
 #pragma endregion
 
 #pragma region プレイヤーの挙動
+//ムービー
 void UpDateMoviePlayer();
-
+//プレイヤー操作
 void SearchPlayerControl(float upmax, float downmax, float leftmax, float rightmax);
-
+//プレイヤー座標保存関数
 void UpDataPlayerPos();
 #pragma endregion
 

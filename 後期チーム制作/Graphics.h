@@ -71,6 +71,7 @@ void DrawUVTexture(float x, float y, TEXTURE_DATA* texture, float sprite_width, 
 
 void ReleaseTexture(TEXTURE_DATA*);
 
+//•¶Žš•`‰æ
 void DrawFont(float pos_x, float pos_y, const char* text, FontSize font_type, FontColor color);
 
 bool CreateFontDevice();

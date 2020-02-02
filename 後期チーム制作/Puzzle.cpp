@@ -103,22 +103,22 @@ void UpDatePuzzle()
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_y[i] < 0.0f)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 			}
 		}
 
@@ -132,22 +132,22 @@ void UpDatePuzzle()
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_y[i] + puzzle.square_height > 1080.0f)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 			}
 		}
 		//¶
@@ -155,26 +155,26 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_x[i] -= 180.0f;
+			puzzle.pos_x[i] -= puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] < 150.0f)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 			}
 		}
 
@@ -183,26 +183,26 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_x[i] += 180.0f;
+			puzzle.pos_x[i] += puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.square_width, puzzle.square_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] + puzzle.square_width > 1770.0f)
 			{
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 			}
 		}
 	}
@@ -217,29 +217,29 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] && GetMousePos().Y <= puzzle.pos_y[i] + 40.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_y[i] -= 180.0f;
+			puzzle.pos_y[i] -= puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
 
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
 
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_y[i] < 0.0f)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 			}
 		}
 		//‰º
@@ -247,27 +247,27 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 140.0f && GetMousePos().Y <= puzzle.pos_y[i] + 180.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_y[i] += 180.0f;
+			puzzle.pos_y[i] += puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
 
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_y[i] + puzzle.Landscape_height > 1080.0f)
 			{
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 			}
 		}
 		//¶
@@ -275,29 +275,29 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_x[i] -= 180.0f;
+			puzzle.pos_x[i] -= puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
 
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
 
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] < 150.0f)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 			}
 		}
 		//‰E
@@ -305,29 +305,29 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 140.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_x[i] += 180.0f;
+			puzzle.pos_x[i] += puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
 
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Landscape_width, puzzle.Landscape_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
 
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] + puzzle.Landscape_width > 1770.0f)
 			{
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 			}
 
 			if (puzzle.pos_x[9] == 1410.0f && puzzle.pos_y[9] == 360.0f && GetMousePos().X >= puzzle.pos_x[9] + 320.0f && GetMousePos().X <= puzzle.pos_x[9] + 360.0f
@@ -350,26 +350,26 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] && GetMousePos().Y <= puzzle.pos_y[i] + 40.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_y[i] -= 180.0f;
+			puzzle.pos_y[i] -= puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
-				puzzle.pos_y[i] += 180.0f;
+				puzzle.pos_y[i] += puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] < 0.0f)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 			}
 		}
 
@@ -378,28 +378,28 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 320.0f && GetMousePos().Y <= puzzle.pos_y[i] + 360.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_y[i] += 180.0f;
+			puzzle.pos_y[i] += puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
 
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 
-				puzzle.pos_y[i] -= 180.0f;
+				puzzle.pos_y[i] -= puzzle.move_speed;
 
 		}
 		else if (puzzle.pos_y[i] + puzzle.Portrait_height > 1080.0f)
 		{
-			puzzle.pos_y[i] -= 180.0f;
+			puzzle.pos_y[i] -= puzzle.move_speed;
 		}
 
 		//¶
@@ -407,29 +407,29 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 320.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_x[i] -= 180.0f;
+			puzzle.pos_x[i] -= puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
 
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
 
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] < 150.0f)
 			{
-				puzzle.pos_x[i] += 180.0f;
+				puzzle.pos_x[i] += puzzle.move_speed;
 			}
 		}
 		//‰E
@@ -437,29 +437,29 @@ void UpDatePuzzle()
 			&& GetMousePos().Y >= puzzle.pos_y[i] + 40.0f && GetMousePos().Y <= puzzle.pos_y[i] + 320.0f
 			&& OnMouseDown(Left) == true)
 		{
-			puzzle.pos_x[i] += 180.0f;
+			puzzle.pos_x[i] += puzzle.move_speed;
 
 			if (HitCabe(0, 9, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.square_width, puzzle.square_height) == true)
 			{
 
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(9, 20, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Landscape_width, puzzle.Landscape_height) == true)
 			{
 
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (HitCabe(20, 28, i, &puzzle, puzzle.Portrait_width, puzzle.Portrait_height, puzzle.Portrait_width, puzzle.Portrait_height) == true)
 			{
 
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 
 			}
 			else if (puzzle.pos_x[i] + puzzle.Portrait_width > 1770.0f)
 			{
-				puzzle.pos_x[i] -= 180.0f;
+				puzzle.pos_x[i] -= puzzle.move_speed;
 			}
 		}
 	}

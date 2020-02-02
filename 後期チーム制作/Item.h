@@ -40,6 +40,7 @@ typedef struct
 	bool tundere;
 	bool yuruhuwa;
 
+	//アクション時フラグ
 	bool doortalk;
 }CorridorTouchObject;
 
@@ -63,6 +64,7 @@ typedef struct
 	bool robottalk;         //ロボ
 	bool robotnecktalk;     //ロボの頭
 
+	//アクション時フラグ
 	bool cabinettalk;
 	bool lighttalk;        
 	bool desktalk;         
@@ -88,6 +90,7 @@ typedef struct
 	bool bed;           //ベッド
 	bool closet;        //クローゼット
 
+	//アクション時フラグ
 	bool lighttalk;         
 	bool desktalk;
 	bool chairtalk;
@@ -112,6 +115,7 @@ typedef struct
 	bool flowerpot;     //植木鉢
 	bool closet;        //クローゼット
 
+	//アクション時フラグ
 	bool lighttalk;
 	bool desktalk;
 	bool chairtalk;
@@ -129,6 +133,7 @@ typedef struct
 	bool itemkey;     //鍵
 	bool itemenergy;  //電池
 	bool itemlight;   //ライト
+
 
 	bool boyishdoorkey;
 	bool yuruhuwadoorkey;

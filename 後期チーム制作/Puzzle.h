@@ -19,7 +19,8 @@ typedef struct
 	//縦長
 	float Portrait_width;
 	float Portrait_height;
-	bool goal_key;
+
+	bool goal_key;//キーブロック
 	float move_speed;
 
 }PuzzleCabe;
