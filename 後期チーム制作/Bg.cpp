@@ -95,11 +95,6 @@ void DrawMovieBg()
 	DrawUVTexture(0.0f, 0.0f, GetTexture(TEXTURE_MOVIE, MovieCategoryTextureList::MovieBgTex), 1920, 2500, moviebgdate.Tu, moviebgdate.Tv);
 }
 
-void DrawTalkBg()
-{
-	DrawTexture(0.0f, 0.0f, GetTexture(TEXTURE_TALK, TalkCategoryTextureList::TalkBgTex));
-}
-
 
 void DrawCorridorBg()
 {

@@ -20,6 +20,7 @@ GetItem getitem;
 
 
 #pragma region 家具初期化
+//大部屋
 void InitLargeRoomObject()
 {
 	largeroomobject.chair = false;
@@ -41,6 +42,7 @@ void InitLargeRoomObject()
 	largeroomobject.sofatalk = false;
 }
 
+//ボーイッシュ部屋
 void InitSearchGameObject()
 {
 	searchgameobject.robot = false;
@@ -65,6 +67,7 @@ void InitSearchGameObject()
 	searchgameobject.bookshelftalk = false;
 }
 
+//ツンデレ部屋
 void InitTundereRoomObject()
 {
 	tundereobject.robot = false;
@@ -84,7 +87,7 @@ void InitTundereRoomObject()
 	tundereobject.flowerpottalk = false;
 	tundereobject.lighttalk = false;
 }
-
+//ゆるふわ部屋
 void InitYuruhuwaRoomObject()
 {
 	yuruhuwaobject.robot = false;
@@ -107,16 +110,26 @@ void InitYuruhuwaRoomObject()
 	yuruhuwaobject.cabinet = false;
 }
 
+//廊下
+void LoadCorridorFurnitureTex()
+{
+	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door);
+	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase);
+}
+
 #pragma endregion
 
+//探索ゲーム時の首描画
 void DrawRobotNeck()
 {
 	if (searchgameobject.robotneck == false && getitem.itemrobot == false && searchgameobject.completerobot == false)
 	{
+		//首を拾っていない時は描画
 		DrawTexture(700.0f, 500.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotNeckTex));
 	}
 }
 
+//アイテムtex読み込み
 void LoadSearchGameItem()
 {
 	LoadTexture("Res/探索ゲーム/鍵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex);
@@ -126,14 +139,8 @@ void LoadSearchGameItem()
 }
 
 
-//背景と家具が別のため関数化
-void LoadCorridorFurnitureTex()
-{
-	LoadTexture("Res/家具/ドア.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Door);
-	LoadTexture("Res/家具/花瓶.png", TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase);
-}
-
 #pragma region 家具テクスチャ読み込み
+//ツンデレ部屋
 void LoadTundereFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRoomBgTex);
@@ -147,6 +154,7 @@ void LoadTundereFurnitureTex()
 	LoadTexture("Res/家具/テーブル03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDesk);
 	LoadTexture("Res/家具/ぬいぐるみ03.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereDoll);
 }
+//ゆるふわ部屋
 void LoadYuruhuwaFurnitureTex()
 {
 	LoadTexture("Res/部屋(空).png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRoomBgTex);
@@ -162,6 +170,7 @@ void LoadYuruhuwaFurnitureTex()
 	LoadTexture("Res/家具/時計.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaClock);
 	LoadTexture("Res/家具/キャビネット.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaCabinet);
 }
+//犯人部屋
 void LoadCriminalFurnitureTex()
 {
 	LoadTexture("Res/犯人部屋.png", TEXTURE_CRIMINAL_ROOM, CriminalRoomCategoryTextureList::CriminalRoomBgTex);
@@ -1141,7 +1150,7 @@ void HitEyeCriminalRoomObject()
 
 #pragma endregion 
 
-
+//探索ゲーム進行関数
 void UpDataSearchGame()
 {
 	if (searchgameobject.robotneck == true)

@@ -1,6 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+//大部屋用構造体
 typedef struct
 {
 	bool maid;          //メイドロボ
@@ -29,40 +30,42 @@ typedef struct
 	
 }LargeRoomTouchObject;
 
+//廊下用構造体
 typedef struct
 {
-	bool boyishdoor;
-	bool tunderedoor;
-	bool yuruhuwadoor;
+	bool boyishdoor;      //ボーイッシュ扉  
+	bool tunderedoor;	  //ツンデレ扉  
+	bool yuruhuwadoor;	  //ゆるふわ扉  
 
-
-	bool boyish;
-	bool tundere;
-	bool yuruhuwa;
+	bool boyish;          //ボーイッシュ扉
+	bool tundere;		  //ツンデレ扉  
+	bool yuruhuwa;		  //ゆるふわ扉  
 
 	//アクション時フラグ
 	bool doortalk;
 }CorridorTouchObject;
 
+//ボーイッシュ部屋用構造体
 typedef struct
 {
-	bool boyish;
-	bool robot;         //ロボ
-	bool robotneck;     //ロボの頭
-	bool completerobot; //ロボ完成形
-
-	bool light;         //ライト
-	bool desk;          //机
-	bool chair;         //椅子
-	bool doll;          //人形
-	bool bed;           //ベッド
-	bool flowerpot;     //植木鉢
-	bool closet;        //クローゼット
-	bool bookshelf;     //本棚
+	bool boyish;            //ボーイッシュ
+	bool robot;             //ロボ
+	bool robotneck;         //ロボの頭
+	bool completerobot;     //ロボ完成形
+						    
+	bool light;             //ライト
+	bool desk;              //机
+	bool chair;             //椅子
+	bool doll;              //人形
+	bool bed;               //ベッド
+	bool flowerpot;         //植木鉢
+	bool closet;            //クローゼット
+	bool bookshelf;         //本棚
 	bool cabinet;
 
-	bool robottalk;         //ロボ
-	bool robotnecktalk;     //ロボの頭
+	//
+	bool robottalk;         
+	bool robotnecktalk;     
 
 	//アクション時フラグ
 	bool cabinettalk;
@@ -77,6 +80,8 @@ typedef struct
 	
 }SearchGameTouchObject;
 
+
+//ゆるふわ部屋用構造体
 typedef struct
 {
 	bool robot;         //ロボ
@@ -102,6 +107,8 @@ typedef struct
 
 }YuruhuwaTouchObject;
 
+
+//ツンデレ部屋用構造体
 typedef struct
 {
 	bool tundere;
@@ -126,7 +133,7 @@ typedef struct
 	bool sofatalk;
 }TundereTouchObject;
 
-
+//アイテム用構造体
 typedef struct
 {
 	bool itemrobot;   //ロボの首
