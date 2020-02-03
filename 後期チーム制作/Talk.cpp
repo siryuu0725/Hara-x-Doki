@@ -11,30 +11,9 @@
 #include <string.h>
 #include "Puzzle.h"
 
-void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
-{
-	if (*touchobject == true && *tolkobject == false)
-	{
-		*tolkobject = true;
-		textbox.onspacekey = true;
-
-	}
-	else if (GetKeyDown(SPACE_KEY) == true && *tolkobject == true)
-	{
-		*tolkobject = false;
-
-		textbox.onspacekey = false;
-
-	}
-	if (*tolkobject == true)
-	{
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-
-		DrawFont(500, 850, text, FontSize::Regular, FontColor::White);
-	}
-}
 
 
+//ファイル読み込み関数(ロボ)
 void InitRobotLoadFile()
 {
 	textdata.robot_nexttext = false;
@@ -187,6 +166,7 @@ void InitRobotLoadFile()
 #pragma endregion
 }
 
+//ファイル読み込み関数(JK)
 void InitJKLoadFile()
 {
 #pragma region ボーイッシュ
@@ -328,12 +308,12 @@ void InitJKLoadFile()
 	}
 	else if (areadata.corridor == true && yuruhuwa.clear == true)
 	{
-	FILE* YuruhuwaFp_4;
-
-	fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下好感度MIN).txt", "r");
-
-	fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
-	fclose(YuruhuwaFp_4);
+	    FILE* YuruhuwaFp_4;
+	    
+	    fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下好感度MIN).txt", "r");
+	    
+	    fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
+	    fclose(YuruhuwaFp_4);
 	}
 	else if (areadata.largeroom == true && yuruhuwa.clear == true)
 	{
@@ -355,16 +335,17 @@ void InitJKLoadFile()
 	}
 	else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart != 3)
 	{
-	FILE* YuruhuwaFp_Clear2;
-
-	fopen_s(&YuruhuwaFp_Clear2, "Res/テキスト/ゆるふわ会話(クリア好感度MIN).txt", "r");
-
-	fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear2);
-	fclose(YuruhuwaFp_Clear2);
+	    FILE* YuruhuwaFp_Clear2;
+	    
+	    fopen_s(&YuruhuwaFp_Clear2, "Res/テキスト/ゆるふわ会話(クリア好感度MIN).txt", "r");
+	    
+	    fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear2);
+	    fclose(YuruhuwaFp_Clear2);
 	}
 #pragma endregion
 }
 
+//テキスト変換(ロボ)
 void RobotLoadText()
 {
 
@@ -394,6 +375,7 @@ void RobotLoadText()
 	textdata.robot_threeline = strtok(NULL, ",");
 }
 
+//テキスト変換(JK)
 void JKLoadText()
 {
 
@@ -794,6 +776,30 @@ void UpDataDoorText()
 		RobotLoadText();
 		textdata.robot_nexttext = true;
 
+	}
+}
+
+//オブジェクト会話関数
+void DrawTalkObject(bool* touchobject, bool* tolkobject, char* text)
+{
+	if (*touchobject == true && *tolkobject == false)
+	{
+		*tolkobject = true;
+		textbox.onspacekey = true;
+
+	}
+	else if (GetKeyDown(SPACE_KEY) == true && *tolkobject == true)
+	{
+		*tolkobject = false;
+
+		textbox.onspacekey = false;
+
+	}
+	if (*tolkobject == true)
+	{
+		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+
+		DrawFont(500, 850, text, FontSize::Regular, FontColor::White);
 	}
 }
 

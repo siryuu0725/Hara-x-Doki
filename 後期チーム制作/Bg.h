@@ -48,7 +48,6 @@ void InitMovieBg();
 //エリア移動フラグの初期化
 void InitArea();
 
-<<<<<<< HEAD
 //背景まとめ
 void DrawSearchBg();
 
@@ -57,26 +56,23 @@ void DrawTitleBg();
 //ムービー
 void DrawMovieBg();
 
-=======
 
 
 //探索パート背景まとめ
 void DrawSearchBg();
 
->>>>>>> 螟画峩
 //廊下
 void DrawCorridorBg();
 //ツンデレ部屋
 void DrawTundereBg();
 //ゆるふわ
 void DrawYuruhuwaBg();
-<<<<<<< HEAD
 
 //犯人部屋
 void DrawCriminalBg();
 
 
-void DrawTalkBg();
+
 
 /*
      ムービ関数
@@ -84,7 +80,6 @@ void DrawTalkBg();
 	 逆方向(y軸)に動かしている
 
 */
-=======
 //犯人部屋
 void DrawCriminalBg();
 
@@ -94,7 +89,6 @@ void DrawTitleBg();
 //ムービー
 void DrawMovieBg();
 //ムービー更新関数
->>>>>>> 螟画峩
 void UpDateBg();
 //クリア
 void GameClearBg();

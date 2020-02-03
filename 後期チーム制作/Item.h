@@ -63,11 +63,10 @@ typedef struct
 	bool bookshelf;         //本棚
 	bool cabinet;
 
-	//
+	//アクション時フラグ
 	bool robottalk;         
 	bool robotnecktalk;     
 
-	//アクション時フラグ
 	bool cabinettalk;
 	bool lighttalk;        
 	bool desktalk;         
@@ -85,13 +84,13 @@ typedef struct
 typedef struct
 {
 	bool robot;         //ロボ
-	bool yuruhuwa;
+	bool yuruhuwa;      //ゆるふわ		
 
 	bool light;         //ライト
 	bool desk;          //机
 	bool chair;         //椅子
-	bool sofa;
-	bool cabinet;
+	bool sofa;          //ソファ 
+	bool cabinet;		//キャビネット
 	bool bed;           //ベッド
 	bool closet;        //クローゼット
 
@@ -111,7 +110,7 @@ typedef struct
 //ツンデレ部屋用構造体
 typedef struct
 {
-	bool tundere;
+	bool tundere;       //ツンデレ
 	bool robot;         //ロボ
 	bool sofa;
 	bool light;         //ライト
@@ -141,7 +140,7 @@ typedef struct
 	bool itemenergy;  //電池
 	bool itemlight;   //ライト
 
-
+	//アクション時フラグ
 	bool boyishdoorkey;
 	bool yuruhuwadoorkey;
 	bool tunderedoorkey;
@@ -161,6 +160,7 @@ extern TundereTouchObject tundereobject;
 
 extern GetItem getitem;
 
+//部屋初期化
 void InitLargeRoomObject();
 
 void InitSearchGameObject();

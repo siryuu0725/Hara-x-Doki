@@ -10,10 +10,10 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
-	bool talk;
-
-	int talktype;
-	bool description;
+	bool talk;             //会話時フラグ
+						   
+	int talktype;		   //会話種類
+	bool description;	   //「はい」を選んだ時
 
 }MaidRobotData;
 
@@ -21,8 +21,8 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
-	bool talk;
-	int talktype;
+	bool talk;             //会話時フラグ
+	int talktype;          //会話種類 
 	
 }SearchGameRobotData;
 
@@ -31,8 +31,8 @@ typedef struct
 {
 	float pos_x, pos_y;
 	float width, height;
-	bool talk;
-	int talktype;
+	bool talk;              //会話時フラグ
+	int talktype;			//会話種類 
 	bool play;
 
 

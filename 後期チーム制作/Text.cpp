@@ -21,6 +21,7 @@ ScenarioData scenario;
 TextData textdata;
 ChoiceTextureData choicetexturedata;
 
+//UIファイル読み込み
 void LoadUI()
 {
 	LoadTexture("Res/UI/テキスト名前.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex);
@@ -30,31 +31,33 @@ void LoadUI()
 	LoadTexture("Res/UI/矢印.png", TEXTURE_SEARCH, LargeRoomCategoryTextureList::ChoiceTex);
 }
 
+//テキストボックス初期化
 void InitTextBox()
 {
 	textbox.pos_x = TEXTBOX_POS_X;
 	textbox.pos_y = TEXTBOX_POS_Y;
 	textbox.onspacekey = false;
 
-	displaydata.name_uicounter = 0;
+	
 	displaydata.displaynext = false;
 }
 
-
+//タイマー初期化
 void InitTimeCounter()
 {
 	if (time.start == false)
 	{
-		time.timecounter = 0;
-		time.onesecondscounter = 0;
-		time.tensecondscounter = 0;
-		time.oneminutecounter = 10;
-		time.tenminutecounter = 0;
+		time.timecounter = 0;         
+		time.onesecondscounter = 0;   
+		time.tensecondscounter = 0;	  
+		time.oneminutecounter = 10;	  
+		time.tenminutecounter = 0;	  
 		time.end = false;
 	}
 	
 }
 
+//タイマー描画
 void DrawTime()
 {
 	if (time.start == true)
@@ -67,7 +70,7 @@ void DrawTime()
 		}
 		if (time.onesecondscounter == -1)
 		{
-			time.onesecondscounter = 9;
+			time.onesecondscounter = 9;//タイマー設定
 			time.tensecondscounter--;
 		}
 		if (time.tensecondscounter == -1)
@@ -119,6 +122,7 @@ void DrawScenario()
 	}
 }
 
+//選択時tex初期化
 void InitChoiceTexture()
 {
 	choicetexturedata.pos_x = 230.0f;
@@ -130,6 +134,7 @@ void InitChoiceTexture()
 
 }
 
+//選択時tex描画
 void DrawChoiceTexture()
 {
 	

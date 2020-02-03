@@ -18,42 +18,41 @@ typedef struct
 
 struct Time
 {
-	char timefont[20];      //<!文字
-	int timecounter;		//<!1秒数える
-	int onesecondscounter;	//<!1の単位
-	int tensecondscounter;	//<!10の単位
-	int oneminutecounter;	//<!1分の単位
-	int tenminutecounter;	//<!10分の単位
+	char timefont[20];      //文字
+	int timecounter;		//1秒数える
+	int onesecondscounter;	//1の単位
+	int tensecondscounter;	//10の単位
+	int oneminutecounter;	//1分の単位
+	int tenminutecounter;	//10分の単位
 	bool start;             
 	bool end;				
 };
 
 typedef struct
 {
-	int name_uicounter;
-	bool displaynext;
-	bool display_cleartext;
+	bool displaynext;        //各JK部屋移動時フラグ
+	bool display_cleartext;	 //クリア画面時スチル描画フラグ
 }DisplayData;
 
 
 struct TextData
 {
-	char robot_text[1000];
-	char jk_text[5000];
-	char* robot_oneline;
-	char* robot_twoline;
-	char* robot_threeline;
-
-	char* jk_oneline;
-	char* jk_twoline;
-	char* jk_threeline;
-
-	char* jk_lossoneline;
-	char* jk_losstwoline;
-	char* jk_lossthreeline;
-
-	bool robot_nexttext;
-	bool jk_nexttext;
+	char robot_text[1000];   //テキスト保存用
+	char jk_text[5000];		 //テキスト保存用
+	char* robot_oneline;	 //1行目
+	char* robot_twoline;	 //2行目
+	char* robot_threeline;	 //3行目
+							 
+	char* jk_oneline;		 //1行目
+	char* jk_twoline;		 //2行目
+	char* jk_threeline;		 //3行目
+							 
+	char* jk_lossoneline;	 //1行目(削除用)
+	char* jk_losstwoline;	 //2行目(削除用)
+	char* jk_lossthreeline;	 //3行目(削除用)
+							 
+	bool robot_nexttext;	 //最初のテキスト表示後続きを読み込むためのフラグ
+	bool jk_nexttext;		 //最初のテキスト表示後続きを読み込むためのフラグ
 };
 
 typedef struct 
@@ -61,12 +60,12 @@ typedef struct
 	float pos_x;
 	float pos_y;
 
-	int Choicepos;
-	bool decision_1;
-	bool decision_2;
+	int Choicepos;      //「はい」か「いいえ」かの座標
+	bool decision_1;    //「はい」のとき
+	bool decision_2;    //「いいえ」のとき
 
-	int display;
-	bool door_touch;
+	int display;        //選択肢tex座標初期化用
+	bool door_touch;	//ドアにアクションしたとき
 
 }ChoiceTextureData;
 
