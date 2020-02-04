@@ -63,8 +63,7 @@ void InitYuruhuwaRoomScene()
 
 	LoadCharacter();
 
-	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
-	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
+	
 
 	LoadUI();
 	InitYuruhuwa();

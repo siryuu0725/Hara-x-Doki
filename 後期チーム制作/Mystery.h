@@ -19,6 +19,10 @@ typedef struct
 	float problemtextpos_x;
 	float problemtextpos_y;
 
+	float text_tu;
+	float text_tv;
+
+
 
 	bool choicetext;
 	bool decisiontext;

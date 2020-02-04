@@ -68,8 +68,7 @@ void InitSearchGameScene()
 	LoadTexture("Res/ŒÂºi—q•”‰®j.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBgTex);
 	LoadTexture("Res/‰Æ‹ï/‘«g.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters);
 
-	LoadTexture("Res/Surprised.png", TEXTURE_TALK, TalkCategoryTextureList::TalkSurprisedTex);
-	LoadTexture("Res/Menu.png", TEXTURE_TALK, TalkCategoryTextureList::MenuTex);
+	
 	
 	LoadUI();
 	

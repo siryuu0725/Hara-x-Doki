@@ -51,7 +51,7 @@ void DrawMysteryBg()
 {
 	DrawBgTexture(GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameBgTex));
 	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextBoxTex));
-
+	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextTex));
 	for (int i = 0; i < 5; ++i)
 	{
 		for (int j = 0; j < 11; ++j)
@@ -60,19 +60,20 @@ void DrawMysteryBg()
 			{
 				DrawTexture(mysterytext.textpos_x + 5.0f + 70 * j, mysterytext.textpos_y + 5.0f + 70 * i, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex));
 			}
+			if (mysterytext.correctanswer == true)
+			{
+				DrawUVTexture(mysterytext.problemtextpos_x + 70, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextTex), 70.0f, 70.0f, mysterytext.text_tu, mysterytext.text_tv);
+			}
 
 		}
 	}
 
 	DrawTexture(mysterytext.textpos_x, mysterytext.textpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameTextTex));
-	DrawTexture(mysterytext.problemtextpos_x, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameProblemTextTex));
+	
 
 	DrawTexture(decisionbutton.pos_x, decisionbutton.pos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameDecisionButtonTex));
 
-	if (mysterytext.correctanswer == true)
-	{
-		DrawTexture(mysterytext.problemtextpos_x + 70, mysterytext.problemtextpos_y, GetTexture(TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameChoiceTextTex));
-	}
+	
 
 
 }
@@ -88,11 +89,13 @@ void UpDataChoiceText()
 				&& OnMouseDown(Left) == true)
 			{
 				mysterytext.decisiontext = true;
-				if (i == 3 && j == 3)
-				{
-					mysterytext.correctanswer = true;
-				}
+			
+				mysterytext.correctanswer = true;
+				mysterytext.text_tu = 0.09f * j;
+
+				mysterytext.text_tv = 0.195f * i;
 			}
+			
 
 		}
 	}
