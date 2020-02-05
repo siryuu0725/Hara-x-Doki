@@ -453,7 +453,11 @@ void HitTundereRoomObject()
 	{
 		searchplayer.hit = true;
 	}
-	
+	//ツンデレ
+	else if (HitPlayerObject(tundere.pos_x, tundere.pos_y + 64.0f, tundere.width, tundere.height - 72.0f) == true)
+	{
+		searchplayer.hit = true;
+	}
 	//ベッド
 	else if (HitPlayerObject(465.0f, 865.0f, 265.0f, 146.0f) == true)
 	{
@@ -930,6 +934,11 @@ void HitEyeTundereRoomObject()
 	{
 		tundereobject.robot = true;
 	}
+	//ツンデレ
+	else if (HitPlayerEyeObject(tundere.pos_x + 20.0f, tundere.pos_y + 64.0f, tundere.width - 30.0f, tundere.height - 52.0f) == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		tundereobject.tundere = true;
+	}
 	//ベッド
 	else if (HitPlayerEyeObject(465.0f, 865.0f, 265.0f, 146.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
@@ -987,6 +996,7 @@ void HitEyeTundereRoomObject()
 		tundereobject.sofa = false;
 
 		tundereobject.robot = false;
+		tundereobject.tundere = false;
 		searchplayer.eyehit = false;
 	}
 }

@@ -68,23 +68,31 @@ void LoadCharacter();
 //JK初期化
 void InitBoyish();
 void InitYuruhuwa();
+void InitTundere();
 
 
 //JK描画
 void DrawBoyish();
 void DrawYuruhuwa();
+void DrawTundere();
 
 
 //JK会話描画
 void DrawTalkYuruhuwa();
 void DrawTalkBoyish();
+void DrawTalkTundere();
+
 
 void DrawTalkClearBoyish();   //クリア時
 void DrawTalkClearYuruhuwa(); //クリア時
+void DrawTalkClearTundere(); //クリア時
+
 
 //次の会話へ移行
 void UpDataBoyishTalk();
 void UpDataYuruhuwaTalk();
+void UpDataTundereTalk();
+
 
 void UpDataClearText();
 

@@ -103,6 +103,8 @@ enum TundereRoomCategoryTextureList
 	TundereRoomBgTex,		  //!< 背景
 	TundereRobotTex,          //!< ロボット
 	TundereTalkRobotTex,      //!< ロボット(未完成)
+	TundereTalkTex,		      //!< ツンデレ
+	TundereTex,		          //!< ツンデレ会話
 	TundereWindow,            //!< 窓
 	TundereFlowerpot,         //!< 花瓶
 	TundereCloset,	          //!< 箪笥

@@ -10,7 +10,7 @@
 #include "Talk.h"
 #include "Puzzle.h"
 
-
+Tundere tundere;
 Boyish boyish;
 Yuruhuwa yuruhuwa;
 
@@ -25,6 +25,9 @@ void LoadCharacter()
 	LoadTexture("Res/キャラ/ボーイッシュちび.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameBoyishTex);
 	LoadTexture("Res/キャラ/ボーイッシュ立ち絵.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkBoyishTex);
 
+	LoadTexture("Res/キャラ/ツンデレ立ち絵.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkTex);
+	LoadTexture("Res/キャラ/ツンデレちび.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTex);
+
 	LoadTexture("Res/キャラ/ゆるふわ立ち絵.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTalkTex);
 	LoadTexture("Res/キャラ/ゆるふわちび.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaTex);
 
@@ -32,6 +35,7 @@ void LoadCharacter()
 	LoadTexture("Res/キャラ/ちび執事(カオナシ).png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameRobotTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameCompleteRobotTex);
 	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_YURUHUWA_ROOM, YuruhuwaRoomCategoryTextureList::YuruhuwaRobotTex);
+	LoadTexture("Res/キャラ/ちび執事.png", TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRobotTex);
 	LoadTexture("Res/キャラ/立ち絵執事かおなし.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot_NoNeckTex);
 	LoadTexture("Res/キャラ/立ち絵執事.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot);
 }
@@ -139,6 +143,48 @@ void InitYuruhuwa()
 	}
 }
 
+void InitTundere()
+{
+	if (areadata.searchtunderearea == true)
+	{
+		tundere.pos_x = 1200.0f;
+		tundere.pos_y = 240.0f;
+		tundere.tu = 0.0f;
+		tundere.tv = 0.0f;
+		tundere.width = 64.0f;
+		tundere.height = 128.0f;
+		tundere.talk = false;
+
+		if (tundere.clear == false)
+		{
+			tundere.talktype = 0;
+
+			tundere.clear = false;
+			tundere.heart = 0;
+		}
+
+	}
+	if (areadata.corridor == true && tundere.unlock == true)
+	{
+		tundere.pos_x = 350.0f;
+		tundere.pos_y = 450.0f;
+		tundere.tu = 0.0f;
+		tundere.tv = 0.0f;
+		tundere.width = 64.0f;
+		tundere.height = 128.0f;
+		tundere.talk = false;
+	}
+	if (areadata.largeroom == true && tundere.unlock == true)
+	{
+		tundere.pos_x = 1395.0f;
+		tundere.pos_y = 250.0f;
+		tundere.tu = 0.0f;
+		tundere.tv = 0.0f;
+		tundere.width = 64.0f;
+		tundere.height = 128.0f;
+		tundere.talk = false;
+	}
+}
 #pragma endregion
 
 #pragma region Jk描画
@@ -177,6 +223,22 @@ void DrawYuruhuwa()
 
 }
 
+void DrawTundere()
+{
+	if (areadata.searchtunderearea == true)
+	{
+		DrawUVTexture(tundere.pos_x, tundere.pos_y, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTex), tundere.width, tundere.height, tundere.tu, tundere.tv);
+	}
+	if (areadata.corridor == true && tundere.unlock == true)
+	{
+		DrawUVTexture(tundere.pos_x, tundere.pos_y, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTex), tundere.width, tundere.height, tundere.tu, tundere.tv);
+	}
+	if (areadata.largeroom == true && tundere.unlock == true)
+	{
+		DrawUVTexture(tundere.pos_x, tundere.pos_y, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTex), tundere.width, tundere.height, tundere.tu, tundere.tv);
+	}
+
+}
 #pragma endregion
 
 #pragma region Jk会話
@@ -359,7 +421,91 @@ void DrawTalkYuruhuwa()
 	}
 }
 
+void DrawTalkTundere()
+{
+	if ((tundereobject.tundere == true || corridorobject.tundere == true || largeroomobject.tundere == true) && tundere.talk == false)
+	{
+		if (tundere.clear == true)
+		{
+			tundere.unlock = true;
+		}
 
+		if (searchplayer.animetion_tv == 0.25f)
+		{
+			tundere.tu = 0.65f;
+		}
+		if (searchplayer.animetion_tv == 0.75f)
+		{
+
+			tundere.tu = 0.33f;
+		}
+
+		tundere.talk = true;
+		textbox.onspacekey = true;
+	}
+	else if (textdata.jk_threeline == NULL && tundere.talk == true)
+	{
+		tundere.tu = 0.0f;
+		tundere.talk = false;
+		textbox.onspacekey = false;
+		choicetexturedata.decision_2 = false;
+		textdata.jk_nexttext = false;
+
+		if (tundere.clear == true)
+		{
+			tundere.talktype = 2;
+
+		}
+		InitJKLoadFile();
+
+		if (tundere.heart == 3)
+		{
+			getitem.yuruhuwadoorkey = false;
+			getitem.boyishdoorkey = false;
+		}
+		else if (tundere.heart <= 2)
+		{
+			getitem.yuruhuwadoorkey = true;
+			getitem.boyishdoorkey = true;
+		}
+	}
+	if (tundere.talk == true)
+	{
+
+		if (strstr(textdata.jk_oneline, "ちょっと") || strstr(textdata.jk_oneline, "信じられる") || strstr(textdata.jk_oneline, "‥‥‥何よ")
+			|| strstr(textdata.jk_oneline, "それ！") || strstr(textdata.jk_oneline, "別に‥") || strstr(textdata.jk_oneline, "本当に")
+			|| strstr(textdata.jk_oneline, "な、なによ") || strstr(textdata.jk_oneline, "逆に怪しい") || strstr(textdata.jk_oneline, "それにし")
+			|| strstr(textdata.jk_oneline, "う、うるさ") || strstr(textdata.jk_oneline, "なんであんた") || strstr(textdata.jk_oneline, "ね、ねぇ、")
+			|| strstr(textdata.jk_oneline, "と、当然ね！") || strstr(textdata.jk_oneline, "信用して") || strstr(textdata.jk_oneline, "はぁー、")
+			|| strstr(textdata.jk_oneline, "って、") || strstr(textdata.jk_oneline, "なんでこ") || strstr(textdata.jk_oneline, "ちょっと待って！")
+			|| strstr(textdata.jk_oneline, "普通の家"))
+		{
+			DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+
+			DrawTexture(350.0f, -50.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkTex));
+			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+			DrawFont(100, 610, "マシロ", FontSize::Regular, FontColor::Yellow);
+		}
+		else if (strstr(textdata.jk_oneline, "落ち着け！") || strstr(textdata.jk_oneline, "そうだ")
+			|| strstr(textdata.jk_oneline, "大丈夫か？") || strstr(textdata.jk_oneline, "それでも") || strstr(textdata.jk_oneline, "君の方")
+			|| strstr(textdata.jk_oneline, "あぁ、"))
+		{
+
+			DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+			DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
+		}
+		else
+		{
+			DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+		}
+		DrawJKTalkText();
+		if (strstr(textdata.jk_oneline, "それでも") || strstr(textdata.jk_oneline, "君の方が") || strstr(textdata.jk_oneline, "あぁ、"))
+		{
+			DrawChoiceTexture();
+		}
+	}
+}
 
 
 //次の会話へ行く関数
@@ -414,6 +560,34 @@ void UpDataYuruhuwaTalk()
 		}
 
   		JKLoadText();
+
+		textdata.jk_nexttext = true;
+	}
+}
+
+void UpDataTundereTalk()
+{
+	if (tundereobject.tundere == true || corridorobject.tundere == true || largeroomobject.tundere == true)
+	{
+		if (puzzle.goal_key == true && tundere.talktype == 1)
+		{
+			InitJKLoadFile();
+		}
+		if ((tundere.talk == true && choicetexturedata.Choicepos == 1))
+		{
+			choicetexturedata.decision_1 = true;
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+		}
+		else if ((tundere.talk == true && choicetexturedata.Choicepos == 2))
+		{
+			choicetexturedata.decision_2 = true;
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+
+		}
+
+		JKLoadText();
 
 		textdata.jk_nexttext = true;
 	}
@@ -497,6 +671,43 @@ void DrawTalkClearYuruhuwa()
 	}
 }
 
+void DrawTalkClearTundere()
+{
+	if (areadata.cleararea == true && tundere.clear == true && tundere.talk == false)
+	{
+		tundere.talk = true;
+		textbox.onspacekey = true;
+	}
+	else if (textdata.jk_threeline == NULL && tundere.talk == true)
+	{
+		tundere.talk = false;
+		textbox.onspacekey = false;
+		tundere.end = true;
+
+	}
+	if (tundere.talk == true)
+	{
+		if (displaydata.display_cleartext == true)
+		{
+			if (strstr(textdata.jk_oneline, "わぁ！") || strstr(textdata.jk_oneline, "ふふふ") || strstr(textdata.jk_oneline, "またアキラ"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+
+				//DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "ハルカ", FontSize::Regular, FontColor::Yellow);
+			}
+			else if (strstr(textdata.jk_oneline, "結婚指輪"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				//DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, SearchCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
+			}
+
+		}
+
+		DrawJKTalkText();
+	}
+}
 
 #pragma endregion
 void UpDataClearText()

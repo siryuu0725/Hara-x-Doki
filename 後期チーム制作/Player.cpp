@@ -106,7 +106,7 @@ void InitGameRoomPlayer()
 	{
 
 	}
-	else if (areadata.searchyuruhuwaarea == true || areadata.searchgamearea == true)
+	else if (areadata.searchyuruhuwaarea == true || areadata.searchgamearea == true || areadata.searchtunderearea == true)
 	{
 		searchplayer.pos_x = 900.0f;
 		searchplayer.pos_y = 950.0f;

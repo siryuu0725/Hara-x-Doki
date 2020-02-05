@@ -43,6 +43,9 @@ typedef struct
 	float pos_x, pos_y;
 	float width, height;
 	bool talk;
+	int talktype;			//会話種類 
+	bool play;
+
 
 }MysteryGameRobotData;
 
@@ -77,7 +80,6 @@ void InitMysteryGameRobot();
 
 void InitSuprised();
 
-void DrawRobot();
 
 #pragma region ロボット描画
 void DrawMaidRobot();
@@ -106,5 +108,8 @@ void UpDateTalkMaid();
 void UpDateTalkSearchGameRobot();
 
 void UpDateTalkPuzzleGameRobot();
+
+void UpDateTalkMysteryGameRobot();
+
 
 #endif

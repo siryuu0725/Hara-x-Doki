@@ -10,6 +10,7 @@
 #include "Text.h"
 #include "Tundere.h"
 #include "JK.h"
+#include "Talk.h"
 
 
 // î∆êlïîâÆÉVÅ[ÉìÇÃèâä˙âª
@@ -40,6 +41,7 @@ SceneId UpdateTundereRoomScene()
 void DrawTundereRoomScene()
 {
 	DrawSearchBg();
+	DrawTundere();
 	//DrawMysteryGameRobot();
 	DrawSearchPlayerAndRobot();
 	
@@ -47,6 +49,7 @@ void DrawTundereRoomScene()
 	DrawTexture(450.0f, 610.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereRight));
 	DrawMenu();
 	DrawTime();
+	DrawTalkTundere();
 	DrawTalkMysteryGameRobot();
 	SearchObject();
 }
@@ -55,14 +58,13 @@ void InitTundereRoomScene()
 {
 	LoadTundereFurnitureTex();
 	LoadSearchGameItem();
-
 	LoadCharacter();
-
-
-	
-
 	LoadUI();
 
+	InitRobotLoadFile();
+	InitJKLoadFile();
+
+	InitTundere();
 	InitTundereRoomObject();
 	InitGameRoomPlayer();
 	InitMysteryGameRobot();
@@ -81,6 +83,8 @@ void MainTundereRoomScene()
 	UpDataPlayerPos();
 	UpDateMenu();
 	HitEyeTundereRoomObject();
+	UpDataTundereTalk();
+	UpDateTalkMysteryGameRobot();
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.searchtunderearea = false;
@@ -95,6 +99,11 @@ SceneId FinishTundereRoomScene()
 {
 	ReleaseCategoryTexture(TEXTURE_TUNDERE_ROOM);
 
+	if (mysterygamerobot.play == true)
+	{
+		mysterygamerobot.play = false;
+		return SceneId::MysteryGameScene;
+	}
 	if (areadata.cangearea2 == 2)
 	{
 		return SceneId::CorridorScene;

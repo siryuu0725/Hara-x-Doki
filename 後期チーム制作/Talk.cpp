@@ -133,7 +133,7 @@ void InitRobotLoadFile()
 	}
 #pragma endregion
 
-#pragma region ボーイッシュ執事会話
+#pragma region ゆるふわ執事会話
 	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && puzzlegamerobot.talktype == 0)
 	{
 		FILE* PuzzleGameRobotFp;
@@ -162,6 +162,38 @@ void InitRobotLoadFile()
 
 		fgets(textdata.robot_text, 1000, PuzzleGameRobotFp);
 		fclose(PuzzleGameRobotFp);
+	}
+#pragma endregion
+
+#pragma region ツンデレ執事会話
+	else if (areadata.searchtunderearea == true && areadata.corridor == false && mysterygamerobot.talktype == 0)
+	{
+		FILE* MysteryGameRobotFp;
+
+		fopen_s(&MysteryGameRobotFp, "Res/テキスト/ツンデレ執事システム.txt", "r");
+
+		fgets(textdata.robot_text, 1000, MysteryGameRobotFp);
+		fclose(MysteryGameRobotFp);
+
+	}
+	else if (areadata.searchyuruhuwaarea == true && areadata.corridor == false && mysterygamerobot.talktype == 1)
+	{
+		FILE* MysteryGameRobotFp;
+
+		fopen_s(&MysteryGameRobotFp, "Res/テキスト/ツンデレ執事クリア時システム.txt", "r");
+
+		fgets(textdata.robot_text, 1000, MysteryGameRobotFp);
+		fclose(MysteryGameRobotFp);
+		puzzlegamerobot.talktype = 2;
+	}
+	else if (areadata.searchtunderearea == true && areadata.corridor == false && mysterygamerobot.talktype == 2)
+	{
+		FILE* MysteryGameRobotFp;
+
+		fopen_s(&MysteryGameRobotFp, "Res/テキスト/ゆるふわ執事会話.txt", "r");
+
+		fgets(textdata.robot_text, 1000, MysteryGameRobotFp);
+		fclose(MysteryGameRobotFp);
 	}
 #pragma endregion
 }
@@ -297,7 +329,7 @@ void InitJKLoadFile()
 		fgets(textdata.jk_text, 2000, YuruhuwaFp_3);
 		fclose(YuruhuwaFp_3);
 	}
-	else if (areadata.corridor == true && yuruhuwa.clear == true)
+	else if (areadata.corridor == true && yuruhuwa.clear == true && yuruhuwa.heart == 3)
 	{
 		FILE* YuruhuwaFp_4;
 
@@ -341,6 +373,94 @@ void InitJKLoadFile()
 	    
 	    fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear2);
 	    fclose(YuruhuwaFp_Clear2);
+	}
+#pragma endregion
+
+#pragma region ツンデレ
+	else if (areadata.searchtunderearea == true && tundere.talktype == 0)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレシステム.txt", "r");
+
+	fgets(textdata.jk_text, 1000, TundereFp);
+	fclose(TundereFp);
+
+	tundere.talktype = 1;
+	}
+	else if (areadata.searchyuruhuwaarea == true && tundere.talktype == 1 && tundere.clear == false)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(鍵入手前).txt", "r");
+
+	fgets(textdata.jk_text, 1000, TundereFp);
+	fclose(TundereFp);
+
+	}
+	else if (areadata.searchtunderearea == true && tundere.talktype == 1 && tundere.clear == true)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレクリア時システム.txt", "r");
+
+	fgets(textdata.jk_text, 2000, TundereFp);
+	fclose(TundereFp);
+
+	}
+	else if (areadata.searchtunderearea == true && tundere.talktype == 2)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(救出後).txt", "r");
+
+	fgets(textdata.jk_text, 2000, TundereFp);
+	fclose(TundereFp);
+	}
+	else if (areadata.corridor == true && tundere.clear == true && tundere.heart == 3)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(廊下好感度MAX).txt", "r");
+
+	fgets(textdata.jk_text, 2000, TundereFp);
+	fclose(TundereFp);
+	}
+	else if (areadata.corridor == true && tundere.clear == true)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(廊下好感度MIN).txt", "r");
+
+	fgets(textdata.jk_text, 2000, TundereFp);
+	fclose(TundereFp);
+	}
+	else if (areadata.largeroom == true && tundere.clear == true)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(大部屋).txt", "r");
+
+	fgets(textdata.jk_text, 2000, TundereFp);
+	fclose(TundereFp);
+	}
+	else if (areadata.largeroom == false && tundere.clear == true && tundere.heart == 3)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(クリア好感度MAX).txt", "r");
+
+	fgets(textdata.jk_text, 5000, TundereFp);
+	fclose(TundereFp);
+	}
+	else if (areadata.largeroom == false && tundere.clear == true && tundere.heart != 3)
+	{
+	FILE* TundereFp;
+
+	fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(クリア好感度MIN).txt", "r");
+
+	fgets(textdata.jk_text, 5000, TundereFp);
+	fclose(TundereFp);
 	}
 #pragma endregion
 }

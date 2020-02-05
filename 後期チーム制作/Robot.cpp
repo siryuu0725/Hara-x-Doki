@@ -309,16 +309,67 @@ void DrawTalkMysteryGameRobot()
 		textbox.onspacekey = true;
 
 	}
-	else if (GetKeyDown(SPACE_KEY) == true && mysterygamerobot.talk == true)
+	else if (textdata.robot_threeline == NULL && mysterygamerobot.talk == true)
 	{
 		mysterygamerobot.talk = false;
 		textbox.onspacekey = false;
+		textdata.robot_nexttext = false;
+
+		if (puzzle.goal_key == true)
+		{
+			tundere.clear = true;
+
+		}
+
+		InitRobotLoadFile();
+
 	}
 	if (mysterygamerobot.talk == true)
 	{
-		DrawTexture(1000.0f, 100.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkRobotTex));
-		DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-		
+		if (puzzle.goal_key == true)
+		{
+			if (strstr(textdata.robot_oneline, "これで"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "主人公", FontSize::Regular, FontColor::Yellow);
+			}
+			else
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "執事ロボ", FontSize::Regular, FontColor::Yellow);
+			}
+		}
+		else
+		{
+ 			if (strstr(textdata.robot_oneline, "人間は、") || strstr(textdata.robot_oneline, "やってみますか？") || strstr(textdata.robot_oneline, "この問題"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "執事ロボ", FontSize::Regular, FontColor::Yellow);
+			}
+			else if (strstr(textdata.robot_oneline, "そいつ"))
+			{
+				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
+				DrawTexture(350.0f, -50.0f, GetTexture(TEXTURE_TUNDERE_ROOM, TundereRoomCategoryTextureList::TundereTalkTex));
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+				DrawFont(100, 610, "マシロ", FontSize::Regular, FontColor::Yellow);
+			}
+			else
+			{
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
+			}
+			if (strstr(textdata.robot_oneline, "はい"))
+			{
+				DrawChoiceTexture();
+			}
+
+		}
+
+		DrawRobotTalkText();
 	}
 }
 
@@ -382,6 +433,33 @@ void UpDateTalkPuzzleGameRobot()
 		RobotLoadText();
 
 		textdata.robot_nexttext = true;
+	}
+}
+
+void UpDateTalkMysteryGameRobot()
+{
+	if (tundereobject.robot == true)
+	{
+		if ((mysterygamerobot.talk == true && choicetexturedata.Choicepos == 1))
+		{
+			mysterygamerobot.play = true;
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+		}
+		else if ((mysterygamerobot.talk == true && choicetexturedata.Choicepos == 2))
+		{
+			choicetexturedata.Choicepos = 0;
+			choicetexturedata.display = 0;
+
+		}
+
+		RobotLoadText();
+
+		textdata.robot_nexttext = true;
+		if (mysterygamerobot.talktype == 3)
+		{
+			mysterygamerobot.talktype = 1;
+		}
 	}
 }
 #pragma endregion
