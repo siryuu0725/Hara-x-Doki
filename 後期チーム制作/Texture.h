@@ -185,9 +185,16 @@ enum MysteryGameCategoryTextureList
 	MysteryGameTextBoxTex,		   //!< あいうえお表箱
 
 	MysteryGameChoiceTextTex,	   //!< 選択中
-	MysteryGameProblemTextTex,	   //!< 問題文
+	MysteryGameProblemTextTex_1,   //!< 問題文
+	MysteryGameProblemTextTex_2,   //!< 問題文
 
-	MysteryGameDecisionButtonTex,  //!< 問題文
+	MysteryGameProblem_Answer_1,
+	MysteryGameProblem_Answer_2,
+
+
+	MysteryGameDecisionButtonTex,  //!< 決定ボタン
+	MysteryGameDeleteButtonTex,    //!< 削除ボタン
+
 	MysteryGameTextureMax,		   //リスト最大数
 };
 
