@@ -106,6 +106,10 @@ void InitGameRoomPlayer()
 	{
 
 	}
+	else if (tundere.unlock == false && tundere.clear == true)
+	{
+
+	}
 	else if (areadata.searchyuruhuwaarea == true || areadata.searchgamearea == true || areadata.searchtunderearea == true)
 	{
 		searchplayer.pos_x = 900.0f;

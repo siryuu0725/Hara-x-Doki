@@ -189,10 +189,18 @@ void DrawSearchBg()
 	else if (areadata.searchtunderearea == true)
 	{
 		DrawTundereBg();
+		if (tundere.unlock == false)
+		{
+			DrawTexture(tundere.pos_x+30.0f, tundere.pos_y+100.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters));
+		}
 	}
 	else if (areadata.searchyuruhuwaarea == true)
 	{
 		DrawYuruhuwaBg();
+		if (yuruhuwa.unlock == false)
+		{
+			DrawTexture(yuruhuwa.pos_x+60.0f, yuruhuwa.pos_y+110.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters));
+		}
 	}
 	else if (areadata.searchcriminalarea == true)
 	{

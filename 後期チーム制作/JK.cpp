@@ -451,11 +451,7 @@ void DrawTalkTundere()
 		choicetexturedata.decision_2 = false;
 		textdata.jk_nexttext = false;
 
-		if (tundere.clear == true)
-		{
-			tundere.talktype = 2;
-
-		}
+		
 		InitJKLoadFile();
 
 		if (tundere.heart == 3)
@@ -569,7 +565,7 @@ void UpDataTundereTalk()
 {
 	if (tundereobject.tundere == true || corridorobject.tundere == true || largeroomobject.tundere == true)
 	{
-		if (puzzle.goal_key == true && tundere.talktype == 1)
+		if (tundere.clear == false && tundere.talktype == 1)
 		{
 			InitJKLoadFile();
 		}

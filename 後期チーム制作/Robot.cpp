@@ -67,7 +67,7 @@ void InitPuzzleGameRobot()
 	puzzlegamerobot.height = 128.0f;
 	puzzlegamerobot.width = 64.0f;
 	puzzlegamerobot.talk = false;
-	if (puzzle.goal_key == false)
+	if (yuruhuwa.clear == false)
 	{
 		puzzlegamerobot.talktype = 0;
 
@@ -81,7 +81,11 @@ void InitMysteryGameRobot()
 	mysterygamerobot.height = 128.0f;
 	mysterygamerobot.width = 64.0f;
 	mysterygamerobot.talk = false;
+	if (tundere.clear == false)
+	{
+		mysterygamerobot.talktype = 0;
 
+	}
 }
 #pragma endregion
 
@@ -326,20 +330,18 @@ void DrawTalkMysteryGameRobot()
 	}
 	if (mysterygamerobot.talk == true)
 	{
-		if (puzzle.goal_key == true)
+		if (tundere.clear == true)
 		{
-			if (strstr(textdata.robot_oneline, "Ç±ÇÍÇ≈"))
-			{
-				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
-				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
-				DrawFont(100, 610, "éÂêlåˆ", FontSize::Regular, FontColor::Yellow);
-			}
-			else
+			if(strstr(textdata.robot_oneline, "Ç®å©éñÇ≈Ç∑")|| strstr(textdata.robot_oneline, "éüÇÕ"))
 			{
 				DrawTexture(0.0f, 600.0f, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextnameTex));
 				DrawTexture(400.0f, 0.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameTalkRobot));
 				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 				DrawFont(100, 610, "é∑éñÉçÉ{", FontSize::Regular, FontColor::Yellow);
+			}
+			else
+			{
+				DrawTexture(textbox.pos_x, textbox.pos_y, GetTexture(TEXTURE_SEARCH, LargeRoomCategoryTextureList::SearchTextBoxTex));
 			}
 		}
 		else
@@ -458,7 +460,7 @@ void UpDateTalkMysteryGameRobot()
 		textdata.robot_nexttext = true;
 		if (mysterygamerobot.talktype == 3)
 		{
-			mysterygamerobot.talktype = 1;
+			mysterygamerobot.talktype = 2;
 		}
 	}
 }

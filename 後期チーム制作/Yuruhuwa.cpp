@@ -49,6 +49,8 @@ void DrawYuruhuwaRoomScene()
 	DrawMenu();
 	DrawTime();
 	
+	LoadTexture("Res/‰Æ‹ï/‘«žg.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters);
+
 
 	DrawTalkPuzzleGameRobot();
 

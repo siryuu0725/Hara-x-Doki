@@ -188,9 +188,12 @@ enum MysteryGameCategoryTextureList
 	MysteryGameProblemTextTex_1,   //!< 問題文
 	MysteryGameProblemTextTex_2,   //!< 問題文
 
-	MysteryGameProblem_Answer_1,
-	MysteryGameProblem_Answer_2,
+	MysteryGameProblem_Answer_1,   //!<答え枠1
+	MysteryGameProblem_Answer_2,   //!<答え枠2
 
+	MysteryGameCorrect_Answer,     //!<正解
+	MysteryGameIncorrect_Answer,   //!<不正解
+	
 
 	MysteryGameDecisionButtonTex,  //!< 決定ボタン
 	MysteryGameDeleteButtonTex,    //!< 削除ボタン

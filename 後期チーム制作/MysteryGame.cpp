@@ -5,6 +5,7 @@
 #include "JK.h"
 #include "Text.h"
 #include "Mystery.h"
+#include "Robot.h"
 
 void InitMysteryGameScene();
 
@@ -35,6 +36,8 @@ SceneId UpdateMysteryGameScene()
 void DrawMysteryGameScene()
 {
 	DrawMysteryBg();
+
+	DrawMysteryAnswerBg();
 	
 }
 
@@ -54,6 +57,9 @@ void InitMysteryGameScene()
 	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/åàíË.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameDecisionButtonTex);
 	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/è¡Ç∑.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameDeleteButtonTex);
 
+	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/maru.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameCorrect_Answer);
+	LoadTexture("Res/ì‰Ç©ÇØÉQÅ[ÉÄ/batu.png", TEXTURE_MYSTERY, MysteryGameCategoryTextureList::MysteryGameIncorrect_Answer);
+
 	InitMysteryText();
 	InitButton();
 	ChangeSceneStep(SceneStep::MainStep);
@@ -63,8 +69,13 @@ void MainMysteryGameScene()
 {
 	UpDataChoiceText();
 
-	if (OnMouseDown(Right) == true)
+	UpdataDecision();
+
+	UpdataDelete();
+
+	if (tundere.clear == true)
 	{
+		mysterygamerobot.talktype = 1;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 

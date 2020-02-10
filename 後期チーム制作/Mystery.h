@@ -28,26 +28,37 @@ typedef struct
     //1•¶š–Ú
 	float one_text_tu;
 	float one_text_tv;
+
+	int one_text;
     //2•¶š–Ú
 	float two_text_tu;
 	float two_text_tv;
+
+	int two_text;
     //3•¶š–Ú
 	float three_text_tu;
 	float three_text_tv;
+
+	int three_text;
     //4•¶š–Ú
 	float four_text_tu;
 	float four_text_tv;
+
+	int four_text;
+
     //5•¶š–Ú
 	float five_text_tu;
 	float five_text_tv;
+
+	int five_text;
+
 
 	//Ÿ‚Ì•¶š‚ÉˆÚs
 	int nexttext;
 
 	//‘I‘ğ
 	bool choicetext;
-	bool decisiontext;
-	bool correctanswer;
+	
 
 	bool oneproblem;
 	bool twoproblem;
@@ -68,7 +79,13 @@ typedef struct
 	float deletewidth;
 	float deleteheight;
 
-	bool push;
+	bool correct_answer;
+
+	bool decisiontext;
+	bool answer;
+
+	int counter;
+
 }Button;
 
 typedef struct
@@ -95,9 +112,15 @@ void InitButton();
 
 void DrawMysteryBg();
 
+void DrawMysteryAnswerBg();
+
 void UpDataChoiceText();
 
 void UpDataChoiceText();
+
+void UpdataDecision();
+
+void UpdataDelete();
 
 
 #endif
