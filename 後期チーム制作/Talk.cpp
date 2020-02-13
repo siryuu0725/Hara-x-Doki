@@ -208,7 +208,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp, "Res/テキスト/ボーイッシュシステム.txt", "r");
 
-		fgets(textdata.jk_text, 1000, BoyishFp);
+		fgets(textdata.boyish_text, 1000, BoyishFp);
 		fclose(BoyishFp);
 		boyish.talktype = 1;
 	}
@@ -218,7 +218,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_1, "Res/テキスト/ボーイッシュ会話(鍵未入手).txt", "r");
 
-		fgets(textdata.jk_text, 1000, BoyishFp_1);
+		fgets(textdata.boyish_text, 1000, BoyishFp_1);
 		fclose(BoyishFp_1);
 
 	}
@@ -228,7 +228,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_2, "Res/テキスト/ボーイッシュクリア時システム.txt", "r");
 
-		fgets(textdata.jk_text, 2000, BoyishFp_2);
+		fgets(textdata.boyish_text, 2000, BoyishFp_2);
 		fclose(BoyishFp_2);
 		boyish.talktype = 2;
 	}
@@ -238,7 +238,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_3, "Res/テキスト/ボーイッシュ会話(救出後).txt", "r");
 
-		fgets(textdata.jk_text, 2000, BoyishFp_3);
+		fgets(textdata.boyish_text, 2000, BoyishFp_3);
 		fclose(BoyishFp_3);
 	}
 	else if (areadata.corridor == true && boyish.clear == true && boyish.heart == 3)
@@ -247,7 +247,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下).txt", "r");
 
-		fgets(textdata.jk_text, 2000, BoyishFp_4);
+		fgets(textdata.boyish_text, 2000, BoyishFp_4);
 		fclose(BoyishFp_4);
 	}
 	else if (areadata.corridor == true && boyish.clear == true)
@@ -256,7 +256,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(廊下好感度MIN).txt", "r");
 
-		fgets(textdata.jk_text, 2000, BoyishFp_4);
+		fgets(textdata.boyish_text, 2000, BoyishFp_4);
 		fclose(BoyishFp_4);
 	}
 	else if (areadata.largeroom == true && boyish.clear == true)
@@ -265,7 +265,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_4, "Res/テキスト/ボーイッシュ会話(大部屋).txt", "r");
 
-		fgets(textdata.jk_text, 2000, BoyishFp_4);
+		fgets(textdata.boyish_text, 2000, BoyishFp_4);
 		fclose(BoyishFp_4);
 	}
 	else if (areadata.largeroom == false && boyish.clear == true && boyish.heart == 3)
@@ -274,7 +274,7 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_Clear, "Res/テキスト/ボーイッシュ会話(クリア).txt", "r");
 
-		fgets(textdata.jk_text, 5000, BoyishFp_Clear);
+		fgets(textdata.boyish_text, 5000, BoyishFp_Clear);
 		fclose(BoyishFp_Clear);
 	}
 	else if (areadata.largeroom == false && boyish.clear == true && boyish.heart != 3 && areadata.cleararea == true)
@@ -283,19 +283,19 @@ void InitJKLoadFile()
 
 		fopen_s(&BoyishFp_Clear2, "Res/テキスト/ボーイッシュ会話(クリア好感度MIN).txt", "r");
 
-		fgets(textdata.jk_text, 5000, BoyishFp_Clear2);
+		fgets(textdata.boyish_text, 5000, BoyishFp_Clear2);
 		fclose(BoyishFp_Clear2);
 	}
 #pragma endregion
 
 #pragma region ゆるふわ
-	else if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 0)
+	if (areadata.searchyuruhuwaarea == true && yuruhuwa.talktype == 0)
 	{
 		FILE* YuruhuwaFp;
 
 		fopen_s(&YuruhuwaFp, "Res/テキスト/ゆるふわシステム.txt", "r");
 
-		fgets(textdata.jk_text, 1000, YuruhuwaFp);
+		fgets(textdata.yuruhuwa_text, 1000, YuruhuwaFp);
 		fclose(YuruhuwaFp);
 
 		yuruhuwa.talktype = 1;
@@ -306,7 +306,7 @@ void InitJKLoadFile()
 
 		fopen_s(&YuruhuwaFp_1, "Res/テキスト/ゆるふわ会話(鍵入手前).txt", "r");
 
-		fgets(textdata.jk_text, 1000, YuruhuwaFp_1);
+		fgets(textdata.yuruhuwa_text, 1000, YuruhuwaFp_1);
 		fclose(YuruhuwaFp_1);
 
 	}
@@ -316,7 +316,7 @@ void InitJKLoadFile()
 
 		fopen_s(&YuruhuwaFp_2, "Res/テキスト/ゆるふわクリア時システム.txt", "r");
 
-		fgets(textdata.jk_text, 2000, YuruhuwaFp_2);
+		fgets(textdata.yuruhuwa_text, 2000, YuruhuwaFp_2);
 		fclose(YuruhuwaFp_2);
 		
 	}
@@ -326,7 +326,7 @@ void InitJKLoadFile()
 
 		fopen_s(&YuruhuwaFp_3, "Res/テキスト/ゆるふわ会話(救出後).txt", "r");
 
-		fgets(textdata.jk_text, 2000, YuruhuwaFp_3);
+		fgets(textdata.yuruhuwa_text, 2000, YuruhuwaFp_3);
 		fclose(YuruhuwaFp_3);
 	}
 	else if (areadata.corridor == true && yuruhuwa.clear == true && yuruhuwa.heart == 3)
@@ -335,7 +335,7 @@ void InitJKLoadFile()
 
 		fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下).txt", "r");
 
-		fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
+		fgets(textdata.yuruhuwa_text, 2000, YuruhuwaFp_4);
 		fclose(YuruhuwaFp_4);
 	}
 	else if (areadata.corridor == true && yuruhuwa.clear == true)
@@ -344,7 +344,7 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&YuruhuwaFp_4, "Res/テキスト/ゆるふわ会話(廊下好感度MIN).txt", "r");
 	    
-	    fgets(textdata.jk_text, 2000, YuruhuwaFp_4);
+	    fgets(textdata.yuruhuwa_text, 2000, YuruhuwaFp_4);
 	    fclose(YuruhuwaFp_4);
 	}
 	else if (areadata.largeroom == true && yuruhuwa.clear == true)
@@ -353,7 +353,7 @@ void InitJKLoadFile()
 
 		fopen_s(&YuruhuwaFp_5, "Res/テキスト/ゆるふわ会話(大部屋).txt", "r");
 
-		fgets(textdata.jk_text, 2000, YuruhuwaFp_5);
+		fgets(textdata.yuruhuwa_text, 2000, YuruhuwaFp_5);
 		fclose(YuruhuwaFp_5);
 	}
 	else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart == 3)
@@ -362,10 +362,10 @@ void InitJKLoadFile()
 
 		fopen_s(&YuruhuwaFp_Clear, "Res/テキスト/ゆるふわ会話(クリア好感度MAX).txt", "r");
 
-		fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear);
+		fgets(textdata.yuruhuwa_text, 5000, YuruhuwaFp_Clear);
 		fclose(YuruhuwaFp_Clear);
 	}
-	else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart != 3)
+	/*else if (areadata.largeroom == false && yuruhuwa.clear == true && yuruhuwa.heart != 3)
 	{
 	    FILE* YuruhuwaFp_Clear2;
 	    
@@ -373,17 +373,17 @@ void InitJKLoadFile()
 	    
 	    fgets(textdata.jk_text, 5000, YuruhuwaFp_Clear2);
 	    fclose(YuruhuwaFp_Clear2);
-	}
+	}*/
 #pragma endregion
 
 #pragma region ツンデレ
-	else if (areadata.searchtunderearea == true && tundere.talktype == 0)
+	if (areadata.searchtunderearea == true && tundere.talktype == 0)
 	{
 	    FILE* TundereFp;
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレシステム.txt", "r");
 	    
-	    fgets(textdata.jk_text, 1000, TundereFp);
+	    fgets(textdata.tundere_text, 1000, TundereFp);
 	    fclose(TundereFp);
 	    
 	    tundere.talktype = 1;
@@ -396,7 +396,7 @@ void InitJKLoadFile()
 
 		
 	    
-	    fgets(textdata.jk_text, 1000, TundereFp);
+	    fgets(textdata.tundere_text, 1000, TundereFp);
 	    fclose(TundereFp);
 
 	}
@@ -406,7 +406,7 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレクリア時システム.txt", "r");
 	    
-	    fgets(textdata.jk_text, 2000, TundereFp);
+	    fgets(textdata.tundere_text, 2000, TundereFp);
 	    fclose(TundereFp);
 
 		if (tundere.clear == true)
@@ -422,7 +422,7 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(救出後).txt", "r");
 	    
-	    fgets(textdata.jk_text, 2000, TundereFp);
+	    fgets(textdata.tundere_text, 2000, TundereFp);
 	    fclose(TundereFp);
 	}
 	else if (areadata.corridor == true && tundere.clear == true && tundere.heart == 3)
@@ -431,7 +431,7 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(廊下好感度MAX).txt", "r");
 	    
-	    fgets(textdata.jk_text, 2000, TundereFp);
+	    fgets(textdata.tundere_text, 2000, TundereFp);
 	    fclose(TundereFp);
 	}
 	else if (areadata.corridor == true && tundere.clear == true)
@@ -440,7 +440,7 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(廊下好感度MIN).txt", "r");
 	    
-	    fgets(textdata.jk_text, 2000, TundereFp);
+	    fgets(textdata.tundere_text, 2000, TundereFp);
 	    fclose(TundereFp);
 	}
 	else if (areadata.largeroom == true && tundere.clear == true)
@@ -449,7 +449,7 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(大部屋).txt", "r");
 	    
-	    fgets(textdata.jk_text, 2000, TundereFp);
+	    fgets(textdata.tundere_text, 2000, TundereFp);
 	    fclose(TundereFp);
 	}
 	else if (areadata.largeroom == false && tundere.clear == true && tundere.heart == 3)
@@ -458,10 +458,10 @@ void InitJKLoadFile()
 	    
 	    fopen_s(&TundereFp, "Res/テキスト/ツンデレ会話(クリア好感度MAX).txt", "r");
 	    
-	    fgets(textdata.jk_text, 5000, TundereFp);
+	    fgets(textdata.tundere_text, 5000, TundereFp);
 	    fclose(TundereFp);
 	}
-	else if (areadata.largeroom == false && tundere.clear == true && tundere.heart != 3)
+	/*else if (areadata.largeroom == false && tundere.clear == true && tundere.heart != 3)
 	{
 	    FILE* TundereFp;
 	    
@@ -469,7 +469,7 @@ void InitJKLoadFile()
 	    
 	    fgets(textdata.jk_text, 5000, TundereFp);
 	    fclose(TundereFp);
-	}
+	}*/
 #pragma endregion
 }
 
@@ -504,12 +504,12 @@ void RobotLoadText()
 }
 
 //テキスト変換(JK)
-void JKLoadText()
+void BoyishLoadText()
 {
 
-	textdata.jk_oneline = NULL;
-	textdata.jk_twoline = NULL;
-	textdata.jk_threeline = NULL;
+	textdata.boyish_oneline = NULL;
+	textdata.boyish_twoline = NULL;
+	textdata.boyish_threeline = NULL;
 
 	//memset(&textdata.oneline, '\0', 256);
 	//memset(&textdata.twoline, '\0', 256);
@@ -518,41 +518,183 @@ void JKLoadText()
 	//好感度
 	if (choicetexturedata.decision_1 == true)
 	{
-		textdata.jk_oneline = strtok(NULL, ",");
-		textdata.jk_twoline = strtok(NULL, ",");
-		textdata.jk_threeline = strtok(NULL, ",");
+		textdata.boyish_oneline = strtok(NULL, ",");
+		textdata.boyish_twoline = strtok(NULL, ",");
+		textdata.boyish_threeline = strtok(NULL, ",");
 
-		textdata.jk_lossoneline = strtok(NULL, ",");
-		textdata.jk_losstwoline = strtok(NULL, ",");
-		textdata.jk_lossthreeline = strtok(NULL, ",");
+		textdata.boyiah_lossoneline = strtok(NULL, ",");
+		textdata.boyiah_losstwoline = strtok(NULL, ",");
+		textdata.boyiah_lossthreeline = strtok(NULL, ",");
 		choicetexturedata.decision_1 = false;
-		boyish.heart++;
-		yuruhuwa.heart++;
+		if (tundere.clear == true)
+		{
+			boyish.heart = 0;
+		}
+		else if (yuruhuwa.clear == true)
+		{
+			boyish.heart = 0;
+		}
+		else
+		{
+			boyish.heart++;
+
+		}
+		
+
+
 
 	}
 	//好感度
 	else if (choicetexturedata.decision_2 == true)
 	{
-		textdata.jk_lossoneline = strtok(NULL, ",");
-		textdata.jk_losstwoline = strtok(NULL, ",");
-		textdata.jk_lossthreeline = strtok(NULL, ",");
+		textdata.boyiah_lossoneline = strtok(NULL, ",");
+		textdata.boyiah_losstwoline = strtok(NULL, ",");
+		textdata.boyiah_lossthreeline = strtok(NULL, ",");
 
-		textdata.jk_oneline = strtok(NULL, ",");
-		textdata.jk_twoline = strtok(NULL, ",");
-		textdata.jk_threeline = strtok(NULL, ",");
+		textdata.boyish_oneline = strtok(NULL, ",");
+		textdata.boyish_twoline = strtok(NULL, ",");
+		textdata.boyish_threeline = strtok(NULL, ",");
 		choicetexturedata.decision_2 = false;
 	}
 	else if (textdata.jk_nexttext == true)
 	{
-  		textdata.jk_oneline = strtok(NULL, ",");
-		textdata.jk_twoline = strtok(NULL, ",");
-		textdata.jk_threeline = strtok(NULL, ",");
+  		textdata.boyish_oneline = strtok(NULL, ",");
+		textdata.boyish_twoline = strtok(NULL, ",");
+		textdata.boyish_threeline = strtok(NULL, ",");
 	}
 	else
 	{
-		textdata.jk_oneline = strtok(textdata.jk_text, ",");
-		textdata.jk_twoline = strtok(NULL, ",");
-		textdata.jk_threeline = strtok(NULL, ",");
+		textdata.boyish_oneline = strtok(textdata.boyish_text, ",");
+		textdata.boyish_twoline = strtok(NULL, ",");
+		textdata.boyish_threeline = strtok(NULL, ",");
+	}
+
+}
+
+void TundereLoadText()
+{
+
+	textdata.tundere_oneline = NULL;
+	textdata.tundere_twoline = NULL;
+	textdata.tundere_threeline = NULL;
+
+	//memset(&textdata.oneline, '\0', 256);
+	//memset(&textdata.twoline, '\0', 256);
+	//memset(&textdata.threeline, '\0', 256);
+
+	//好感度
+	if (choicetexturedata.decision_1 == true)
+	{
+		textdata.tundere_oneline = strtok(NULL, ",");
+		textdata.tundere_twoline = strtok(NULL, ",");
+		textdata.tundere_threeline = strtok(NULL, ",");
+
+		textdata.tundere_lossoneline = strtok(NULL, ",");
+		textdata.tundere_losstwoline = strtok(NULL, ",");
+		textdata.tundere_lossthreeline = strtok(NULL, ",");
+		choicetexturedata.decision_1 = false;
+		
+		if (boyish.clear == true)
+		{
+			tundere.heart = 0;
+		}
+		else if (yuruhuwa.clear == true)
+		{
+			tundere.heart = 0;
+		}
+		else
+		{
+			tundere.heart++;
+		}
+
+
+	}
+	//好感度
+	else if (choicetexturedata.decision_2 == true)
+	{
+		textdata.tundere_lossoneline = strtok(NULL, ",");
+		textdata.tundere_losstwoline = strtok(NULL, ",");
+		textdata.tundere_lossthreeline = strtok(NULL, ",");
+
+		textdata.tundere_oneline = strtok(NULL, ",");
+		textdata.tundere_twoline = strtok(NULL, ",");
+		textdata.tundere_threeline = strtok(NULL, ",");
+		choicetexturedata.decision_2 = false;
+	}
+	else if (textdata.jk_nexttext == true)
+	{
+		textdata.tundere_oneline = strtok(NULL, ",");
+		textdata.tundere_twoline = strtok(NULL, ",");
+		textdata.tundere_threeline = strtok(NULL, ",");
+	}
+	else
+	{
+		textdata.tundere_oneline = strtok(textdata.tundere_text, ",");
+		textdata.tundere_twoline = strtok(NULL, ",");
+		textdata.tundere_threeline = strtok(NULL, ",");
+	}
+
+}
+
+void YuruhuwaLoadText()
+{
+
+	textdata.yuruhuwa_oneline = NULL;
+	textdata.yuruhuwa_twoline = NULL;
+	textdata.yuruhuwa_threeline = NULL;
+
+	//memset(&textdata.oneline, '\0', 256);
+	//memset(&textdata.twoline, '\0', 256);
+	//memset(&textdata.threeline, '\0', 256);
+
+	//好感度
+	if (choicetexturedata.decision_1 == true)
+	{
+		textdata.yuruhuwa_oneline = strtok(NULL, ",");
+		textdata.yuruhuwa_twoline = strtok(NULL, ",");
+		textdata.yuruhuwa_threeline = strtok(NULL, ",");
+
+		textdata.yuruhuwa_lossoneline = strtok(NULL, ",");
+		textdata.yuruhuwa_losstwoline = strtok(NULL, ",");
+		textdata.yuruhuwa_lossthreeline = strtok(NULL, ",");
+		choicetexturedata.decision_1 = false;
+		
+		if (boyish.clear == true)
+		{
+			yuruhuwa.heart = 0;
+		}
+		else if (tundere.clear == true)
+		{
+			yuruhuwa.heart = 0;
+		}
+		else
+		{
+			yuruhuwa.heart++;
+		}
+	}
+	//好感度
+	else if (choicetexturedata.decision_2 == true)
+	{
+		textdata.yuruhuwa_lossoneline = strtok(NULL, ",");
+		textdata.yuruhuwa_losstwoline = strtok(NULL, ",");
+		textdata.yuruhuwa_lossthreeline = strtok(NULL, ",");
+
+		textdata.yuruhuwa_oneline = strtok(NULL, ",");
+		textdata.yuruhuwa_twoline = strtok(NULL, ",");
+		textdata.yuruhuwa_threeline = strtok(NULL, ",");
+		choicetexturedata.decision_2 = false;
+	}
+	else if (textdata.jk_nexttext == true)
+	{
+		textdata.yuruhuwa_oneline = strtok(NULL, ",");
+		textdata.yuruhuwa_twoline = strtok(NULL, ",");
+		textdata.yuruhuwa_threeline = strtok(NULL, ",");
+	}
+	else
+	{
+		textdata.yuruhuwa_oneline = strtok(textdata.yuruhuwa_text, ",");
+		textdata.yuruhuwa_twoline = strtok(NULL, ",");
+		textdata.yuruhuwa_threeline = strtok(NULL, ",");
 	}
 
 }
@@ -568,23 +710,61 @@ void DrawJKTalkText()
 {
 	
 
-	if (displaydata.display_cleartext == false && areadata.cleararea == true)
+	if (displaydata.display_cleartext == false && areadata.cleararea == true && boyish.talk == true)
 	{
-		DrawFont(400.0f, 460.0f, textdata.jk_oneline, FontSize::Regular, FontColor::White);
-		DrawFont(400.0f, 560.0f, textdata.jk_twoline, FontSize::Regular, FontColor::White);
-		DrawFont(400.0f, 660.0f, textdata.jk_threeline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 460.0f, textdata.boyish_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 560.0f, textdata.boyish_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 660.0f, textdata.boyish_threeline, FontSize::Regular, FontColor::White);
 	}
-	else if(boyish.end == true)
+	else if (displaydata.display_cleartext == false && areadata.cleararea == true && tundere.talk == true)
 	{
-		DrawFont(300.0f, 760.0f, textdata.jk_oneline, FontSize::Regular, FontColor::Yellow);
-		DrawFont(300.0f, 860.0f, textdata.jk_twoline, FontSize::Regular, FontColor::Yellow);
-		DrawFont(300.0f, 960.0f, textdata.jk_threeline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 460.0f, textdata.tundere_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 560.0f, textdata.tundere_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 660.0f, textdata.tundere_threeline, FontSize::Regular, FontColor::White);
 	}
-	else
+	else if (displaydata.display_cleartext == false && areadata.cleararea == true && yuruhuwa.talk == true)
 	{
-		DrawFont(300.0f, 760.0f, textdata.jk_oneline, FontSize::Regular, FontColor::White);
-		DrawFont(300.0f, 860.0f, textdata.jk_twoline, FontSize::Regular, FontColor::White);
-		DrawFont(300.0f, 960.0f, textdata.jk_threeline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 460.0f, textdata.yuruhuwa_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 560.0f, textdata.yuruhuwa_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 660.0f, textdata.yuruhuwa_threeline, FontSize::Regular, FontColor::White);
+	}
+
+	else if (boyish.end == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.boyish_oneline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 860.0f, textdata.boyish_twoline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 960.0f, textdata.boyish_threeline, FontSize::Regular, FontColor::Yellow);
+	}
+	else if (tundere.end == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.tundere_oneline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 860.0f, textdata.tundere_twoline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 960.0f, textdata.tundere_threeline, FontSize::Regular, FontColor::Yellow);
+	}
+	else if (yuruhuwa.end == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.yuruhuwa_oneline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 860.0f, textdata.yuruhuwa_twoline, FontSize::Regular, FontColor::Yellow);
+		DrawFont(300.0f, 960.0f, textdata.yuruhuwa_threeline, FontSize::Regular, FontColor::Yellow);
+	}
+	
+	else if (boyish.talk == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.boyish_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 860.0f, textdata.boyish_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 960.0f, textdata.boyish_threeline, FontSize::Regular, FontColor::White);
+	}
+	else if (tundere.talk == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.tundere_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 860.0f, textdata.tundere_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 960.0f, textdata.tundere_threeline, FontSize::Regular, FontColor::White);
+	}
+	else if (yuruhuwa.talk == true)
+	{
+		DrawFont(300.0f, 760.0f, textdata.yuruhuwa_oneline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 860.0f, textdata.yuruhuwa_twoline, FontSize::Regular, FontColor::White);
+		DrawFont(300.0f, 960.0f, textdata.yuruhuwa_threeline, FontSize::Regular, FontColor::White);
 	}
 }
 

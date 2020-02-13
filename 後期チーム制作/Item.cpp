@@ -248,6 +248,11 @@ void HitLargeRoomObject()
 	{
 		searchplayer.hit = true;
 	}
+	//ツンデレ
+	else if (HitPlayerObject(tundere.pos_x, tundere.pos_y + 64.0f, tundere.width, tundere.height - 72.0f) == true && tundere.clear == true)
+	{
+		searchplayer.hit = true;
+	}
 	//大テーブル
 	else if (HitPlayerObject(720.0f, 380.0f, 460.0f, 360.0f) == true)
 	{
@@ -328,6 +333,10 @@ void HitCorridorObject()
 		searchplayer.hit = true;
 	}
 	else if (HitPlayerObject(yuruhuwa.pos_x, yuruhuwa.pos_y + 64.0f, yuruhuwa.width, yuruhuwa.height - 92.0f) == true && yuruhuwa.clear == true)
+	{
+		searchplayer.hit = true;
+	}
+	else if (HitPlayerObject(tundere.pos_x, tundere.pos_y + 64.0f, tundere.width, tundere.height - 92.0f) == true && tundere.clear == true)
 	{
 		searchplayer.hit = true;
 	}
@@ -761,11 +770,17 @@ void HitEyeLargeRoomObject()
 	{
  		largeroomobject.yuruhuwa = true;
 	}
+	else if (HitPlayerEyeObject(tundere.pos_x, tundere.pos_y + 84.0f, tundere.width, tundere.height - 72.0f) == true && GetKeyDown(SPACE_KEY) == true && tundere.clear == true)
+	{
+		largeroomobject.tundere = true;
+	}
 	else
 	{
 		largeroomobject.maid = false;
 		largeroomobject.boyish = false;
 		largeroomobject.yuruhuwa = false;
+		largeroomobject.tundere = false;
+
 
 		largeroomobject.chair = false;
 		largeroomobject.clock = false;
@@ -822,10 +837,15 @@ void HitEyeCorridorObject()
 	{
 		corridorobject.yuruhuwa = true;
 	}
+	else if (HitPlayerEyeObject(tundere.pos_x, tundere.pos_y + 64.0f, tundere.width, tundere.height - 72.0f) == true && tundere.clear == true && GetKeyDown(SPACE_KEY) == true)
+	{
+		corridorobject.tundere = true;
+	}
 	else
 	{
 		corridorobject.boyish = false;
 		corridorobject.yuruhuwa = false;
+		corridorobject.tundere = false;
 	}
 	
 }

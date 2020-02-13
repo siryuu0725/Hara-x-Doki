@@ -47,6 +47,7 @@ void DrawCorridorScene()
 	DrawSearchBg();
 	DrawBoyish();
 	DrawYuruhuwa();
+	DrawTundere();
 	DrawSearchPlayerAndRobot();
 	DrawTexture(5.0f, 700.0f, GetTexture(TEXTURE_SEARCH2, CorridorCategoryTextureList::Search2Vase));
 
@@ -54,6 +55,7 @@ void DrawCorridorScene()
 	DrawTime();
 	DrawTalkBoyish();
 	DrawTalkYuruhuwa();
+	DrawTalkTundere();
 	DrawDoorTalk();
 	DrawMenu();
 }
@@ -71,6 +73,7 @@ void InitCorridorScene()
 	InitCorridorPlayer();
 	InitBoyish();
 	InitYuruhuwa();
+	InitTundere();
 	InitMenu();
 	InitRobotLoadFile();
 	InitJKLoadFile();
@@ -96,6 +99,7 @@ void MainCorridorScene()
 
 	UpDataBoyishTalk();
 	UpDataYuruhuwaTalk();
+	UpDataTundereTalk();
 
 	UpDateMenu();
 

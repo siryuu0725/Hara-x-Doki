@@ -59,14 +59,11 @@ void MainPuzzleGameScene()
 	
 	if (nextcene.Clea == true)
 	{
-		ChangeSceneStep(SceneStep::EndStep);
-	}
-	if (OnMouseDown(Right) == true)
-	{
 		puzzlegamerobot.talktype = 1;
 		puzzle.goal_key = true;
 		ChangeSceneStep(SceneStep::EndStep);
 	}
+	
 	
 }
 

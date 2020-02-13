@@ -49,6 +49,7 @@ void DrawLargeRoomScene()
 	DrawSearchBg();
 	DrawBoyish();
 	DrawYuruhuwa();
+	DrawTundere();
 	DrawMaidRobot();
 
 	DrawSearchPlayerAndRobot();
@@ -62,6 +63,7 @@ void DrawLargeRoomScene()
 	DrawTalkMaid();
 	DrawTalkBoyish();
 	DrawTalkYuruhuwa();
+	DrawTalkTundere();
 	DrawMenu();
 }
 
@@ -82,6 +84,7 @@ void InitLargeRoomScene()
 
 	InitBoyish();
 	InitYuruhuwa();
+	InitTundere();
 	InitArea();
 	InitLargeRoomPlayer();
 	InitMaidRobot();
@@ -117,6 +120,8 @@ void MainLargeRoomScene()
 
 	UpDataYuruhuwaTalk();
 
+	UpDataTundereTalk();
+
 	UpDataDescriptionText();
 
 	UpDateTalkMaid();
@@ -136,7 +141,7 @@ void MainLargeRoomScene()
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (searchplayer.pos_x >= 860.0f && searchplayer.pos_x <= 920.0f && searchplayer.pos_y >= 950.0f
-		&& (boyish.clear == true || yuruhuwa.clear == true) && (boyish.heart != 3 || yuruhuwa.heart != 3)
+		&& (boyish.clear == true && yuruhuwa.clear == true && tundere.clear == true) && (boyish.heart != 3 || yuruhuwa.heart != 3 || tundere.heart != 3)
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.largeroom = false;
@@ -145,7 +150,7 @@ void MainLargeRoomScene()
 		ChangeSceneStep(SceneStep::EndStep);
 	}
 	else if (searchplayer.pos_x >= 860.0f && searchplayer.pos_x <= 920.0f && searchplayer.pos_y >= 950.0f 
-		&& (boyish.clear == true || yuruhuwa.clear == true) && (boyish.heart == 3 || yuruhuwa.heart == 3)
+		&& (boyish.clear == true || yuruhuwa.clear == true || tundere.clear == true) && (boyish.heart == 3 || yuruhuwa.heart == 3 || tundere.heart == 3)
 		&& GetKeyDown(SPACE_KEY) == true)
 	{
 		areadata.largeroom = false;

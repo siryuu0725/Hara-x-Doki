@@ -70,7 +70,6 @@ void InitPuzzleGameRobot()
 	if (yuruhuwa.clear == false)
 	{
 		puzzlegamerobot.talktype = 0;
-
 	}
 }
 
@@ -253,11 +252,11 @@ void DrawTalkPuzzleGameRobot()
 		textbox.onspacekey = false;
 		textdata.robot_nexttext = false;
 
-		if (puzzle.goal_key == true)
+		/*if (puzzle.goal_key == true)
 		{
 			yuruhuwa.clear = true;
 
-		}
+		}*/
 
 		InitRobotLoadFile();
 

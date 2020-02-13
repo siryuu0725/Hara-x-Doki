@@ -7,6 +7,7 @@
 #include "Bg.h"
 #include "JK.h"
 #include "Robot.h"
+#include "Puzzle.h"
 
 #define MENU_POS_X 0
 #define MENU_POS_Y 680
@@ -40,7 +41,7 @@ void DrawMenu()
 		{
 			DrawTexture(320.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemRightTex));
 		}
-		if (getitem.itemkey == true)
+		if (getitem.itemkey == true || boyish.clear == true || tundere.clear == true || yuruhuwa.clear == true)
 		{
 			DrawTexture(580.0f, 790.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameItemKeyTex));
 		}
@@ -76,19 +77,30 @@ void Reset()
 {
 	time.start = false;
 	areadata.cangearea = false;
+
 	getitem.breakdoorkey = false;
 	getitem.boyishdoorkey = false;
 	getitem.tunderedoorkey = false;
 	getitem.yuruhuwadoorkey = false;
+
 	textdata.jk_nexttext = false;
+
 	boyish.clear = false;
 	yuruhuwa.clear = false;
+	tundere.clear = false;
+
 	searchgameobject.completerobot = false;
+	puzzle.goal_key = false;
+
 	boyish.heart = 0;
 	yuruhuwa.heart = 0;
+	tundere.heart = 0;
+
 	boyish.unlock = false;
 	yuruhuwa.unlock = false;
+	tundere.unlock = false;
 
 	searchgamerobot.talktype = 0;
 	puzzlegamerobot.talktype = 0;
+	mysterygamerobot.talktype = 0;
 }

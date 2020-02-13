@@ -62,7 +62,10 @@ void DrawTime()
 {
 	if (time.start == true)
 	{
-		time.timecounter++;
+		if (textbox.onspacekey == false)
+		{
+			time.timecounter++;
+		}
 		if (time.timecounter == 60)
 		{
 			time.onesecondscounter--;

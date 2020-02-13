@@ -41,6 +41,8 @@ void DrawGameClearScene()
 
 	DrawTalkClearYuruhuwa();
 
+	DrawTalkClearTundere();
+
 }
 
 void InitGameClearScene()
@@ -51,6 +53,7 @@ void InitGameClearScene()
 
 	LoadTexture("Res/スチル 改変.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::BoyishClearBgTex);
 	LoadTexture("Res/スチルゆるふわ.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::YuruhuwaClearBgTex);
+	LoadTexture("Res/スチルツンデレ.png", TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::TundereClearBgTex);
 
 	LoadUI();
 
@@ -58,7 +61,7 @@ void InitGameClearScene()
 
 	InitJKLoadFile();
 
-	JKLoadText();
+	BoyishLoadText();
 	
 	ChangeSceneStep(SceneStep::MainStep);
 }
@@ -70,10 +73,11 @@ void MainGameClearScene()
 
 	
 
-	if (boyish.end == true || yuruhuwa.end == true)
+	if (boyish.end == true || yuruhuwa.end == true || tundere.end == true)
 	{
 		boyish.end = false;
 		yuruhuwa.end = false;
+		tundere.end = false;
 		Reset();
 		ChangeSceneStep(SceneStep::EndStep);
 	}

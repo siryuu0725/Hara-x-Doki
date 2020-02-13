@@ -49,15 +49,10 @@ void DrawTitleBg()
 	{
 		titlebg.choiceend = true;
 	}
-	else if(HitChoise(LIST_X, LIST_Y, LIST_X_SIZE, LIST_Y_SIZE) == true)
-	{
-		titlebg.choicelist = true;
-	}
 	else
 	{
 		titlebg.choicestart = false;
 		titlebg.choiceend = false;
-		titlebg.choicelist = false;
 	}
 
 
@@ -65,27 +60,17 @@ void DrawTitleBg()
 	{
 		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartChoiceTex));
 		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
-		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex));
 	}
 	if (titlebg.choiceend == true)
 	{
 		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
 		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndChoiceTex));
-		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex));
 		
-	}
-	if (titlebg.choicelist == true)
-	{
-		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListChoiceTex));
-		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
-		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
-
 	}
 	else
 	{
 		DrawTexture(START_X, START_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleStartTex));
 		DrawTexture(END_X, END_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleEndTex));
-		DrawTexture(LIST_X, LIST_Y, GetTexture(TEXTURE_TITLE, TitleCategoryTextureList::TitleListTex));
 	}
 
 }
@@ -197,10 +182,6 @@ void DrawSearchBg()
 	else if (areadata.searchyuruhuwaarea == true)
 	{
 		DrawYuruhuwaBg();
-		if (yuruhuwa.unlock == false)
-		{
-			DrawTexture(yuruhuwa.pos_x+60.0f, yuruhuwa.pos_y+110.0f, GetTexture(TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters));
-		}
 	}
 	else if (areadata.searchcriminalarea == true)
 	{
@@ -248,15 +229,15 @@ void UpDateBg()
 
 void GameClearBg()
 {
-	if (boyish.clear == true && boyish.heart == 3&& displaydata.display_cleartext == true)
+	if (boyish.clear == true && boyish.heart == 3 && displaydata.display_cleartext == true)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::BoyishClearBgTex));
 	}
-	/*else if (tundere.clear == true && tundere.heart == 3)
+	else if (tundere.clear == true && tundere.heart == 3 && displaydata.display_cleartext == true)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::TundereClearBgTex));
-	}*/
-	else if (yuruhuwa.clear == true && yuruhuwa.heart == 3)
+	}
+	else if (yuruhuwa.clear == true && yuruhuwa.heart == 3 && displaydata.display_cleartext == true)
 	{
 		DrawBgTexture(GetTexture(TEXTURE_GAME_CLEAR, GameClearCategoryTextureList::YuruhuwaClearBgTex));
 	}

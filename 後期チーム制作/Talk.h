@@ -16,7 +16,12 @@ void RobotLoadText();
 
 void DrawJKTalkText();
 
-void JKLoadText();
+void BoyishLoadText();
+
+void TundereLoadText();
+
+void YuruhuwaLoadText();
+
 
 void UpDataDoorText();
 

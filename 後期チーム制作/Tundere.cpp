@@ -59,6 +59,7 @@ void InitTundereRoomScene()
 	LoadTundereFurnitureTex();
 	LoadSearchGameItem();
 	LoadCharacter();
+	InitTundere();
 	LoadUI();
 
 	InitRobotLoadFile();
@@ -66,7 +67,7 @@ void InitTundereRoomScene()
 
 	LoadTexture("Res/‰Æ‹ï/‘«žg.png", TEXTURE_SEARCH_GAME, SearchGameCategoryTextureList::SearchGameFetters);
 
-	InitTundere();
+	
 	InitTundereRoomObject();
 	InitGameRoomPlayer();
 	InitMysteryGameRobot();
@@ -93,6 +94,7 @@ void MainTundereRoomScene()
 
 	if (HitNextArea(900.0f, 990.0f, 940.0f, 1020.0f) == true && GetKeyDown(SPACE_KEY) == true)
 	{
+		areadata.searchtunderearea = false;
 		areadata.corridor = true;
 		areadata.cangearea2 = 2;
 		ChangeSceneStep(SceneStep::EndStep);
