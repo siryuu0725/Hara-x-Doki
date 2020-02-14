@@ -224,15 +224,15 @@ void HitLargeRoomObject()
 		searchplayer.hit = true;
 	}
 	//画面右端
-	else if (HitPlayerObject(1730.0f, 580.0f, 185.0f, 525.0f) == true)
+	else if (HitPlayerObject(1730.0f, 0.0f, 185.0f, 1080.0f) == true)
 	{
 		searchplayer.hit = true;
 	}
-	//画面右端
-	else if (HitPlayerObject(1730.0f, 0.0f, 185.0f, 450.0f) == true)
-	{
-		searchplayer.hit = true;
-	}
+	////画面右端
+	//else if (HitPlayerObject(1730.0f, 0.0f, 185.0f, 450.0f) == true)
+	//{
+	//	searchplayer.hit = true;
+	//}
 	//メイド
 	else if (HitPlayerObject(maidrobot.pos_x, maidrobot.pos_y, 64.0f, 110.0f) == true)
 	{
