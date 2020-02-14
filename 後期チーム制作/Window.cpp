@@ -45,8 +45,8 @@ HWND MakeWindow(HINSTANCE instance, int width, int height)
 	hWnd = CreateWindow(
 		TEXT("チーム制作"),
 		TEXT("チーム制作"),
-		
-		//WS_VISIBLE | WS_POPUP, //フルスクリーンかどうか
+		//(WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME) | WS_VISIBLE,
+		WS_VISIBLE | WS_POPUP, //フルスクリーンかどうか
 		CW_USEDEFAULT,
 		0,
 		width,
