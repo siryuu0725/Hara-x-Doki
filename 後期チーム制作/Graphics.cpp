@@ -21,9 +21,16 @@ bool  InitDirectGraphics(HWND window_handle)
 	ZeroMemory(&present_param, sizeof(D3DPRESENT_PARAMETERS));
 
 	present_param.BackBufferCount = 1;
-	present_param.BackBufferFormat = D3DFMT_UNKNOWN;
-	present_param.Windowed = true;
+	present_param.BackBufferFormat = D3DFMT_A8R8G8B8;
+	present_param.Windowed = false;
 	present_param.SwapEffect = D3DSWAPEFFECT_DISCARD;
+
+	if (present_param.Windowed == false)
+	{
+		present_param.BackBufferWidth  = 1920.0f;
+		present_param.BackBufferHeight = 1080.0f;
+		present_param.FullScreen_RefreshRateInHz = 60.0f;
+	}
 
 	if (FAILED(g_Interface->CreateDevice(D3DADAPTER_DEFAULT,
 		D3DDEVTYPE_HAL,
